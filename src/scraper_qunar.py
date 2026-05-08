@@ -204,8 +204,144 @@ class QunarFlightScraper:
             logger.warning(f"[去哪儿/列表v2] 有响应但无航班，完整响应: {json.dumps(data, ensure_ascii=False)[:600]}")
         self._polite_delay()
 
+        # ── 尝试6：PC 版搜索网页（HTML 内嵌 JSON）──
+        offers = self._search_pc_web(from_city, to_city, dep, arr, date_str)
+        if offers:
+            return offers
+
+        # ── 尝试7：PC 版 JSON API（同参数，不同路径）──
+        data = self._get_json_pc(
+            "https://flight.qunar.com/site/onewayFlightList.htm",
+            {
+                "searchDepartureAirport": from_city,
+                "searchArrivalAirport": to_city,
+                "searchDepartureTime": date_str,
+                "fromCode": dep,
+                "toCode": arr,
+                "nextNDays": 0,
+                "startSearch": "true",
+            },
+            "PC航班列表",
+        )
+        if data is not None:
+            offers = self._parse_flight_list(data, from_city, to_city, date_str)
+            if offers:
+                return sorted(offers, key=lambda x: x.price)
+            logger.warning(f"[去哪儿/PC航班列表] 有响应但无航班，keys={list(data.keys())[:10]}")
+            self._save_debug(data, dep, arr, date_str, "pc_list")
+
         logger.error(f"[去哪儿] {from_city}→{to_city} {date_str} 所有接口均失败")
         return []
+
+    def _search_pc_web(
+        self, from_city: str, to_city: str,
+        dep: str, arr: str, date_str: str,
+    ) -> list[FlightOffer]:
+        """
+        抓取去哪儿 PC 搜索页 HTML，提取内嵌 JSON 航班数据
+        URL: https://flight.qunar.com/site/oneway_list.htm
+        """
+        import re as _re
+        params = {
+            "searchDepartureAirport": from_city,
+            "searchArrivalAirport": to_city,
+            "searchDepartureTime": date_str,
+            "fromCode": dep,
+            "toCode": arr,
+            "nextNDays": 0,
+            "startSearch": "true",
+            "lowestPrice": "null",
+        }
+        try:
+            with httpx.Client(
+                timeout=self.timeout,
+                follow_redirects=True,
+                headers={
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+                    "Accept": "text/html,application/xhtml+xml,*/*;q=0.9",
+                    "Accept-Language": "zh-CN,zh;q=0.9",
+                    "Referer": "https://flight.qunar.com/",
+                },
+            ) as client:
+                resp = client.get(
+                    "https://flight.qunar.com/site/oneway_list.htm",
+                    params=params,
+                )
+            logger.info(f"[去哪儿/PC网页] {resp.status_code} CT={resp.headers.get('content-type','')[:60]}")
+            logger.info(f"[去哪儿/PC网页] 最终URL: {resp.url}")
+
+            if resp.status_code != 200:
+                logger.warning(f"[去哪儿/PC网页] 非200，跳过")
+                return []
+
+            html = resp.text
+            logger.info(f"[去哪儿/PC网页] HTML长度={len(html)}")
+
+            # 去哪儿PC 常见预加载变量
+            patterns = [
+                r'window\.__qunar_data__\s*=\s*(\{.+?\})\s*;',
+                r'window\.__INIT_DATA__\s*=\s*(\{.+?\})\s*;',
+                r'window\.__globalProps__\s*=\s*(\{.+?\})\s*;',
+                r'"flightList"\s*:\s*(\[.+?\])',
+                r'"flights"\s*:\s*(\[.+?\])',
+                r'var\s+flightList\s*=\s*(\[.+?\])',
+            ]
+            for pat in patterns:
+                m = _re.search(pat, html, _re.DOTALL)
+                if m:
+                    logger.info(f"[去哪儿/PC网页] 匹配模式: {pat[:50]}")
+                    try:
+                        raw = json.loads(m.group(1))
+                        if isinstance(raw, list):
+                            offers = self._parse_flight_list({"flights": raw}, from_city, to_city, date_str)
+                        else:
+                            offers = self._parse_flight_list(raw, from_city, to_city, date_str)
+                        if offers:
+                            logger.info(f"[去哪儿/PC网页] 解析到 {len(offers)} 个航班")
+                            return sorted(offers, key=lambda x: x.price)
+                    except Exception as e:
+                        logger.debug(f"[去哪儿/PC网页] 解析异常: {e}")
+
+            # 没找到数据，存 HTML 片段供排查
+            logger.warning(f"[去哪儿/PC网页] 未找到嵌入数据，前1000字:\n{html[:1000]}")
+            key = f"{dep}_{arr}_pc_web"
+            if key not in self._debug_saved:
+                self._debug_saved.add(key)
+                DEBUG_DIR.mkdir(parents=True, exist_ok=True)
+                fname = DEBUG_DIR / f"debug_qunar_{dep}_{arr}_{date_str}_pc_web.html"
+                fname.write_text(html[:8000], encoding="utf-8")
+                logger.info(f"[去哪儿/PC网页] HTML前8000字已存: {fname.name}")
+            return []
+
+        except httpx.RequestError as e:
+            logger.error(f"[去哪儿/PC网页] 网络异常: {e}")
+            return []
+
+    def _get_json_pc(self, url: str, params: dict, label: str) -> Optional[dict]:
+        """带 follow_redirects 的 JSON 请求（PC 版可能需要跟重定向）"""
+        try:
+            with httpx.Client(
+                timeout=self.timeout,
+                follow_redirects=True,
+                headers={
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+                    "Accept": "application/json, text/html, */*",
+                    "Accept-Language": "zh-CN,zh;q=0.9",
+                    "Referer": "https://flight.qunar.com/",
+                },
+            ) as client:
+                resp = client.get(url, params=params)
+            logger.info(f"[去哪儿/{label}] {resp.status_code} {resp.url}")
+            if resp.status_code != 200:
+                return None
+            ct = resp.headers.get("content-type", "")
+            if "html" in ct:
+                logger.warning(f"[去哪儿/{label}] 返回 HTML，前300字: {resp.text[:300]}")
+                return None
+            return resp.json()
+        except Exception as e:
+            logger.error(f"[去哪儿/{label}] 异常: {e}")
+            return None
 
     def _save_debug(self, data: dict, dep: str, arr: str, date_str: str, tag: str):
         """保存原始响应到 data/ 供排查（每个路线+标签只存一次）"""
