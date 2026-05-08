@@ -136,17 +136,14 @@ class LyFlightScraper:
                     ct = response.headers.get("content-type", "")
                     if "json" not in ct:
                         return
-                    # 只关心可能含航班数据的 API
                     ru = response.url
-                    if not any(k in ru for k in ("flight", "airticket", "api", "query", "search", "list")):
-                        return
                     body = response.body()
                     if not body:
                         return
                     data = json.loads(body)
                     with lock:
                         captured_responses.append({"url": ru, "data": data})
-                    logger.debug(f"[同程] 捕获 JSON: {ru[:80]}")
+                    logger.info(f"[同程] 捕获 JSON: {ru[:100]}")
                 except Exception as e:
                     logger.debug(f"[同程] response 解析跳过: {e}")
 
@@ -195,6 +192,11 @@ class LyFlightScraper:
             finally:
                 browser.close()
 
+        # ── 诊断日志：打印每个 JSON 响应的结构 ──
+        logger.info(f"[同程] 共捕获 {len(captured_responses)} 个 JSON 响应，结构摘要:")
+        for i, resp in enumerate(captured_responses):
+            _log_json_structure(resp["url"], resp["data"], i)
+
         # ── 解析捕获到的 JSON 响应 ──
         offers: list[FlightOffer] = []
         for resp in captured_responses:
@@ -204,7 +206,7 @@ class LyFlightScraper:
         # 保存原始 JSON 便于下次改进解析器
         if captured_responses:
             self._save_debug_json(captured_responses, dep, arr, date_str)
-        elif not dom_offers:
+        else:
             logger.warning(f"[同程] {from_city}→{to_city} {date_str} 未捕获到任何 JSON 响应")
             self._save_debug_json([], dep, arr, date_str)
 
@@ -237,16 +239,24 @@ class LyFlightScraper:
                     offers.append(o)
             return sorted(offers, key=lambda x: x.price) if offers else []
 
-        # 递归找 flightList/flights 数组
+        # 递归找航班列表（覆盖同程/去哪儿/携程等常见字段名）
         flight_list = (
             _dig(data, "data", "flightList")
+            or _dig(data, "data", "flightVOList")
+            or _dig(data, "data", "flightInfoList")
+            or _dig(data, "data", "flightInfos")
             or _dig(data, "data", "flights")
             or _dig(data, "data", "result", "flightList")
+            or _dig(data, "data", "result", "flightVOList")
             or _dig(data, "result", "flightList")
+            or _dig(data, "result", "flightVOList")
             or _dig(data, "flightList")
+            or _dig(data, "flightVOList")
             or _dig(data, "flights")
             or _dig(data, "data", "list")
             or _dig(data, "list")
+            or _dig(data, "data", "rows")
+            or _dig(data, "rows")
         )
 
         if not flight_list:
@@ -436,6 +446,30 @@ def _find_flight_array(obj, depth: int = 0) -> list | None:
             if result:
                 return result
     return None
+
+
+def _log_json_structure(url: str, obj, idx: int, max_depth: int = 3):
+    """递归打印 JSON 结构摘要，帮助找到航班数据字段路径"""
+    def _summarize(o, depth=0) -> str:
+        indent = "  " * depth
+        if isinstance(o, dict):
+            parts = []
+            for k, v in list(o.items())[:10]:  # 最多显示10个键
+                parts.append(f"{indent}  {k!r}: {_summarize(v, depth+1)}")
+            suffix = f"\n{indent}  ... (+{len(o)-10} more)" if len(o) > 10 else ""
+            return "{\n" + "\n".join(parts) + suffix + f"\n{indent}}}"
+        elif isinstance(o, list):
+            if not o:
+                return "[]"
+            first = _summarize(o[0], depth+1) if depth < max_depth else "..."
+            return f"[{len(o)} items, first: {first}]"
+        else:
+            s = repr(o)
+            return s[:60] + "..." if len(s) > 60 else s
+
+    short_url = url.split("?")[0][-60:]
+    summary = _summarize(obj)
+    logger.info(f"[同程/诊断] [{idx}] {short_url}\n{summary}")
 
 
 def _dedup(offers: list[FlightOffer]) -> list[FlightOffer]:
