@@ -14,6 +14,8 @@ jobs:
 
     permissions:
       contents: write   # 允许 push 数据回仓库
+      pages: write
+      id-token: write
 
     steps:
       - name: 检出代码
@@ -52,6 +54,14 @@ jobs:
             git commit -m "chore: update price data $(date -u +'%Y-%m-%d %H:%M UTC')"
             git push
           fi
+
+      - name: 发布 GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./docs
+
+      - name: 部署到 Pages
+        uses: actions/deploy-pages@v4
 
       - name: 上传日志（失败时）
         if: failure()
