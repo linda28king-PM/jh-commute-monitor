@@ -63,12 +63,12 @@ jobs:
       - name: 部署到 Pages
         uses: actions/deploy-pages@v4
 
-      - name: 上传日志（失败时）
-        if: failure()
+      - name: 上传调试文件（始终保留）
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: scraper-logs-${{ github.run_id }}
+          name: scraper-debug-${{ github.run_id }}
           path: |
             *.log
-            data/
-          retention-days: 7
+            data/debug_qunar_*.json
+          retention-days: 3
