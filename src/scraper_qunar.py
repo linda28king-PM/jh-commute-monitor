@@ -2,8 +2,8 @@
 去哪儿机票抓取器
 
 策略：
-1. 直接调用去哪儿 H5 端的 list API，返回 JSON，无需解析 HTML
-2. 这是手机网页版接口，反爬比 PC 版弱
+1. 优先用低价日历接口（返回每天最低价 JSON，稳定、反爬弱）
+2. 降级用 OTA 搜索接口（返回具体航班，偶尔被风控）
 3. 接口随时可能变，实际跑出问题第一时间检查这里
 """
 
@@ -14,7 +14,7 @@ import logging
 import random
 import time
 from dataclasses import dataclass, asdict
-from datetime import date
+from datetime import date, datetime
 from typing import Optional
 
 import httpx
@@ -25,7 +25,17 @@ USER_AGENTS = [
     "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1",
     "Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",
     "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
+    "Mozilla/5.0 (Linux; Android 14; SM-S918B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36",
 ]
+
+# 城市名 → 去哪儿三字代码
+CITY_CODES = {
+    "北京": "BJS",
+    "武汉": "WUH",
+    "上海": "SHA",
+    "广州": "CAN",
+    "深圳": "SZX",
+}
 
 
 @dataclass
@@ -35,7 +45,7 @@ class FlightOffer:
     from_city: str
     to_city: str
     depart_date: str         # YYYY-MM-DD
-    flight_no: str           # CA1234
+    flight_no: str           # CA1234 / 或 "日历最低价" 占位
     carrier: str             # 国航
     dep_time: str            # 08:30
     arr_time: str            # 11:00
@@ -43,9 +53,9 @@ class FlightOffer:
     arr_airport: str         # 天河T3
     duration_min: int        # 时长分钟
     price: int               # 含税总价
-    base_price: Optional[int] = None  # 不含税
-    discount: Optional[float] = None  # 折扣
-    captured_at: str = ""    # 抓取时间戳
+    base_price: Optional[int] = None
+    discount: Optional[float] = None
+    captured_at: str = ""
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -54,18 +64,21 @@ class FlightOffer:
 class QunarFlightScraper:
     """去哪儿机票抓取器"""
 
-    BASE_URL = "https://touch.dujia.qunar.com/golfz/sight/api/onewayFlightList"
-    # 备用 H5 接口
-    LIST_URL = "https://m.flight.qunar.com/h5/flight/onewaylist"
-    # 真实使用的 JSON 接口（手机网页背后调用的）
-    API_URL = "https://m.flight.qunar.com/h5/flight/listinfo"
+    # 低价日历接口：返回指定月份每天最低价，JSON 格式，最稳定
+    CALENDAR_URL = "https://m.flight.qunar.com/h5/api/cheapday/oneWayPriceCalendar"
+
+    # 备用：OTA 航班列表接口
+    FLIGHT_LIST_URL = "https://m.flight.qunar.com/h5/api/flight/onewayList"
+
+    # 备用2：PC 版接口
+    PC_LIST_URL = "https://flight.qunar.com/site/onewayFlightList.htm"
 
     def __init__(self, delay_range: tuple[int, int] = (2, 5), timeout: int = 20):
         self.delay_range = delay_range
         self.timeout = timeout
         self.client = httpx.Client(
             timeout=timeout,
-            follow_redirects=True,
+            follow_redirects=False,   # 不跟 301，方便检测被重定向
             headers=self._build_headers(),
         )
 
@@ -73,13 +86,12 @@ class QunarFlightScraper:
         return {
             "User-Agent": random.choice(USER_AGENTS),
             "Accept": "application/json, text/plain, */*",
-            "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+            "Accept-Language": "zh-CN,zh;q=0.9",
             "Referer": "https://m.flight.qunar.com/",
             "Origin": "https://m.flight.qunar.com",
         }
 
     def _polite_delay(self):
-        """友善延迟，降低被风控概率"""
         delay = random.uniform(*self.delay_range)
         time.sleep(delay)
 
@@ -90,83 +102,194 @@ class QunarFlightScraper:
         depart_date: date,
     ) -> list[FlightOffer]:
         """
-        搜索单程机票
-
-        Args:
-            from_city: 出发城市中文名 / 三字代码
-            to_city: 到达城市
-            depart_date: 出发日期
+        搜索单程机票，优先走日历接口
 
         Returns:
             航班报价列表，按价格升序
         """
-        date_str = depart_date.strftime("%Y-%m-%d")
+        # 先尝试日历接口（最稳定）
+        offers = self._search_calendar(from_city, to_city, depart_date)
+        if offers:
+            return offers
 
-        # 去哪儿 H5 搜索参数（已用浏览器抓包验证过的格式）
+        # 降级尝试 OTA 航班列表接口
+        offers = self._search_flight_list(from_city, to_city, depart_date)
+        if offers:
+            return offers
+
+        logger.error(f"[去哪儿] {from_city}→{to_city} {depart_date} 所有接口均失败")
+        return []
+
+    # ──────────────────────────────────────────────
+    # 接口1：低价日历（推荐，返回 JSON 最稳定）
+    # ──────────────────────────────────────────────
+    def _search_calendar(
+        self, from_city: str, to_city: str, depart_date: date
+    ) -> list[FlightOffer]:
+        date_str = depart_date.strftime("%Y-%m-%d")
+        month_str = depart_date.strftime("%Y-%m")
+
+        dep_code = CITY_CODES.get(from_city, from_city)
+        arr_code = CITY_CODES.get(to_city, to_city)
+
         params = {
-            "dep": from_city,
-            "arr": to_city,
-            "date": date_str,
-            "from": "flight_h5_index",
-            "channel": "h5",
-            "transit": 0,         # 0=直飞优先, 1=不含中转
+            "dep": dep_code,
+            "arr": arr_code,
+            "startDate": month_str + "-01",
+            "endDate": depart_date.replace(day=28).strftime("%Y-%m") + "-28",
         }
 
         for attempt in range(3):
             try:
-                # 刷新 UA
                 self.client.headers.update({"User-Agent": random.choice(USER_AGENTS)})
+                logger.info(f"[去哪儿日历] {from_city}→{to_city} {month_str} (尝试 {attempt+1}/3)")
 
-                logger.info(f"[去哪儿] 搜索 {from_city}→{to_city} {date_str} (尝试 {attempt+1}/3)")
-                resp = self.client.get(self.API_URL, params=params)
+                resp = self.client.get(self.CALENDAR_URL, params=params)
 
-                # 风控页面通常返回非 200 或 HTML
+                if resp.status_code in (301, 302):
+                    logger.warning(f"[去哪儿日历] 被重定向 {resp.status_code}，跳过")
+                    return []
+
                 if resp.status_code != 200:
-                    logger.warning(f"[去哪儿] HTTP {resp.status_code}, 重试")
+                    logger.warning(f"[去哪儿日历] HTTP {resp.status_code}，重试")
                     self._polite_delay()
                     continue
 
-                # 尝试解析 JSON
                 try:
                     data = resp.json()
                 except json.JSONDecodeError:
-                    logger.warning(f"[去哪儿] 返回非 JSON，可能被风控；前 200 字: {resp.text[:200]}")
+                    logger.warning(f"[去哪儿日历] 非 JSON 响应，前200字: {resp.text[:200]}")
                     self._polite_delay()
                     continue
 
-                offers = self._parse_response(data, from_city, to_city, date_str)
+                offers = self._parse_calendar(data, from_city, to_city, date_str)
                 if offers:
-                    logger.info(f"[去哪儿] 抓到 {len(offers)} 个航班")
-                    return sorted(offers, key=lambda x: x.price)
+                    logger.info(f"[去哪儿日历] 抓到 {date_str} 最低价 ¥{offers[0].price}")
+                    return offers
                 else:
-                    logger.warning(f"[去哪儿] 解析后航班列表为空，响应顶层 keys: {list(data.keys())[:10]}, 前200字: {str(data)[:200]}")
+                    logger.warning(f"[去哪儿日历] 未找到 {date_str} 数据，响应: {str(data)[:300]}")
+                    return []
 
             except httpx.RequestError as e:
-                logger.error(f"[去哪儿] 网络异常: {e}")
-
+                logger.error(f"[去哪儿日历] 网络异常: {e}")
             self._polite_delay()
 
-        logger.error(f"[去哪儿] {from_city}→{to_city} {date_str} 抓取失败")
         return []
 
-    def _parse_response(
-        self,
-        data: dict,
-        from_city: str,
-        to_city: str,
-        date_str: str,
+    def _parse_calendar(
+        self, data: dict, from_city: str, to_city: str, date_str: str
     ) -> list[FlightOffer]:
-        """
-        解析去哪儿返回的 JSON
-
-        注意：去哪儿接口返回结构会变，下面的字段路径可能需要根据实际返回调整。
-        实际使用时建议先 print 一次完整 response，根据真实结构修改。
-        """
-        offers: list[FlightOffer] = []
-        from datetime import datetime
+        """解析低价日历响应，提取指定日期的最低价"""
         now = datetime.now().isoformat(timespec="seconds")
 
-        # 常见的几种返回结构都尝试一下
+        # 尝试多种响应结构
+        # 结构1: {"ret": true, "data": [{"date": "2026-05-15", "price": 680}, ...]}
+        # 结构2: {"data": {"2026-05-15": 680, ...}}
+        # 结构3: {"ret": true, "data": {"calendar": [...]}}
+
+        raw = data.get("data") or data.get("result") or {}
+
+        price = None
+
+        if isinstance(raw, list):
+            for item in raw:
+                if isinstance(item, dict) and item.get("date") == date_str:
+                    price = item.get("price") or item.get("lowestPrice") or item.get("minPrice")
+                    break
+        elif isinstance(raw, dict):
+            # {"2026-05-15": 680, ...}
+            if date_str in raw:
+                val = raw[date_str]
+                price = val if isinstance(val, (int, float)) else (
+                    val.get("price") or val.get("lowestPrice") if isinstance(val, dict) else None
+                )
+            # {"calendar": [...]}
+            elif "calendar" in raw:
+                for item in raw.get("calendar", []):
+                    if isinstance(item, dict) and item.get("date") == date_str:
+                        price = item.get("price") or item.get("lowestPrice")
+                        break
+
+        if not price:
+            logger.debug(f"[去哪儿日历] {date_str} 无价格，data keys: {list(data.keys())}")
+            return []
+
+        price = int(price)
+        return [FlightOffer(
+            source="qunar",
+            from_city=from_city,
+            to_city=to_city,
+            depart_date=date_str,
+            flight_no="(最低价)",
+            carrier="综合",
+            dep_time="--",
+            arr_time="--",
+            dep_airport="",
+            arr_airport="",
+            duration_min=0,
+            price=price,
+            captured_at=now,
+        )]
+
+    # ──────────────────────────────────────────────
+    # 接口2：OTA 航班列表（有具体航班，偶被风控）
+    # ──────────────────────────────────────────────
+    def _search_flight_list(
+        self, from_city: str, to_city: str, depart_date: date
+    ) -> list[FlightOffer]:
+        date_str = depart_date.strftime("%Y-%m-%d")
+        dep_code = CITY_CODES.get(from_city, from_city)
+        arr_code = CITY_CODES.get(to_city, to_city)
+
+        params = {
+            "depCity": dep_code,
+            "arrCity": arr_code,
+            "dptDate": date_str,
+            "channel": "h5",
+            "from": "m_flight_h5",
+        }
+
+        for attempt in range(2):
+            try:
+                self.client.headers.update({"User-Agent": random.choice(USER_AGENTS)})
+                logger.info(f"[去哪儿列表] {from_city}→{to_city} {date_str} (尝试 {attempt+1}/2)")
+
+                resp = self.client.get(self.FLIGHT_LIST_URL, params=params)
+
+                if resp.status_code in (301, 302):
+                    logger.warning(f"[去哪儿列表] 被重定向，接口失效")
+                    return []
+
+                if resp.status_code != 200:
+                    logger.warning(f"[去哪儿列表] HTTP {resp.status_code}")
+                    self._polite_delay()
+                    continue
+
+                try:
+                    data = resp.json()
+                except json.JSONDecodeError:
+                    logger.warning(f"[去哪儿列表] 非 JSON，前200字: {resp.text[:200]}")
+                    return []
+
+                offers = self._parse_flight_list(data, from_city, to_city, date_str)
+                if offers:
+                    logger.info(f"[去哪儿列表] 抓到 {len(offers)} 个航班")
+                    return sorted(offers, key=lambda x: x.price)
+                else:
+                    logger.warning(f"[去哪儿列表] 解析后为空，keys: {list(data.keys())[:10]}")
+
+            except httpx.RequestError as e:
+                logger.error(f"[去哪儿列表] 网络异常: {e}")
+            self._polite_delay()
+
+        return []
+
+    def _parse_flight_list(
+        self, data: dict, from_city: str, to_city: str, date_str: str
+    ) -> list[FlightOffer]:
+        now = datetime.now().isoformat(timespec="seconds")
+        offers: list[FlightOffer] = []
+
         flights = (
             data.get("data", {}).get("flights")
             or data.get("data", {}).get("list")
@@ -174,10 +297,6 @@ class QunarFlightScraper:
             or data.get("list")
             or []
         )
-
-        if not flights:
-            logger.debug(f"[去哪儿] 响应结构: {list(data.keys())}")
-            return []
 
         for f in flights:
             try:
@@ -198,11 +317,10 @@ class QunarFlightScraper:
                     discount=f.get("discount"),
                     captured_at=now,
                 )
-                # 过滤无效数据
                 if offer.price > 0 and offer.flight_no:
                     offers.append(offer)
             except (ValueError, TypeError) as e:
-                logger.debug(f"[去哪儿] 跳过单条解析异常: {e}")
+                logger.debug(f"[去哪儿列表] 跳过解析异常: {e}")
                 continue
 
         return offers
