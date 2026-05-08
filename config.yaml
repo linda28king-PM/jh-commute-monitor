@@ -28,10 +28,10 @@ monitor_weeks_ahead: 6
 
 # 抓取数据源开关
 sources:
-  qunar: true        # 去哪儿（机票，相对友好）
-  ctrip: false       # 携程（反爬强，默认关闭，需要时开）
+  qunar: false       # 去哪儿（已下线全部 H5 API，暂停）
+  ctrip: false       # 携程（反爬强，默认关闭）
   railway: false     # 12306（高铁余票，已关闭）
-  google_flights: false  # Google Flights（GitHub Actions 海外节点可开）
+  google_flights: true   # Google Flights（GitHub Actions 海外节点可用）
 
 # 提醒规则
 alert_rules:

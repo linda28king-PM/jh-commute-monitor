@@ -26,6 +26,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from src.scraper_qunar import QunarFlightScraper
+from src.scraper_google import GoogleFlightScraper
 from src.scraper_railway import RailwayScraper
 from src.storage import Storage
 from src.notifier import Notifier
@@ -132,6 +133,7 @@ def main():
 
     # ---- 抓机票 ----
     flights_by_route: dict[tuple, list[dict]] = {}
+
     if config["sources"].get("qunar"):
         with QunarFlightScraper(
             delay_range=(
@@ -142,6 +144,22 @@ def main():
         ) as q:
             for route, d in target_pairs:
                 offers = q.search(route["from_city"], route["to_city"], d)
+                offer_dicts = [o.to_dict() for o in offers]
+                if offer_dicts:
+                    storage.save_flights(offer_dicts)
+                key = (route["direction"], d.strftime("%Y-%m-%d"))
+                flights_by_route.setdefault(key, []).extend(offer_dicts)
+
+    if config["sources"].get("google_flights"):
+        with GoogleFlightScraper(
+            delay_range=(
+                config["scraping"]["request_delay_min"],
+                config["scraping"]["request_delay_max"],
+            ),
+            timeout=config["scraping"]["timeout"],
+        ) as g:
+            for route, d in target_pairs:
+                offers = g.search(route["from_city"], route["to_city"], d)
                 offer_dicts = [o.to_dict() for o in offers]
                 if offer_dicts:
                     storage.save_flights(offer_dicts)
