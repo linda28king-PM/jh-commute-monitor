@@ -139,7 +139,7 @@ class QunarFlightScraper:
                     logger.info(f"[去哪儿] 抓到 {len(offers)} 个航班")
                     return sorted(offers, key=lambda x: x.price)
                 else:
-                    logger.warning(f"[去哪儿] 解析后航班列表为空")
+                    logger.warning(f"[去哪儿] 解析后航班列表为空，响应顶层 keys: {list(data.keys())[:10]}, 前200字: {str(data)[:200]}")
 
             except httpx.RequestError as e:
                 logger.error(f"[去哪儿] 网络异常: {e}")
