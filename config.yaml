@@ -24,13 +24,13 @@ routes:
     direction: "back"
 
 # 监控范围：未来 N 周
-monitor_weeks_ahead: 4
+monitor_weeks_ahead: 6
 
 # 抓取数据源开关
 sources:
   qunar: true        # 去哪儿（机票，相对友好）
   ctrip: false       # 携程（反爬强，默认关闭，需要时开）
-  railway: true      # 12306（高铁余票，价格固定）
+  railway: false     # 12306（高铁余票，已关闭）
   google_flights: false  # Google Flights（GitHub Actions 海外节点可开）
 
 # 提醒规则
@@ -45,13 +45,6 @@ alert_rules:
     direction: "back"
     mode: "flight"
     threshold: 800
-    enabled: true
-
-  - name: "高铁余票紧张提醒"
-    direction: "any"
-    mode: "train"
-    condition: "low_seats"     # 余票少于 20 张时提醒
-    threshold_seats: 20
     enabled: true
 
 # 推送渠道（token 走 GitHub Secrets，这里只配开关）

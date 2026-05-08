@@ -177,7 +177,6 @@
 <script>
 let DATA = null;
 let currentWeekIdx = 0;
-let modeMap = {};  // {routeIdx: 'flight'|'train'}
 
 async function loadData() {
   try {
@@ -195,9 +194,6 @@ async function loadData() {
 }
 
 function init() {
-  // 初始化每条路线的默认 mode
-  DATA.routes.forEach((_, i) => modeMap[i] = 'flight');
-
   // 周选择器（取第一条路线的周数）
   const weeksCount = DATA.routes[0]?.weeks?.length || 0;
   const sel = document.getElementById('week-selector');
@@ -234,16 +230,6 @@ function render() {
   // 双向对比
   const split = document.getElementById('split');
   split.innerHTML = DATA.routes.map((route, i) => renderLeg(route, i)).join('');
-
-  // 绑定 tab
-  document.querySelectorAll('.tab').forEach(t => {
-    t.onclick = () => {
-      const idx = +t.dataset.idx;
-      const mode = t.dataset.mode;
-      modeMap[idx] = mode;
-      render();
-    };
-  });
 }
 
 function renderSummary(weekData) {
@@ -252,7 +238,6 @@ function renderSummary(weekData) {
   const friMin = friFlights.length ? Math.min(...friFlights.map(f => f.price)) : null;
   const sunMin = sunFlights.length ? Math.min(...sunFlights.map(f => f.price)) : null;
   const totalFlight = (friMin && sunMin) ? friMin + sunMin : null;
-  const trainTotal = 520 * 2;
 
   const cell = (label, value, delta) => `
     <div class="summary-cell">
@@ -263,24 +248,21 @@ function renderSummary(weekData) {
   `;
 
   document.getElementById('summary-grid').innerHTML =
-    cell('去程最低 · 飞机', friMin, friMin ? `${friFlights.length} 个航班` : '') +
-    cell('回程最低 · 飞机', sunMin, sunMin ? `${sunFlights.length} 个航班` : '') +
-    cell('飞机往返合计', totalFlight, '含税；不含机场往返') +
-    cell('高铁往返参考', trainTotal,
-         totalFlight ? (totalFlight > trainTotal + 100 ? `↓ 高铁省 ¥${totalFlight - trainTotal}` : '价差较小')
-                     : '');
+    cell('去程最低', friMin, friMin ? `${friFlights.length} 个航班` : '') +
+    cell('回程最低', sunMin, sunMin ? `${sunFlights.length} 个航班` : '') +
+    cell('往返合计', totalFlight, '含税；不含机场往返') +
+    cell('监控周数', 6, '本周起未来 6 周');
 }
 
 function renderLeg(route, idx) {
   const week = route.weeks[currentWeekIdx];
-  const mode = modeMap[idx];
-  const list = mode === 'flight' ? (week?.flights || []) : (week?.trains || []);
+  const list = week?.flights || [];
   const dirText = idx === 0 ? '周五·去程' : idx === 1 ? '周日·回程' : route.name;
 
   let body;
   if (!list.length) {
-    body = `<div class="empty-state">暂无${mode === 'flight' ? '航班' : '高铁'}数据</div>`;
-  } else if (mode === 'flight') {
+    body = `<div class="empty-state">暂无航班数据</div>`;
+  } else {
     const min = Math.min(...list.map(x => x.price));
     body = list.map(f => {
       const isMin = f.price === min;
@@ -298,22 +280,6 @@ function renderLeg(route, idx) {
         <div class="option-price ${cls}"><span class="currency">¥</span>${f.price}</div>
       </div>`;
     }).join('');
-  } else {
-    body = list.map(t => {
-      return `<div class="option">
-        <div class="option-time">${t.dep_time || '--'}<span class="arrow">→</span>${t.arr_time || '--'}</div>
-        <div class="option-meta">
-          <div><span class="carrier">${t.train_no || ''}</span>
-            <span class="duration">${formatDuration(t.duration_min)}</span>
-          </div>
-          <div style="margin-top:2px;color:var(--text-faint);font-size:11px">${t.dep_station || ''} → ${t.arr_station || ''}</div>
-        </div>
-        <div class="option-trend">余票 ${t.second_class_seats || '--'}</div>
-        <div class="option-price">
-          <span class="currency">¥</span>${t.second_class_price || '-'}
-        </div>
-      </div>`;
-    }).join('');
   }
 
   return `
@@ -321,14 +287,6 @@ function renderLeg(route, idx) {
       <div class="leg-head">
         <div class="title"><span class="day">${dirText.split('·')[0]}</span>${dirText.split('·')[1] || ''}</div>
         <div class="date">${week?.date || '--'} 周${week?.weekday_label || ''}</div>
-      </div>
-      <div class="tabs">
-        <button class="tab ${mode === 'flight' ? 'active' : ''}" data-idx="${idx}" data-mode="flight">
-          飞机 <span class="count">${week?.flights?.length || 0}</span>
-        </button>
-        <button class="tab ${mode === 'train' ? 'active' : ''}" data-idx="${idx}" data-mode="train">
-          高铁 <span class="count">${week?.trains?.length || 0}</span>
-        </button>
       </div>
       <div class="options">${body}</div>
     </div>
