@@ -38,13 +38,13 @@ alert_rules:
   - name: "周五机票特价"
     direction: "out"
     mode: "flight"
-    threshold: 750
+    threshold: 1500       # 当前均价约 ¥1900，低于此价格提醒
     enabled: true
 
   - name: "周日机票特价"
     direction: "back"
     mode: "flight"
-    threshold: 800
+    threshold: 1500
     enabled: true
 
 # 推送渠道（token 走 GitHub Secrets，这里只配开关）
