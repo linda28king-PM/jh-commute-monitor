@@ -107,12 +107,12 @@ class Notifier:
     # ---------------- 邮件 ----------------
     def _send_email(self, title: str, content: str, content_html: Optional[str], to: str) -> bool:
         host = os.getenv("EMAIL_HOST")
-        port = int(os.getenv("EMAIL_PORT", "465"))
         user = os.getenv("EMAIL_USER")
         password = os.getenv("EMAIL_PASSWORD")
         if not all([host, user, password, to]):
             logger.warning("[Notifier] 邮件配置不完整，跳过")
             return False
+        port = int(os.getenv("EMAIL_PORT") or "465")
 
         try:
             msg = MIMEMultipart("alternative")
