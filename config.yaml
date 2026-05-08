@@ -28,11 +28,11 @@ monitor_weeks_ahead: 6
 
 # 抓取数据源开关
 sources:
-  qunar: true        # 去哪儿（H5 API 已死，改为抓 PC 网页 + PC JSON 接口）
+  qunar: false       # 去哪儿（PC/H5 均为 SPA，纯 httpx 抓不到数据）
   ctrip: false       # 携程（反爬强，默认关闭）
   railway: false     # 12306（高铁余票，已关闭）
   google_flights: false  # Google Flights（价格为美元/往返，不适合国内监控）
-  ly: true           # 同程旅行（ly.com，国内价格）
+  ly: true           # 同程旅行（Playwright 无头浏览器，可拿到国内价格）
 
 # 提醒规则
 alert_rules:

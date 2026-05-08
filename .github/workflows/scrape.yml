@@ -10,7 +10,7 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
 
     permissions:
       contents: write   # 允许 push 数据回仓库
@@ -27,8 +27,11 @@ jobs:
           python-version: '3.11'
           cache: pip
 
-      - name: 安装依赖
+      - name: 安装 Python 依赖
         run: pip install -r requirements.txt
+
+      - name: 安装 Playwright Chromium
+        run: playwright install chromium --with-deps
 
       - name: 执行抓取
         env:
@@ -71,4 +74,6 @@ jobs:
           path: |
             *.log
             data/debug_qunar_*.json
+            data/debug_ly_*.json
+            data/screenshot_ly_*.png
           retention-days: 3

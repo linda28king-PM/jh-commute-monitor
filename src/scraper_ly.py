@@ -1,44 +1,44 @@
 """
-同程旅行（ly.com）机票抓取器
+同程旅行（ly.com）机票抓取器 - Playwright 版
 
 策略：
-1. 直接请求 www.ly.com 桌面搜索页，提取页面内嵌的 JSON 初始化数据
-2. 如果内嵌数据不可用，尝试已知的 JSON API 路径
-3. 完整记录每次响应，方便通过 Actions 日志排查
+1. 用无头 Chromium 加载 m.ly.com 移动版搜索页（SPA，需 JS 执行）
+2. 拦截所有 JSON API 响应，收集航班数据
+3. 等到 networkidle，确保所有 XHR/Fetch 请求完成
+4. 保存调试截图和原始 JSON，方便排查
 """
 
 from __future__ import annotations
 
 import json
 import logging
-import random
-import re
+import threading
 import time
 from dataclasses import dataclass, asdict
 from datetime import date, datetime
 from pathlib import Path
 from typing import Optional
 
-import httpx
-
 logger = logging.getLogger(__name__)
 
 DEBUG_DIR = Path(__file__).resolve().parent.parent / "data"
 
-USER_AGENTS = [
-    # 模拟国内 Android 手机，更像真实用户
-    "Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36",
-    "Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Mobile Safari/537.36",
-    "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Mobile/15E148 Safari/604.1",
-]
-
-# 城市名 → 同程用的机场/城市三字码
+# 城市名 → 同程三字码
 CITY_CODES = {
     "北京": "BJS",
     "武汉": "WUH",
     "上海": "SHA",
     "广州": "CAN",
     "深圳": "SZX",
+}
+
+# 城市名 → 中文全名（URL 参数）
+CITY_CN = {
+    "北京": "北京",
+    "武汉": "武汉",
+    "上海": "上海",
+    "广州": "广州",
+    "深圳": "深圳",
 }
 
 
@@ -65,31 +65,19 @@ class FlightOffer:
 
 
 class LyFlightScraper:
-    """同程旅行机票抓取器"""
+    """同程旅行机票抓取器（Playwright 无头浏览器）"""
 
-    # 桌面版搜索页 URL，页面内通常有 window.__INITIAL_DATA__ 等预加载 JSON
-    WEB_URL = "https://www.ly.com/flights/itinerary/oneway/{dep}-{arr}"
-
-    # 移动版（有时 JSON 结构更简单）
-    MOBILE_URL = "https://m.ly.com/flights/itinerary/oneway/{dep}-{arr}"
+    MOBILE_URL = (
+        "https://m.ly.com/ft/touch/book1"
+        "?date={date}&fromCode={dep}&toCode={arr}"
+        "&fromCity={from_city}&toCity={to_city}"
+        "&adult=1&child=0&infant=0&cabin=0"
+    )
 
     def __init__(self, delay_range: tuple[int, int] = (2, 5), timeout: int = 25):
         self.delay_range = delay_range
-        self.timeout = timeout
+        self.timeout = timeout  # seconds
         self._debug_saved: set[str] = set()
-
-    def _build_headers(self, mobile: bool = False) -> dict:
-        ua = random.choice(USER_AGENTS)
-        referer = "https://m.ly.com/" if mobile else "https://www.ly.com/"
-        return {
-            "User-Agent": ua,
-            "Accept": "text/html,application/xhtml+xml,application/json,*/*;q=0.9",
-            "Accept-Language": "zh-CN,zh;q=0.9",
-            "Accept-Encoding": "gzip, deflate, br",
-            "Referer": referer,
-            "Cache-Control": "no-cache",
-            "Connection": "keep-alive",
-        }
 
     def search(
         self,
@@ -101,171 +89,204 @@ class LyFlightScraper:
         arr = CITY_CODES.get(to_city, to_city)
         date_str = depart_date.strftime("%Y-%m-%d")
 
-        # 先试桌面版
-        offers = self._try_web(dep, arr, from_city, to_city, date_str, mobile=False)
-        if offers:
-            return offers
-        time.sleep(random.uniform(*self.delay_range))
-
-        # 再试移动版
-        offers = self._try_web(dep, arr, from_city, to_city, date_str, mobile=True)
-        if offers:
-            return offers
-
-        logger.error(f"[同程] {from_city}→{to_city} {date_str} 所有方式均失败")
-        return []
-
-    def _try_web(
-        self, dep: str, arr: str,
-        from_city: str, to_city: str,
-        date_str: str, mobile: bool,
-    ) -> list[FlightOffer]:
-        label = "mobile" if mobile else "desktop"
-        base = self.MOBILE_URL if mobile else self.WEB_URL
-        url = base.format(dep=dep, arr=arr)
-        params = {
-            "date": date_str,
-            "from": from_city,
-            "to": to_city,
-        }
-
         try:
-            with httpx.Client(
-                timeout=self.timeout,
-                follow_redirects=True,
-                headers=self._build_headers(mobile),
-            ) as client:
-                logger.info(f"[同程/{label}] GET {url}?date={date_str}")
-                resp = client.get(url, params=params)
+            from playwright.sync_api import sync_playwright
+        except ImportError:
+            logger.error("[同程] playwright 未安装，跳过。运行: pip install playwright && playwright install chromium")
+            return []
 
-            logger.info(f"[同程/{label}] HTTP {resp.status_code} | CT={resp.headers.get('content-type','')[:60]}")
+        url = self.MOBILE_URL.format(
+            date=date_str,
+            dep=dep,
+            arr=arr,
+            from_city=from_city,
+            to_city=to_city,
+        )
+        logger.info(f"[同程] 打开 {url}")
 
-            if resp.status_code != 200:
-                logger.warning(f"[同程/{label}] 非200，跳过")
-                return []
+        captured_responses: list[dict] = []
+        lock = threading.Lock()
 
-            body = resp.text
+        with sync_playwright() as p:
+            browser = p.chromium.launch(
+                headless=True,
+                args=[
+                    "--no-sandbox",
+                    "--disable-setuid-sandbox",
+                    "--disable-dev-shm-usage",
+                    "--disable-gpu",
+                    "--lang=zh-CN",
+                ],
+            )
+            context = browser.new_context(
+                user_agent=(
+                    "Mozilla/5.0 (Linux; Android 13; Pixel 7) "
+                    "AppleWebKit/537.36 (KHTML, like Gecko) "
+                    "Chrome/120.0.0.0 Mobile Safari/537.36"
+                ),
+                locale="zh-CN",
+                timezone_id="Asia/Shanghai",
+                viewport={"width": 390, "height": 844},
+            )
 
-            # ─── 尝试1：页面直接返回 JSON ───
-            if "application/json" in resp.headers.get("content-type", ""):
+            page = context.new_page()
+
+            def on_response(response):
                 try:
-                    data = resp.json()
-                    offers = self._parse_json_api(data, from_city, to_city, date_str)
-                    if offers:
-                        return offers
-                    logger.warning(f"[同程/{label}] JSON解析无结果，完整响应: {json.dumps(data, ensure_ascii=False)[:800]}")
-                    self._save_debug(data, dep, arr, date_str, label)
-                    return []
+                    ct = response.headers.get("content-type", "")
+                    if "json" not in ct:
+                        return
+                    # 只关心可能含航班数据的 API
+                    ru = response.url
+                    if not any(k in ru for k in ("flight", "airticket", "api", "query", "search", "list")):
+                        return
+                    body = response.body()
+                    if not body:
+                        return
+                    data = json.loads(body)
+                    with lock:
+                        captured_responses.append({"url": ru, "data": data})
+                    logger.debug(f"[同程] 捕获 JSON: {ru[:80]}")
                 except Exception as e:
-                    logger.warning(f"[同程/{label}] JSON解析异常: {e}")
+                    logger.debug(f"[同程] response 解析跳过: {e}")
 
-            # ─── 尝试2：从 HTML 中提取嵌入 JSON ───
-            logger.info(f"[同程/{label}] HTML长度={len(body)}，尝试提取嵌入JSON")
-            offers = self._extract_from_html(body, from_city, to_city, date_str)
-            if offers:
-                return offers
+            page.on("response", on_response)
 
-            # 没拿到数据，记录便于排查
-            logger.warning(f"[同程/{label}] HTML中未找到航班数据，前800字:\n{body[:800]}")
-            self._save_debug({"html_snippet": body[:3000]}, dep, arr, date_str, label)
-            return []
+            try:
+                page.goto(url, wait_until="domcontentloaded", timeout=self.timeout * 1000)
+                # 等待网络静默（数据加载完成）
+                try:
+                    page.wait_for_load_state("networkidle", timeout=20_000)
+                except Exception:
+                    pass  # 超时也继续，可能数据已来了
 
-        except httpx.RequestError as e:
-            logger.error(f"[同程/{label}] 网络异常: {e}")
-            return []
+                # 额外等待，给 JS 渲染时间
+                time.sleep(3)
+
+                # 尝试等待航班列表元素出现（不同版本的选择器）
+                SELECTORS = [
+                    "[class*='flight'][class*='item']",
+                    "[class*='flightItem']",
+                    "[class*='flight-item']",
+                    ".flight-list .item",
+                    "[class*='list'] [class*='price']",
+                ]
+                found_selector = None
+                for sel in SELECTORS:
+                    try:
+                        page.wait_for_selector(sel, timeout=5_000)
+                        found_selector = sel
+                        logger.info(f"[同程] DOM 元素已出现: {sel}")
+                        break
+                    except Exception:
+                        pass
+
+                # 保存截图以便诊断
+                self._save_screenshot(page, dep, arr, date_str)
+
+                # 如果还没拿到 JSON，尝试从 DOM 解析
+                dom_offers: list[FlightOffer] = []
+                if found_selector:
+                    dom_offers = self._parse_dom(page, from_city, to_city, date_str)
+
+            except Exception as e:
+                logger.error(f"[同程] 页面加载失败: {e}")
+                self._save_screenshot(page, dep, arr, date_str)
+            finally:
+                browser.close()
+
+        # ── 解析捕获到的 JSON 响应 ──
+        offers: list[FlightOffer] = []
+        for resp in captured_responses:
+            parsed = self._parse_json_response(resp["url"], resp["data"], from_city, to_city, date_str)
+            offers.extend(parsed)
+
+        # 保存原始 JSON 便于下次改进解析器
+        if captured_responses:
+            self._save_debug_json(captured_responses, dep, arr, date_str)
+        elif not dom_offers:
+            logger.warning(f"[同程] {from_city}→{to_city} {date_str} 未捕获到任何 JSON 响应")
+            self._save_debug_json([], dep, arr, date_str)
+
+        # 合并去重（JSON 优先，再补 DOM）
+        all_offers = offers if offers else dom_offers
+        all_offers = _dedup(all_offers)
+
+        if all_offers:
+            logger.info(f"[同程] {from_city}→{to_city} {date_str}: {len(all_offers)} 个航班，最低 ¥{all_offers[0].price}")
+        else:
+            logger.warning(f"[同程] {from_city}→{to_city} {date_str}: 未解析到航班数据（共捕获 {len(captured_responses)} 个 JSON 响应）")
+
+        return all_offers
 
     # ─────────────────────────────────────────────
-    # JSON API 解析（如果接口直接返回 JSON）
+    # JSON 解析
     # ─────────────────────────────────────────────
-    def _parse_json_api(
-        self, data: dict,
+    def _parse_json_response(
+        self, url: str, data: dict | list,
         from_city: str, to_city: str, date_str: str,
     ) -> list[FlightOffer]:
         now = datetime.now().isoformat(timespec="seconds")
         offers: list[FlightOffer] = []
 
-        # 同程常见结构尝试
-        flights = (
-            data.get("data", {}).get("flightList")
-            or data.get("data", {}).get("flights")
-            or data.get("flightList")
-            or data.get("flights")
-            or []
+        # 如果是列表直接尝试
+        if isinstance(data, list):
+            for item in data:
+                o = self._parse_flight_item(item, from_city, to_city, date_str, now)
+                if o:
+                    offers.append(o)
+            return sorted(offers, key=lambda x: x.price) if offers else []
+
+        # 递归找 flightList/flights 数组
+        flight_list = (
+            _dig(data, "data", "flightList")
+            or _dig(data, "data", "flights")
+            or _dig(data, "data", "result", "flightList")
+            or _dig(data, "result", "flightList")
+            or _dig(data, "flightList")
+            or _dig(data, "flights")
+            or _dig(data, "data", "list")
+            or _dig(data, "list")
         )
 
-        for f in flights:
+        if not flight_list:
+            # 广搜：找第一个元素有 price/lowestPrice 的数组
+            flight_list = _find_flight_array(data)
+
+        if not flight_list:
+            logger.debug(f"[同程] {url[:60]} 无 flightList 字段，跳过")
+            return []
+
+        for item in flight_list:
             try:
-                offer = self._flight_dict_to_offer(f, from_city, to_city, date_str, now)
-                if offer:
-                    offers.append(offer)
+                o = self._parse_flight_item(item, from_city, to_city, date_str, now)
+                if o:
+                    offers.append(o)
             except Exception as e:
                 logger.debug(f"[同程] 跳过单条: {e}")
 
         return sorted(offers, key=lambda x: x.price) if offers else []
 
-    # ─────────────────────────────────────────────
-    # HTML 内嵌 JSON 提取
-    # ─────────────────────────────────────────────
-    def _extract_from_html(
-        self, html: str,
-        from_city: str, to_city: str, date_str: str,
-    ) -> list[FlightOffer]:
-        now = datetime.now().isoformat(timespec="seconds")
-
-        # 常见的预加载 JSON 变量名（按可能性排序）
-        patterns = [
-            r'window\.__INITIAL_DATA__\s*=\s*(\{.+?\})\s*;?\s*(?:</script>|window\.)',
-            r'window\.__INITIAL_STATE__\s*=\s*(\{.+?\})\s*;?\s*(?:</script>|window\.)',
-            r'window\.__NUXT__\s*=\s*(\{.+?\})\s*;?\s*(?:</script>|window\.)',
-            r'window\.__DATA__\s*=\s*(\{.+?\})\s*;?\s*(?:</script>|window\.)',
-            r'"flightList"\s*:\s*(\[.+?\])\s*[,}]',
-            r'"flights"\s*:\s*(\[.+?\])\s*[,}]',
-        ]
-
-        for pat in patterns:
-            m = re.search(pat, html, re.DOTALL)
-            if not m:
-                continue
-            raw = m.group(1)
-            logger.info(f"[同程/html] 匹配到模式 {pat[:40]}，长度={len(raw)}")
-            try:
-                data = json.loads(raw)
-            except json.JSONDecodeError:
-                # 截断 JSON 可能不完整，跳过
-                continue
-
-            if isinstance(data, list):
-                # 直接是 flightList 数组
-                offers = []
-                for f in data:
-                    offer = self._flight_dict_to_offer(f, from_city, to_city, date_str, now)
-                    if offer:
-                        offers.append(offer)
-                if offers:
-                    return sorted(offers, key=lambda x: x.price)
-            else:
-                offers = self._parse_json_api(data, from_city, to_city, date_str)
-                if offers:
-                    return offers
-
-        return []
-
-    # ─────────────────────────────────────────────
-    # 单条航班字段映射
-    # ─────────────────────────────────────────────
-    def _flight_dict_to_offer(
+    def _parse_flight_item(
         self, f: dict,
         from_city: str, to_city: str,
         date_str: str, now: str,
     ) -> Optional[FlightOffer]:
+        if not isinstance(f, dict):
+            return None
+
         price = (
             f.get("price") or f.get("lowestPrice") or f.get("minPrice")
-            or f.get("salPrice") or f.get("salePrice") or 0
+            or f.get("salPrice") or f.get("salePrice")
+            or f.get("adultPrice") or f.get("economyPrice") or 0
         )
         if not price:
             return None
-        price = int(float(str(price)))
-        if price <= 0:
+        try:
+            price = int(float(str(price)))
+        except (ValueError, TypeError):
+            return None
+        if price <= 0 or price > 20000:
             return None
 
         def g(*keys):
@@ -275,13 +296,21 @@ class LyFlightScraper:
                     return str(v)
             return ""
 
-        dep_time = g("departTime", "deptTime", "dep_time", "depTime")
-        arr_time = g("arriveTime", "arrTime", "arr_time", "arrivalTime")
-        flight_no = g("flightNo", "flight_no", "flightNumber")
-        carrier = g("airlineName", "airline", "carrier", "airName")
-        dep_airport = g("departAirportName", "deptAirport", "dep_airport")
-        arr_airport = g("arriveAirportName", "arrAirport", "arr_airport")
-        duration = int(f.get("flyTime") or f.get("duration") or f.get("flightTime") or 0)
+        dep_time = g("departTime", "deptTime", "dep_time", "depTime", "departureTime")
+        arr_time = g("arriveTime", "arrTime", "arr_time", "arrivalTime", "arrTime")
+        flight_no = g("flightNo", "flight_no", "flightNumber", "flightNum")
+        carrier = g("airlineName", "airline", "carrier", "airName", "airlineCode")
+        dep_airport = g("departAirportName", "deptAirport", "dep_airport", "departAirport")
+        arr_airport = g("arriveAirportName", "arrAirport", "arr_airport", "arrivalAirport")
+        duration = 0
+        for dk in ("flyTime", "duration", "flightTime", "flightDuration"):
+            v = f.get(dk)
+            if v:
+                try:
+                    duration = int(float(str(v)))
+                    break
+                except (ValueError, TypeError):
+                    pass
 
         if not flight_no:
             return None
@@ -302,19 +331,71 @@ class LyFlightScraper:
             captured_at=now,
         )
 
-    def _save_debug(self, data, dep, arr, date_str, tag):
-        key = f"{dep}_{arr}_{tag}"
+    # ─────────────────────────────────────────────
+    # DOM 解析（备用）
+    # ─────────────────────────────────────────────
+    def _parse_dom(self, page, from_city: str, to_city: str, date_str: str) -> list[FlightOffer]:
+        """尝试从渲染后的 DOM 提取价格（粗略兜底）"""
+        now = datetime.now().isoformat(timespec="seconds")
+        offers: list[FlightOffer] = []
+        try:
+            items = page.query_selector_all("[class*='flight'][class*='item'], [class*='flightItem']")
+            logger.info(f"[同程/DOM] 找到 {len(items)} 个航班元素")
+            for el in items:
+                text = el.inner_text()
+                import re
+                prices = re.findall(r"[¥￥]?\s*(\d{3,4})", text)
+                flight_nos = re.findall(r"[A-Z]{2}\d{3,4}", text)
+                times = re.findall(r"\d{2}:\d{2}", text)
+                if not prices or not flight_nos:
+                    continue
+                price = int(prices[0])
+                if price <= 0 or price > 20000:
+                    continue
+                offers.append(FlightOffer(
+                    source="ly_dom",
+                    from_city=from_city,
+                    to_city=to_city,
+                    depart_date=date_str,
+                    flight_no=flight_nos[0],
+                    carrier=flight_nos[0][:2] if flight_nos else "",
+                    dep_time=times[0] if len(times) > 0 else "",
+                    arr_time=times[1] if len(times) > 1 else "",
+                    dep_airport="",
+                    arr_airport="",
+                    duration_min=0,
+                    price=price,
+                    captured_at=now,
+                ))
+        except Exception as e:
+            logger.warning(f"[同程/DOM] 解析异常: {e}")
+        return sorted(offers, key=lambda x: x.price) if offers else []
+
+    # ─────────────────────────────────────────────
+    # 调试辅助
+    # ─────────────────────────────────────────────
+    def _save_screenshot(self, page, dep: str, arr: str, date_str: str):
+        try:
+            DEBUG_DIR.mkdir(parents=True, exist_ok=True)
+            path = DEBUG_DIR / f"screenshot_ly_{dep}_{arr}_{date_str}.png"
+            page.screenshot(path=str(path))
+            logger.info(f"[同程] 截图已存: {path.name}")
+        except Exception as e:
+            logger.warning(f"[同程] 无法保存截图: {e}")
+
+    def _save_debug_json(self, responses: list, dep: str, arr: str, date_str: str):
+        key = f"{dep}_{arr}_{date_str}"
         if key in self._debug_saved:
             return
         self._debug_saved.add(key)
         DEBUG_DIR.mkdir(parents=True, exist_ok=True)
-        fname = DEBUG_DIR / f"debug_ly_{dep}_{arr}_{date_str}_{tag}.json"
+        fname = DEBUG_DIR / f"debug_ly_{dep}_{arr}_{date_str}.json"
         try:
             with fname.open("w", encoding="utf-8") as f:
-                json.dump(data, f, ensure_ascii=False, indent=2)
-            logger.info(f"[同程] 原始响应已存: {fname.name}")
+                json.dump(responses, f, ensure_ascii=False, indent=2)
+            logger.info(f"[同程] 捕获 JSON 已存: {fname.name} ({len(responses)} 个响应)")
         except Exception as e:
-            logger.warning(f"[同程] 无法保存调试文件: {e}")
+            logger.warning(f"[同程] 无法保存调试 JSON: {e}")
 
     def close(self):
         pass
@@ -324,3 +405,45 @@ class LyFlightScraper:
 
     def __exit__(self, *args):
         self.close()
+
+
+# ─────────────────────────────────────────────
+# 工具函数
+# ─────────────────────────────────────────────
+
+def _dig(obj: dict, *keys):
+    """安全深取值：_dig(d, 'a', 'b', 'c') → d['a']['b']['c'] or None"""
+    cur = obj
+    for k in keys:
+        if not isinstance(cur, dict):
+            return None
+        cur = cur.get(k)
+    return cur if isinstance(cur, list) and cur else None
+
+
+def _find_flight_array(obj, depth: int = 0) -> list | None:
+    """在嵌套 dict 里广搜，找第一个含有 price 字段的列表"""
+    if depth > 5:
+        return None
+    if isinstance(obj, list) and obj:
+        if isinstance(obj[0], dict) and any(
+            k in obj[0] for k in ("price", "lowestPrice", "minPrice", "salPrice")
+        ):
+            return obj
+    if isinstance(obj, dict):
+        for v in obj.values():
+            result = _find_flight_array(v, depth + 1)
+            if result:
+                return result
+    return None
+
+
+def _dedup(offers: list[FlightOffer]) -> list[FlightOffer]:
+    seen: set[str] = set()
+    result = []
+    for o in offers:
+        key = f"{o.flight_no}_{o.depart_date}_{o.price}"
+        if key not in seen:
+            seen.add(key)
+            result.append(o)
+    return sorted(result, key=lambda x: x.price)
