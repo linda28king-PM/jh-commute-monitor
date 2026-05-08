@@ -146,29 +146,16 @@ class GoogleFlightScraper:
         date_str: str,
     ) -> list[FlightOffer]:
         try:
-            from fast_flights import FlightData, Passengers, get_flights
+            from fast_flights import FlightData, Passengers, create_filter, get_flights, SeatType
 
             logger.info(f"[Google] 查询 {dep_code}→{arr_code} {date_str}")
-            result = get_flights(
+            f = create_filter(
                 flight_data=[FlightData(date=date_str, from_airport=dep_code, to_airport=arr_code)],
                 trip="one-way",
                 passengers=Passengers(adults=1),
-                fetch_mode="fallback",
+                seat=SeatType.ECONOMY,
             )
-        except TypeError:
-            # 旧版 API：create_filter + get_flights
-            try:
-                from fast_flights import FlightData, Passengers, create_filter, get_flights
-
-                f = create_filter(
-                    flight_data=[FlightData(date=date_str, from_airport=dep_code, to_airport=arr_code)],
-                    trip="one-way",
-                    passengers=Passengers(adults=1),
-                )
-                result = get_flights(f)
-            except Exception as e:
-                logger.error(f"[Google] 旧版 API 也失败: {e}")
-                return []
+            result = get_flights(f, fetch_mode="fallback")
         except Exception as e:
             logger.error(f"[Google] 查询异常: {e}")
             return []
