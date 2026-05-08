@@ -192,23 +192,17 @@ class LyFlightScraper:
             finally:
                 browser.close()
 
-        # ── 诊断日志：打印每个 JSON 响应的结构 ──
-        logger.info(f"[同程] 共捕获 {len(captured_responses)} 个 JSON 响应，结构摘要:")
-        for i, resp in enumerate(captured_responses):
-            _log_json_structure(resp["url"], resp["data"], i)
-
         # ── 解析捕获到的 JSON 响应 ──
         offers: list[FlightOffer] = []
         for resp in captured_responses:
             parsed = self._parse_json_response(resp["url"], resp["data"], from_city, to_city, date_str)
             offers.extend(parsed)
 
-        # 保存原始 JSON 便于下次改进解析器
+        # 保存原始 JSON；如果解析失败则额外打印结构摘要
         if captured_responses:
             self._save_debug_json(captured_responses, dep, arr, date_str)
         else:
             logger.warning(f"[同程] {from_city}→{to_city} {date_str} 未捕获到任何 JSON 响应")
-            self._save_debug_json([], dep, arr, date_str)
 
         # 合并去重（JSON 优先，再补 DOM）
         all_offers = offers if offers else dom_offers
@@ -217,65 +211,185 @@ class LyFlightScraper:
         if all_offers:
             logger.info(f"[同程] {from_city}→{to_city} {date_str}: {len(all_offers)} 个航班，最低 ¥{all_offers[0].price}")
         else:
-            logger.warning(f"[同程] {from_city}→{to_city} {date_str}: 未解析到航班数据（共捕获 {len(captured_responses)} 个 JSON 响应）")
+            logger.warning(f"[同程] {from_city}→{to_city} {date_str}: 解析失败，打印响应结构:")
+            for i, resp in enumerate(captured_responses):
+                _log_json_structure(resp["url"], resp["data"], i)
 
         return all_offers
 
     # ─────────────────────────────────────────────
-    # JSON 解析
+    # JSON 解析 — 顶层分发
     # ─────────────────────────────────────────────
     def _parse_json_response(
         self, url: str, data: dict | list,
         from_city: str, to_city: str, date_str: str,
     ) -> list[FlightOffer]:
         now = datetime.now().isoformat(timespec="seconds")
+
+        # 17u.cn 专属解析（同程旅行后端 API）
+        if "17u.cn" in url:
+            return self._parse_17u(url, data, from_city, to_city, date_str, now)
+
+        # 通用兜底：找 flightList / flights 数组
         offers: list[FlightOffer] = []
-
-        # 如果是列表直接尝试
         if isinstance(data, list):
-            for item in data:
-                o = self._parse_flight_item(item, from_city, to_city, date_str, now)
-                if o:
-                    offers.append(o)
-            return sorted(offers, key=lambda x: x.price) if offers else []
-
-        # 递归找航班列表（覆盖同程/去哪儿/携程等常见字段名）
-        flight_list = (
-            _dig(data, "data", "flightList")
-            or _dig(data, "data", "flightVOList")
-            or _dig(data, "data", "flightInfoList")
-            or _dig(data, "data", "flightInfos")
-            or _dig(data, "data", "flights")
-            or _dig(data, "data", "result", "flightList")
-            or _dig(data, "data", "result", "flightVOList")
-            or _dig(data, "result", "flightList")
-            or _dig(data, "result", "flightVOList")
-            or _dig(data, "flightList")
-            or _dig(data, "flightVOList")
-            or _dig(data, "flights")
-            or _dig(data, "data", "list")
-            or _dig(data, "list")
-            or _dig(data, "data", "rows")
-            or _dig(data, "rows")
-        )
-
-        if not flight_list:
-            # 广搜：找第一个元素有 price/lowestPrice 的数组
-            flight_list = _find_flight_array(data)
-
-        if not flight_list:
-            logger.debug(f"[同程] {url[:60]} 无 flightList 字段，跳过")
-            return []
-
-        for item in flight_list:
+            items = data
+        else:
+            items = (
+                _dig(data, "data", "flightList") or _dig(data, "data", "flights")
+                or _dig(data, "flightList") or _dig(data, "flights")
+                or _dig(data, "data", "list") or _dig(data, "list")
+                or _find_flight_array(data) or []
+            )
+        for item in items:
             try:
                 o = self._parse_flight_item(item, from_city, to_city, date_str, now)
                 if o:
                     offers.append(o)
             except Exception as e:
                 logger.debug(f"[同程] 跳过单条: {e}")
+        return sorted(offers, key=lambda x: x.price) if offers else []
+
+    # ─────────────────────────────────────────────
+    # 17u.cn API 解析
+    # ─────────────────────────────────────────────
+    def _parse_17u(
+        self, url: str, data: dict,
+        from_city: str, to_city: str, date_str: str, now: str,
+    ) -> list[FlightOffer]:
+        inner = data.get("data") if isinstance(data, dict) else None
+        if not isinstance(inner, dict):
+            return []
+
+        offers: list[FlightOffer] = []
+
+        if "connection/flights" in url:
+            # ── 中转航班 ──
+            for fp in inner.get("fps", []):
+                o = self._parse_17u_fps(fp, from_city, to_city, date_str, now)
+                if o:
+                    offers.append(o)
+            # 兜底：父级最低价
+            if not offers:
+                o = self._lp_offer(inner, from_city, to_city, date_str, now, suffix="(中转最低)")
+                if o:
+                    offers.append(o)
+
+        else:
+            # ── 直飞 book1/flights ──
+            for group in inner.get("fs", []):
+                for fi in group.get("fis", []):
+                    o = self._parse_17u_fis(fi, from_city, to_city, date_str, now)
+                    if o:
+                        offers.append(o)
+            # 兜底：父级最低价（直飞）
+            if not offers:
+                o = self._lp_offer(inner, from_city, to_city, date_str, now, suffix="(直飞最低)")
+                if o:
+                    offers.append(o)
 
         return sorted(offers, key=lambda x: x.price) if offers else []
+
+    def _parse_17u_fis(self, fi: dict, from_city, to_city, date_str, now) -> Optional[FlightOffer]:
+        """解析 book1/flights data.fs[n].fis 中的单条直飞"""
+        def g(*keys):
+            for k in keys:
+                v = fi.get(k)
+                if v:
+                    return str(v)
+            return ""
+
+        price = fi.get("lp") or fi.get("price") or fi.get("adultPrice") or fi.get("minPrice") or 0
+        if not price:
+            return None
+        try:
+            price = int(float(str(price)))
+        except (ValueError, TypeError):
+            return None
+        if price <= 0 or price > 20000:
+            return None
+
+        flight_no = g("fn", "fNo", "flightNo", "flightNum")
+        dep_time  = g("dst", "depTime", "departTime")
+        arr_time  = g("ast", "arrTime", "arriveTime")
+        carrier   = g("al", "airline", "airlineName")
+        dep_ap    = g("dat", "depAp", "depAirport")
+        arr_ap    = g("aat", "arrAp", "arrAirport")
+        dur_str   = g("td", "flyTime", "duration")
+        duration  = _parse_duration_min(dur_str)
+
+        if not flight_no:
+            return None
+
+        return FlightOffer(
+            source="ly",
+            from_city=from_city, to_city=to_city, depart_date=date_str,
+            flight_no=flight_no, carrier=carrier,
+            dep_time=dep_time, arr_time=arr_time,
+            dep_airport=dep_ap, arr_airport=arr_ap,
+            duration_min=duration, price=price, captured_at=now,
+        )
+
+    def _parse_17u_fps(self, fp: dict, from_city, to_city, date_str, now) -> Optional[FlightOffer]:
+        """解析 connection/flights data.fps 中的单条中转"""
+        def g(*keys):
+            for k in keys:
+                v = fp.get(k)
+                if v:
+                    return str(v)
+            return ""
+
+        price = fp.get("lp") or fp.get("price") or fp.get("tp") or fp.get("minPrice") or 0
+        if not price:
+            return None
+        try:
+            price = int(float(str(price)))
+        except (ValueError, TypeError):
+            return None
+        if price <= 0 or price > 20000:
+            return None
+
+        flight_id = g("fId", "flightId", "fn")
+        dep_time  = g("dst", "depTime")
+        arr_time  = g("ast", "arrTime")
+        dep_ap    = g("dat", "dap")
+        arr_ap    = g("aat", "aap")
+        dur_str   = g("td", "flyTime")
+        duration  = _parse_duration_min(dur_str)
+
+        if not flight_id:
+            return None
+
+        return FlightOffer(
+            source="ly_connection",
+            from_city=from_city, to_city=to_city, depart_date=date_str,
+            flight_no=flight_id, carrier="(中转)",
+            dep_time=dep_time, arr_time=arr_time,
+            dep_airport=dep_ap, arr_airport=arr_ap,
+            duration_min=duration, price=price, captured_at=now,
+        )
+
+    def _lp_offer(
+        self, inner: dict, from_city, to_city, date_str, now, suffix=""
+    ) -> Optional[FlightOffer]:
+        """用 data.lp（最低价）生成兜底 offer"""
+        lp = inner.get("lp")
+        if not lp:
+            return None
+        try:
+            price = int(float(str(lp)))
+        except (ValueError, TypeError):
+            return None
+        if price <= 0 or price > 20000:
+            return None
+        return FlightOffer(
+            source="ly",
+            from_city=from_city, to_city=to_city, depart_date=date_str,
+            flight_no=f"最低价{suffix}", carrier="",
+            dep_time="", arr_time="",
+            dep_airport=inner.get("d", ""), arr_airport=inner.get("a", ""),
+            duration_min=0, price=price, captured_at=now,
+        )
 
     def _parse_flight_item(
         self, f: dict,
@@ -446,6 +560,25 @@ def _find_flight_array(obj, depth: int = 0) -> list | None:
             if result:
                 return result
     return None
+
+
+def _parse_duration_min(s: str) -> int:
+    """'8h' / '5h45m' / '135min' / '135' → 分钟数"""
+    if not s:
+        return 0
+    import re
+    h = re.search(r"(\d+)\s*h", s, re.I)
+    m = re.search(r"(\d+)\s*m(?:in)?", s, re.I)
+    total = 0
+    if h:
+        total += int(h.group(1)) * 60
+    if m:
+        total += int(m.group(1))
+    if total == 0:
+        n = re.search(r"(\d+)", s)
+        if n:
+            total = int(n.group(1))
+    return total
 
 
 def _log_json_structure(url: str, obj, idx: int, max_depth: int = 3):
