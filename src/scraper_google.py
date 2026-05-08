@@ -159,39 +159,28 @@ class GoogleFlightScraper:
         date_str: str,
     ) -> list[FlightOffer]:
         try:
-            from fast_flights import FlightData, Passengers, create_filter, get_flights
+            import fast_flights as ff
+            from fast_flights import FlightData, Passengers, create_filter
 
             logger.info(f"[Google] 查询 {dep_code}→{arr_code} {date_str}")
 
-            # 尝试带 seat 参数（新版 API 必填，值可能是枚举或字符串）
-            seat_val = _get_seat_value()
-            filter_kwargs = dict(
+            filter_kwargs: dict = dict(
                 flight_data=[FlightData(date=date_str, from_airport=dep_code, to_airport=arr_code)],
                 trip="one-way",
                 passengers=Passengers(adults=1),
             )
+            seat_val = _get_seat_value()
             if seat_val is not None:
                 filter_kwargs["seat"] = seat_val
 
             f = create_filter(**filter_kwargs)
-            result = get_flights(f, fetch_mode="fallback")
-        except TypeError as e:
-            # fetch_mode 参数不支持时再试一次
-            try:
-                from fast_flights import FlightData, Passengers, create_filter, get_flights
-                filter_kwargs = dict(
-                    flight_data=[FlightData(date=date_str, from_airport=dep_code, to_airport=arr_code)],
-                    trip="one-way",
-                    passengers=Passengers(adults=1),
-                )
-                seat_val = _get_seat_value()
-                if seat_val is not None:
-                    filter_kwargs["seat"] = seat_val
-                f = create_filter(**filter_kwargs)
-                result = get_flights(f)
-            except Exception as e2:
-                logger.error(f"[Google] 查询异常(retry): {e2}")
-                return []
+
+            # 优先用 get_flights_from_filter（新版 API）
+            if hasattr(ff, "get_flights_from_filter"):
+                result = ff.get_flights_from_filter(f)
+            else:
+                result = ff.get_flights(f)
+
         except Exception as e:
             logger.error(f"[Google] 查询异常: {e}")
             return []
