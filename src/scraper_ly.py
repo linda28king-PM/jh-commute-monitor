@@ -267,12 +267,11 @@ class LyFlightScraper:
 
         offers: list[FlightOffer] = []
 
-        # book1/flights: data.fs[n].fis = 直飞列表
-        for group in inner.get("fs", []):
-            for fi in group.get("fis", []):
-                o = self._parse_17u_fis(fi, from_city, to_city, date_str, now)
-                if o:
-                    offers.append(o)
+        # book1/flights: data.fl = 直飞航班列表（实际字段）
+        for fi in inner.get("fl", []):
+            o = self._parse_17u_fis(fi, from_city, to_city, date_str, now)
+            if o:
+                offers.append(o)
 
         # 兜底：用 data.lp（直飞最低价）
         if not offers:
@@ -283,7 +282,10 @@ class LyFlightScraper:
         return sorted(offers, key=lambda x: x.price) if offers else []
 
     def _parse_17u_fis(self, fi: dict, from_city, to_city, date_str, now) -> Optional[FlightOffer]:
-        """解析 book1/flights data.fs[n].fis 中的单条直飞"""
+        """解析 book1/flights data.fl 中的单条直飞
+        字段来自实测：atp=价格, fn=航班号, asn=航司名, ac=航司码,
+        dst/ast=时刻, dac/aac=机场码, dasn/aasn=机场短名, td=时长
+        """
         def g(*keys):
             for k in keys:
                 v = fi.get(k)
@@ -291,7 +293,8 @@ class LyFlightScraper:
                     return str(v)
             return ""
 
-        price = fi.get("lp") or fi.get("price") or fi.get("adultPrice") or fi.get("minPrice") or 0
+        # atp = adult total price（17u.cn 实测字段名）
+        price = fi.get("atp") or fi.get("lp") or fi.get("price") or fi.get("minPrice") or 0
         if not price:
             return None
         try:
@@ -301,12 +304,12 @@ class LyFlightScraper:
         if price <= 0 or price > 20000:
             return None
 
-        flight_no = g("fn", "fNo", "flightNo", "flightNum")
-        dep_time  = g("dst", "depTime", "departTime")
-        arr_time  = g("ast", "arrTime", "arriveTime")
-        carrier   = g("al", "airline", "airlineName")
-        dep_ap    = g("dat", "depAp", "depAirport")
-        arr_ap    = g("aat", "arrAp", "arrAirport")
+        flight_no = g("fn", "fNo", "flightNo")
+        dep_time  = g("dst", "depTime")
+        arr_time  = g("ast", "arrTime")
+        carrier   = g("asn", "ac", "airline", "airlineName")   # asn=航司名, ac=航司码
+        dep_ap    = g("dac", "dasn", "dat")                     # dac=机场码, dasn=机场短名
+        arr_ap    = g("aac", "aasn", "aat")
         dur_str   = g("td", "flyTime", "duration")
         duration  = _parse_duration_min(dur_str)
 
