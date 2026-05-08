@@ -16,6 +16,18 @@ from typing import Optional
 
 logger = logging.getLogger(__name__)
 
+
+def _get_seat_value():
+    """返回当前 fast-flights 版本接受的 seat 参数值，不支持则返回 None"""
+    try:
+        from fast_flights import SeatType
+        return SeatType.ECONOMY
+    except ImportError:
+        pass
+    # 尝试字符串形式（部分版本接受）
+    return "economy"
+
+
 # 城市名 → IATA 代码（Google Flights 用）
 AIRPORT_CODES: dict[str, list[str]] = {
     "北京": ["PEK", "PKX"],   # 首都/大兴，先试首都
@@ -111,8 +123,9 @@ class GoogleFlightScraper:
 
     def _check_import(self):
         try:
-            from fast_flights import FlightData, Passengers, get_flights  # noqa: F401
-            logger.info("[Google] fast-flights 库加载成功")
+            import fast_flights as ff
+            exported = dir(ff)
+            logger.info(f"[Google] fast-flights 加载成功，导出名: {exported}")
         except ImportError:
             logger.error("[Google] 缺少依赖：pip install fast-flights")
             raise
@@ -146,16 +159,39 @@ class GoogleFlightScraper:
         date_str: str,
     ) -> list[FlightOffer]:
         try:
-            from fast_flights import FlightData, Passengers, create_filter, get_flights, SeatType
+            from fast_flights import FlightData, Passengers, create_filter, get_flights
 
             logger.info(f"[Google] 查询 {dep_code}→{arr_code} {date_str}")
-            f = create_filter(
+
+            # 尝试带 seat 参数（新版 API 必填，值可能是枚举或字符串）
+            seat_val = _get_seat_value()
+            filter_kwargs = dict(
                 flight_data=[FlightData(date=date_str, from_airport=dep_code, to_airport=arr_code)],
                 trip="one-way",
                 passengers=Passengers(adults=1),
-                seat=SeatType.ECONOMY,
             )
+            if seat_val is not None:
+                filter_kwargs["seat"] = seat_val
+
+            f = create_filter(**filter_kwargs)
             result = get_flights(f, fetch_mode="fallback")
+        except TypeError as e:
+            # fetch_mode 参数不支持时再试一次
+            try:
+                from fast_flights import FlightData, Passengers, create_filter, get_flights
+                filter_kwargs = dict(
+                    flight_data=[FlightData(date=date_str, from_airport=dep_code, to_airport=arr_code)],
+                    trip="one-way",
+                    passengers=Passengers(adults=1),
+                )
+                seat_val = _get_seat_value()
+                if seat_val is not None:
+                    filter_kwargs["seat"] = seat_val
+                f = create_filter(**filter_kwargs)
+                result = get_flights(f)
+            except Exception as e2:
+                logger.error(f"[Google] 查询异常(retry): {e2}")
+                return []
         except Exception as e:
             logger.error(f"[Google] 查询异常: {e}")
             return []
