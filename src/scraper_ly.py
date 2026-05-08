@@ -257,36 +257,28 @@ class LyFlightScraper:
         self, url: str, data: dict,
         from_city: str, to_city: str, date_str: str, now: str,
     ) -> list[FlightOffer]:
+        # 只要直飞，中转跳过
+        if "connection/flights" in url:
+            return []
+
         inner = data.get("data") if isinstance(data, dict) else None
         if not isinstance(inner, dict):
             return []
 
         offers: list[FlightOffer] = []
 
-        if "connection/flights" in url:
-            # ── 中转航班 ──
-            for fp in inner.get("fps", []):
-                o = self._parse_17u_fps(fp, from_city, to_city, date_str, now)
-                if o:
-                    offers.append(o)
-            # 兜底：父级最低价
-            if not offers:
-                o = self._lp_offer(inner, from_city, to_city, date_str, now, suffix="(中转最低)")
+        # book1/flights: data.fs[n].fis = 直飞列表
+        for group in inner.get("fs", []):
+            for fi in group.get("fis", []):
+                o = self._parse_17u_fis(fi, from_city, to_city, date_str, now)
                 if o:
                     offers.append(o)
 
-        else:
-            # ── 直飞 book1/flights ──
-            for group in inner.get("fs", []):
-                for fi in group.get("fis", []):
-                    o = self._parse_17u_fis(fi, from_city, to_city, date_str, now)
-                    if o:
-                        offers.append(o)
-            # 兜底：父级最低价（直飞）
-            if not offers:
-                o = self._lp_offer(inner, from_city, to_city, date_str, now, suffix="(直飞最低)")
-                if o:
-                    offers.append(o)
+        # 兜底：用 data.lp（直飞最低价）
+        if not offers:
+            o = self._lp_offer(inner, from_city, to_city, date_str, now, suffix="(直飞最低)")
+            if o:
+                offers.append(o)
 
         return sorted(offers, key=lambda x: x.price) if offers else []
 
