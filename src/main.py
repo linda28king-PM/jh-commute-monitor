@@ -27,6 +27,7 @@ sys.path.insert(0, str(ROOT))
 
 from src.scraper_qunar import QunarFlightScraper
 from src.scraper_google import GoogleFlightScraper
+from src.scraper_ly import LyFlightScraper
 from src.scraper_railway import RailwayScraper
 from src.storage import Storage
 from src.notifier import Notifier
@@ -144,6 +145,22 @@ def main():
         ) as q:
             for route, d in target_pairs:
                 offers = q.search(route["from_city"], route["to_city"], d)
+                offer_dicts = [o.to_dict() for o in offers]
+                if offer_dicts:
+                    storage.save_flights(offer_dicts)
+                key = (route["direction"], d.strftime("%Y-%m-%d"))
+                flights_by_route.setdefault(key, []).extend(offer_dicts)
+
+    if config["sources"].get("ly"):
+        with LyFlightScraper(
+            delay_range=(
+                config["scraping"]["request_delay_min"],
+                config["scraping"]["request_delay_max"],
+            ),
+            timeout=config["scraping"]["timeout"],
+        ) as ly:
+            for route, d in target_pairs:
+                offers = ly.search(route["from_city"], route["to_city"], d)
                 offer_dicts = [o.to_dict() for o in offers]
                 if offer_dicts:
                     storage.save_flights(offer_dicts)

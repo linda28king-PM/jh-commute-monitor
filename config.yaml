@@ -31,20 +31,21 @@ sources:
   qunar: false       # 去哪儿（已下线全部 H5 API，暂停）
   ctrip: false       # 携程（反爬强，默认关闭）
   railway: false     # 12306（高铁余票，已关闭）
-  google_flights: true   # Google Flights（GitHub Actions 海外节点可用）
+  google_flights: false  # Google Flights（价格为美元/往返，不适合国内监控）
+  ly: true           # 同程旅行（ly.com，国内价格）
 
 # 提醒规则
 alert_rules:
   - name: "周五机票特价"
     direction: "out"
     mode: "flight"
-    threshold: 1500       # 当前均价约 ¥1900，低于此价格提醒
+    threshold: 600        # 低于 ¥600 提醒（国内去哪儿/同程正常区间 ¥330-800）
     enabled: true
 
   - name: "周日机票特价"
     direction: "back"
     mode: "flight"
-    threshold: 1500
+    threshold: 600
     enabled: true
 
 # 推送渠道（token 走 GitHub Secrets，这里只配开关）
