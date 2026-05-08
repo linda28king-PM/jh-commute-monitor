@@ -1,0 +1,73 @@
+# ============================================================
+# 京汉通勤监控 - 个人配置
+# ============================================================
+# 改完这个文件再 commit 回仓库即可
+# 敏感信息（推送 token、邮箱密码）建议放 GitHub Secrets，不要直接写这里
+# ============================================================
+
+# 监控的航线（可以加多个，比如不同机场组合）
+routes:
+  - name: "周五去程"
+    from_city: "北京"
+    from_code: "BJS"           # 北京全部机场
+    to_city: "武汉"
+    to_code: "WUH"
+    weekday: 5                  # 1=周一, 5=周五, 7=周日
+    direction: "out"            # out=去程, back=回程
+
+  - name: "周日回程"
+    from_city: "武汉"
+    from_code: "WUH"
+    to_city: "北京"
+    to_code: "BJS"
+    weekday: 7
+    direction: "back"
+
+# 监控范围：未来 N 周
+monitor_weeks_ahead: 4
+
+# 抓取数据源开关
+sources:
+  qunar: true        # 去哪儿（机票，相对友好）
+  ctrip: false       # 携程（反爬强，默认关闭，需要时开）
+  railway: true      # 12306（高铁余票，价格固定）
+  google_flights: false  # Google Flights（GitHub Actions 海外节点可开）
+
+# 提醒规则
+alert_rules:
+  - name: "周五机票特价"
+    direction: "out"
+    mode: "flight"
+    threshold: 750
+    enabled: true
+
+  - name: "周日机票特价"
+    direction: "back"
+    mode: "flight"
+    threshold: 800
+    enabled: true
+
+  - name: "高铁余票紧张提醒"
+    direction: "any"
+    mode: "train"
+    condition: "low_seats"     # 余票少于 20 张时提醒
+    threshold_seats: 20
+    enabled: true
+
+# 推送渠道（token 走 GitHub Secrets，这里只配开关）
+notifiers:
+  serverchan:
+    enabled: true              # 微信推送（Server酱）
+  pushplus:
+    enabled: false             # 微信推送（PushPlus，备选）
+  email:
+    enabled: true
+    to: "your-email@example.com"   # 改成你的邮箱
+
+# 抓取行为（调慢一点更稳）
+scraping:
+  request_delay_min: 2         # 每次请求之间至少等几秒
+  request_delay_max: 5
+  timeout: 20
+  max_retries: 3
+  user_agent_pool: "default"   # 内置 UA 池

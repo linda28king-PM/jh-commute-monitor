@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>京汉通勤监控 · BJS ⇌ WUH</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+SC:wght@400;600;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0a0e1a; --bg-elevated: #111827; --bg-card: #161b2e;
+    --border: #1f2937; --border-light: #2d3748;
+    --text: #e5e7eb; --text-dim: #9ca3af; --text-faint: #6b7280;
+    --accent: #fbbf24; --accent-glow: rgba(251, 191, 36, 0.15);
+    --green: #10b981; --red: #ef4444; --blue: #3b82f6; --purple: #a78bfa;
+    --serif: 'Noto Serif SC', serif;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text); font-family: var(--sans);
+    font-size: 14px; line-height: 1.5; min-height: 100vh;
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(251, 191, 36, 0.06) 0%, transparent 40%),
+      radial-gradient(circle at 85% 100%, rgba(59, 130, 246, 0.05) 0%, transparent 40%);
+  }
+  .header { border-bottom: 1px solid var(--border); background: rgba(10, 14, 26, 0.8); backdrop-filter: blur(20px); position: sticky; top: 0; z-index: 100; }
+  .header-inner { max-width: 1400px; margin: 0 auto; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .brand { display: flex; align-items: baseline; gap: 16px; }
+  .brand-logo { font-family: var(--serif); font-weight: 900; font-size: 22px; color: var(--accent); letter-spacing: 0.02em; }
+  .brand-route { font-family: var(--mono); font-size: 13px; color: var(--text-dim); letter-spacing: 0.05em; }
+  .brand-route .arrow { color: var(--accent); margin: 0 6px; }
+  .header-status { display: flex; align-items: center; gap: 24px; font-family: var(--mono); font-size: 12px; color: var(--text-dim); }
+  .live-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--green); margin-right: 6px; animation: pulse 2s infinite; }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+    50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  }
+  .main { max-width: 1400px; margin: 0 auto; padding: 32px; }
+  .top-bar { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+  .page-title { font-family: var(--serif); font-size: 32px; font-weight: 600; letter-spacing: -0.01em; }
+  .page-title em { font-style: normal; color: var(--accent); }
+  .page-subtitle { font-size: 13px; color: var(--text-faint); font-family: var(--mono); margin-top: 4px; }
+  .week-selector { display: flex; gap: 6px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; padding: 4px; }
+  .week-btn { background: transparent; border: none; color: var(--text-dim); font-family: var(--mono); font-size: 12px; padding: 8px 14px; border-radius: 4px; cursor: pointer; transition: all 0.15s; }
+  .week-btn:hover { color: var(--text); }
+  .week-btn.active { background: var(--accent); color: var(--bg); font-weight: 700; }
+  .summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 32px; }
+  .summary-cell { background: var(--bg-card); padding: 20px 24px; }
+  .summary-cell .label { font-family: var(--mono); font-size: 10px; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+  .summary-cell .value { font-family: var(--mono); font-size: 28px; font-weight: 700; color: var(--text); letter-spacing: -0.02em; }
+  .summary-cell .value .currency { font-size: 16px; color: var(--text-dim); margin-right: 2px; }
+  .summary-cell .value.empty { color: var(--text-faint); font-size: 16px; }
+  .summary-cell .delta { font-family: var(--mono); font-size: 12px; margin-top: 6px; }
+  .delta.up { color: var(--red); }
+  .delta.down { color: var(--green); }
+  .delta.neutral { color: var(--text-faint); }
+  .section { margin-bottom: 32px; }
+  .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+  .section-title { display: flex; align-items: baseline; gap: 12px; }
+  .section-title h2 { font-family: var(--serif); font-size: 20px; font-weight: 600; }
+  .section-title .num { font-family: var(--mono); color: var(--accent); font-size: 12px; font-weight: 500; }
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .leg { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .leg-head { padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .leg-head .title { font-family: var(--serif); font-size: 16px; font-weight: 600; }
+  .leg-head .title .day { color: var(--accent); margin-right: 8px; }
+  .leg-head .date { font-family: var(--mono); font-size: 12px; color: var(--text-dim); }
+  .tabs { display: flex; border-bottom: 1px solid var(--border); }
+  .tab { flex: 1; padding: 12px 16px; background: transparent; border: none; color: var(--text-dim); font-family: var(--mono); font-size: 12px; letter-spacing: 0.05em; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.15s; text-transform: uppercase; }
+  .tab:hover { color: var(--text); }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .tab .count { font-size: 10px; margin-left: 6px; color: var(--text-faint); }
+  .tab.active .count { color: var(--accent); }
+  .options { padding: 8px 0; min-height: 200px; }
+  .option { display: grid; grid-template-columns: auto 1fr auto auto; gap: 16px; align-items: center; padding: 14px 20px; border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.15s; position: relative; }
+  .option:last-child { border-bottom: none; }
+  .option:hover { background: var(--bg-elevated); }
+  .option.recommended::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--accent); }
+  .option-time { font-family: var(--mono); font-weight: 700; font-size: 16px; min-width: 110px; }
+  .option-time .arrow { color: var(--text-faint); margin: 0 6px; font-weight: 400; }
+  .option-meta { font-size: 12px; color: var(--text-dim); line-height: 1.4; }
+  .option-meta .carrier { color: var(--text); font-weight: 500; }
+  .option-meta .duration { font-family: var(--mono); margin-left: 8px; }
+  .option-tag { display: inline-block; font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; padding: 2px 6px; border-radius: 3px; background: var(--accent-glow); color: var(--accent); margin-left: 6px; text-transform: uppercase; }
+  .option-trend { font-family: var(--mono); font-size: 11px; color: var(--text-faint); text-align: right; }
+  .option-price { font-family: var(--mono); font-size: 20px; font-weight: 700; text-align: right; min-width: 90px; }
+  .option-price .currency { font-size: 12px; color: var(--text-dim); font-weight: 400; margin-right: 1px; }
+  .price-good { color: var(--green); }
+  .price-warn { color: var(--accent); }
+  .price-bad { color: var(--red); }
+  .empty-state { padding: 40px 20px; text-align: center; color: var(--text-faint); font-family: var(--mono); font-size: 12px; }
+  .chart-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; }
+  .chart-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
+  .chart-head h3 { font-family: var(--serif); font-size: 16px; font-weight: 600; }
+  .chart-legend { display: flex; gap: 16px; font-family: var(--mono); font-size: 11px; }
+  .legend-item { display: flex; align-items: center; gap: 6px; color: var(--text-dim); }
+  .legend-dot { width: 10px; height: 2px; }
+  .chart-body { height: 280px; position: relative; }
+  .footer-note { margin-top: 48px; padding: 20px; background: var(--bg-card); border: 1px dashed var(--border-light); border-radius: 8px; font-family: var(--mono); font-size: 11px; color: var(--text-faint); line-height: 1.7; }
+  .footer-note strong { color: var(--accent); }
+  .footer-note code { background: var(--bg); padding: 2px 6px; border-radius: 3px; color: var(--text-dim); }
+  @media (max-width: 1024px) {
+    .summary-grid { grid-template-columns: repeat(2, 1fr); }
+    .split { grid-template-columns: 1fr; }
+    .header-inner, .main { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-logo">京汉通勤</div>
+      <div class="brand-route">PEK <span class="arrow">⇌</span> WUH · 周末通勤监控</div>
+    </div>
+    <div class="header-status">
+      <span><span class="live-dot"></span>LIVE</span>
+      <span id="last-update">加载中...</span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <div class="top-bar">
+    <div>
+      <h1 class="page-title">本周<em>价格</em>概览</h1>
+      <div class="page-subtitle" id="week-range">--</div>
+    </div>
+    <div class="week-selector" id="week-selector"></div>
+  </div>
+
+  <div class="summary-grid" id="summary-grid"></div>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-title">
+        <span class="num">01</span>
+        <h2>往返方案对比</h2>
+      </div>
+    </div>
+    <div class="split" id="split"></div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-title">
+        <span class="num">02</span>
+        <h2>价格走势</h2>
+      </div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-head">
+        <h3>近 30 天最低价格</h3>
+        <div class="chart-legend">
+          <div class="legend-item"><span class="legend-dot" style="background:var(--accent)"></span>去程·飞机</div>
+          <div class="legend-item"><span class="legend-dot" style="background:var(--blue)"></span>回程·飞机</div>
+        </div>
+      </div>
+      <div class="chart-body">
+        <canvas id="trend-chart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-note">
+    <strong>📌 数据说明</strong><br>
+    数据由 GitHub Actions 每日 8 / 13 / 20 点（北京时间）抓取去哪儿 + 12306 后入库。
+    走势图基于近 30 天历史快照。如果某天数据缺失，可能是抓取被风控或源站接口变更，
+    查看 <code>Actions</code> 面板的运行日志即可定位。
+  </div>
+</main>
+
+<script>
+let DATA = null;
+let currentWeekIdx = 0;
+let modeMap = {};  // {routeIdx: 'flight'|'train'}
+
+async function loadData() {
+  try {
+    const res = await fetch('./data.json?t=' + Date.now());
+    if (!res.ok) throw new Error('加载失败');
+    DATA = await res.json();
+    document.getElementById('last-update').textContent =
+      '更新于 ' + DATA.updated_at.replace('T', ' ').slice(0, 16);
+    init();
+  } catch (e) {
+    document.getElementById('last-update').textContent = '数据加载失败';
+    document.getElementById('split').innerHTML =
+      `<div class="empty-state">无法加载 data.json：${e.message}<br>等首次抓取完成后会自动出现</div>`;
+  }
+}
+
+function init() {
+  // 初始化每条路线的默认 mode
+  DATA.routes.forEach((_, i) => modeMap[i] = 'flight');
+
+  // 周选择器（取第一条路线的周数）
+  const weeksCount = DATA.routes[0]?.weeks?.length || 0;
+  const sel = document.getElementById('week-selector');
+  sel.innerHTML = '';
+  for (let i = 0; i < weeksCount; i++) {
+    const btn = document.createElement('button');
+    btn.className = 'week-btn' + (i === 0 ? ' active' : '');
+    btn.textContent = i === 0 ? '本周' : `+${i}周`;
+    btn.onclick = () => {
+      currentWeekIdx = i;
+      document.querySelectorAll('.week-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      render();
+    };
+    sel.appendChild(btn);
+  }
+
+  render();
+  renderChart();
+}
+
+function render() {
+  // 取本周的两条路线对应日期
+  const weekData = DATA.routes.map(r => r.weeks[currentWeekIdx]);
+  const friRoute = DATA.routes[0];  // 假设第一个是去程
+  const sunRoute = DATA.routes[1];
+
+  document.getElementById('week-range').textContent =
+    `${weekData[0]?.date || '--'} → ${weekData[1]?.date || '--'}`;
+
+  // 摘要
+  renderSummary(weekData);
+
+  // 双向对比
+  const split = document.getElementById('split');
+  split.innerHTML = DATA.routes.map((route, i) => renderLeg(route, i)).join('');
+
+  // 绑定 tab
+  document.querySelectorAll('.tab').forEach(t => {
+    t.onclick = () => {
+      const idx = +t.dataset.idx;
+      const mode = t.dataset.mode;
+      modeMap[idx] = mode;
+      render();
+    };
+  });
+}
+
+function renderSummary(weekData) {
+  const friFlights = weekData[0]?.flights || [];
+  const sunFlights = weekData[1]?.flights || [];
+  const friMin = friFlights.length ? Math.min(...friFlights.map(f => f.price)) : null;
+  const sunMin = sunFlights.length ? Math.min(...sunFlights.map(f => f.price)) : null;
+  const totalFlight = (friMin && sunMin) ? friMin + sunMin : null;
+  const trainTotal = 520 * 2;
+
+  const cell = (label, value, delta) => `
+    <div class="summary-cell">
+      <div class="label">${label}</div>
+      <div class="value ${value === null ? 'empty' : ''}">${value === null ? '暂无数据' : `<span class="currency">¥</span>${value}`}</div>
+      <div class="delta neutral">${delta || '&nbsp;'}</div>
+    </div>
+  `;
+
+  document.getElementById('summary-grid').innerHTML =
+    cell('去程最低 · 飞机', friMin, friMin ? `${friFlights.length} 个航班` : '') +
+    cell('回程最低 · 飞机', sunMin, sunMin ? `${sunFlights.length} 个航班` : '') +
+    cell('飞机往返合计', totalFlight, '含税；不含机场往返') +
+    cell('高铁往返参考', trainTotal,
+         totalFlight ? (totalFlight > trainTotal + 100 ? `↓ 高铁省 ¥${totalFlight - trainTotal}` : '价差较小')
+                     : '');
+}
+
+function renderLeg(route, idx) {
+  const week = route.weeks[currentWeekIdx];
+  const mode = modeMap[idx];
+  const list = mode === 'flight' ? (week?.flights || []) : (week?.trains || []);
+  const dirText = idx === 0 ? '周五·去程' : idx === 1 ? '周日·回程' : route.name;
+
+  let body;
+  if (!list.length) {
+    body = `<div class="empty-state">暂无${mode === 'flight' ? '航班' : '高铁'}数据</div>`;
+  } else if (mode === 'flight') {
+    const min = Math.min(...list.map(x => x.price));
+    body = list.map(f => {
+      const isMin = f.price === min;
+      const cls = f.price < min * 1.1 ? 'price-good' : f.price < min * 1.4 ? 'price-warn' : 'price-bad';
+      return `<div class="option ${isMin ? 'recommended' : ''}">
+        <div class="option-time">${f.dep_time || '--'}<span class="arrow">→</span>${f.arr_time || '--'}</div>
+        <div class="option-meta">
+          <div><span class="carrier">${f.carrier || ''} ${f.flight_no || ''}</span>
+            <span class="duration">${formatDuration(f.duration_min)}</span>
+            ${isMin ? '<span class="option-tag">最低</span>' : ''}
+          </div>
+          <div style="margin-top:2px;color:var(--text-faint);font-size:11px">${f.dep_airport || ''} → ${f.arr_airport || ''}</div>
+        </div>
+        <div class="option-trend">${f.source || ''}</div>
+        <div class="option-price ${cls}"><span class="currency">¥</span>${f.price}</div>
+      </div>`;
+    }).join('');
+  } else {
+    body = list.map(t => {
+      return `<div class="option">
+        <div class="option-time">${t.dep_time || '--'}<span class="arrow">→</span>${t.arr_time || '--'}</div>
+        <div class="option-meta">
+          <div><span class="carrier">${t.train_no || ''}</span>
+            <span class="duration">${formatDuration(t.duration_min)}</span>
+          </div>
+          <div style="margin-top:2px;color:var(--text-faint);font-size:11px">${t.dep_station || ''} → ${t.arr_station || ''}</div>
+        </div>
+        <div class="option-trend">余票 ${t.second_class_seats || '--'}</div>
+        <div class="option-price">
+          <span class="currency">¥</span>${t.second_class_price || '-'}
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  return `
+    <div class="leg">
+      <div class="leg-head">
+        <div class="title"><span class="day">${dirText.split('·')[0]}</span>${dirText.split('·')[1] || ''}</div>
+        <div class="date">${week?.date || '--'} 周${week?.weekday_label || ''}</div>
+      </div>
+      <div class="tabs">
+        <button class="tab ${mode === 'flight' ? 'active' : ''}" data-idx="${idx}" data-mode="flight">
+          飞机 <span class="count">${week?.flights?.length || 0}</span>
+        </button>
+        <button class="tab ${mode === 'train' ? 'active' : ''}" data-idx="${idx}" data-mode="train">
+          高铁 <span class="count">${week?.trains?.length || 0}</span>
+        </button>
+      </div>
+      <div class="options">${body}</div>
+    </div>
+  `;
+}
+
+function formatDuration(min) {
+  if (!min) return '';
+  const h = Math.floor(min / 60);
+  const m = min % 60;
+  return `${h}h${m ? m + 'm' : ''}`;
+}
+
+let trendChart = null;
+function renderChart() {
+  if (!DATA?.routes?.length) return;
+  const friHistory = DATA.routes[0]?.weeks?.[currentWeekIdx]?.history || [];
+  const sunHistory = DATA.routes[1]?.weeks?.[currentWeekIdx]?.history || [];
+
+  // 合并日期
+  const allDates = [...new Set([...friHistory.map(h => h.captured_date), ...sunHistory.map(h => h.captured_date)])].sort();
+  const friMap = Object.fromEntries(friHistory.map(h => [h.captured_date, h.min_price]));
+  const sunMap = Object.fromEntries(sunHistory.map(h => [h.captured_date, h.min_price]));
+
+  const ctx = document.getElementById('trend-chart').getContext('2d');
+  if (trendChart) trendChart.destroy();
+  trendChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: allDates.map(d => d.slice(5)),
+      datasets: [
+        {
+          label: '去程·飞机',
+          data: allDates.map(d => friMap[d] || null),
+          borderColor: '#fbbf24',
+          backgroundColor: 'rgba(251, 191, 36, 0.05)',
+          borderWidth: 2, tension: 0.3, pointRadius: 2, pointHoverRadius: 5, fill: true, spanGaps: true,
+        },
+        {
+          label: '回程·飞机',
+          data: allDates.map(d => sunMap[d] || null),
+          borderColor: '#3b82f6',
+          backgroundColor: 'rgba(59, 130, 246, 0.05)',
+          borderWidth: 2, tension: 0.3, pointRadius: 2, pointHoverRadius: 5, spanGaps: true,
+        }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#161b2e', titleColor: '#fbbf24', bodyColor: '#e5e7eb',
+          borderColor: '#2d3748', borderWidth: 1, padding: 10,
+          titleFont: { family: 'JetBrains Mono', size: 11 },
+          bodyFont: { family: 'JetBrains Mono', size: 12 },
+          callbacks: { label: c => `${c.dataset.label}: ¥${c.raw}` }
+        }
+      },
+      scales: {
+        x: { grid: { color: 'rgba(45, 55, 72, 0.3)' }, ticks: { color: '#6b7280', font: { family: 'JetBrains Mono', size: 10 } } },
+        y: { grid: { color: 'rgba(45, 55, 72, 0.3)' }, ticks: { color: '#6b7280', font: { family: 'JetBrains Mono', size: 10 }, callback: v => '¥' + v } }
+      }
+    }
+  });
+}
+
+loadData();
+</script>
+</body>
+</html>
