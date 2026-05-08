@@ -86,6 +86,11 @@
   .option-meta .duration { font-family: var(--mono); margin-left: 8px; }
   .option-tag { display: inline-block; font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; padding: 2px 6px; border-radius: 3px; background: var(--accent-light); color: var(--accent); margin-left: 6px; text-transform: uppercase; }
   .option-trend { font-family: var(--mono); font-size: 11px; color: var(--text-faint); text-align: right; }
+  .option-links { display: flex; flex-direction: column; gap: 4px; align-items: flex-end; }
+  .book-btn { display: inline-block; font-family: var(--mono); font-size: 9px; padding: 2px 8px; border-radius: 3px; text-decoration: none; border: 1px solid var(--border); color: var(--text-dim); transition: all 0.15s; white-space: nowrap; letter-spacing: 0.03em; }
+  .book-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+  .book-btn.qunar { border-color: #f5d0a9; color: #c2710c; }
+  .book-btn.qunar:hover { border-color: #f97316; color: #ea580c; background: rgba(249,115,22,0.06); }
   .option-price { font-family: var(--mono); font-size: 20px; font-weight: 700; text-align: right; min-width: 90px; }
   .option-price .currency { font-size: 12px; color: var(--text-dim); font-weight: 400; margin-right: 1px; }
   .price-good { color: var(--green); }
@@ -254,6 +259,19 @@ function renderSummary(weekData) {
     cell('监控周数', 6, '本周起未来 6 周');
 }
 
+function lyUrl(f) {
+  const dep = f.dep_airport || f.from_city || 'BJS';
+  const arr = f.arr_airport || f.to_city || 'WUH';
+  // ly.com 直飞搜索：机场码-机场码?date=
+  return `https://www.ly.com/flights/itinerary/oneway/${dep}-${arr}?date=${f.depart_date}`;
+}
+
+function qunarUrl(f) {
+  const from = encodeURIComponent(f.from_city || '北京');
+  const to   = encodeURIComponent(f.to_city   || '武汉');
+  return `https://flight.qunar.com/site/oneway_index.htm?searchDepartureAirport=${from}&searchArrivalAirport=${to}&searchDepartureTime=${f.depart_date}`;
+}
+
 function renderLeg(route, idx) {
   const week = route.weeks[currentWeekIdx];
   const list = week?.flights || [];
@@ -267,7 +285,9 @@ function renderLeg(route, idx) {
     body = list.map(f => {
       const isMin = f.price === min;
       const cls = f.price < min * 1.1 ? 'price-good' : f.price < min * 1.4 ? 'price-warn' : 'price-bad';
-      return `<div class="option ${isMin ? 'recommended' : ''}">
+      const lUrl = lyUrl(f);
+      const qUrl = qunarUrl(f);
+      return `<div class="option ${isMin ? 'recommended' : ''}" onclick="window.open('${lUrl}','_blank')" title="点击在同程旅行查看并预订">
         <div class="option-time">${f.dep_time || '--'}<span class="arrow">→</span>${f.arr_time || '--'}</div>
         <div class="option-meta">
           <div><span class="carrier">${f.carrier || ''} ${f.flight_no || ''}</span>
@@ -276,7 +296,10 @@ function renderLeg(route, idx) {
           </div>
           <div style="margin-top:2px;color:var(--text-faint);font-size:11px">${f.dep_airport || ''} → ${f.arr_airport || ''}</div>
         </div>
-        <div class="option-trend">${f.source || ''}</div>
+        <div class="option-links">
+          <a class="book-btn" href="${lUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">↗ 同程</a>
+          <a class="book-btn qunar" href="${qUrl}" target="_blank" rel="noopener" onclick="event.stopPropagation()">↗ 去哪儿</a>
+        </div>
         <div class="option-price ${cls}"><span class="currency">¥</span>${f.price}</div>
       </div>`;
     }).join('');
