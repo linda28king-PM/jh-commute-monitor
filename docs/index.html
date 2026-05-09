@@ -193,8 +193,14 @@ async function loadData() {
     const res = await fetch('./data.json?t=' + Date.now());
     if (!res.ok) throw new Error('加载失败');
     DATA = await res.json();
-    document.getElementById('last-update').textContent =
-      '更新于 ' + DATA.updated_at.replace('T', ' ').slice(0, 16);
+    // updated_at 由 GitHub Actions（UTC 时区）生成，加 Z 后转北京时间显示
+    const _dt = new Date(DATA.updated_at + 'Z');
+    const _bjTime = _dt.toLocaleString('zh-CN', {
+      timeZone: 'Asia/Shanghai',
+      year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit', hour12: false,
+    }).replace(/\//g, '-');
+    document.getElementById('last-update').textContent = '更新于 ' + _bjTime;
     init();
   } catch (e) {
     document.getElementById('last-update').textContent = '数据加载失败';
