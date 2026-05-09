@@ -154,20 +154,25 @@
     <div class="section-header">
       <div class="section-title">
         <span class="num">02</span>
-        <h2>价格走势</h2>
+        <h2>各周最低价对比</h2>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button class="tab active" id="chart-tab-weeks" onclick="switchChart('weeks')" style="flex:unset;padding:6px 14px">按出行日期</button>
+        <button class="tab" id="chart-tab-history" onclick="switchChart('history')" style="flex:unset;padding:6px 14px">价格监控历史</button>
       </div>
     </div>
     <div class="chart-card">
       <div class="chart-head">
-        <h3>近 30 天最低价格</h3>
+        <h3 id="chart-title">未来 6 周最低价</h3>
         <div class="chart-legend">
-          <div class="legend-item"><span class="legend-dot" style="background:var(--accent)"></span>去程·飞机</div>
-          <div class="legend-item"><span class="legend-dot" style="background:var(--blue)"></span>回程·飞机</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#f59e0b"></span>去程（周五）</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#3b82f6"></span>回程（周日）</div>
         </div>
       </div>
       <div class="chart-body">
         <canvas id="trend-chart"></canvas>
       </div>
+      <div id="chart-hint" style="text-align:center;font-family:var(--mono);font-size:11px;color:var(--text-faint);margin-top:12px"></div>
     </div>
   </section>
 
@@ -324,36 +329,123 @@ function formatDuration(min) {
 }
 
 let trendChart = null;
+let chartMode = 'weeks';  // 'weeks' | 'history'
+
+function switchChart(mode) {
+  chartMode = mode;
+  document.getElementById('chart-tab-weeks').classList.toggle('active', mode === 'weeks');
+  document.getElementById('chart-tab-history').classList.toggle('active', mode === 'history');
+  renderChart();
+}
+
 function renderChart() {
   if (!DATA?.routes?.length) return;
+  chartMode === 'weeks' ? renderChartWeeks() : renderChartHistory();
+}
+
+// 模式1：未来各周最低价对比（立即有用）
+function renderChartWeeks() {
+  document.getElementById('chart-title').textContent = '未来 6 周最低价';
+  document.getElementById('chart-hint').textContent = '';
+
+  const friWeeks = DATA.routes[0]?.weeks || [];
+  const sunWeeks = DATA.routes[1]?.weeks || [];
+
+  const friPoints = friWeeks.map(w => ({
+    label: w.date.slice(5) + ' 周' + w.weekday_label,
+    val: w.flights.length ? Math.min(...w.flights.map(f => f.price)) : null,
+  }));
+  const sunPoints = sunWeeks.map(w => ({
+    label: w.date.slice(5) + ' 周' + w.weekday_label,
+    val: w.flights.length ? Math.min(...w.flights.map(f => f.price)) : null,
+  }));
+
+  // X 轴：去程日期 + 回程日期 交替（按周配对）
+  const labels = friWeeks.map((w, i) => `第${i + 1}周`);
+  const friData = friPoints.map(p => p.val);
+  const sunData = sunPoints.map(p => p.val);
+
+  drawChart(labels, friData, sunData,
+    ctx => ({
+      callbacks: {
+        title: items => {
+          const i = items[0].dataIndex;
+          return `第${i + 1}周`;
+        },
+        label: c => {
+          const pts = c.datasetIndex === 0 ? friPoints : sunPoints;
+          const p = pts[c.dataIndex];
+          return `${c.dataset.label}  ${p.label}  ¥${c.raw}`;
+        }
+      }
+    })
+  );
+}
+
+// 模式2：某周的历史监控价格走势
+function renderChartHistory() {
   const friHistory = DATA.routes[0]?.weeks?.[currentWeekIdx]?.history || [];
   const sunHistory = DATA.routes[1]?.weeks?.[currentWeekIdx]?.history || [];
+  const friDate = DATA.routes[0]?.weeks?.[currentWeekIdx]?.date || '';
+  const sunDate = DATA.routes[1]?.weeks?.[currentWeekIdx]?.date || '';
 
-  // 合并日期
-  const allDates = [...new Set([...friHistory.map(h => h.captured_date), ...sunHistory.map(h => h.captured_date)])].sort();
+  document.getElementById('chart-title').textContent =
+    `价格监控历史（去程 ${friDate} / 回程 ${sunDate}）`;
+
+  const allDates = [...new Set([
+    ...friHistory.map(h => h.captured_date),
+    ...sunHistory.map(h => h.captured_date),
+  ])].sort();
+
+  const hint = document.getElementById('chart-hint');
+  if (allDates.length < 3) {
+    hint.textContent = `📊 数据积累中（当前 ${allDates.length} 个抓取日期）——运行几天后价格走势将更清晰`;
+  } else {
+    hint.textContent = '';
+  }
+
   const friMap = Object.fromEntries(friHistory.map(h => [h.captured_date, h.min_price]));
   const sunMap = Object.fromEntries(sunHistory.map(h => [h.captured_date, h.min_price]));
 
+  drawChart(
+    allDates.map(d => d.slice(5)),
+    allDates.map(d => friMap[d] ?? null),
+    allDates.map(d => sunMap[d] ?? null),
+    () => ({ callbacks: { label: c => `${c.dataset.label}: ¥${c.raw}` } })
+  );
+}
+
+function drawChart(labels, friData, sunData, tooltipExtra) {
   const ctx = document.getElementById('trend-chart').getContext('2d');
   if (trendChart) trendChart.destroy();
+
+  const tooltipOpts = typeof tooltipExtra === 'function'
+    ? tooltipExtra(ctx) : {};
+
   trendChart = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: allDates.map(d => d.slice(5)),
+      labels,
       datasets: [
         {
-          label: '去程·飞机',
-          data: allDates.map(d => friMap[d] || null),
-          borderColor: '#fbbf24',
-          backgroundColor: 'rgba(251, 191, 36, 0.05)',
-          borderWidth: 2, tension: 0.3, pointRadius: 2, pointHoverRadius: 5, fill: true, spanGaps: true,
+          label: '去程',
+          data: friData,
+          borderColor: '#f59e0b',
+          backgroundColor: 'rgba(245,158,11,0.08)',
+          borderWidth: 2.5, tension: 0.35,
+          pointRadius: 5, pointHoverRadius: 7,
+          pointBackgroundColor: '#f59e0b',
+          fill: true, spanGaps: true,
         },
         {
-          label: '回程·飞机',
-          data: allDates.map(d => sunMap[d] || null),
+          label: '回程',
+          data: sunData,
           borderColor: '#3b82f6',
-          backgroundColor: 'rgba(59, 130, 246, 0.05)',
-          borderWidth: 2, tension: 0.3, pointRadius: 2, pointHoverRadius: 5, spanGaps: true,
+          backgroundColor: 'rgba(59,130,246,0.06)',
+          borderWidth: 2.5, tension: 0.35,
+          pointRadius: 5, pointHoverRadius: 7,
+          pointBackgroundColor: '#3b82f6',
+          spanGaps: true,
         }
       ]
     },
@@ -362,16 +454,22 @@ function renderChart() {
       plugins: {
         legend: { display: false },
         tooltip: {
-          backgroundColor: '#161b2e', titleColor: '#fbbf24', bodyColor: '#e5e7eb',
-          borderColor: '#2d3748', borderWidth: 1, padding: 10,
+          backgroundColor: '#1e293b', titleColor: '#f59e0b', bodyColor: '#e2e8f0',
+          borderColor: '#334155', borderWidth: 1, padding: 12,
           titleFont: { family: 'JetBrains Mono', size: 11 },
-          bodyFont: { family: 'JetBrains Mono', size: 12 },
-          callbacks: { label: c => `${c.dataset.label}: ¥${c.raw}` }
+          bodyFont: { family: 'JetBrains Mono', size: 13 },
+          ...tooltipOpts,
         }
       },
       scales: {
-        x: { grid: { color: 'rgba(45, 55, 72, 0.3)' }, ticks: { color: '#6b7280', font: { family: 'JetBrains Mono', size: 10 } } },
-        y: { grid: { color: 'rgba(45, 55, 72, 0.3)' }, ticks: { color: '#6b7280', font: { family: 'JetBrains Mono', size: 10 }, callback: v => '¥' + v } }
+        x: {
+          grid: { color: 'rgba(148,163,184,0.15)' },
+          ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 11 } }
+        },
+        y: {
+          grid: { color: 'rgba(148,163,184,0.15)' },
+          ticks: { color: '#64748b', font: { family: 'JetBrains Mono', size: 11 }, callback: v => '¥' + v }
+        }
       }
     }
   });
