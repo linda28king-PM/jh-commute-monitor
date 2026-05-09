@@ -366,8 +366,12 @@ function renderChartWeeks() {
     val: w.flights.length ? Math.min(...w.flights.map(f => f.price)) : null,
   }));
 
-  // X 轴：去程日期 + 回程日期 交替（按周配对）
-  const labels = friWeeks.map((w, i) => `第${i + 1}周`);
+  // X 轴：第N周 + 具体日期（去程→回程）
+  const labels = friWeeks.map((w, i) => {
+    const fd = w.date.slice(5);                      // 去程 MM-DD
+    const sd = (sunWeeks[i]?.date || '').slice(5);   // 回程 MM-DD
+    return [`第${i + 1}周`, `${fd}→${sd}`];          // Chart.js 数组 = 多行
+  });
   const friData = friPoints.map(p => p.val);
   const sunData = sunPoints.map(p => p.val);
 
