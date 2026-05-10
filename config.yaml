@@ -22,6 +22,10 @@ routes:
     to_code: "BJS"
     weekday: 7
     direction: "back"
+    exclude:
+      # 周日晚 22:30 后到达大兴（PKX）的不显示也不推送（大兴机场线末班约 22:35）
+      - arr_airport: "PKX"
+        arr_time_after: "22:30"
 
 # 监控范围：未来 N 周
 monitor_weeks_ahead: 6

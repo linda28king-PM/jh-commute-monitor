@@ -32,6 +32,7 @@ from src.scraper_railway import RailwayScraper
 from src.storage import Storage
 from src.notifier import Notifier
 from src.alert_engine import AlertEngine
+from src.filters import apply_route_filters
 
 
 def setup_logging():
@@ -64,7 +65,8 @@ def compute_target_dates(routes: list[dict], weeks_ahead: int) -> list[tuple[dic
     return pairs
 
 
-def export_for_frontend(storage: Storage, routes: list[dict], weeks_ahead: int, out_path: Path):
+def export_for_frontend(storage: Storage, routes: list[dict], weeks_ahead: int, out_path: Path,
+                        filter_fn=None):
     """
     导出最近一次抓取结果为 JSON，供前端 HTML 直接读取
     """
@@ -83,8 +85,9 @@ def export_for_frontend(storage: Storage, routes: list[dict], weeks_ahead: int, 
         for w in range(weeks_ahead):
             d = first_date + timedelta(weeks=w)
             d_str = d.strftime("%Y-%m-%d")
-            flights = storage.get_latest_flights(
-                route["from_city"], route["to_city"], d_str
+            flights = apply_route_filters(
+                storage.get_latest_flights(route["from_city"], route["to_city"], d_str),
+                route,
             )
             trains = storage.get_latest_trains(
                 route["from_city"], route["to_city"], d_str
@@ -147,9 +150,10 @@ def main():
                 offers = q.search(route["from_city"], route["to_city"], d)
                 offer_dicts = [o.to_dict() for o in offers]
                 if offer_dicts:
-                    storage.save_flights(offer_dicts)
+                    storage.save_flights(offer_dicts)  # 原始数据全量存库
+                filtered = apply_route_filters(offer_dicts, route)
                 key = (route["direction"], d.strftime("%Y-%m-%d"))
-                flights_by_route.setdefault(key, []).extend(offer_dicts)
+                flights_by_route.setdefault(key, []).extend(filtered)
 
     if config["sources"].get("ly"):
         with LyFlightScraper(
@@ -163,9 +167,10 @@ def main():
                 offers = ly.search(route["from_city"], route["to_city"], d)
                 offer_dicts = [o.to_dict() for o in offers]
                 if offer_dicts:
-                    storage.save_flights(offer_dicts)
+                    storage.save_flights(offer_dicts)  # 原始数据全量存库
+                filtered = apply_route_filters(offer_dicts, route)
                 key = (route["direction"], d.strftime("%Y-%m-%d"))
-                flights_by_route.setdefault(key, []).extend(offer_dicts)
+                flights_by_route.setdefault(key, []).extend(filtered)
 
     if config["sources"].get("google_flights"):
         with GoogleFlightScraper(
@@ -179,9 +184,10 @@ def main():
                 offers = g.search(route["from_city"], route["to_city"], d)
                 offer_dicts = [o.to_dict() for o in offers]
                 if offer_dicts:
-                    storage.save_flights(offer_dicts)
+                    storage.save_flights(offer_dicts)  # 原始数据全量存库
+                filtered = apply_route_filters(offer_dicts, route)
                 key = (route["direction"], d.strftime("%Y-%m-%d"))
-                flights_by_route.setdefault(key, []).extend(offer_dicts)
+                flights_by_route.setdefault(key, []).extend(filtered)
 
     # ---- 抓高铁 ----
     trains_by_route: dict[tuple, list[dict]] = {}
