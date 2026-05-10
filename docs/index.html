@@ -136,6 +136,50 @@
     .split { grid-template-columns: 1fr; }
     .header-inner, .main { padding: 16px; }
   }
+  /* ── 手机端适配 ────────────────────────────────────────── */
+  @media (max-width: 640px) {
+    /* Header */
+    .header-inner { flex-wrap: wrap; gap: 4px 12px; padding: 10px 14px; }
+    .brand-logo { font-size: 18px; }
+    .brand-route { font-size: 11px; }
+    .header-status { font-size: 10px; gap: 10px; }
+    /* Page */
+    .main { padding: 12px 14px; }
+    .page-title { font-size: 22px; }
+    .top-bar { margin-bottom: 16px; }
+    /* Week selector */
+    .week-selector { flex-wrap: wrap; gap: 4px; }
+    .week-btn { padding: 5px 8px; font-size: 11px; }
+    /* Summary cards */
+    .summary-grid { gap: 8px; margin-bottom: 20px; }
+    .summary-cell { padding: 12px 14px; }
+    .summary-cell .value { font-size: 20px; }
+    .summary-cell .delta { font-size: 11px; }
+    /* Section */
+    .section-header { margin-bottom: 12px; }
+    .section-title h2 { font-size: 17px; }
+    /* Leg header */
+    .leg-head { padding: 12px 14px; }
+    /* 航班行：3 列（时刻 | 信息 | 价格），同程/去哪儿按钮隐藏 */
+    .option { grid-template-columns: auto 1fr auto; gap: 8px 10px; padding: 11px 14px; }
+    .option-links { display: none; }
+    .option-time { font-size: 13px; min-width: 0; }
+    .option-time .arrow { margin: 0 3px; }
+    .option-price { font-size: 16px; min-width: 52px; }
+    .option-meta .duration { margin-left: 4px; }
+    /* 接驳浮层：全屏宽，固定在底部更好读 */
+    .commute-tip { width: calc(100vw - 20px) !important;
+      border-radius: 12px; padding: 14px; }
+    .ct-route { font-size: 11px; }
+    /* Chart */
+    .chart-card { padding: 14px; }
+    .chart-body { height: 200px; }
+    .chart-legend { gap: 10px; font-size: 10px; }
+    /* Tab buttons */
+    #chart-tab-weeks, #chart-tab-history { font-size: 11px; padding: 5px 10px; }
+    /* Footer */
+    .footer-note { padding: 14px; font-size: 10px; margin-top: 28px; }
+  }
 </style>
 </head>
 <body>
@@ -269,8 +313,43 @@ function canCatchMetro(arrTime, lastCatch) {
   return arrTime <= lastCatch;
 }
 
+// 触屏检测（hover:none = 纯触屏设备）
+const _isTouch = () => window.matchMedia('(hover: none)').matches;
+let _lastTappedEl = null;
+
+// 触屏：第一次点击=显示接驳信息，第二次点击=跳转预订
+function handleOptionClick(e, lUrl, el, ap, arrTime) {
+  if (_isTouch()) {
+    if (_tipEl && _lastTappedEl === el) {
+      // 已经显示过，第二次点击 → 跳转
+      hideCommuteTip();
+      _lastTappedEl = null;
+      window.open(lUrl, '_blank');
+    } else {
+      // 第一次点击 → 显示接驳信息
+      _doShowTip(el, ap, arrTime);
+      _lastTappedEl = el;
+    }
+  } else {
+    // 桌面端直接跳转（hover 已经显示过接驳信息）
+    window.open(lUrl, '_blank');
+  }
+}
+// 点击航班行以外的地方关闭浮层
+document.addEventListener('click', (e) => {
+  if (_tipEl && !e.target.closest('.option')) {
+    hideCommuteTip();
+    _lastTappedEl = null;
+  }
+});
+
 let _tipEl = null;
+// 桌面 hover 触发（触屏跳过，由 handleOptionClick 处理）
 function showCommuteTip(el, rawAp, arrTime) {
+  if (_isTouch()) return;
+  _doShowTip(el, rawAp, arrTime);
+}
+function _doShowTip(el, rawAp, arrTime) {
   hideCommuteTip();
   const info = COMMUTE[resolveAp(rawAp)];
   if (!info) return;
@@ -299,12 +378,14 @@ function showCommuteTip(el, rawAp, arrTime) {
     }).join('');
   document.body.appendChild(_tipEl);
   const r = el.getBoundingClientRect();
-  const tipW = 420;
+  const tipW = Math.min(420, window.innerWidth - 20);
   let left = r.left + window.scrollX;
   if (left + tipW > window.innerWidth - 8) left = window.innerWidth - tipW - 8;
   if (left < 8) left = 8;
   _tipEl.style.left = left + 'px';
-  _tipEl.style.top  = (r.bottom + window.scrollY + 6) + 'px';
+  // 触屏：出现在行下方，确保在视口内
+  const idealTop = r.bottom + window.scrollY + 6;
+  _tipEl.style.top = idealTop + 'px';
 }
 function hideCommuteTip() {
   if (_tipEl) { _tipEl.remove(); _tipEl = null; }
@@ -423,7 +504,7 @@ function renderLeg(route, idx) {
       const cls = f.price < min * 1.1 ? 'price-good' : f.price < min * 1.4 ? 'price-warn' : 'price-bad';
       const lUrl = lyUrl(f);
       const qUrl = qunarUrl(f);
-      return `<div class="option ${isMin ? 'recommended' : ''}" onclick="window.open('${lUrl}','_blank')" onmouseenter="showCommuteTip(this,'${f.arr_airport}','${f.arr_time}')" onmouseleave="hideCommuteTip()">
+      return `<div class="option ${isMin ? 'recommended' : ''}" onclick="handleOptionClick(event,'${lUrl}',this,'${f.arr_airport}','${f.arr_time}')" onmouseenter="showCommuteTip(this,'${f.arr_airport}','${f.arr_time}')" onmouseleave="hideCommuteTip()">
         <div class="option-time">${f.dep_time || '--'}<span class="arrow">→</span>${f.arr_time || '--'}</div>
         <div class="option-meta">
           <div><span class="carrier">${f.carrier || ''} ${f.flight_no || ''}</span>
