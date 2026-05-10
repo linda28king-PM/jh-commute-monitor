@@ -96,6 +96,28 @@
   .price-good { color: var(--green); }
   .price-warn { color: #d97706; }
   .price-bad { color: var(--red); }
+  /* 接驳方案浮层 */
+  .commute-tip {
+    position: absolute; z-index: 400;
+    background: #1a2535; color: #e2e8f0;
+    border: 1px solid #2d4060; border-radius: 10px;
+    padding: 14px 16px; width: 420px; max-width: calc(100vw - 20px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+    pointer-events: none; font-family: var(--sans);
+  }
+  .ct-header { font-family: var(--mono); font-size: 10px; color: #64748b;
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+  .ct-header strong { color: #93c5fd; font-weight: 600; }
+  .ct-row { display: flex; align-items: flex-start; gap: 10px;
+    padding: 9px 0; border-bottom: 1px solid #253347; }
+  .ct-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .ct-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+  .ct-body { flex: 1; min-width: 0; }
+  .ct-mode { font-size: 12px; font-weight: 600; color: #cbd5e1; margin-bottom: 3px; }
+  .ct-route { font-size: 11px; color: #64748b; line-height: 1.5; }
+  .ct-stats { display: flex; gap: 14px; margin-top: 5px; }
+  .ct-time { font-family: var(--mono); font-size: 11px; color: #94a3b8; }
+  .ct-cost { font-family: var(--mono); font-size: 13px; font-weight: 700; color: #fbbf24; }
   .empty-state { padding: 40px 20px; text-align: center; color: var(--text-faint); font-family: var(--mono); font-size: 12px; }
   .chart-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
   .chart-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
@@ -185,6 +207,87 @@
 </main>
 
 <script>
+// ── 接驳方案数据（机场码 → 目的地）──────────────────────────
+const COMMUTE = {
+  // 去程：落地武汉天河(WUH) → 宗关地铁站
+  WUH: {
+    dest: '宗关地铁站',
+    note: '落地武汉天河机场后',
+    options: [
+      { icon: '🚇', mode: '地铁 2 号线直达',
+        route: '天河机场 → 宗关（无需换乘，约 8 站）',
+        time: '约 50 分钟', cost: '¥6' },
+      { icon: '🚕', mode: '出租 / 滴滴快车',
+        route: '走机场高速，约 35 km',
+        time: '约 40–55 分钟', cost: '¥70–110' },
+    ],
+  },
+  // 回程：落地大兴(PKX) → 五道口
+  PKX: {
+    dest: '五道口',
+    note: '落地大兴国际机场后',
+    options: [
+      { icon: '🚇', mode: '大兴快轨 + 地铁换乘',
+        route: '大兴快轨→草桥 → 10号线→知春路 → 13号线→五道口',
+        time: '约 85 分钟', cost: '¥35 + ¥4 ≈ ¥40' },
+      { icon: '🚕', mode: '出租 / 滴滴快车',
+        route: '走京开高速，约 52 km',
+        time: '约 55–90 分钟', cost: '¥150–200' },
+    ],
+  },
+  // 回程：落地首都机场(PEK) → 五道口
+  PEK: {
+    dest: '五道口',
+    note: '落地首都国际机场后',
+    options: [
+      { icon: '🚇', mode: '机场快轨 + 地铁换乘',
+        route: '首都快轨→三元桥 → 10号线→知春路 → 13号线→五道口',
+        time: '约 60 分钟', cost: '¥25 + ¥4 ≈ ¥29' },
+      { icon: '🚕', mode: '出租 / 滴滴快车',
+        route: '走机场高速，约 22 km',
+        time: '约 35–60 分钟', cost: '¥80–130' },
+    ],
+  },
+};
+
+// 中文短名 → IATA 码（防止 arr_airport 存的是短名）
+const AP_CODE = { '天河':'WUH','大兴':'PKX','首都':'PEK' };
+function resolveAp(ap) { return AP_CODE[ap] || ap; }
+
+let _tipEl = null;
+function showCommuteTip(el, rawAp) {
+  hideCommuteTip();
+  const info = COMMUTE[resolveAp(rawAp)];
+  if (!info) return;
+  _tipEl = document.createElement('div');
+  _tipEl.className = 'commute-tip';
+  _tipEl.innerHTML =
+    `<div class="ct-header">${info.note} &nbsp;→&nbsp; <strong>${info.dest}</strong></div>` +
+    info.options.map(o => `
+      <div class="ct-row">
+        <div class="ct-icon">${o.icon}</div>
+        <div class="ct-body">
+          <div class="ct-mode">${o.mode}</div>
+          <div class="ct-route">${o.route}</div>
+          <div class="ct-stats">
+            <span class="ct-time">⏱ ${o.time}</span>
+            <span class="ct-cost">${o.cost}</span>
+          </div>
+        </div>
+      </div>`).join('');
+  document.body.appendChild(_tipEl);
+  const r = el.getBoundingClientRect();
+  const tipW = 420;
+  let left = r.left + window.scrollX;
+  if (left + tipW > window.innerWidth - 8) left = window.innerWidth - tipW - 8;
+  if (left < 8) left = 8;
+  _tipEl.style.left = left + 'px';
+  _tipEl.style.top  = (r.bottom + window.scrollY + 6) + 'px';
+}
+function hideCommuteTip() {
+  if (_tipEl) { _tipEl.remove(); _tipEl = null; }
+}
+
 let DATA = null;
 let currentWeekIdx = 0;
 
@@ -298,7 +401,7 @@ function renderLeg(route, idx) {
       const cls = f.price < min * 1.1 ? 'price-good' : f.price < min * 1.4 ? 'price-warn' : 'price-bad';
       const lUrl = lyUrl(f);
       const qUrl = qunarUrl(f);
-      return `<div class="option ${isMin ? 'recommended' : ''}" onclick="window.open('${lUrl}','_blank')" title="点击在同程旅行查看并预订">
+      return `<div class="option ${isMin ? 'recommended' : ''}" onclick="window.open('${lUrl}','_blank')" onmouseenter="showCommuteTip(this,'${f.arr_airport}')" onmouseleave="hideCommuteTip()">
         <div class="option-time">${f.dep_time || '--'}<span class="arrow">→</span>${f.arr_time || '--'}</div>
         <div class="option-meta">
           <div><span class="carrier">${f.carrier || ''} ${f.flight_no || ''}</span>
