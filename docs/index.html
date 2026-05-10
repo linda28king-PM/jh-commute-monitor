@@ -118,6 +118,8 @@
   .ct-stats { display: flex; gap: 14px; margin-top: 5px; }
   .ct-time { font-family: var(--mono); font-size: 11px; color: #92400e; }
   .ct-cost { font-family: var(--mono); font-size: 13px; font-weight: 700; color: #b45309; }
+  .ct-warn { margin-top: 6px; font-family: var(--mono); font-size: 11px; font-weight: 600; color: #dc2626; }
+  .ct-row-dim { opacity: 0.55; }
   .empty-state { padding: 40px 20px; text-align: center; color: var(--text-faint); font-family: var(--mono); font-size: 12px; }
   .chart-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 20px 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
   .chart-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
@@ -208,6 +210,7 @@
 
 <script>
 // ── 接驳方案数据（机场码 → 目的地）──────────────────────────
+// lastCatch：落地时刻不晚于此值才能赶上末班（已含 15 min 行走缓冲）
 const COMMUTE = {
   // 去程：落地武汉天河(WUH) → 宗关地铁站
   WUH: {
@@ -216,7 +219,8 @@ const COMMUTE = {
     options: [
       { icon: '🚇', mode: '地铁 2 号线直达',
         route: '天河机场 → 宗关（无需换乘，约 8 站）',
-        time: '约 50 分钟', cost: '¥6' },
+        time: '约 50 分钟', cost: '¥6',
+        lastCatch: '21:45', lastTrain: '22:00' },   // 末班 22:00 出发
       { icon: '🚕', mode: '出租 / 滴滴快车',
         route: '走机场高速，约 35 km',
         time: '约 40–55 分钟', cost: '¥70–110' },
@@ -229,7 +233,8 @@ const COMMUTE = {
     options: [
       { icon: '🚇', mode: '大兴快轨 + 地铁换乘',
         route: '大兴快轨→草桥 → 10号线→知春路 → 13号线→五道口',
-        time: '约 85 分钟', cost: '¥35 + ¥4 ≈ ¥40' },
+        time: '约 85 分钟', cost: '¥35 + ¥4 ≈ ¥40',
+        lastCatch: '22:20', lastTrain: '22:35' },   // 末班 22:35 出发
       { icon: '🚕', mode: '出租 / 滴滴快车',
         route: '走京开高速，约 52 km',
         time: '约 55–90 分钟', cost: '¥150–200' },
@@ -242,7 +247,8 @@ const COMMUTE = {
     options: [
       { icon: '🚇', mode: '机场快轨 + 地铁换乘',
         route: '首都快轨→三元桥 → 10号线→知春路 → 13号线→五道口',
-        time: '约 60 分钟', cost: '¥25 + ¥4 ≈ ¥29' },
+        time: '约 60 分钟', cost: '¥25 + ¥4 ≈ ¥29',
+        lastCatch: '22:55', lastTrain: '23:10' },   // 末班 23:10 出发
       { icon: '🚕', mode: '出租 / 滴滴快车',
         route: '走机场高速，约 22 km',
         time: '约 35–60 分钟', cost: '¥80–130' },
@@ -254,8 +260,17 @@ const COMMUTE = {
 const AP_CODE = { '天河':'WUH','大兴':'PKX','首都':'PEK' };
 function resolveAp(ap) { return AP_CODE[ap] || ap; }
 
+// 判断落地时刻是否能赶上末班（lastCatch 是 HH:MM 字符串）
+// 凌晨到达（00:xx-05:xx）视为已过末班
+function canCatchMetro(arrTime, lastCatch) {
+  if (!arrTime || !lastCatch) return true;
+  const h = parseInt(arrTime);
+  if (h < 6) return false;          // 凌晨落地，末班肯定没了
+  return arrTime <= lastCatch;
+}
+
 let _tipEl = null;
-function showCommuteTip(el, rawAp) {
+function showCommuteTip(el, rawAp, arrTime) {
   hideCommuteTip();
   const info = COMMUTE[resolveAp(rawAp)];
   if (!info) return;
@@ -263,18 +278,25 @@ function showCommuteTip(el, rawAp) {
   _tipEl.className = 'commute-tip';
   _tipEl.innerHTML =
     `<div class="ct-header">${info.note} &nbsp;→&nbsp; <strong>${info.dest}</strong></div>` +
-    info.options.map(o => `
-      <div class="ct-row">
-        <div class="ct-icon">${o.icon}</div>
-        <div class="ct-body">
-          <div class="ct-mode">${o.mode}</div>
-          <div class="ct-route">${o.route}</div>
-          <div class="ct-stats">
-            <span class="ct-time">⏱ ${o.time}</span>
-            <span class="ct-cost">${o.cost}</span>
+    info.options.map(o => {
+      const missed = o.lastCatch && !canCatchMetro(arrTime, o.lastCatch);
+      const warnHtml = missed
+        ? `<div class="ct-warn">⚠ 末班 ${o.lastTrain} 已过（落地需早于 ${o.lastCatch}）· 建议打车</div>`
+        : '';
+      return `
+        <div class="ct-row${missed ? ' ct-row-dim' : ''}">
+          <div class="ct-icon">${o.icon}</div>
+          <div class="ct-body">
+            <div class="ct-mode">${o.mode}</div>
+            <div class="ct-route">${o.route}</div>
+            <div class="ct-stats">
+              <span class="ct-time">⏱ ${o.time}</span>
+              <span class="ct-cost">${missed ? '<s style="opacity:.4">' + o.cost + '</s>' : o.cost}</span>
+            </div>
+            ${warnHtml}
           </div>
-        </div>
-      </div>`).join('');
+        </div>`;
+    }).join('');
   document.body.appendChild(_tipEl);
   const r = el.getBoundingClientRect();
   const tipW = 420;
@@ -401,7 +423,7 @@ function renderLeg(route, idx) {
       const cls = f.price < min * 1.1 ? 'price-good' : f.price < min * 1.4 ? 'price-warn' : 'price-bad';
       const lUrl = lyUrl(f);
       const qUrl = qunarUrl(f);
-      return `<div class="option ${isMin ? 'recommended' : ''}" onclick="window.open('${lUrl}','_blank')" onmouseenter="showCommuteTip(this,'${f.arr_airport}')" onmouseleave="hideCommuteTip()">
+      return `<div class="option ${isMin ? 'recommended' : ''}" onclick="window.open('${lUrl}','_blank')" onmouseenter="showCommuteTip(this,'${f.arr_airport}','${f.arr_time}')" onmouseleave="hideCommuteTip()">
         <div class="option-time">${f.dep_time || '--'}<span class="arrow">→</span>${f.arr_time || '--'}</div>
         <div class="option-meta">
           <div><span class="carrier">${f.carrier || ''} ${f.flight_no || ''}</span>
