@@ -1,6 +1,6 @@
 [
   {
-    "url": "https://c.go-mpulse.net/api/config.json?key=VP9LC-35W9U-68TQN-7HPLX-PPF4Y&d=m.ly.com&t=5931174&v=1.720.0&sl=0&si=6f1542b1-e32a-461c-88e8-4ff7ed947621-tfdov3&plugins=AK,ConfigOverride,Continuity,PageParams,IFrameDelay,AutoXHR,SPA,History,Angular,Backbone,Ember,RT,CrossDomain,BW,PaintTiming,NavigationTiming,ResourceTiming,Memory,CACHE_RELOAD,Errors,TPAnalytics,UserTiming,Akamai,Early,EventTiming,LOGN&acao=&ak.ai=947581",
+    "url": "https://c.go-mpulse.net/api/config.json?key=VP9LC-35W9U-68TQN-7HPLX-PPF4Y&d=m.ly.com&t=5931247&v=1.720.0&sl=0&si=0346c28b-8a66-430e-ab28-fcec2dc3a87f-tfe5xk&plugins=AK,ConfigOverride,Continuity,PageParams,IFrameDelay,AutoXHR,SPA,History,Angular,Backbone,Ember,RT,CrossDomain,BW,PaintTiming,NavigationTiming,ResourceTiming,Memory,CACHE_RELOAD,Errors,TPAnalytics,UserTiming,Akamai,Early,EventTiming,LOGN&acao=&ak.ai=947581",
     "data": {
       "site_domain": "arlid:947581",
       "rate_limited": true
@@ -14,10 +14,10 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "c0b859d8-c7ff-4be8-8b0b-e9a46bdf9775",
-      "host": "::ffff:10.204.66.18",
+      "tracerId": "d9cc984f-83c7-4cbb-bada-90d4ef4f082a",
+      "host": "::ffff:10.200.164.49",
       "iact": "0",
-      "timestamp": 1779352095796
+      "timestamp": 1779374218233
     }
   },
   {
@@ -705,6 +705,13 @@
     }
   },
   {
+    "url": "https://apmfront.17u.cn/fms/h5multi",
+    "data": {
+      "code": 200,
+      "msg": "ok"
+    }
+  },
+  {
     "url": "https://wx.17u.cn/flightbffv2/book1/flights",
     "data": {
       "success": true,
@@ -716,16 +723,16 @@
         "pc": [
           {
             "dd": "2026-06-19",
-            "lp": 598,
+            "lp": 550,
             "isHoliday": true,
             "holidayName": "端午节",
             "tag": "休",
             "isStrong": true,
-            "hlp": 1350
+            "hlp": 1270
           },
           {
             "dd": "2026-06-20",
-            "lp": 320,
+            "lp": 420,
             "isHoliday": true,
             "holidayName": "",
             "tag": "休",
@@ -734,7 +741,7 @@
           },
           {
             "dd": "2026-06-21",
-            "lp": 320,
+            "lp": 550,
             "isHoliday": true,
             "holidayName": "",
             "tag": "休",
@@ -743,7 +750,7 @@
           },
           {
             "dd": "2026-06-22",
-            "lp": 320,
+            "lp": 420,
             "hlp": 1380
           },
           {
@@ -753,20 +760,20 @@
           },
           {
             "dd": "2026-06-24",
-            "lp": 588,
+            "lp": 550,
             "hlp": 1380
           },
           {
             "dd": "2026-06-25",
-            "lp": 500,
+            "lp": 420,
             "hlp": 1380
           },
           {
             "dd": "2026-06-26",
-            "lp": 598,
-            "ms": "2|598|598|0|33|SC7604,SC7929|YNT|ut_user_new|||650|0|0|MU2021|0|2||||2026-05-19 11:15:05|2026-05-21 16:28:15",
+            "lp": 550,
+            "ms": "1|550|0|550|20|CZ6606||ut_user_new|||550|1|0|CZ6606|2|0|TH||2026-05-21 22:36:58||2026-05-21 22:36:58|0|550|550",
             "hlp": 1489,
-            "hms": "1|1489|0|1489|22|MU2021||ut_user_new|||1489|1|0|MU2021|2|0|XC||2026-05-21 16:28:15||2026-05-21 16:28:15"
+            "hms": "1|1489|0|1489|22|MU2021||ut_user_new|||1489|1|0|MU2021|2|0|XC||2026-05-21 22:36:58||2026-05-21 22:36:58|0|1489|1489"
           },
           {
             "dd": "2026-06-27",
@@ -780,7 +787,7 @@
           },
           {
             "dd": "2026-06-29",
-            "lp": 560,
+            "lp": 500,
             "hlp": 1380
           },
           {
@@ -951,9 +958,9 @@
         ],
         "rt": {
           "pc": "020000",
-          "lp": 650
+          "lp": 550
         },
-        "lp": 650,
+        "lp": 550,
         "lap": 0,
         "not": "A",
         "cfs": [
@@ -1012,7 +1019,7 @@
             ]
           }
         ],
-        "cache_key": "flight_44d79d524ed1f8389a1147e3f8155c033dcc2b42",
+        "cache_key": "flight_25d583e63733eef39d43f0fa6895df27c6bdabce",
         "tfs": [
           {
             "type": "9",
@@ -1064,16 +1071,16 @@
         },
         "lowPrice": {
           "inEcoCabin": {
-            "oIdx": 33,
+            "oIdx": 0,
             "dac": "PKX",
             "aac": "WUH",
-            "fn": "MU2021",
-            "td": "2h5m",
-            "dd": "2026-06-26 15:25",
-            "tmins": 125,
+            "fn": "CZ6606",
+            "td": "2h",
+            "dd": "2026-06-26 07:30",
+            "tmins": 120,
             "nos": 0,
-            "price": 650,
-            "discountDesc": "2.9折经济舱"
+            "price": 550,
+            "discountDesc": "2折经济舱"
           },
           "inHighCabin": {
             "oIdx": 33,
@@ -1088,28 +1095,28 @@
             "discountDesc": "折扣公务舱"
           },
           "inAllCabin": {
-            "oIdx": 33,
+            "oIdx": 0,
             "dac": "PKX",
             "aac": "WUH",
-            "fn": "MU2021",
-            "td": "2h5m",
-            "dd": "2026-06-26 15:25",
-            "tmins": 125,
+            "fn": "CZ6606",
+            "td": "2h",
+            "dd": "2026-06-26 07:30",
+            "tmins": 120,
             "nos": 0,
-            "price": 650,
-            "discountDesc": "2.9折经济舱"
+            "price": 550,
+            "discountDesc": "2折经济舱"
           },
           "ecoMinTicketPrice": {
-            "oIdx": 33,
+            "oIdx": 0,
             "dac": "PKX",
             "aac": "WUH",
-            "fn": "MU2021",
-            "td": "2h5m",
-            "dd": "2026-06-26 15:25",
-            "tmins": 125,
+            "fn": "CZ6606",
+            "td": "2h",
+            "dd": "2026-06-26 07:30",
+            "tmins": 120,
             "nos": 0,
-            "price": 650,
-            "discountDesc": "2.9折经济舱"
+            "price": 550,
+            "discountDesc": "2折经济舱"
           },
           "highMinTicketPrice": {
             "oIdx": 33,
@@ -1124,16 +1131,16 @@
             "discountDesc": "折扣公务舱"
           },
           "minTicketPrice": {
-            "oIdx": 33,
+            "oIdx": 0,
             "dac": "PKX",
             "aac": "WUH",
-            "fn": "MU2021",
-            "td": "2h5m",
-            "dd": "2026-06-26 15:25",
-            "tmins": 125,
+            "fn": "CZ6606",
+            "td": "2h",
+            "dd": "2026-06-26 07:30",
+            "tmins": 120,
             "nos": 0,
-            "price": 650,
-            "discountDesc": "2.9折经济舱"
+            "price": 550,
+            "discountDesc": "2折经济舱"
           }
         },
         "lowestPriceFlights": [],
@@ -1232,13 +1239,19 @@
                 "lpt": 11,
                 "ccid": 1,
                 "dct": 1,
-                "atp": 750,
+                "atp": 550,
                 "app": 0,
                 "not": "A",
                 "pts": [
                   {
                     "tt": 2,
-                    "td": "2.8折经济舱"
+                    "td": "2折经济舱"
+                  }
+                ],
+                "rts": [
+                  {
+                    "tt": 4,
+                    "td": "低价推荐"
                   }
                 ],
                 "fs": [
@@ -1270,7 +1283,7 @@
                     "td": "到达准点率100%"
                   }
                 ],
-                "sp": 750,
+                "sp": 550,
                 "pa": 0,
                 "ms": [
                   {
@@ -1284,20 +1297,20 @@
                 "$pts1": [
                   {
                     "tt": 2,
-                    "td": "2.8折经济舱"
+                    "td": "2折经济舱"
                   }
                 ],
                 "$pts1f": [
                   {
                     "tt": 2,
-                    "td": "2.8折经济舱"
+                    "td": "2折经济舱"
                   }
                 ],
                 "$pts2": [],
                 "$pts2f": [],
                 "$pts4": [],
                 "mts": [],
-                "$rtsN7N25Str": ""
+                "$rtsN7N25Str": "低价推荐"
               },
               {
                 "lpt": 2,
@@ -1368,7 +1381,7 @@
             "ms": [
               {
                 "mc": "pinsort",
-                "mv": "TH_LS_QJ_XC_GD"
+                "mv": "TH_LS_XC_GD"
               },
               {
                 "mc": "buddhapinsort",
@@ -1413,13 +1426,19 @@
               "lpt": 11,
               "ccid": 1,
               "dct": 1,
-              "atp": 750,
+              "atp": 550,
               "app": 0,
               "not": "A",
               "pts": [
                 {
                   "tt": 2,
-                  "td": "2.8折经济舱"
+                  "td": "2折经济舱"
+                }
+              ],
+              "rts": [
+                {
+                  "tt": 4,
+                  "td": "低价推荐"
                 }
               ],
               "fs": [
@@ -1451,7 +1470,7 @@
                   "td": "到达准点率100%"
                 }
               ],
-              "sp": 750,
+              "sp": 550,
               "pa": 0,
               "ms": [
                 {
@@ -1465,22 +1484,23 @@
               "$pts1": [
                 {
                   "tt": 2,
-                  "td": "2.8折经济舱"
+                  "td": "2折经济舱"
                 }
               ],
               "$pts1f": [
                 {
                   "tt": 2,
-                  "td": "2.8折经济舱"
+                  "td": "2折经济舱"
                 }
               ],
               "$pts2": [],
               "$pts2f": [],
               "$pts4": [],
               "mts": [],
-              "$rtsN7N25Str": ""
+              "$rtsN7N25Str": "低价推荐"
             },
-            "atp": 750
+            "atp": 550,
+            "isLowestPrice": true
           },
           {
             "dac": "PKX",
@@ -1733,7 +1753,7 @@
             "cfcps": [
               {
                 "ccid": 1,
-                "atp": 750
+                "atp": 550
               },
               {
                 "ccid": 2,
@@ -4251,6 +4271,350 @@
           {
             "dac": "PKX",
             "aac": "WUH",
+            "fn": "CZ8831",
+            "dat": "",
+            "aat": "T3",
+            "dt": "2026-06-26 09:45",
+            "at": "2026-06-26 11:50",
+            "dst": "09:45",
+            "ast": "11:50",
+            "td": "2h5m",
+            "dasn": "北京大兴",
+            "aasn": "天河",
+            "ac": "CZ",
+            "asn": "南航",
+            "amn": "空客320",
+            "amt": "中",
+            "icsf": false,
+            "sts": [
+              {
+                "tt": 1,
+                "td": "到达准点率97%"
+              },
+              {
+                "tt": 2,
+                "td": "机龄11.8年"
+              },
+              {
+                "tt": 4,
+                "td": "点心"
+              },
+              {
+                "tt": 6,
+                "td": "航班廊桥率37%"
+              },
+              {
+                "tt": 7,
+                "td": "平均延误10分钟"
+              },
+              {
+                "tt": 9,
+                "td": "航班取消率27%"
+              }
+            ],
+            "fs": [
+              {
+                "ft": 1,
+                "fcs": [
+                  "2"
+                ]
+              },
+              {
+                "ft": 11,
+                "fcs": [
+                  "4"
+                ]
+              },
+              {
+                "ft": 2,
+                "fcs": [
+                  "CZ"
+                ]
+              },
+              {
+                "ft": 3,
+                "fcs": [
+                  "1",
+                  "2"
+                ]
+              },
+              {
+                "ft": 4,
+                "fcs": [
+                  "PKX"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "WUH"
+                ]
+              },
+              {
+                "ft": 8,
+                "fcs": [
+                  "3"
+                ]
+              }
+            ],
+            "lps": [
+              {
+                "lpt": 11,
+                "ccid": 1,
+                "dct": 1,
+                "atp": 750,
+                "app": 0,
+                "not": "A",
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "2.8折经济舱"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "pin": [
+                  "2"
+                ],
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  }
+                ],
+                "clct": [
+                  {
+                    "tt": 2,
+                    "td": "到达准点率97%"
+                  }
+                ],
+                "sp": 750,
+                "pa": 0,
+                "ms": [
+                  {
+                    "mc": "ilpp",
+                    "mv": "1"
+                  }
+                ],
+                "$label": "值机需到实际承运航司柜台办理",
+                "$betterTag": {},
+                "$showSingle": false,
+                "$pts1": [
+                  {
+                    "tt": 2,
+                    "td": "2.8折经济舱"
+                  }
+                ],
+                "$pts1f": [
+                  {
+                    "tt": 2,
+                    "td": "2.8折经济舱"
+                  }
+                ],
+                "$pts2": [],
+                "$pts2f": [],
+                "$pts4": [],
+                "mts": [],
+                "$rtsN7N25Str": ""
+              },
+              {
+                "lpt": 2,
+                "ccid": 2,
+                "dct": 2,
+                "atp": 1600,
+                "app": 0,
+                "not": "2",
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "超值公务舱"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "pin": [
+                  "29"
+                ],
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  }
+                ],
+                "clct": [
+                  {
+                    "tt": 2,
+                    "td": "到达准点率97%"
+                  }
+                ],
+                "sp": 1600,
+                "pa": 0,
+                "$label": "值机需到实际承运航司柜台办理",
+                "$betterTag": {},
+                "$showSingle": false,
+                "$pts1": [
+                  {
+                    "tt": 2,
+                    "td": "超值公务舱"
+                  }
+                ],
+                "$pts1f": [
+                  {
+                    "tt": 2,
+                    "td": "超值公务舱"
+                  }
+                ],
+                "$pts2": [],
+                "$pts2f": [],
+                "$pts4": [],
+                "mts": [],
+                "$rtsN7N25Str": ""
+              }
+            ],
+            "ms": [
+              {
+                "mc": "pinsort",
+                "mv": "TH_LS_XC_GD"
+              },
+              {
+                "mc": "buddhapinsort",
+                "mv": "TH_LS_FX_GJ_GC_YJ_QJ_XZ_JX_XC_GD"
+              },
+              {
+                "mc": "dPStrategyInfo",
+                "mv": "8831cf3387b44433b820fab9f7f1362f|5"
+              },
+              {
+                "mc": "commissionAmount",
+                "mv": "0.00"
+              },
+              {
+                "mc": "commissionRecoveredAmount",
+                "mv": "0.00"
+              }
+            ],
+            "sfd": "flightId_CZ8831",
+            "ieso": false,
+            "mt": 2,
+            "$sls": true,
+            "oIdx": 9,
+            "depMinsInDay": 585,
+            "$flightType": "OW",
+            "$checkKey": "09:4511:50CZ8831",
+            "$isG5": false,
+            "$dasn": "北京大兴",
+            "$aasn": "天河",
+            "$rob": {},
+            "$crossDayText": "",
+            "$crossDateString": "",
+            "$crossDayWeek": "",
+            "$td": "2时5分",
+            "$g5MultiData": {
+              "td": "",
+              "type": "g5"
+            },
+            "$amn": "空客320(中)",
+            "$checkG5Class": false,
+            "newLps": {
+              "lpt": 11,
+              "ccid": 1,
+              "dct": 1,
+              "atp": 750,
+              "app": 0,
+              "not": "A",
+              "pts": [
+                {
+                  "tt": 2,
+                  "td": "2.8折经济舱"
+                }
+              ],
+              "fs": [
+                {
+                  "ft": 7,
+                  "fcs": [
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "11"
+                  ]
+                }
+              ],
+              "pin": [
+                "2"
+              ],
+              "brs": [
+                {
+                  "bpt": 0,
+                  "al": 20,
+                  "cn": -1
+                }
+              ],
+              "clct": [
+                {
+                  "tt": 2,
+                  "td": "到达准点率97%"
+                }
+              ],
+              "sp": 750,
+              "pa": 0,
+              "ms": [
+                {
+                  "mc": "ilpp",
+                  "mv": "1"
+                }
+              ],
+              "$label": "值机需到实际承运航司柜台办理",
+              "$betterTag": {},
+              "$showSingle": false,
+              "$pts1": [
+                {
+                  "tt": 2,
+                  "td": "2.8折经济舱"
+                }
+              ],
+              "$pts1f": [
+                {
+                  "tt": 2,
+                  "td": "2.8折经济舱"
+                }
+              ],
+              "$pts2": [],
+              "$pts2f": [],
+              "$pts4": [],
+              "mts": [],
+              "$rtsN7N25Str": ""
+            },
+            "atp": 750
+          },
+          {
+            "dac": "PKX",
+            "aac": "WUH",
             "fn": "3U2073",
             "dat": "",
             "aat": "T3",
@@ -4499,7 +4863,7 @@
             "cfcps": [
               {
                 "ccid": 1,
-                "atp": 1030
+                "atp": 750
               },
               {
                 "ccid": 2,
@@ -4509,7 +4873,7 @@
             "ieso": false,
             "mt": 1,
             "$sls": false,
-            "oIdx": 9,
+            "oIdx": 10,
             "depMinsInDay": 585,
             "$flightType": "OW",
             "$checkKey": "09:4511:503U2073",
@@ -4548,350 +4912,6 @@
                     "4",
                     "5",
                     "6",
-                    "11"
-                  ]
-                }
-              ],
-              "pin": [
-                "2"
-              ],
-              "brs": [
-                {
-                  "bpt": 0,
-                  "al": 20,
-                  "cn": -1
-                }
-              ],
-              "clct": [
-                {
-                  "tt": 2,
-                  "td": "到达准点率97%"
-                }
-              ],
-              "sp": 1030,
-              "pa": 0,
-              "ms": [
-                {
-                  "mc": "ilpp",
-                  "mv": "1"
-                }
-              ],
-              "$label": "值机需到实际承运航司柜台办理",
-              "$betterTag": {},
-              "$showSingle": false,
-              "$pts1": [
-                {
-                  "tt": 2,
-                  "td": "3.8折经济舱"
-                }
-              ],
-              "$pts1f": [
-                {
-                  "tt": 2,
-                  "td": "3.8折经济舱"
-                }
-              ],
-              "$pts2": [],
-              "$pts2f": [],
-              "$pts4": [],
-              "mts": [],
-              "$rtsN7N25Str": ""
-            },
-            "atp": 1030
-          },
-          {
-            "dac": "PKX",
-            "aac": "WUH",
-            "fn": "CZ8831",
-            "dat": "",
-            "aat": "T3",
-            "dt": "2026-06-26 09:45",
-            "at": "2026-06-26 11:50",
-            "dst": "09:45",
-            "ast": "11:50",
-            "td": "2h5m",
-            "dasn": "北京大兴",
-            "aasn": "天河",
-            "ac": "CZ",
-            "asn": "南航",
-            "amn": "空客320",
-            "amt": "中",
-            "icsf": false,
-            "sts": [
-              {
-                "tt": 1,
-                "td": "到达准点率97%"
-              },
-              {
-                "tt": 2,
-                "td": "机龄11.8年"
-              },
-              {
-                "tt": 4,
-                "td": "点心"
-              },
-              {
-                "tt": 6,
-                "td": "航班廊桥率37%"
-              },
-              {
-                "tt": 7,
-                "td": "平均延误10分钟"
-              },
-              {
-                "tt": 9,
-                "td": "航班取消率27%"
-              }
-            ],
-            "fs": [
-              {
-                "ft": 1,
-                "fcs": [
-                  "2"
-                ]
-              },
-              {
-                "ft": 11,
-                "fcs": [
-                  "4"
-                ]
-              },
-              {
-                "ft": 2,
-                "fcs": [
-                  "CZ"
-                ]
-              },
-              {
-                "ft": 3,
-                "fcs": [
-                  "1",
-                  "2"
-                ]
-              },
-              {
-                "ft": 4,
-                "fcs": [
-                  "PKX"
-                ]
-              },
-              {
-                "ft": 5,
-                "fcs": [
-                  "WUH"
-                ]
-              },
-              {
-                "ft": 8,
-                "fcs": [
-                  "3"
-                ]
-              }
-            ],
-            "lps": [
-              {
-                "lpt": 11,
-                "ccid": 1,
-                "dct": 1,
-                "atp": 1030,
-                "app": 0,
-                "not": "A",
-                "pts": [
-                  {
-                    "tt": 2,
-                    "td": "3.8折经济舱"
-                  }
-                ],
-                "fs": [
-                  {
-                    "ft": 7,
-                    "fcs": [
-                      "3",
-                      "4",
-                      "5",
-                      "6",
-                      "7",
-                      "11"
-                    ]
-                  }
-                ],
-                "pin": [
-                  "2"
-                ],
-                "brs": [
-                  {
-                    "bpt": 0,
-                    "al": 20,
-                    "cn": -1
-                  }
-                ],
-                "clct": [
-                  {
-                    "tt": 2,
-                    "td": "到达准点率97%"
-                  }
-                ],
-                "sp": 1030,
-                "pa": 0,
-                "ms": [
-                  {
-                    "mc": "ilpp",
-                    "mv": "1"
-                  }
-                ],
-                "$label": "值机需到实际承运航司柜台办理",
-                "$betterTag": {},
-                "$showSingle": false,
-                "$pts1": [
-                  {
-                    "tt": 2,
-                    "td": "3.8折经济舱"
-                  }
-                ],
-                "$pts1f": [
-                  {
-                    "tt": 2,
-                    "td": "3.8折经济舱"
-                  }
-                ],
-                "$pts2": [],
-                "$pts2f": [],
-                "$pts4": [],
-                "mts": [],
-                "$rtsN7N25Str": ""
-              },
-              {
-                "lpt": 2,
-                "ccid": 2,
-                "dct": 2,
-                "atp": 1600,
-                "app": 0,
-                "not": "2",
-                "pts": [
-                  {
-                    "tt": 2,
-                    "td": "超值公务舱"
-                  }
-                ],
-                "fs": [
-                  {
-                    "ft": 7,
-                    "fcs": [
-                      "3",
-                      "4",
-                      "5",
-                      "6",
-                      "7",
-                      "11"
-                    ]
-                  }
-                ],
-                "pin": [
-                  "29"
-                ],
-                "brs": [
-                  {
-                    "bpt": 0,
-                    "al": 30,
-                    "cn": -1
-                  }
-                ],
-                "clct": [
-                  {
-                    "tt": 2,
-                    "td": "到达准点率97%"
-                  }
-                ],
-                "sp": 1600,
-                "pa": 0,
-                "$label": "值机需到实际承运航司柜台办理",
-                "$betterTag": {},
-                "$showSingle": false,
-                "$pts1": [
-                  {
-                    "tt": 2,
-                    "td": "超值公务舱"
-                  }
-                ],
-                "$pts1f": [
-                  {
-                    "tt": 2,
-                    "td": "超值公务舱"
-                  }
-                ],
-                "$pts2": [],
-                "$pts2f": [],
-                "$pts4": [],
-                "mts": [],
-                "$rtsN7N25Str": ""
-              }
-            ],
-            "ms": [
-              {
-                "mc": "pinsort",
-                "mv": "TH_LS_QJ_XC_GD"
-              },
-              {
-                "mc": "buddhapinsort",
-                "mv": "TH_LS_FX_GJ_GC_YJ_QJ_XZ_JX_XC_GD"
-              },
-              {
-                "mc": "dPStrategyInfo",
-                "mv": "8831cf3387b44433b820fab9f7f1362f|5"
-              },
-              {
-                "mc": "commissionAmount",
-                "mv": "0.00"
-              },
-              {
-                "mc": "commissionRecoveredAmount",
-                "mv": "0.00"
-              }
-            ],
-            "sfd": "flightId_CZ8831",
-            "ieso": false,
-            "mt": 2,
-            "$sls": true,
-            "oIdx": 10,
-            "depMinsInDay": 585,
-            "$flightType": "OW",
-            "$checkKey": "09:4511:50CZ8831",
-            "$isG5": false,
-            "$dasn": "北京大兴",
-            "$aasn": "天河",
-            "$rob": {},
-            "$crossDayText": "",
-            "$crossDateString": "",
-            "$crossDayWeek": "",
-            "$td": "2时5分",
-            "$g5MultiData": {
-              "td": "",
-              "type": "g5"
-            },
-            "$amn": "空客320(中)",
-            "$checkG5Class": false,
-            "newLps": {
-              "lpt": 11,
-              "ccid": 1,
-              "dct": 1,
-              "atp": 1030,
-              "app": 0,
-              "not": "A",
-              "pts": [
-                {
-                  "tt": 2,
-                  "td": "3.8折经济舱"
-                }
-              ],
-              "fs": [
-                {
-                  "ft": 7,
-                  "fcs": [
-                    "3",
-                    "4",
-                    "5",
-                    "6",
-                    "7",
                     "11"
                   ]
                 }
@@ -5194,7 +5214,7 @@
             "cfcps": [
               {
                 "ccid": 1,
-                "atp": 1030
+                "atp": 750
               },
               {
                 "ccid": 2,
@@ -5545,7 +5565,7 @@
             "cfcps": [
               {
                 "ccid": 1,
-                "atp": 1030
+                "atp": 750
               },
               {
                 "ccid": 2,
@@ -7092,6 +7112,350 @@
           {
             "dac": "PKX",
             "aac": "WUH",
+            "fn": "CZ3118",
+            "dat": "",
+            "aat": "T3",
+            "dt": "2026-06-26 11:10",
+            "at": "2026-06-26 13:25",
+            "dst": "11:10",
+            "ast": "13:25",
+            "td": "2h15m",
+            "dasn": "北京大兴",
+            "aasn": "天河",
+            "ac": "CZ",
+            "asn": "南航",
+            "amn": "波音737",
+            "amt": "中",
+            "icsf": false,
+            "sts": [
+              {
+                "tt": 1,
+                "td": "到达准点率100%"
+              },
+              {
+                "tt": 2,
+                "td": "机龄13.9年"
+              },
+              {
+                "tt": 4,
+                "td": "有正餐"
+              },
+              {
+                "tt": 6,
+                "td": "航班廊桥率100%"
+              },
+              {
+                "tt": 7,
+                "td": "平均延误10分钟"
+              },
+              {
+                "tt": 9,
+                "td": "航班取消率0%"
+              }
+            ],
+            "fs": [
+              {
+                "ft": 1,
+                "fcs": [
+                  "2"
+                ]
+              },
+              {
+                "ft": 11,
+                "fcs": [
+                  "4"
+                ]
+              },
+              {
+                "ft": 2,
+                "fcs": [
+                  "CZ"
+                ]
+              },
+              {
+                "ft": 3,
+                "fcs": [
+                  "1",
+                  "2"
+                ]
+              },
+              {
+                "ft": 4,
+                "fcs": [
+                  "PKX"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "WUH"
+                ]
+              },
+              {
+                "ft": 8,
+                "fcs": [
+                  "3"
+                ]
+              }
+            ],
+            "lps": [
+              {
+                "lpt": 11,
+                "ccid": 1,
+                "dct": 1,
+                "atp": 750,
+                "app": 0,
+                "not": "A",
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "2.8折经济舱"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "pin": [
+                  "2"
+                ],
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  }
+                ],
+                "clct": [
+                  {
+                    "tt": 2,
+                    "td": "到达准点率100%"
+                  }
+                ],
+                "sp": 750,
+                "pa": 0,
+                "ms": [
+                  {
+                    "mc": "ilpp",
+                    "mv": "1"
+                  }
+                ],
+                "$label": "值机需到实际承运航司柜台办理",
+                "$betterTag": {},
+                "$showSingle": false,
+                "$pts1": [
+                  {
+                    "tt": 2,
+                    "td": "2.8折经济舱"
+                  }
+                ],
+                "$pts1f": [
+                  {
+                    "tt": 2,
+                    "td": "2.8折经济舱"
+                  }
+                ],
+                "$pts2": [],
+                "$pts2f": [],
+                "$pts4": [],
+                "mts": [],
+                "$rtsN7N25Str": ""
+              },
+              {
+                "lpt": 2,
+                "ccid": 2,
+                "dct": 2,
+                "atp": 1650,
+                "app": 0,
+                "not": "2",
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "超值公务舱"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "pin": [
+                  "29"
+                ],
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  }
+                ],
+                "clct": [
+                  {
+                    "tt": 2,
+                    "td": "到达准点率100%"
+                  }
+                ],
+                "sp": 1650,
+                "pa": 0,
+                "$label": "值机需到实际承运航司柜台办理",
+                "$betterTag": {},
+                "$showSingle": false,
+                "$pts1": [
+                  {
+                    "tt": 2,
+                    "td": "超值公务舱"
+                  }
+                ],
+                "$pts1f": [
+                  {
+                    "tt": 2,
+                    "td": "超值公务舱"
+                  }
+                ],
+                "$pts2": [],
+                "$pts2f": [],
+                "$pts4": [],
+                "mts": [],
+                "$rtsN7N25Str": ""
+              }
+            ],
+            "ms": [
+              {
+                "mc": "pinsort",
+                "mv": "TH_LS_XC_GD"
+              },
+              {
+                "mc": "buddhapinsort",
+                "mv": "TH_LS_FX_GJ_GC_YJ_QJ_XZ_JX_XC_GD"
+              },
+              {
+                "mc": "dPStrategyInfo",
+                "mv": "8831cf3387b44433b820fab9f7f1362f|5"
+              },
+              {
+                "mc": "commissionAmount",
+                "mv": "0.00"
+              },
+              {
+                "mc": "commissionRecoveredAmount",
+                "mv": "0.00"
+              }
+            ],
+            "sfd": "flightId_CZ3118",
+            "ieso": false,
+            "mt": 2,
+            "$sls": true,
+            "oIdx": 17,
+            "depMinsInDay": 670,
+            "$flightType": "OW",
+            "$checkKey": "11:1013:25CZ3118",
+            "$isG5": false,
+            "$dasn": "北京大兴",
+            "$aasn": "天河",
+            "$rob": {},
+            "$crossDayText": "",
+            "$crossDateString": "",
+            "$crossDayWeek": "",
+            "$td": "2时15分",
+            "$g5MultiData": {
+              "td": "",
+              "type": "g5"
+            },
+            "$amn": "波音737(中)",
+            "$checkG5Class": false,
+            "newLps": {
+              "lpt": 11,
+              "ccid": 1,
+              "dct": 1,
+              "atp": 750,
+              "app": 0,
+              "not": "A",
+              "pts": [
+                {
+                  "tt": 2,
+                  "td": "2.8折经济舱"
+                }
+              ],
+              "fs": [
+                {
+                  "ft": 7,
+                  "fcs": [
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "11"
+                  ]
+                }
+              ],
+              "pin": [
+                "2"
+              ],
+              "brs": [
+                {
+                  "bpt": 0,
+                  "al": 20,
+                  "cn": -1
+                }
+              ],
+              "clct": [
+                {
+                  "tt": 2,
+                  "td": "到达准点率100%"
+                }
+              ],
+              "sp": 750,
+              "pa": 0,
+              "ms": [
+                {
+                  "mc": "ilpp",
+                  "mv": "1"
+                }
+              ],
+              "$label": "值机需到实际承运航司柜台办理",
+              "$betterTag": {},
+              "$showSingle": false,
+              "$pts1": [
+                {
+                  "tt": 2,
+                  "td": "2.8折经济舱"
+                }
+              ],
+              "$pts1f": [
+                {
+                  "tt": 2,
+                  "td": "2.8折经济舱"
+                }
+              ],
+              "$pts2": [],
+              "$pts2f": [],
+              "$pts4": [],
+              "mts": [],
+              "$rtsN7N25Str": ""
+            },
+            "atp": 750
+          },
+          {
+            "dac": "PKX",
+            "aac": "WUH",
             "fn": "3U1028",
             "dat": "",
             "aat": "T3",
@@ -7340,7 +7704,7 @@
             "cfcps": [
               {
                 "ccid": 1,
-                "atp": 1030
+                "atp": 750
               },
               {
                 "ccid": 2,
@@ -7350,7 +7714,7 @@
             "ieso": false,
             "mt": 2,
             "$sls": false,
-            "oIdx": 17,
+            "oIdx": 18,
             "depMinsInDay": 670,
             "$flightType": "OW",
             "$checkKey": "11:1013:253U1028",
@@ -7389,350 +7753,6 @@
                     "4",
                     "5",
                     "6",
-                    "11"
-                  ]
-                }
-              ],
-              "pin": [
-                "2"
-              ],
-              "brs": [
-                {
-                  "bpt": 0,
-                  "al": 20,
-                  "cn": -1
-                }
-              ],
-              "clct": [
-                {
-                  "tt": 2,
-                  "td": "到达准点率100%"
-                }
-              ],
-              "sp": 1030,
-              "pa": 0,
-              "ms": [
-                {
-                  "mc": "ilpp",
-                  "mv": "1"
-                }
-              ],
-              "$label": "值机需到实际承运航司柜台办理",
-              "$betterTag": {},
-              "$showSingle": false,
-              "$pts1": [
-                {
-                  "tt": 2,
-                  "td": "3.8折经济舱"
-                }
-              ],
-              "$pts1f": [
-                {
-                  "tt": 2,
-                  "td": "3.8折经济舱"
-                }
-              ],
-              "$pts2": [],
-              "$pts2f": [],
-              "$pts4": [],
-              "mts": [],
-              "$rtsN7N25Str": ""
-            },
-            "atp": 1030
-          },
-          {
-            "dac": "PKX",
-            "aac": "WUH",
-            "fn": "CZ3118",
-            "dat": "",
-            "aat": "T3",
-            "dt": "2026-06-26 11:10",
-            "at": "2026-06-26 13:25",
-            "dst": "11:10",
-            "ast": "13:25",
-            "td": "2h15m",
-            "dasn": "北京大兴",
-            "aasn": "天河",
-            "ac": "CZ",
-            "asn": "南航",
-            "amn": "波音737",
-            "amt": "中",
-            "icsf": false,
-            "sts": [
-              {
-                "tt": 1,
-                "td": "到达准点率100%"
-              },
-              {
-                "tt": 2,
-                "td": "机龄13.9年"
-              },
-              {
-                "tt": 4,
-                "td": "有正餐"
-              },
-              {
-                "tt": 6,
-                "td": "航班廊桥率100%"
-              },
-              {
-                "tt": 7,
-                "td": "平均延误10分钟"
-              },
-              {
-                "tt": 9,
-                "td": "航班取消率0%"
-              }
-            ],
-            "fs": [
-              {
-                "ft": 1,
-                "fcs": [
-                  "2"
-                ]
-              },
-              {
-                "ft": 11,
-                "fcs": [
-                  "4"
-                ]
-              },
-              {
-                "ft": 2,
-                "fcs": [
-                  "CZ"
-                ]
-              },
-              {
-                "ft": 3,
-                "fcs": [
-                  "1",
-                  "2"
-                ]
-              },
-              {
-                "ft": 4,
-                "fcs": [
-                  "PKX"
-                ]
-              },
-              {
-                "ft": 5,
-                "fcs": [
-                  "WUH"
-                ]
-              },
-              {
-                "ft": 8,
-                "fcs": [
-                  "3"
-                ]
-              }
-            ],
-            "lps": [
-              {
-                "lpt": 11,
-                "ccid": 1,
-                "dct": 1,
-                "atp": 1030,
-                "app": 0,
-                "not": "A",
-                "pts": [
-                  {
-                    "tt": 2,
-                    "td": "3.8折经济舱"
-                  }
-                ],
-                "fs": [
-                  {
-                    "ft": 7,
-                    "fcs": [
-                      "3",
-                      "4",
-                      "5",
-                      "6",
-                      "7",
-                      "11"
-                    ]
-                  }
-                ],
-                "pin": [
-                  "2"
-                ],
-                "brs": [
-                  {
-                    "bpt": 0,
-                    "al": 20,
-                    "cn": -1
-                  }
-                ],
-                "clct": [
-                  {
-                    "tt": 2,
-                    "td": "到达准点率100%"
-                  }
-                ],
-                "sp": 1030,
-                "pa": 0,
-                "ms": [
-                  {
-                    "mc": "ilpp",
-                    "mv": "1"
-                  }
-                ],
-                "$label": "值机需到实际承运航司柜台办理",
-                "$betterTag": {},
-                "$showSingle": false,
-                "$pts1": [
-                  {
-                    "tt": 2,
-                    "td": "3.8折经济舱"
-                  }
-                ],
-                "$pts1f": [
-                  {
-                    "tt": 2,
-                    "td": "3.8折经济舱"
-                  }
-                ],
-                "$pts2": [],
-                "$pts2f": [],
-                "$pts4": [],
-                "mts": [],
-                "$rtsN7N25Str": ""
-              },
-              {
-                "lpt": 2,
-                "ccid": 2,
-                "dct": 2,
-                "atp": 1650,
-                "app": 0,
-                "not": "2",
-                "pts": [
-                  {
-                    "tt": 2,
-                    "td": "超值公务舱"
-                  }
-                ],
-                "fs": [
-                  {
-                    "ft": 7,
-                    "fcs": [
-                      "3",
-                      "4",
-                      "5",
-                      "6",
-                      "7",
-                      "11"
-                    ]
-                  }
-                ],
-                "pin": [
-                  "29"
-                ],
-                "brs": [
-                  {
-                    "bpt": 0,
-                    "al": 30,
-                    "cn": -1
-                  }
-                ],
-                "clct": [
-                  {
-                    "tt": 2,
-                    "td": "到达准点率100%"
-                  }
-                ],
-                "sp": 1650,
-                "pa": 0,
-                "$label": "值机需到实际承运航司柜台办理",
-                "$betterTag": {},
-                "$showSingle": false,
-                "$pts1": [
-                  {
-                    "tt": 2,
-                    "td": "超值公务舱"
-                  }
-                ],
-                "$pts1f": [
-                  {
-                    "tt": 2,
-                    "td": "超值公务舱"
-                  }
-                ],
-                "$pts2": [],
-                "$pts2f": [],
-                "$pts4": [],
-                "mts": [],
-                "$rtsN7N25Str": ""
-              }
-            ],
-            "ms": [
-              {
-                "mc": "pinsort",
-                "mv": "TH_LS_QJ_XC_GD"
-              },
-              {
-                "mc": "buddhapinsort",
-                "mv": "TH_LS_FX_GJ_GC_YJ_QJ_XZ_JX_XC_GD"
-              },
-              {
-                "mc": "dPStrategyInfo",
-                "mv": "8831cf3387b44433b820fab9f7f1362f|5"
-              },
-              {
-                "mc": "commissionAmount",
-                "mv": "0.00"
-              },
-              {
-                "mc": "commissionRecoveredAmount",
-                "mv": "0.00"
-              }
-            ],
-            "sfd": "flightId_CZ3118",
-            "ieso": false,
-            "mt": 2,
-            "$sls": true,
-            "oIdx": 18,
-            "depMinsInDay": 670,
-            "$flightType": "OW",
-            "$checkKey": "11:1013:25CZ3118",
-            "$isG5": false,
-            "$dasn": "北京大兴",
-            "$aasn": "天河",
-            "$rob": {},
-            "$crossDayText": "",
-            "$crossDateString": "",
-            "$crossDayWeek": "",
-            "$td": "2时15分",
-            "$g5MultiData": {
-              "td": "",
-              "type": "g5"
-            },
-            "$amn": "波音737(中)",
-            "$checkG5Class": false,
-            "newLps": {
-              "lpt": 11,
-              "ccid": 1,
-              "dct": 1,
-              "atp": 1030,
-              "app": 0,
-              "not": "A",
-              "pts": [
-                {
-                  "tt": 2,
-                  "td": "3.8折经济舱"
-                }
-              ],
-              "fs": [
-                {
-                  "ft": 7,
-                  "fcs": [
-                    "3",
-                    "4",
-                    "5",
-                    "6",
-                    "7",
                     "11"
                   ]
                 }
@@ -8035,7 +8055,7 @@
             "cfcps": [
               {
                 "ccid": 1,
-                "atp": 1030
+                "atp": 750
               },
               {
                 "ccid": 2,
@@ -11546,6 +11566,350 @@
           {
             "dac": "PKX",
             "aac": "WUH",
+            "fn": "CZ3138",
+            "dat": "",
+            "aat": "T3",
+            "dt": "2026-06-26 15:20",
+            "at": "2026-06-26 17:25",
+            "dst": "15:20",
+            "ast": "17:25",
+            "td": "2h5m",
+            "dasn": "北京大兴",
+            "aasn": "天河",
+            "ac": "CZ",
+            "asn": "南航",
+            "amn": "波音737",
+            "amt": "中",
+            "icsf": false,
+            "sts": [
+              {
+                "tt": 1,
+                "td": "到达准点率100%"
+              },
+              {
+                "tt": 2,
+                "td": "机龄14.8年"
+              },
+              {
+                "tt": 4,
+                "td": "点心"
+              },
+              {
+                "tt": 6,
+                "td": "航班廊桥率100%"
+              },
+              {
+                "tt": 7,
+                "td": "平均延误9分钟"
+              },
+              {
+                "tt": 9,
+                "td": "航班取消率0%"
+              }
+            ],
+            "fs": [
+              {
+                "ft": 1,
+                "fcs": [
+                  "3"
+                ]
+              },
+              {
+                "ft": 11,
+                "fcs": [
+                  "6"
+                ]
+              },
+              {
+                "ft": 2,
+                "fcs": [
+                  "CZ"
+                ]
+              },
+              {
+                "ft": 3,
+                "fcs": [
+                  "1",
+                  "2"
+                ]
+              },
+              {
+                "ft": 4,
+                "fcs": [
+                  "PKX"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "WUH"
+                ]
+              },
+              {
+                "ft": 8,
+                "fcs": [
+                  "2"
+                ]
+              }
+            ],
+            "lps": [
+              {
+                "lpt": 11,
+                "ccid": 1,
+                "dct": 1,
+                "atp": 1050,
+                "app": 0,
+                "not": "A",
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "3.9折经济舱"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "pin": [
+                  "2"
+                ],
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  }
+                ],
+                "clct": [
+                  {
+                    "tt": 2,
+                    "td": "到达准点率100%"
+                  }
+                ],
+                "sp": 1050,
+                "pa": 0,
+                "ms": [
+                  {
+                    "mc": "ilpp",
+                    "mv": "1"
+                  }
+                ],
+                "$label": "值机需到实际承运航司柜台办理",
+                "$betterTag": {},
+                "$showSingle": false,
+                "$pts1": [
+                  {
+                    "tt": 2,
+                    "td": "3.9折经济舱"
+                  }
+                ],
+                "$pts1f": [
+                  {
+                    "tt": 2,
+                    "td": "3.9折经济舱"
+                  }
+                ],
+                "$pts2": [],
+                "$pts2f": [],
+                "$pts4": [],
+                "mts": [],
+                "$rtsN7N25Str": ""
+              },
+              {
+                "lpt": 2,
+                "ccid": 2,
+                "dct": 2,
+                "atp": 1650,
+                "app": 0,
+                "not": "2",
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "超值公务舱"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "pin": [
+                  "29"
+                ],
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  }
+                ],
+                "clct": [
+                  {
+                    "tt": 2,
+                    "td": "到达准点率100%"
+                  }
+                ],
+                "sp": 1650,
+                "pa": 0,
+                "$label": "值机需到实际承运航司柜台办理",
+                "$betterTag": {},
+                "$showSingle": false,
+                "$pts1": [
+                  {
+                    "tt": 2,
+                    "td": "超值公务舱"
+                  }
+                ],
+                "$pts1f": [
+                  {
+                    "tt": 2,
+                    "td": "超值公务舱"
+                  }
+                ],
+                "$pts2": [],
+                "$pts2f": [],
+                "$pts4": [],
+                "mts": [],
+                "$rtsN7N25Str": ""
+              }
+            ],
+            "ms": [
+              {
+                "mc": "pinsort",
+                "mv": "TH_LS_XC_GD"
+              },
+              {
+                "mc": "buddhapinsort",
+                "mv": "TH_LS_FX_GJ_GC_YJ_QJ_XZ_JX_XC_GD"
+              },
+              {
+                "mc": "dPStrategyInfo",
+                "mv": "8831cf3387b44433b820fab9f7f1362f|5"
+              },
+              {
+                "mc": "commissionAmount",
+                "mv": "0.00"
+              },
+              {
+                "mc": "commissionRecoveredAmount",
+                "mv": "0.00"
+              }
+            ],
+            "sfd": "flightId_CZ3138",
+            "ieso": false,
+            "mt": 2,
+            "$sls": true,
+            "oIdx": 30,
+            "depMinsInDay": 920,
+            "$flightType": "OW",
+            "$checkKey": "15:2017:25CZ3138",
+            "$isG5": false,
+            "$dasn": "北京大兴",
+            "$aasn": "天河",
+            "$rob": {},
+            "$crossDayText": "",
+            "$crossDateString": "",
+            "$crossDayWeek": "",
+            "$td": "2时5分",
+            "$g5MultiData": {
+              "td": "",
+              "type": "g5"
+            },
+            "$amn": "波音737(中)",
+            "$checkG5Class": false,
+            "newLps": {
+              "lpt": 11,
+              "ccid": 1,
+              "dct": 1,
+              "atp": 1050,
+              "app": 0,
+              "not": "A",
+              "pts": [
+                {
+                  "tt": 2,
+                  "td": "3.9折经济舱"
+                }
+              ],
+              "fs": [
+                {
+                  "ft": 7,
+                  "fcs": [
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "11"
+                  ]
+                }
+              ],
+              "pin": [
+                "2"
+              ],
+              "brs": [
+                {
+                  "bpt": 0,
+                  "al": 20,
+                  "cn": -1
+                }
+              ],
+              "clct": [
+                {
+                  "tt": 2,
+                  "td": "到达准点率100%"
+                }
+              ],
+              "sp": 1050,
+              "pa": 0,
+              "ms": [
+                {
+                  "mc": "ilpp",
+                  "mv": "1"
+                }
+              ],
+              "$label": "值机需到实际承运航司柜台办理",
+              "$betterTag": {},
+              "$showSingle": false,
+              "$pts1": [
+                {
+                  "tt": 2,
+                  "td": "3.9折经济舱"
+                }
+              ],
+              "$pts1f": [
+                {
+                  "tt": 2,
+                  "td": "3.9折经济舱"
+                }
+              ],
+              "$pts2": [],
+              "$pts2f": [],
+              "$pts4": [],
+              "mts": [],
+              "$rtsN7N25Str": ""
+            },
+            "atp": 1050
+          },
+          {
+            "dac": "PKX",
+            "aac": "WUH",
             "fn": "3U1042",
             "dat": "",
             "aat": "T3",
@@ -11794,7 +12158,7 @@
             "cfcps": [
               {
                 "ccid": 1,
-                "atp": 1160
+                "atp": 1050
               },
               {
                 "ccid": 2,
@@ -11804,7 +12168,7 @@
             "ieso": false,
             "mt": 1,
             "$sls": false,
-            "oIdx": 30,
+            "oIdx": 31,
             "depMinsInDay": 920,
             "$flightType": "OW",
             "$checkKey": "15:2017:253U1042",
@@ -11843,350 +12207,6 @@
                     "4",
                     "5",
                     "6",
-                    "11"
-                  ]
-                }
-              ],
-              "pin": [
-                "2"
-              ],
-              "brs": [
-                {
-                  "bpt": 0,
-                  "al": 20,
-                  "cn": -1
-                }
-              ],
-              "clct": [
-                {
-                  "tt": 2,
-                  "td": "到达准点率100%"
-                }
-              ],
-              "sp": 1160,
-              "pa": 0,
-              "ms": [
-                {
-                  "mc": "ilpp",
-                  "mv": "1"
-                }
-              ],
-              "$label": "值机需到实际承运航司柜台办理",
-              "$betterTag": {},
-              "$showSingle": false,
-              "$pts1": [
-                {
-                  "tt": 2,
-                  "td": "4.3折经济舱"
-                }
-              ],
-              "$pts1f": [
-                {
-                  "tt": 2,
-                  "td": "4.3折经济舱"
-                }
-              ],
-              "$pts2": [],
-              "$pts2f": [],
-              "$pts4": [],
-              "mts": [],
-              "$rtsN7N25Str": ""
-            },
-            "atp": 1160
-          },
-          {
-            "dac": "PKX",
-            "aac": "WUH",
-            "fn": "CZ3138",
-            "dat": "",
-            "aat": "T3",
-            "dt": "2026-06-26 15:20",
-            "at": "2026-06-26 17:25",
-            "dst": "15:20",
-            "ast": "17:25",
-            "td": "2h5m",
-            "dasn": "北京大兴",
-            "aasn": "天河",
-            "ac": "CZ",
-            "asn": "南航",
-            "amn": "波音737",
-            "amt": "中",
-            "icsf": false,
-            "sts": [
-              {
-                "tt": 1,
-                "td": "到达准点率100%"
-              },
-              {
-                "tt": 2,
-                "td": "机龄14.8年"
-              },
-              {
-                "tt": 4,
-                "td": "点心"
-              },
-              {
-                "tt": 6,
-                "td": "航班廊桥率100%"
-              },
-              {
-                "tt": 7,
-                "td": "平均延误9分钟"
-              },
-              {
-                "tt": 9,
-                "td": "航班取消率0%"
-              }
-            ],
-            "fs": [
-              {
-                "ft": 1,
-                "fcs": [
-                  "3"
-                ]
-              },
-              {
-                "ft": 11,
-                "fcs": [
-                  "6"
-                ]
-              },
-              {
-                "ft": 2,
-                "fcs": [
-                  "CZ"
-                ]
-              },
-              {
-                "ft": 3,
-                "fcs": [
-                  "1",
-                  "2"
-                ]
-              },
-              {
-                "ft": 4,
-                "fcs": [
-                  "PKX"
-                ]
-              },
-              {
-                "ft": 5,
-                "fcs": [
-                  "WUH"
-                ]
-              },
-              {
-                "ft": 8,
-                "fcs": [
-                  "2"
-                ]
-              }
-            ],
-            "lps": [
-              {
-                "lpt": 11,
-                "ccid": 1,
-                "dct": 1,
-                "atp": 1160,
-                "app": 0,
-                "not": "A",
-                "pts": [
-                  {
-                    "tt": 2,
-                    "td": "4.3折经济舱"
-                  }
-                ],
-                "fs": [
-                  {
-                    "ft": 7,
-                    "fcs": [
-                      "3",
-                      "4",
-                      "5",
-                      "6",
-                      "7",
-                      "11"
-                    ]
-                  }
-                ],
-                "pin": [
-                  "2"
-                ],
-                "brs": [
-                  {
-                    "bpt": 0,
-                    "al": 20,
-                    "cn": -1
-                  }
-                ],
-                "clct": [
-                  {
-                    "tt": 2,
-                    "td": "到达准点率100%"
-                  }
-                ],
-                "sp": 1160,
-                "pa": 0,
-                "ms": [
-                  {
-                    "mc": "ilpp",
-                    "mv": "1"
-                  }
-                ],
-                "$label": "值机需到实际承运航司柜台办理",
-                "$betterTag": {},
-                "$showSingle": false,
-                "$pts1": [
-                  {
-                    "tt": 2,
-                    "td": "4.3折经济舱"
-                  }
-                ],
-                "$pts1f": [
-                  {
-                    "tt": 2,
-                    "td": "4.3折经济舱"
-                  }
-                ],
-                "$pts2": [],
-                "$pts2f": [],
-                "$pts4": [],
-                "mts": [],
-                "$rtsN7N25Str": ""
-              },
-              {
-                "lpt": 2,
-                "ccid": 2,
-                "dct": 2,
-                "atp": 1650,
-                "app": 0,
-                "not": "2",
-                "pts": [
-                  {
-                    "tt": 2,
-                    "td": "超值公务舱"
-                  }
-                ],
-                "fs": [
-                  {
-                    "ft": 7,
-                    "fcs": [
-                      "3",
-                      "4",
-                      "5",
-                      "6",
-                      "7",
-                      "11"
-                    ]
-                  }
-                ],
-                "pin": [
-                  "29"
-                ],
-                "brs": [
-                  {
-                    "bpt": 0,
-                    "al": 30,
-                    "cn": -1
-                  }
-                ],
-                "clct": [
-                  {
-                    "tt": 2,
-                    "td": "到达准点率100%"
-                  }
-                ],
-                "sp": 1650,
-                "pa": 0,
-                "$label": "值机需到实际承运航司柜台办理",
-                "$betterTag": {},
-                "$showSingle": false,
-                "$pts1": [
-                  {
-                    "tt": 2,
-                    "td": "超值公务舱"
-                  }
-                ],
-                "$pts1f": [
-                  {
-                    "tt": 2,
-                    "td": "超值公务舱"
-                  }
-                ],
-                "$pts2": [],
-                "$pts2f": [],
-                "$pts4": [],
-                "mts": [],
-                "$rtsN7N25Str": ""
-              }
-            ],
-            "ms": [
-              {
-                "mc": "pinsort",
-                "mv": "TH_LS_QJ_XC_GD"
-              },
-              {
-                "mc": "buddhapinsort",
-                "mv": "TH_LS_FX_GJ_GC_YJ_QJ_XZ_JX_XC_GD"
-              },
-              {
-                "mc": "dPStrategyInfo",
-                "mv": "8831cf3387b44433b820fab9f7f1362f|5"
-              },
-              {
-                "mc": "commissionAmount",
-                "mv": "0.00"
-              },
-              {
-                "mc": "commissionRecoveredAmount",
-                "mv": "0.00"
-              }
-            ],
-            "sfd": "flightId_CZ3138",
-            "ieso": false,
-            "mt": 2,
-            "$sls": true,
-            "oIdx": 31,
-            "depMinsInDay": 920,
-            "$flightType": "OW",
-            "$checkKey": "15:2017:25CZ3138",
-            "$isG5": false,
-            "$dasn": "北京大兴",
-            "$aasn": "天河",
-            "$rob": {},
-            "$crossDayText": "",
-            "$crossDateString": "",
-            "$crossDayWeek": "",
-            "$td": "2时5分",
-            "$g5MultiData": {
-              "td": "",
-              "type": "g5"
-            },
-            "$amn": "波音737(中)",
-            "$checkG5Class": false,
-            "newLps": {
-              "lpt": 11,
-              "ccid": 1,
-              "dct": 1,
-              "atp": 1160,
-              "app": 0,
-              "not": "A",
-              "pts": [
-                {
-                  "tt": 2,
-                  "td": "4.3折经济舱"
-                }
-              ],
-              "fs": [
-                {
-                  "ft": 7,
-                  "fcs": [
-                    "3",
-                    "4",
-                    "5",
-                    "6",
-                    "7",
                     "11"
                   ]
                 }
@@ -12489,7 +12509,7 @@
             "cfcps": [
               {
                 "ccid": 1,
-                "atp": 1160
+                "atp": 1050
               },
               {
                 "ccid": 2,
@@ -12696,12 +12716,6 @@
                     "td": "2.9折经济舱"
                   }
                 ],
-                "rts": [
-                  {
-                    "tt": 4,
-                    "td": "低价推荐"
-                  }
-                ],
                 "fs": [
                   {
                     "ft": 7,
@@ -12760,7 +12774,7 @@
                 "$pts2f": [],
                 "$pts4": [],
                 "mts": [],
-                "$rtsN7N25Str": "低价推荐"
+                "$rtsN7N25Str": ""
               },
               {
                 "lpt": 2,
@@ -12886,12 +12900,6 @@
                   "td": "2.9折经济舱"
                 }
               ],
-              "rts": [
-                {
-                  "tt": 4,
-                  "td": "低价推荐"
-                }
-              ],
               "fs": [
                 {
                   "ft": 7,
@@ -12950,10 +12958,9 @@
               "$pts2f": [],
               "$pts4": [],
               "mts": [],
-              "$rtsN7N25Str": "低价推荐"
+              "$rtsN7N25Str": ""
             },
-            "atp": 650,
-            "isLowestPrice": true
+            "atp": 650
           },
           {
             "dac": "PKX",
@@ -14031,13 +14038,13 @@
                 "lpt": 11,
                 "ccid": 1,
                 "dct": 1,
-                "atp": 1160,
+                "atp": 1050,
                 "app": 0,
                 "not": "A",
                 "pts": [
                   {
                     "tt": 2,
-                    "td": "4.3折经济舱"
+                    "td": "3.9折经济舱"
                   }
                 ],
                 "fs": [
@@ -14069,7 +14076,7 @@
                     "td": "到达准点率100%"
                   }
                 ],
-                "sp": 1160,
+                "sp": 1050,
                 "pa": 0,
                 "ms": [
                   {
@@ -14083,13 +14090,13 @@
                 "$pts1": [
                   {
                     "tt": 2,
-                    "td": "4.3折经济舱"
+                    "td": "3.9折经济舱"
                   }
                 ],
                 "$pts1f": [
                   {
                     "tt": 2,
-                    "td": "4.3折经济舱"
+                    "td": "3.9折经济舱"
                   }
                 ],
                 "$pts2": [],
@@ -14167,7 +14174,7 @@
             "ms": [
               {
                 "mc": "pinsort",
-                "mv": "TH_LS_QJ_XC_GD"
+                "mv": "TH_LS_XC_GD"
               },
               {
                 "mc": "buddhapinsort",
@@ -14211,13 +14218,13 @@
               "lpt": 11,
               "ccid": 1,
               "dct": 1,
-              "atp": 1160,
+              "atp": 1050,
               "app": 0,
               "not": "A",
               "pts": [
                 {
                   "tt": 2,
-                  "td": "4.3折经济舱"
+                  "td": "3.9折经济舱"
                 }
               ],
               "fs": [
@@ -14249,7 +14256,7 @@
                   "td": "到达准点率100%"
                 }
               ],
-              "sp": 1160,
+              "sp": 1050,
               "pa": 0,
               "ms": [
                 {
@@ -14263,13 +14270,13 @@
               "$pts1": [
                 {
                   "tt": 2,
-                  "td": "4.3折经济舱"
+                  "td": "3.9折经济舱"
                 }
               ],
               "$pts1f": [
                 {
                   "tt": 2,
-                  "td": "4.3折经济舱"
+                  "td": "3.9折经济舱"
                 }
               ],
               "$pts2": [],
@@ -14278,7 +14285,7 @@
               "mts": [],
               "$rtsN7N25Str": ""
             },
-            "atp": 1160
+            "atp": 1050
           },
           {
             "dac": "PEK",
@@ -15005,6 +15012,352 @@
           {
             "dac": "PKX",
             "aac": "WUH",
+            "fn": "CZ8541",
+            "dat": "",
+            "aat": "T3",
+            "dt": "2026-06-26 18:00",
+            "at": "2026-06-26 20:05",
+            "dst": "18:00",
+            "ast": "20:05",
+            "td": "2h5m",
+            "dasn": "北京大兴",
+            "aasn": "天河",
+            "ac": "CZ",
+            "asn": "南航",
+            "amn": "空客320",
+            "amt": "中",
+            "icsf": false,
+            "sts": [
+              {
+                "tt": 1,
+                "td": "到达准点率100%"
+              },
+              {
+                "tt": 2,
+                "td": "机龄13.2年"
+              },
+              {
+                "tt": 4,
+                "td": "有正餐"
+              },
+              {
+                "tt": 6,
+                "td": "航班廊桥率100%"
+              },
+              {
+                "tt": 7,
+                "td": "平均延误11分钟"
+              },
+              {
+                "tt": 9,
+                "td": "航班取消率30%"
+              }
+            ],
+            "fs": [
+              {
+                "ft": 1,
+                "fcs": [
+                  "4",
+                  "3"
+                ]
+              },
+              {
+                "ft": 11,
+                "fcs": [
+                  "7",
+                  "6"
+                ]
+              },
+              {
+                "ft": 2,
+                "fcs": [
+                  "CZ"
+                ]
+              },
+              {
+                "ft": 3,
+                "fcs": [
+                  "1",
+                  "2"
+                ]
+              },
+              {
+                "ft": 4,
+                "fcs": [
+                  "PKX"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "WUH"
+                ]
+              },
+              {
+                "ft": 8,
+                "fcs": [
+                  "2"
+                ]
+              }
+            ],
+            "lps": [
+              {
+                "lpt": 11,
+                "ccid": 1,
+                "dct": 1,
+                "atp": 1050,
+                "app": 0,
+                "not": "A",
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "3.9折经济舱"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "pin": [
+                  "2"
+                ],
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  }
+                ],
+                "clct": [
+                  {
+                    "tt": 2,
+                    "td": "到达准点率100%"
+                  }
+                ],
+                "sp": 1050,
+                "pa": 0,
+                "ms": [
+                  {
+                    "mc": "ilpp",
+                    "mv": "1"
+                  }
+                ],
+                "$label": "值机需到实际承运航司柜台办理",
+                "$betterTag": {},
+                "$showSingle": false,
+                "$pts1": [
+                  {
+                    "tt": 2,
+                    "td": "3.9折经济舱"
+                  }
+                ],
+                "$pts1f": [
+                  {
+                    "tt": 2,
+                    "td": "3.9折经济舱"
+                  }
+                ],
+                "$pts2": [],
+                "$pts2f": [],
+                "$pts4": [],
+                "mts": [],
+                "$rtsN7N25Str": ""
+              },
+              {
+                "lpt": 2,
+                "ccid": 2,
+                "dct": 2,
+                "atp": 1600,
+                "app": 0,
+                "not": "2",
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "超值公务舱"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "pin": [
+                  "29"
+                ],
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  }
+                ],
+                "clct": [
+                  {
+                    "tt": 2,
+                    "td": "到达准点率100%"
+                  }
+                ],
+                "sp": 1600,
+                "pa": 0,
+                "$label": "值机需到实际承运航司柜台办理",
+                "$betterTag": {},
+                "$showSingle": false,
+                "$pts1": [
+                  {
+                    "tt": 2,
+                    "td": "超值公务舱"
+                  }
+                ],
+                "$pts1f": [
+                  {
+                    "tt": 2,
+                    "td": "超值公务舱"
+                  }
+                ],
+                "$pts2": [],
+                "$pts2f": [],
+                "$pts4": [],
+                "mts": [],
+                "$rtsN7N25Str": ""
+              }
+            ],
+            "ms": [
+              {
+                "mc": "pinsort",
+                "mv": "TH_LS_XC_GD"
+              },
+              {
+                "mc": "buddhapinsort",
+                "mv": "TH_LS_FX_GJ_GC_YJ_QJ_XZ_JX_XC_GD"
+              },
+              {
+                "mc": "dPStrategyInfo",
+                "mv": "8831cf3387b44433b820fab9f7f1362f|5"
+              },
+              {
+                "mc": "commissionAmount",
+                "mv": "0.00"
+              },
+              {
+                "mc": "commissionRecoveredAmount",
+                "mv": "0.00"
+              }
+            ],
+            "sfd": "flightId_CZ8541",
+            "ieso": false,
+            "mt": 2,
+            "$sls": true,
+            "oIdx": 40,
+            "depMinsInDay": 1080,
+            "$flightType": "OW",
+            "$checkKey": "18:0020:05CZ8541",
+            "$isG5": false,
+            "$dasn": "北京大兴",
+            "$aasn": "天河",
+            "$rob": {},
+            "$crossDayText": "",
+            "$crossDateString": "",
+            "$crossDayWeek": "",
+            "$td": "2时5分",
+            "$g5MultiData": {
+              "td": "",
+              "type": "g5"
+            },
+            "$amn": "空客320(中)",
+            "$checkG5Class": false,
+            "newLps": {
+              "lpt": 11,
+              "ccid": 1,
+              "dct": 1,
+              "atp": 1050,
+              "app": 0,
+              "not": "A",
+              "pts": [
+                {
+                  "tt": 2,
+                  "td": "3.9折经济舱"
+                }
+              ],
+              "fs": [
+                {
+                  "ft": 7,
+                  "fcs": [
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "11"
+                  ]
+                }
+              ],
+              "pin": [
+                "2"
+              ],
+              "brs": [
+                {
+                  "bpt": 0,
+                  "al": 20,
+                  "cn": -1
+                }
+              ],
+              "clct": [
+                {
+                  "tt": 2,
+                  "td": "到达准点率100%"
+                }
+              ],
+              "sp": 1050,
+              "pa": 0,
+              "ms": [
+                {
+                  "mc": "ilpp",
+                  "mv": "1"
+                }
+              ],
+              "$label": "值机需到实际承运航司柜台办理",
+              "$betterTag": {},
+              "$showSingle": false,
+              "$pts1": [
+                {
+                  "tt": 2,
+                  "td": "3.9折经济舱"
+                }
+              ],
+              "$pts1f": [
+                {
+                  "tt": 2,
+                  "td": "3.9折经济舱"
+                }
+              ],
+              "$pts2": [],
+              "$pts2f": [],
+              "$pts4": [],
+              "mts": [],
+              "$rtsN7N25Str": ""
+            },
+            "atp": 1050
+          },
+          {
+            "dac": "PKX",
+            "aac": "WUH",
             "fn": "3U2013",
             "dat": "",
             "aat": "T3",
@@ -15255,7 +15608,7 @@
             "cfcps": [
               {
                 "ccid": 1,
-                "atp": 1160
+                "atp": 1050
               },
               {
                 "ccid": 2,
@@ -15265,7 +15618,7 @@
             "ieso": false,
             "mt": 2,
             "$sls": false,
-            "oIdx": 40,
+            "oIdx": 41,
             "depMinsInDay": 1080,
             "$flightType": "OW",
             "$checkKey": "18:0020:053U2013",
@@ -15304,352 +15657,6 @@
                     "4",
                     "5",
                     "6",
-                    "11"
-                  ]
-                }
-              ],
-              "pin": [
-                "2"
-              ],
-              "brs": [
-                {
-                  "bpt": 0,
-                  "al": 20,
-                  "cn": -1
-                }
-              ],
-              "clct": [
-                {
-                  "tt": 2,
-                  "td": "到达准点率100%"
-                }
-              ],
-              "sp": 1160,
-              "pa": 0,
-              "ms": [
-                {
-                  "mc": "ilpp",
-                  "mv": "1"
-                }
-              ],
-              "$label": "值机需到实际承运航司柜台办理",
-              "$betterTag": {},
-              "$showSingle": false,
-              "$pts1": [
-                {
-                  "tt": 2,
-                  "td": "4.3折经济舱"
-                }
-              ],
-              "$pts1f": [
-                {
-                  "tt": 2,
-                  "td": "4.3折经济舱"
-                }
-              ],
-              "$pts2": [],
-              "$pts2f": [],
-              "$pts4": [],
-              "mts": [],
-              "$rtsN7N25Str": ""
-            },
-            "atp": 1160
-          },
-          {
-            "dac": "PKX",
-            "aac": "WUH",
-            "fn": "CZ8541",
-            "dat": "",
-            "aat": "T3",
-            "dt": "2026-06-26 18:00",
-            "at": "2026-06-26 20:05",
-            "dst": "18:00",
-            "ast": "20:05",
-            "td": "2h5m",
-            "dasn": "北京大兴",
-            "aasn": "天河",
-            "ac": "CZ",
-            "asn": "南航",
-            "amn": "空客320",
-            "amt": "中",
-            "icsf": false,
-            "sts": [
-              {
-                "tt": 1,
-                "td": "到达准点率100%"
-              },
-              {
-                "tt": 2,
-                "td": "机龄13.2年"
-              },
-              {
-                "tt": 4,
-                "td": "有正餐"
-              },
-              {
-                "tt": 6,
-                "td": "航班廊桥率100%"
-              },
-              {
-                "tt": 7,
-                "td": "平均延误11分钟"
-              },
-              {
-                "tt": 9,
-                "td": "航班取消率30%"
-              }
-            ],
-            "fs": [
-              {
-                "ft": 1,
-                "fcs": [
-                  "4",
-                  "3"
-                ]
-              },
-              {
-                "ft": 11,
-                "fcs": [
-                  "7",
-                  "6"
-                ]
-              },
-              {
-                "ft": 2,
-                "fcs": [
-                  "CZ"
-                ]
-              },
-              {
-                "ft": 3,
-                "fcs": [
-                  "1",
-                  "2"
-                ]
-              },
-              {
-                "ft": 4,
-                "fcs": [
-                  "PKX"
-                ]
-              },
-              {
-                "ft": 5,
-                "fcs": [
-                  "WUH"
-                ]
-              },
-              {
-                "ft": 8,
-                "fcs": [
-                  "2"
-                ]
-              }
-            ],
-            "lps": [
-              {
-                "lpt": 11,
-                "ccid": 1,
-                "dct": 1,
-                "atp": 1160,
-                "app": 0,
-                "not": "A",
-                "pts": [
-                  {
-                    "tt": 2,
-                    "td": "4.3折经济舱"
-                  }
-                ],
-                "fs": [
-                  {
-                    "ft": 7,
-                    "fcs": [
-                      "3",
-                      "4",
-                      "5",
-                      "6",
-                      "7",
-                      "11"
-                    ]
-                  }
-                ],
-                "pin": [
-                  "2"
-                ],
-                "brs": [
-                  {
-                    "bpt": 0,
-                    "al": 20,
-                    "cn": -1
-                  }
-                ],
-                "clct": [
-                  {
-                    "tt": 2,
-                    "td": "到达准点率100%"
-                  }
-                ],
-                "sp": 1160,
-                "pa": 0,
-                "ms": [
-                  {
-                    "mc": "ilpp",
-                    "mv": "1"
-                  }
-                ],
-                "$label": "值机需到实际承运航司柜台办理",
-                "$betterTag": {},
-                "$showSingle": false,
-                "$pts1": [
-                  {
-                    "tt": 2,
-                    "td": "4.3折经济舱"
-                  }
-                ],
-                "$pts1f": [
-                  {
-                    "tt": 2,
-                    "td": "4.3折经济舱"
-                  }
-                ],
-                "$pts2": [],
-                "$pts2f": [],
-                "$pts4": [],
-                "mts": [],
-                "$rtsN7N25Str": ""
-              },
-              {
-                "lpt": 2,
-                "ccid": 2,
-                "dct": 2,
-                "atp": 1600,
-                "app": 0,
-                "not": "2",
-                "pts": [
-                  {
-                    "tt": 2,
-                    "td": "超值公务舱"
-                  }
-                ],
-                "fs": [
-                  {
-                    "ft": 7,
-                    "fcs": [
-                      "3",
-                      "4",
-                      "5",
-                      "6",
-                      "7",
-                      "11"
-                    ]
-                  }
-                ],
-                "pin": [
-                  "29"
-                ],
-                "brs": [
-                  {
-                    "bpt": 0,
-                    "al": 30,
-                    "cn": -1
-                  }
-                ],
-                "clct": [
-                  {
-                    "tt": 2,
-                    "td": "到达准点率100%"
-                  }
-                ],
-                "sp": 1600,
-                "pa": 0,
-                "$label": "值机需到实际承运航司柜台办理",
-                "$betterTag": {},
-                "$showSingle": false,
-                "$pts1": [
-                  {
-                    "tt": 2,
-                    "td": "超值公务舱"
-                  }
-                ],
-                "$pts1f": [
-                  {
-                    "tt": 2,
-                    "td": "超值公务舱"
-                  }
-                ],
-                "$pts2": [],
-                "$pts2f": [],
-                "$pts4": [],
-                "mts": [],
-                "$rtsN7N25Str": ""
-              }
-            ],
-            "ms": [
-              {
-                "mc": "pinsort",
-                "mv": "TH_LS_QJ_XC_GD"
-              },
-              {
-                "mc": "buddhapinsort",
-                "mv": "TH_LS_FX_GJ_GC_YJ_QJ_XZ_JX_XC_GD"
-              },
-              {
-                "mc": "dPStrategyInfo",
-                "mv": "8831cf3387b44433b820fab9f7f1362f|5"
-              },
-              {
-                "mc": "commissionAmount",
-                "mv": "0.00"
-              },
-              {
-                "mc": "commissionRecoveredAmount",
-                "mv": "0.00"
-              }
-            ],
-            "sfd": "flightId_CZ8541",
-            "ieso": false,
-            "mt": 2,
-            "$sls": true,
-            "oIdx": 41,
-            "depMinsInDay": 1080,
-            "$flightType": "OW",
-            "$checkKey": "18:0020:05CZ8541",
-            "$isG5": false,
-            "$dasn": "北京大兴",
-            "$aasn": "天河",
-            "$rob": {},
-            "$crossDayText": "",
-            "$crossDateString": "",
-            "$crossDayWeek": "",
-            "$td": "2时5分",
-            "$g5MultiData": {
-              "td": "",
-              "type": "g5"
-            },
-            "$amn": "空客320(中)",
-            "$checkG5Class": false,
-            "newLps": {
-              "lpt": 11,
-              "ccid": 1,
-              "dct": 1,
-              "atp": 1160,
-              "app": 0,
-              "not": "A",
-              "pts": [
-                {
-                  "tt": 2,
-                  "td": "4.3折经济舱"
-                }
-              ],
-              "fs": [
-                {
-                  "ft": 7,
-                  "fcs": [
-                    "3",
-                    "4",
-                    "5",
-                    "6",
-                    "7",
                     "11"
                   ]
                 }
@@ -15954,7 +15961,7 @@
             "cfcps": [
               {
                 "ccid": 1,
-                "atp": 1160
+                "atp": 1050
               },
               {
                 "ccid": 2,
@@ -16777,6 +16784,344 @@
           {
             "dac": "PKX",
             "aac": "WUH",
+            "fn": "CZ3140",
+            "dat": "",
+            "aat": "T3",
+            "dt": "2026-06-26 19:35",
+            "at": "2026-06-26 22:10",
+            "dst": "19:35",
+            "ast": "22:10",
+            "td": "2h35m",
+            "dasn": "北京大兴",
+            "aasn": "天河",
+            "ac": "CZ",
+            "asn": "南航",
+            "amn": "波音737",
+            "amt": "中",
+            "icsf": false,
+            "sts": [
+              {
+                "tt": 1,
+                "td": "到达准点率100%"
+              },
+              {
+                "tt": 2,
+                "td": "机龄13.3年"
+              },
+              {
+                "tt": 4,
+                "td": "点心"
+              },
+              {
+                "tt": 6,
+                "td": "航班廊桥率100%"
+              },
+              {
+                "tt": 7,
+                "td": "平均延误11分钟"
+              },
+              {
+                "tt": 9,
+                "td": "航班取消率0%"
+              }
+            ],
+            "fs": [
+              {
+                "ft": 1,
+                "fcs": [
+                  "4"
+                ]
+              },
+              {
+                "ft": 11,
+                "fcs": [
+                  "7"
+                ]
+              },
+              {
+                "ft": 2,
+                "fcs": [
+                  "CZ"
+                ]
+              },
+              {
+                "ft": 3,
+                "fcs": [
+                  "1",
+                  "2"
+                ]
+              },
+              {
+                "ft": 4,
+                "fcs": [
+                  "PKX"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "WUH"
+                ]
+              }
+            ],
+            "lps": [
+              {
+                "lpt": 11,
+                "ccid": 1,
+                "dct": 1,
+                "atp": 750,
+                "app": 0,
+                "not": "A",
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "2.8折经济舱"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "pin": [
+                  "2"
+                ],
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  }
+                ],
+                "clct": [
+                  {
+                    "tt": 2,
+                    "td": "到达准点率100%"
+                  }
+                ],
+                "sp": 750,
+                "pa": 0,
+                "ms": [
+                  {
+                    "mc": "ilpp",
+                    "mv": "1"
+                  }
+                ],
+                "$label": "值机需到实际承运航司柜台办理",
+                "$betterTag": {},
+                "$showSingle": false,
+                "$pts1": [
+                  {
+                    "tt": 2,
+                    "td": "2.8折经济舱"
+                  }
+                ],
+                "$pts1f": [
+                  {
+                    "tt": 2,
+                    "td": "2.8折经济舱"
+                  }
+                ],
+                "$pts2": [],
+                "$pts2f": [],
+                "$pts4": [],
+                "mts": [],
+                "$rtsN7N25Str": ""
+              },
+              {
+                "lpt": 2,
+                "ccid": 2,
+                "dct": 2,
+                "atp": 1500,
+                "app": 0,
+                "not": "2",
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "超值公务舱"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "5",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "pin": [
+                  "29"
+                ],
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  }
+                ],
+                "clct": [
+                  {
+                    "tt": 2,
+                    "td": "到达准点率100%"
+                  }
+                ],
+                "sp": 1500,
+                "pa": 0,
+                "$label": "值机需到实际承运航司柜台办理",
+                "$betterTag": {},
+                "$showSingle": false,
+                "$pts1": [
+                  {
+                    "tt": 2,
+                    "td": "超值公务舱"
+                  }
+                ],
+                "$pts1f": [
+                  {
+                    "tt": 2,
+                    "td": "超值公务舱"
+                  }
+                ],
+                "$pts2": [],
+                "$pts2f": [],
+                "$pts4": [],
+                "mts": [],
+                "$rtsN7N25Str": ""
+              }
+            ],
+            "ms": [
+              {
+                "mc": "pinsort",
+                "mv": "TH_LS_XC_GD"
+              },
+              {
+                "mc": "buddhapinsort",
+                "mv": "TH_LS_FX_GJ_GC_YJ_QJ_XZ_JX_XC_GD"
+              },
+              {
+                "mc": "dPStrategyInfo",
+                "mv": "8831cf3387b44433b820fab9f7f1362f|5"
+              },
+              {
+                "mc": "commissionAmount",
+                "mv": "0.00"
+              },
+              {
+                "mc": "commissionRecoveredAmount",
+                "mv": "0.00"
+              }
+            ],
+            "sfd": "flightId_CZ3140",
+            "ieso": false,
+            "mt": 2,
+            "$sls": true,
+            "oIdx": 45,
+            "depMinsInDay": 1175,
+            "$flightType": "OW",
+            "$checkKey": "19:3522:10CZ3140",
+            "$isG5": false,
+            "$dasn": "北京大兴",
+            "$aasn": "天河",
+            "$rob": {},
+            "$crossDayText": "",
+            "$crossDateString": "",
+            "$crossDayWeek": "",
+            "$td": "2时35分",
+            "$g5MultiData": {
+              "td": "",
+              "type": "g5"
+            },
+            "$amn": "波音737(中)",
+            "$checkG5Class": false,
+            "newLps": {
+              "lpt": 11,
+              "ccid": 1,
+              "dct": 1,
+              "atp": 750,
+              "app": 0,
+              "not": "A",
+              "pts": [
+                {
+                  "tt": 2,
+                  "td": "2.8折经济舱"
+                }
+              ],
+              "fs": [
+                {
+                  "ft": 7,
+                  "fcs": [
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "11"
+                  ]
+                }
+              ],
+              "pin": [
+                "2"
+              ],
+              "brs": [
+                {
+                  "bpt": 0,
+                  "al": 20,
+                  "cn": -1
+                }
+              ],
+              "clct": [
+                {
+                  "tt": 2,
+                  "td": "到达准点率100%"
+                }
+              ],
+              "sp": 750,
+              "pa": 0,
+              "ms": [
+                {
+                  "mc": "ilpp",
+                  "mv": "1"
+                }
+              ],
+              "$label": "值机需到实际承运航司柜台办理",
+              "$betterTag": {},
+              "$showSingle": false,
+              "$pts1": [
+                {
+                  "tt": 2,
+                  "td": "2.8折经济舱"
+                }
+              ],
+              "$pts1f": [
+                {
+                  "tt": 2,
+                  "td": "2.8折经济舱"
+                }
+              ],
+              "$pts2": [],
+              "$pts2f": [],
+              "$pts4": [],
+              "mts": [],
+              "$rtsN7N25Str": ""
+            },
+            "atp": 750
+          },
+          {
+            "dac": "PKX",
+            "aac": "WUH",
             "fn": "3U1044",
             "dat": "",
             "aat": "T3",
@@ -17019,7 +17364,7 @@
             "cfcps": [
               {
                 "ccid": 1,
-                "atp": 1030
+                "atp": 750
               },
               {
                 "ccid": 2,
@@ -17029,7 +17374,7 @@
             "ieso": false,
             "mt": 1,
             "$sls": false,
-            "oIdx": 45,
+            "oIdx": 46,
             "depMinsInDay": 1175,
             "$flightType": "OW",
             "$checkKey": "19:3522:103U1044",
@@ -17068,344 +17413,6 @@
                     "4",
                     "5",
                     "6",
-                    "11"
-                  ]
-                }
-              ],
-              "pin": [
-                "2"
-              ],
-              "brs": [
-                {
-                  "bpt": 0,
-                  "al": 20,
-                  "cn": -1
-                }
-              ],
-              "clct": [
-                {
-                  "tt": 2,
-                  "td": "到达准点率100%"
-                }
-              ],
-              "sp": 1030,
-              "pa": 0,
-              "ms": [
-                {
-                  "mc": "ilpp",
-                  "mv": "1"
-                }
-              ],
-              "$label": "值机需到实际承运航司柜台办理",
-              "$betterTag": {},
-              "$showSingle": false,
-              "$pts1": [
-                {
-                  "tt": 2,
-                  "td": "3.8折经济舱"
-                }
-              ],
-              "$pts1f": [
-                {
-                  "tt": 2,
-                  "td": "3.8折经济舱"
-                }
-              ],
-              "$pts2": [],
-              "$pts2f": [],
-              "$pts4": [],
-              "mts": [],
-              "$rtsN7N25Str": ""
-            },
-            "atp": 1030
-          },
-          {
-            "dac": "PKX",
-            "aac": "WUH",
-            "fn": "CZ3140",
-            "dat": "",
-            "aat": "T3",
-            "dt": "2026-06-26 19:35",
-            "at": "2026-06-26 22:10",
-            "dst": "19:35",
-            "ast": "22:10",
-            "td": "2h35m",
-            "dasn": "北京大兴",
-            "aasn": "天河",
-            "ac": "CZ",
-            "asn": "南航",
-            "amn": "波音737",
-            "amt": "中",
-            "icsf": false,
-            "sts": [
-              {
-                "tt": 1,
-                "td": "到达准点率100%"
-              },
-              {
-                "tt": 2,
-                "td": "机龄13.3年"
-              },
-              {
-                "tt": 4,
-                "td": "点心"
-              },
-              {
-                "tt": 6,
-                "td": "航班廊桥率100%"
-              },
-              {
-                "tt": 7,
-                "td": "平均延误11分钟"
-              },
-              {
-                "tt": 9,
-                "td": "航班取消率0%"
-              }
-            ],
-            "fs": [
-              {
-                "ft": 1,
-                "fcs": [
-                  "4"
-                ]
-              },
-              {
-                "ft": 11,
-                "fcs": [
-                  "7"
-                ]
-              },
-              {
-                "ft": 2,
-                "fcs": [
-                  "CZ"
-                ]
-              },
-              {
-                "ft": 3,
-                "fcs": [
-                  "1",
-                  "2"
-                ]
-              },
-              {
-                "ft": 4,
-                "fcs": [
-                  "PKX"
-                ]
-              },
-              {
-                "ft": 5,
-                "fcs": [
-                  "WUH"
-                ]
-              }
-            ],
-            "lps": [
-              {
-                "lpt": 11,
-                "ccid": 1,
-                "dct": 1,
-                "atp": 1030,
-                "app": 0,
-                "not": "A",
-                "pts": [
-                  {
-                    "tt": 2,
-                    "td": "3.8折经济舱"
-                  }
-                ],
-                "fs": [
-                  {
-                    "ft": 7,
-                    "fcs": [
-                      "3",
-                      "4",
-                      "5",
-                      "6",
-                      "7",
-                      "11"
-                    ]
-                  }
-                ],
-                "pin": [
-                  "2"
-                ],
-                "brs": [
-                  {
-                    "bpt": 0,
-                    "al": 20,
-                    "cn": -1
-                  }
-                ],
-                "clct": [
-                  {
-                    "tt": 2,
-                    "td": "到达准点率100%"
-                  }
-                ],
-                "sp": 1030,
-                "pa": 0,
-                "ms": [
-                  {
-                    "mc": "ilpp",
-                    "mv": "1"
-                  }
-                ],
-                "$label": "值机需到实际承运航司柜台办理",
-                "$betterTag": {},
-                "$showSingle": false,
-                "$pts1": [
-                  {
-                    "tt": 2,
-                    "td": "3.8折经济舱"
-                  }
-                ],
-                "$pts1f": [
-                  {
-                    "tt": 2,
-                    "td": "3.8折经济舱"
-                  }
-                ],
-                "$pts2": [],
-                "$pts2f": [],
-                "$pts4": [],
-                "mts": [],
-                "$rtsN7N25Str": ""
-              },
-              {
-                "lpt": 2,
-                "ccid": 2,
-                "dct": 2,
-                "atp": 1500,
-                "app": 0,
-                "not": "2",
-                "pts": [
-                  {
-                    "tt": 2,
-                    "td": "超值公务舱"
-                  }
-                ],
-                "fs": [
-                  {
-                    "ft": 7,
-                    "fcs": [
-                      "3",
-                      "4",
-                      "5",
-                      "6",
-                      "7",
-                      "11"
-                    ]
-                  }
-                ],
-                "pin": [
-                  "29"
-                ],
-                "brs": [
-                  {
-                    "bpt": 0,
-                    "al": 30,
-                    "cn": -1
-                  }
-                ],
-                "clct": [
-                  {
-                    "tt": 2,
-                    "td": "到达准点率100%"
-                  }
-                ],
-                "sp": 1500,
-                "pa": 0,
-                "$label": "值机需到实际承运航司柜台办理",
-                "$betterTag": {},
-                "$showSingle": false,
-                "$pts1": [
-                  {
-                    "tt": 2,
-                    "td": "超值公务舱"
-                  }
-                ],
-                "$pts1f": [
-                  {
-                    "tt": 2,
-                    "td": "超值公务舱"
-                  }
-                ],
-                "$pts2": [],
-                "$pts2f": [],
-                "$pts4": [],
-                "mts": [],
-                "$rtsN7N25Str": ""
-              }
-            ],
-            "ms": [
-              {
-                "mc": "pinsort",
-                "mv": "TH_LS_QJ_XC_GD"
-              },
-              {
-                "mc": "buddhapinsort",
-                "mv": "TH_LS_FX_GJ_GC_YJ_QJ_XZ_JX_XC_GD"
-              },
-              {
-                "mc": "dPStrategyInfo",
-                "mv": "8831cf3387b44433b820fab9f7f1362f|5"
-              },
-              {
-                "mc": "commissionAmount",
-                "mv": "0.00"
-              },
-              {
-                "mc": "commissionRecoveredAmount",
-                "mv": "0.00"
-              }
-            ],
-            "sfd": "flightId_CZ3140",
-            "ieso": false,
-            "mt": 2,
-            "$sls": true,
-            "oIdx": 46,
-            "depMinsInDay": 1175,
-            "$flightType": "OW",
-            "$checkKey": "19:3522:10CZ3140",
-            "$isG5": false,
-            "$dasn": "北京大兴",
-            "$aasn": "天河",
-            "$rob": {},
-            "$crossDayText": "",
-            "$crossDateString": "",
-            "$crossDayWeek": "",
-            "$td": "2时35分",
-            "$g5MultiData": {
-              "td": "",
-              "type": "g5"
-            },
-            "$amn": "波音737(中)",
-            "$checkG5Class": false,
-            "newLps": {
-              "lpt": 11,
-              "ccid": 1,
-              "dct": 1,
-              "atp": 1030,
-              "app": 0,
-              "not": "A",
-              "pts": [
-                {
-                  "tt": 2,
-                  "td": "3.8折经济舱"
-                }
-              ],
-              "fs": [
-                {
-                  "ft": 7,
-                  "fcs": [
-                    "3",
-                    "4",
-                    "5",
-                    "6",
-                    "7",
                     "11"
                   ]
                 }
@@ -17702,7 +17709,7 @@
             "cfcps": [
               {
                 "ccid": 1,
-                "atp": 1030
+                "atp": 750
               },
               {
                 "ccid": 2,
@@ -18047,7 +18054,7 @@
             "cfcps": [
               {
                 "ccid": 1,
-                "atp": 1030
+                "atp": 750
               },
               {
                 "ccid": 2,
@@ -22215,17 +22222,10 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "c0b859d8-c7ff-4be8-8b0b-e9a46bdf9775",
-      "host": "::ffff:10.215.235.4",
+      "tracerId": "d9cc984f-83c7-4cbb-bada-90d4ef4f082a",
+      "host": "::ffff:10.204.110.50",
       "iact": "0",
-      "timestamp": 1779352095936
-    }
-  },
-  {
-    "url": "https://apmfront.17u.cn/fms/h5multi",
-    "data": {
-      "code": 200,
-      "msg": "ok"
+      "timestamp": 1779374218374
     }
   },
   {
@@ -22250,10 +22250,10 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "c0b859d8-c7ff-4be8-8b0b-e9a46bdf9775",
-      "host": "::ffff:10.204.30.158",
+      "tracerId": "d9cc984f-83c7-4cbb-bada-90d4ef4f082a",
+      "host": "::ffff:10.200.193.254",
       "iact": "0",
-      "timestamp": 1779352096509
+      "timestamp": 1779374218939
     }
   },
   {
@@ -22269,7 +22269,7 @@
         "bgImgUrl": "",
         "advertises": [],
         "associatePositions": null,
-        "biRequestId": "ff01c7ee-c868-40d1-af41-64bf6e1fb78b",
+        "biRequestId": "46016c0a-622c-46f8-9fd5-f34830376e82",
         "biExpNo": null,
         "prizeCount": null,
         "title": "",
@@ -22443,10 +22443,10 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "c0b859d8-c7ff-4be8-8b0b-e9a46bdf9775",
-      "host": "::ffff:10.220.160.85",
+      "tracerId": "d9cc984f-83c7-4cbb-bada-90d4ef4f082a",
+      "host": "::ffff:10.204.25.223",
       "iact": "0",
-      "timestamp": 1779352096533
+      "timestamp": 1779374218950
     }
   },
   {
@@ -22455,7 +22455,7 @@
       "success": true,
       "data": {
         "ec": 0,
-        "tId": "1a8ac7d16e7c7b907de5bd9cdecaa193",
+        "tId": "69f78e80c0ac77650900f9adafd64b20",
         "d": "BJS",
         "a": "WUH",
         "dac": "",
@@ -22563,17 +22563,23 @@
               {
                 "lpt": 11,
                 "ccid": 1,
-                "atp": 794,
-                "not": "8",
+                "atp": 932,
+                "not": "A",
                 "tda": 0,
                 "tags": [
-                  "nzBjfqXmEWpBNxQehHPGyeLLH5bwd3m4YuseGKeHVzvz64KrFB5nw9DlpWRGCIyqDpHJro5RbvDO8AfEGPODILopffDsBAEwGHzyQ7fynvIySLn9uJGSkgFFeJorcdoG00",
-                  "yVP68gYABaPkcw77XKFB6rYxGr7fFXZSJMmoIzEzDlefZls4Qt7y5rqyOTKSdwPzgHHNU20hzK5KgzEi5O0WXDEUwOhFYzyg6Clz7kbY4ufa3Y2kAmG0NDMwKh8y0ioy5Q0"
+                  "nzBjfqXmEWpBNxQehHPGyeawwjU1zDmkKeX9yFb4FeNOgedxzZtgEC8AElkGVCiuRopH3qpnIPdQFI5iDvEA3pH68BKYXseZQHg6nOzz0RwAVD4Vd1i5sgX7pwTQZLEUG1",
+                  "Wl4znrOTqbwNvGzDCJhT4wydoajrOKxzikx78SVJ0dNll9JIt9XyrKsVe5f4o7cWK0aeWtS6FgbqYMRyGDzpLSVkyqC3CLeExxFAASe9hEtw8EAjZXntJt7ZyfJwITHyJ0"
                 ],
                 "pts": [
                   {
                     "tt": 2,
                     "td": "经济舱"
+                  }
+                ],
+                "mts": [
+                  {
+                    "tt": 11,
+                    "td": "已优惠¥15"
                   }
                 ],
                 "rts": [
@@ -22610,16 +22616,28 @@
                     "cn": -1
                   }
                 ],
-                "sp": 794,
-                "pa": 0,
+                "sp": 917,
+                "dps": {
+                  "mdp": 917,
+                  "bdp": 932,
+                  "iap": false
+                },
+                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":932,\"ias\":false,\"iis\":false,\"fd\":false,\"eca\":0.0,\"ca\":0}",
+                "pa": 15,
                 "fwbqRaws": "",
                 "fwbqs": [],
                 "noLabelBg": true,
                 "$showTransferRts": "中转低价推荐",
-                "$mtsN5": [],
+                "$mts5": null,
+                "$mtsN5": [
+                  {
+                    "tt": 11,
+                    "td": "已优惠¥15"
+                  }
+                ],
                 "$showHxj": {
                   "showInMts": false,
-                  "showPrice": 0
+                  "showPrice": 932
                 },
                 "$ptStyle": "pt24",
                 "$showFwbqsInMulti": false,
@@ -22635,8 +22653,8 @@
                 "not": "2",
                 "tda": 0,
                 "tags": [
-                  "aYQH8bEzcmneaRSu9INxtRmdSA9yTNeA7BdEEFEjszLSlkotz3bio91i5ujwJdLTavrM3yJfxlOcQHvcNJYsJOVym5zuXrISqzChzAuND6uCp3knwBauGaeS2IikWJ1ar5",
-                  "flE8rkGBBfLoftVfM6nuADQkwbq74iLEkxoFzStCYIvSkEszDxSGERrwxK85wfneJRqFFht2v0kOzaHqfvCy4mR2VA2Wn3bPylVfmKSIC7SFbHikkb36XaQw8hN2GW5FM"
+                  "aYQH8bEzcmneaRSu9INxtPZ2ebQlsfYrGbroKyWcRWpzBWKL4WydzUnhwVp1sTm6SYjiAJOIa1Ky0LAmPoNHAqgQg2cenhbNq68aQJu89ymupeV6nk4yIjWh13ol3wPjz1",
+                  "flE8rkGBBfLoftVfM6nuA3bc8UuP0BcN3xI3oH3wjj8zqYwEC9jsAzJYgr8sBRzR75O4H1oXyZqBjnr7ReocSA6Ug9fdyKxbqXWce1FRhFOAKqWqchDIbPB1626Qj7CI7"
                 ],
                 "pts": [
                   {
@@ -22738,21 +22756,20 @@
             "is_high": false
           },
           {
-            "fId": "PEKYCU20260626ZH1127_YCUWUH20260627ZH8171",
+            "fId": "PEKYNT20260626SC7604_YNTWUH20260626SC7929",
             "it": 1,
             "icat": false,
-            "dat": "T2",
-            "aat": "T3",
-            "dt": "2026-06-26 12:15",
-            "at": "2026-06-27 17:20",
-            "ad": "1",
-            "dst": "12:15",
-            "ast": "17:20",
-            "td": "29h5m",
+            "dat": "T3",
+            "aat": "T2",
+            "dt": "2026-06-26 09:55",
+            "at": "2026-06-26 15:55",
+            "dst": "09:55",
+            "ast": "15:55",
+            "td": "6h",
             "dasn": "首都",
             "aasn": "天河",
-            "sc": "运城",
-            "sd": "25h50m",
+            "sc": "烟台",
+            "sd": "2h30m",
             "tac": "",
             "tfn": "",
             "tasn": "",
@@ -22761,52 +22778,52 @@
             "fprt": 1,
             "ss": [
               {
-                "fn": "ZH1127",
+                "fn": "SC7604",
                 "dac": "PEK",
-                "aac": "YCU",
-                "isf": "True",
-                "dat": "T2",
-                "aat": "",
-                "dt": "2026-06-26 12:15",
-                "at": "2026-06-26 13:55",
-                "td": "1小时40分钟",
-                "ac": "ZH",
-                "asn": "深航",
+                "aac": "YNT",
+                "isf": "False",
+                "dat": "T3",
+                "aat": "T2",
+                "dt": "2026-06-26 09:55",
+                "at": "2026-06-26 11:10",
+                "td": "1小时15分钟",
+                "ac": "SC",
+                "asn": "山航",
                 "amn": "波音737-800(中)"
               },
               {
-                "fn": "ZH8171",
-                "dac": "YCU",
+                "fn": "SC7929",
+                "dac": "YNT",
                 "aac": "WUH",
                 "isf": "False",
-                "dat": "",
-                "aat": "T3",
-                "dt": "2026-06-27 15:45",
-                "at": "2026-06-27 17:20",
-                "td": "1小时35分钟",
-                "ac": "ZH",
-                "asn": "深航",
-                "amn": "空客320(中)"
+                "dat": "T2",
+                "aat": "T2",
+                "dt": "2026-06-26 13:40",
+                "at": "2026-06-26 15:55",
+                "td": "2小时15分钟",
+                "ac": "SC",
+                "asn": "山航",
+                "amn": "波音737-800(中)"
               }
             ],
             "fs": [
               {
                 "ft": 1,
                 "fcs": [
-                  "3"
+                  "2"
                 ]
               },
               {
                 "ft": 11,
                 "fcs": [
-                  "5"
+                  "4"
                 ]
               },
               {
                 "ft": 2,
                 "fcs": [
-                  "ZH",
-                  "ZH"
+                  "SC",
+                  "SC"
                 ]
               },
               {
@@ -22830,13 +22847,13 @@
               {
                 "ft": 6,
                 "fcs": [
-                  "运城"
+                  "烟台"
                 ]
               },
               {
                 "ft": 8,
                 "fcs": [
-                  "2"
+                  "3"
                 ]
               }
             ],
@@ -22844,12 +22861,12 @@
               {
                 "lpt": 11,
                 "ccid": 1,
-                "atp": 910,
-                "not": "A",
+                "atp": 1085,
+                "not": "7",
                 "tda": 0,
                 "tags": [
-                  "2jtWgyyXGByp875rDssy7B9sTvUZurMmQFP8zd05sCugfQ8M0VaUvkFG109UNezrJebG2iwCoozOry1hdig1oDapwkRVmhguCqO9tj4WLiPgU61PqfZSt7psUmTv9xERd0",
-                  "f0z7loZz4HH4QR16FaonFRWRzUTSyOV7XY3vbhek0aYhbiYRZewcCu9G2xXSaguOc9qXxbiShhzjiPE48kzTdIyVX4YKOdHIeUyJkFbZGaT39qIcaqMTNorDZxBzwaqhr6"
+                  "qB1tk9bZQCrTYw7EiyXmyxaJBFPIEPzhHJmQtzP94GBFmXrWkhzHAa1u2I7bC9amoBgtPvxefVklsunP8NbcHx9kbyPliilp7HTAmXAFX12sECzahzJZ0tgdx5e5zXrTO4",
+                  "m6hKzDsbU95qyebLfbKPI2iB0OJJ3SN8OjgQofKlpGxXFWu3Ttp8rnhabvXgxYcdo9qJeSNa9l8VO0lvliDMOAGtbLj8FTWWwtI83UW5nUDzROxFfJejN8os1Wy1UzQa4"
                 ],
                 "pts": [
                   {
@@ -22870,6 +22887,7 @@
                       "3",
                       "4",
                       "6",
+                      "7",
                       "11"
                     ]
                   }
@@ -22890,13 +22908,13 @@
                     "cn": -1
                   }
                 ],
-                "sp": 895,
+                "sp": 1070,
                 "dps": {
-                  "mdp": 895,
-                  "bdp": 910,
+                  "mdp": 1070,
+                  "bdp": 1085,
                   "iap": false
                 },
-                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":910,\"ias\":false,\"iis\":false,\"fd\":false,\"eca\":0.0,\"ca\":0}",
+                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":1085,\"ias\":false,\"iis\":false,\"fd\":false,\"eca\":0.0,\"ca\":0}",
                 "pa": 15,
                 "rts": [],
                 "fwbqRaws": "",
@@ -22911,7 +22929,7 @@
                 ],
                 "$showHxj": {
                   "showInMts": false,
-                  "showPrice": 910
+                  "showPrice": 1085
                 },
                 "$ptStyle": "pt24",
                 "$showFwbqsInMulti": false,
@@ -22923,12 +22941,12 @@
               {
                 "lpt": 2,
                 "ccid": 2,
-                "atp": 3700,
+                "atp": 4138,
                 "not": "2",
                 "tda": 0,
                 "tags": [
-                  "fRbkdzRQIcyVivYDFa6EEl7MqkUVtLfArITSjCZwFp614eBlMSdMqQNozkzpEEpbHSf63n2aSVdbOyzcXeY7pvZlcoMNuR2j9TJnU0wGHwlctgbGyRGRafwFd88yArRKP3",
-                  "T3qZjf7r1RoFxYzekv6D7Q6J20x0Mwnpyll19fYWPazG2ZH8lKoLKStId3kB6lE4PvY9c3tsonZeYrGzezuStkStSQqBr34WaPWMQs5fLwngDXuq8myzS61vkeNlfc1i80"
+                  "aYQH8bEzcmneaRSu9INxtPZ2ebQlsfYrGbroKyWcRWpzBWKL4WydzUnhwVp1sTm6Sgg2ozadzZKuiGmj3lcyslzT0ZaxBhTBWG0AeIjnypzCaz7rDTBypkr0XTjEFFppf10",
+                  "ZTIyJnYSG8iDvgaT8Bz1dUw83XhS0bqizy2LuZocbb9zuCZLoEDcg4rn3Hx6nziqXgzMI8YsNzWfpfiwoCe1rCA4wmMLY6rE5J3EcsjywiL97eAV1xZG9OvsAisEjZYtR0"
                 ],
                 "pts": [
                   {
@@ -22943,6 +22961,7 @@
                       "3",
                       "4",
                       "6",
+                      "7",
                       "11"
                     ]
                   }
@@ -22963,7 +22982,7 @@
                     "cn": -1
                   }
                 ],
-                "sp": 3700,
+                "sp": 4138,
                 "pa": 0,
                 "rts": [],
                 "fwbqRaws": "",
@@ -22982,29 +23001,90 @@
                 }
               }
             ],
-            "tss": [],
-            "stss": [],
+            "stss": [
+              {
+                "ServiceType": "NO_CHECK",
+                "ServiceId": "1333699935547179214@2025123001010",
+                "ServiceName": "免二次安检",
+                "ServiceDesc": [],
+                "AuxRevenueSkuCode": "9046003016"
+              },
+              {
+                "ServiceType": "LUGGAGE_SYSTEM",
+                "ServiceId": "1333700520694534311@2025122901024",
+                "ServiceName": "行李直达",
+                "ServiceDesc": [],
+                "AuxRevenueSkuCode": "9046003015"
+              },
+              {
+                "ServiceType": "COUPON_VOUCHER",
+                "ServiceId": "2005549742582431744@2025122901022",
+                "ServiceName": "中转权益券申领",
+                "ServiceDesc": [],
+                "AuxRevenueSkuCode": "9046004046494"
+              },
+              {
+                "ServiceType": "TRANSFER_LOUNGE",
+                "ServiceId": "2005550727446949888@2025122901026",
+                "ServiceName": "中转休息区",
+                "ServiceDesc": [],
+                "AuxRevenueSkuCode": "9046004046495"
+              },
+              {
+                "ServiceType": "DISCOUNT_BUSINESS",
+                "ServiceId": "2005551224593612800@2025122901027",
+                "ServiceName": "优惠旅游门票申领",
+                "ServiceDesc": [],
+                "AuxRevenueSkuCode": "9046004046496"
+              },
+              {
+                "ServiceType": "COUPON_SHOPPING",
+                "ServiceId": "2005551660184666112@2025122901028",
+                "ServiceName": "优惠购物折扣申领",
+                "ServiceDesc": [],
+                "AuxRevenueSkuCode": "9046004046497"
+              }
+            ],
             "fcd": false,
             "dup": false,
             "rs": "TransitTravel",
-            "cfis": [],
+            "cfis": [
+              {
+                "ft": 2,
+                "fcs": [
+                  "2"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "5"
+                ]
+              },
+              {
+                "ft": 6,
+                "fcs": [
+                  "6"
+                ]
+              }
+            ],
             "mt": 3,
             "bff_sort": 1,
             "oIdx": 1,
-            "depMinsInDay": 735,
-            "isCross2ndTrip": true,
+            "depMinsInDay": 595,
+            "isCross2ndTrip": false,
             "$flightType": "IL",
             "$checkKey": "1_1",
-            "$crossDateString": "6月27日",
-            "$crossDayWeek": "周六",
+            "$crossDateString": "",
+            "$crossDayWeek": "",
             "$dasn": "首都",
             "$aasn": "天河",
             "$isShowHigh": true,
-            "$td": "29时5分",
-            "$sd": "25时50分",
+            "$td": "6时",
+            "$sd": "2时30分",
             "$arrowText": "中转",
-            "$crossDayText": "6月27日 周六",
-            "timespanNumber": 1745,
+            "$crossDayText": "",
+            "timespanNumber": 360,
             "is_high": false
           },
           {
@@ -23108,17 +23188,23 @@
               {
                 "lpt": 11,
                 "ccid": 1,
-                "atp": 874,
-                "not": "8",
+                "atp": 1012,
+                "not": "A",
                 "tda": 0,
                 "tags": [
-                  "W7Gufyk04dLIHrJgYtAGr6WPPxEmrnDfkbSxUXlfk9fqoevt9CjwkyekNvCJ6qIFEZh4ewVF90xEUYvFNOkcjS9hWs52csyWbQ8MfqhZPiXB4srpOtf8kCQT1tj342hQ6",
-                  "yVP68gYABaPkcw77XKFB6rYxGr7fFXZSJMmoIzEzDlefZls4Qt7y5rqyOTKSdwPzgHHNU20hzK5KgzEi5O0WXDEUwOhFYzyg6Clz7kbY4ufa3Y2kAmG0NDMwKh8y0ioy5Q0"
+                  "W7Gufyk04dLIHrJgYtAGr6YTbmt1LNZJI7cTq6Lz3xgT18QSyB6U3UprS10UA6pC7O2izRTpYWPFTtGSmkAe91nE9LPtKNpVQgQpzyPVFtzqcbA9yPlADODTGtbSMIQGF2",
+                  "Wl4znrOTqbwNvGzDCJhT4wydoajrOKxzikx78SVJ0dNll9JIt9XyrKsVe5f4o7cWK0aeWtS6FgbqYMRyGDzpLSVkyqC3CLeExxFAASe9hEtw8EAjZXntJt7ZyfJwITHyJ0"
                 ],
                 "pts": [
                   {
                     "tt": 2,
                     "td": "经济舱"
+                  }
+                ],
+                "mts": [
+                  {
+                    "tt": 11,
+                    "td": "已优惠¥15"
                   }
                 ],
                 "fs": [
@@ -23149,16 +23235,28 @@
                     "cn": -1
                   }
                 ],
-                "sp": 874,
-                "pa": 0,
+                "sp": 997,
+                "dps": {
+                  "mdp": 997,
+                  "bdp": 1012,
+                  "iap": false
+                },
+                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":1012,\"ias\":false,\"iis\":false,\"fd\":false,\"eca\":0.0,\"ca\":0}",
+                "pa": 15,
                 "rts": [],
                 "fwbqRaws": "",
                 "fwbqs": [],
                 "$showTransferRts": "",
-                "$mtsN5": [],
+                "$mts5": null,
+                "$mtsN5": [
+                  {
+                    "tt": 11,
+                    "td": "已优惠¥15"
+                  }
+                ],
                 "$showHxj": {
                   "showInMts": false,
-                  "showPrice": 0
+                  "showPrice": 1012
                 },
                 "$ptStyle": "pt24",
                 "$showFwbqsInMulti": false,
@@ -23174,8 +23272,8 @@
                 "not": "2",
                 "tda": 0,
                 "tags": [
-                  "aYQH8bEzcmneaRSu9INxtRmdSA9yTNeA7BdEEFEjszLSlkotz3bio91i5ujwJdLTbr3oNRjP4cdgDuKHEa9MtToE2EkguXUH1Hs5BAnhnyyosVoGhhBiHzRXA0oghhACn1",
-                  "flE8rkGBBfLoftVfM6nuADQkwbq74iLEkxoFzStCYIvSkEszDxSGERrwxK85wfneJRqFFht2v0kOzaHqfvCy4mR2VA2Wn3bPylVfmKSIC7SFbHikkb36XaQw8hN2GW5FM"
+                  "aYQH8bEzcmneaRSu9INxtPZ2ebQlsfYrGbroKyWcRWpzBWKL4WydzUnhwVp1sTm6TGzSSRiZlGTuDYGDFUSgbVSOgMkzBDmceO13035yOawZp7JwEM4FticBaApmzz02uC",
+                  "flE8rkGBBfLoftVfM6nuA3bc8UuP0BcN3xI3oH3wjj8zqYwEC9jsAzJYgr8sBRzR75O4H1oXyZqBjnr7ReocSA6Ug9fdyKxbqXWce1FRhFOAKqWqchDIbPB1626Qj7CI7"
                 ],
                 "pts": [
                   {
@@ -23377,17 +23475,23 @@
               {
                 "lpt": 11,
                 "ccid": 1,
-                "atp": 874,
-                "not": "8",
+                "atp": 1012,
+                "not": "A",
                 "tda": 0,
                 "tags": [
-                  "W7Gufyk04dLIHrJgYtAGr6WPPxEmrnDfkbSxUXlfk9fqoevt9CjwkyekNvCJ6qIFF38jICSux36zz0Wu7USiFpXL2DySzD8rmAOPvq55yS1qnBMkFmCzytNsOYGFhfxyw7",
-                  "yVP68gYABaPkcw77XKFB6rYxGr7fFXZSJMmoIzEzDlefZls4Qt7y5rqyOTKSdwPzgHHNU20hzK5KgzEi5O0WXDEUwOhFYzyg6Clz7kbY4ufa3Y2kAmG0NDMwKh8y0ioy5Q0"
+                  "W7Gufyk04dLIHrJgYtAGr6YTbmt1LNZJI7cTq6Lz3xgT18QSyB6U3UprS10UA6pC1HQnBHAFlqLF9Rn9coz9SjFUzbWNtKwlP4SldNbzVXRkBtvhGabUWfWilvAPCGp5d",
+                  "Wl4znrOTqbwNvGzDCJhT4wydoajrOKxzikx78SVJ0dNll9JIt9XyrKsVe5f4o7cWK0aeWtS6FgbqYMRyGDzpLSVkyqC3CLeExxFAASe9hEtw8EAjZXntJt7ZyfJwITHyJ0"
                 ],
                 "pts": [
                   {
                     "tt": 2,
                     "td": "经济舱"
+                  }
+                ],
+                "mts": [
+                  {
+                    "tt": 11,
+                    "td": "已优惠¥15"
                   }
                 ],
                 "fs": [
@@ -23418,16 +23522,28 @@
                     "cn": -1
                   }
                 ],
-                "sp": 874,
-                "pa": 0,
+                "sp": 997,
+                "dps": {
+                  "mdp": 997,
+                  "bdp": 1012,
+                  "iap": false
+                },
+                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":1012,\"ias\":false,\"iis\":false,\"fd\":false,\"eca\":0.0,\"ca\":0}",
+                "pa": 15,
                 "rts": [],
                 "fwbqRaws": "",
                 "fwbqs": [],
                 "$showTransferRts": "",
-                "$mtsN5": [],
+                "$mts5": null,
+                "$mtsN5": [
+                  {
+                    "tt": 11,
+                    "td": "已优惠¥15"
+                  }
+                ],
                 "$showHxj": {
                   "showInMts": false,
-                  "showPrice": 0
+                  "showPrice": 1012
                 },
                 "$ptStyle": "pt24",
                 "$showFwbqsInMulti": false,
@@ -23443,8 +23559,8 @@
                 "not": "2",
                 "tda": 0,
                 "tags": [
-                  "aYQH8bEzcmneaRSu9INxtRmdSA9yTNeA7BdEEFEjszLSlkotz3bio91i5ujwJdLTbltaLKE8AXOZF7Dixf9YGNjzfz4yJlfmc5ACf97OzAA2w8SaZzs2xBm7WaXK7qVy5A",
-                  "flE8rkGBBfLoftVfM6nuADQkwbq74iLEkxoFzStCYIvSkEszDxSGERrwxK85wfneJRqFFht2v0kOzaHqfvCy4mR2VA2Wn3bPylVfmKSIC7SFbHikkb36XaQw8hN2GW5FM"
+                  "aYQH8bEzcmneaRSu9INxtPZ2ebQlsfYrGbroKyWcRWpzBWKL4WydzUnhwVp1sTm6T1KJoV4ahCDIzt9pu7i9eq0Q8QVBi4vSEZy4KOfTmnhLZZVkHWKskKM3LoQhE8KWn0",
+                  "flE8rkGBBfLoftVfM6nuA3bc8UuP0BcN3xI3oH3wjj8zqYwEC9jsAzJYgr8sBRzR75O4H1oXyZqBjnr7ReocSA6Ug9fdyKxbqXWce1FRhFOAKqWqchDIbPB1626Qj7CI7"
                 ],
                 "pts": [
                   {
@@ -23543,338 +23659,6 @@
             "$arrowText": "中转",
             "$crossDayText": "6月27日 周六",
             "timespanNumber": 865,
-            "is_high": false
-          },
-          {
-            "fId": "PEKYNT20260626SC7604_YNTWUH20260626SC7929",
-            "it": 1,
-            "icat": false,
-            "dat": "T3",
-            "aat": "T2",
-            "dt": "2026-06-26 09:55",
-            "at": "2026-06-26 15:55",
-            "dst": "09:55",
-            "ast": "15:55",
-            "td": "6h",
-            "dasn": "首都",
-            "aasn": "天河",
-            "sc": "烟台",
-            "sd": "2h30m",
-            "tac": "",
-            "tfn": "",
-            "tasn": "",
-            "rt": 0,
-            "score": "0.00",
-            "fprt": 1,
-            "ss": [
-              {
-                "fn": "SC7604",
-                "dac": "PEK",
-                "aac": "YNT",
-                "isf": "False",
-                "dat": "T3",
-                "aat": "T2",
-                "dt": "2026-06-26 09:55",
-                "at": "2026-06-26 11:10",
-                "td": "1小时15分钟",
-                "ac": "SC",
-                "asn": "山航",
-                "amn": "波音737-800(中)"
-              },
-              {
-                "fn": "SC7929",
-                "dac": "YNT",
-                "aac": "WUH",
-                "isf": "False",
-                "dat": "T2",
-                "aat": "T2",
-                "dt": "2026-06-26 13:40",
-                "at": "2026-06-26 15:55",
-                "td": "2小时15分钟",
-                "ac": "SC",
-                "asn": "山航",
-                "amn": "波音737-800(中)"
-              }
-            ],
-            "fs": [
-              {
-                "ft": 1,
-                "fcs": [
-                  "2"
-                ]
-              },
-              {
-                "ft": 11,
-                "fcs": [
-                  "4"
-                ]
-              },
-              {
-                "ft": 2,
-                "fcs": [
-                  "SC",
-                  "SC"
-                ]
-              },
-              {
-                "ft": 3,
-                "fcs": [
-                  "1"
-                ]
-              },
-              {
-                "ft": 4,
-                "fcs": [
-                  "PEK"
-                ]
-              },
-              {
-                "ft": 5,
-                "fcs": [
-                  "WUH"
-                ]
-              },
-              {
-                "ft": 6,
-                "fcs": [
-                  "烟台"
-                ]
-              },
-              {
-                "ft": 8,
-                "fcs": [
-                  "3"
-                ]
-              }
-            ],
-            "lps": [
-              {
-                "lpt": 11,
-                "ccid": 1,
-                "atp": 1085,
-                "not": "7",
-                "tda": 0,
-                "tags": [
-                  "qB1tk9bZQCrTYw7EiyXmyvwInEplTFRmNxN261xjzyFEESdLTQCXA4J2f3RKM9CyQBuzyvLfZHN6zyIEmliBatmK0aFVfhEjduc2tsmUlru1VQrl4Rruh8u4mLwXgpUSe1",
-                  "m6hKzDsbU95qyebLfbKPI3vkNGB2m9a4fFZrFwplOeBCyqz40fcMyEu8hKeTxvuXhziHS2Zg3b6U2k0GHqqU1ccyCDsL0WfzZabFeaFqKptbT37ZFfwrByEubHby6HQeQ3"
-                ],
-                "pts": [
-                  {
-                    "tt": 2,
-                    "td": "经济舱"
-                  }
-                ],
-                "mts": [
-                  {
-                    "tt": 11,
-                    "td": "已优惠¥15"
-                  }
-                ],
-                "fs": [
-                  {
-                    "ft": 7,
-                    "fcs": [
-                      "3",
-                      "4",
-                      "6",
-                      "7",
-                      "11"
-                    ]
-                  }
-                ],
-                "ofl": 0,
-                "tht": 0,
-                "fcd": false,
-                "dup": false,
-                "brs": [
-                  {
-                    "bpt": 0,
-                    "al": 20,
-                    "cn": -1
-                  },
-                  {
-                    "bpt": 0,
-                    "al": 20,
-                    "cn": -1
-                  }
-                ],
-                "sp": 1070,
-                "dps": {
-                  "mdp": 1070,
-                  "bdp": 1085,
-                  "iap": false
-                },
-                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":1085,\"ias\":false,\"iis\":false,\"fd\":false,\"eca\":0.0,\"ca\":0}",
-                "pa": 15,
-                "rts": [],
-                "fwbqRaws": "",
-                "fwbqs": [],
-                "$showTransferRts": "",
-                "$mts5": null,
-                "$mtsN5": [
-                  {
-                    "tt": 11,
-                    "td": "已优惠¥15"
-                  }
-                ],
-                "$showHxj": {
-                  "showInMts": false,
-                  "showPrice": 1085
-                },
-                "$ptStyle": "pt24",
-                "$showFwbqsInMulti": false,
-                "$tcTip": {
-                  "c1": "中转专享",
-                  "c2": "航司中转，享联程服务"
-                }
-              },
-              {
-                "lpt": 2,
-                "ccid": 2,
-                "atp": 4138,
-                "not": "2",
-                "tda": 0,
-                "tags": [
-                  "aYQH8bEzcmneaRSu9INxtRmdSA9yTNeA7BdEEFEjszLSlkotz3bio91i5ujwJdLTd75qA4N7dI5mRvtZ0sBkxgMl550UpD8U7OrTb1dYoKLHEL00Iv6ZrIRBLZeHt8ak1",
-                  "ZTIyJnYSG8iDvgaT8Bz1dTAFj2mhzftKm1xN4bEITrQzyjotC4Q0hBRZ4uJ6ysouGxP28jI21UeFzoosbtNxXl2syAmIaY5JFeaLxujtCzyK8I3DdmqDDmUqYtHDf2Gyw2"
-                ],
-                "pts": [
-                  {
-                    "tt": 2,
-                    "td": "公务舱"
-                  }
-                ],
-                "fs": [
-                  {
-                    "ft": 7,
-                    "fcs": [
-                      "3",
-                      "4",
-                      "6",
-                      "7",
-                      "11"
-                    ]
-                  }
-                ],
-                "ofl": 0,
-                "tht": 0,
-                "fcd": false,
-                "dup": false,
-                "brs": [
-                  {
-                    "bpt": 0,
-                    "al": 30,
-                    "cn": -1
-                  },
-                  {
-                    "bpt": 0,
-                    "al": 30,
-                    "cn": -1
-                  }
-                ],
-                "sp": 4138,
-                "pa": 0,
-                "rts": [],
-                "fwbqRaws": "",
-                "fwbqs": [],
-                "$showTransferRts": "",
-                "$mtsN5": [],
-                "$showHxj": {
-                  "showInMts": false,
-                  "showPrice": 0
-                },
-                "$ptStyle": "pt24",
-                "$showFwbqsInMulti": false,
-                "$tcTip": {
-                  "c1": "中转专享",
-                  "c2": "航司中转，享联程服务"
-                }
-              }
-            ],
-            "stss": [
-              {
-                "ServiceType": "NO_CHECK",
-                "ServiceId": "1333699935547179214@2025123001010",
-                "ServiceName": "免二次安检",
-                "ServiceDesc": [],
-                "AuxRevenueSkuCode": "9046003016"
-              },
-              {
-                "ServiceType": "LUGGAGE_SYSTEM",
-                "ServiceId": "1333700520694534311@2025122901024",
-                "ServiceName": "行李直达",
-                "ServiceDesc": [],
-                "AuxRevenueSkuCode": "9046003015"
-              },
-              {
-                "ServiceType": "COUPON_VOUCHER",
-                "ServiceId": "2005549742582431744@2025122901022",
-                "ServiceName": "中转权益券申领",
-                "ServiceDesc": [],
-                "AuxRevenueSkuCode": "9046004046494"
-              },
-              {
-                "ServiceType": "TRANSFER_LOUNGE",
-                "ServiceId": "2005550727446949888@2025122901026",
-                "ServiceName": "中转休息区",
-                "ServiceDesc": [],
-                "AuxRevenueSkuCode": "9046004046495"
-              },
-              {
-                "ServiceType": "DISCOUNT_BUSINESS",
-                "ServiceId": "2005551224593612800@2025122901027",
-                "ServiceName": "优惠旅游门票申领",
-                "ServiceDesc": [],
-                "AuxRevenueSkuCode": "9046004046496"
-              },
-              {
-                "ServiceType": "COUPON_SHOPPING",
-                "ServiceId": "2005551660184666112@2025122901028",
-                "ServiceName": "优惠购物折扣申领",
-                "ServiceDesc": [],
-                "AuxRevenueSkuCode": "9046004046497"
-              }
-            ],
-            "fcd": false,
-            "dup": false,
-            "rs": "TransitTravel",
-            "cfis": [
-              {
-                "ft": 2,
-                "fcs": [
-                  "2"
-                ]
-              },
-              {
-                "ft": 5,
-                "fcs": [
-                  "5"
-                ]
-              },
-              {
-                "ft": 6,
-                "fcs": [
-                  "6"
-                ]
-              }
-            ],
-            "mt": 3,
-            "bff_sort": 4,
-            "oIdx": 4,
-            "depMinsInDay": 595,
-            "isCross2ndTrip": false,
-            "$flightType": "IL",
-            "$checkKey": "1_4",
-            "$crossDateString": "",
-            "$crossDayWeek": "",
-            "$dasn": "首都",
-            "$aasn": "天河",
-            "$isShowHigh": true,
-            "$td": "6时",
-            "$sd": "2时30分",
-            "$arrowText": "中转",
-            "$crossDayText": "",
-            "timespanNumber": 360,
             "is_high": false
           },
           {
@@ -23978,17 +23762,23 @@
               {
                 "lpt": 11,
                 "ccid": 1,
-                "atp": 894,
-                "not": "5",
+                "atp": 1055,
+                "not": "A",
                 "tda": 0,
                 "tags": [
-                  "nzBjfqXmEWpBNxQehHPGyeLLH5bwd3m4YuseGKeHVzvz64KrFB5nw9DlpWRGCIyqDpHJro5RbvDO8AfEGPODILopffDsBAEwGHzyQ7fynvIySLn9uJGSkgFFeJorcdoG00",
-                  "sO3zaQuLvylRuzGNo4xA3Ly49jqoK5mjFf0c6klz1sNzT6wFPwZJY7YgEO6TnjKKQ7HCeHcGJolzzs0szAuVyky5Sk8wyFpMuhzykVEFCosAbvCenyToJmMrLH21sK3CyhA"
+                  "nzBjfqXmEWpBNxQehHPGyeawwjU1zDmkKeX9yFb4FeNOgedxzZtgEC8AElkGVCiuRopH3qpnIPdQFI5iDvEA3pH68BKYXseZQHg6nOzz0RwAVD4Vd1i5sgX7pwTQZLEUG1",
+                  "m6hKzDsbU95qyebLfbKPI2iB0OJJ3SN8OjgQofKlpGxGAQK2kAJ6FrU1WZ7lUzRoWGAuuXGvzysUKxtqxH0jYjWYKyIvZzNKdneoMtnrA31smC590azkAVyzg2WsseJVE3"
                 ],
                 "pts": [
                   {
                     "tt": 2,
                     "td": "经济舱"
+                  }
+                ],
+                "mts": [
+                  {
+                    "tt": 11,
+                    "td": "已优惠¥15"
                   }
                 ],
                 "fs": [
@@ -24019,16 +23809,28 @@
                     "cn": -1
                   }
                 ],
-                "sp": 894,
-                "pa": 0,
+                "sp": 1040,
+                "dps": {
+                  "mdp": 1040,
+                  "bdp": 1055,
+                  "iap": false
+                },
+                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":1055,\"ias\":false,\"iis\":false,\"fd\":false,\"eca\":0.0,\"ca\":0}",
+                "pa": 15,
                 "rts": [],
                 "fwbqRaws": "",
                 "fwbqs": [],
                 "$showTransferRts": "",
-                "$mtsN5": [],
+                "$mts5": null,
+                "$mtsN5": [
+                  {
+                    "tt": 11,
+                    "td": "已优惠¥15"
+                  }
+                ],
                 "$showHxj": {
                   "showInMts": false,
-                  "showPrice": 0
+                  "showPrice": 1055
                 },
                 "$ptStyle": "pt24",
                 "$showFwbqsInMulti": false,
@@ -24044,8 +23846,8 @@
                 "not": "2",
                 "tda": 0,
                 "tags": [
-                  "aYQH8bEzcmneaRSu9INxtRmdSA9yTNeA7BdEEFEjszLSlkotz3bio91i5ujwJdLTavrM3yJfxlOcQHvcNJYsJOVym5zuXrISqzChzAuND6uCp3knwBauGaeS2IikWJ1ar5",
-                  "TAY97aydF8mXuMvrjbXzBC5b1pc00ZpN7hWBVfn6Y69pcRwb3BGVa80K0r7gZxnHmc9FdnzyzttmuVy1uyo1QmPiCMh3T2yGaPnwIcMAAOEZp93qHEtr6El6TgPGx0zTt6"
+                  "aYQH8bEzcmneaRSu9INxtPZ2ebQlsfYrGbroKyWcRWpzBWKL4WydzUnhwVp1sTm6SYjiAJOIa1Ky0LAmPoNHAqgQg2cenhbNq68aQJu89ymupeV6nk4yIjWh13ol3wPjz1",
+                  "TAY97aydF8mXuMvrjbXzBET3OFgfZDu5ztqAsfkmns9cP1vSOKKX8tyJr4zV98QiWc31Wjyz7NTByQMm1I1XEbKXoKIEO7WQSQXJEFbdPzeqOSJ2TIOC2seYEfhfdW2aq1"
                 ],
                 "pts": [
                   {
@@ -24128,12 +23930,12 @@
               }
             ],
             "mt": 3,
-            "bff_sort": 5,
-            "oIdx": 5,
+            "bff_sort": 4,
+            "oIdx": 4,
             "depMinsInDay": 1330,
             "isCross2ndTrip": true,
             "$flightType": "IL",
-            "$checkKey": "1_5",
+            "$checkKey": "1_4",
             "$crossDateString": "6月27日",
             "$crossDayWeek": "周六",
             "$dasn": "首都",
@@ -24144,6 +23946,276 @@
             "$arrowText": "中转",
             "$crossDayText": "6月27日 周六",
             "timespanNumber": 1065,
+            "is_high": false
+          },
+          {
+            "fId": "PEKTYN20260626CA1145_TYNWUH20260627CA3728",
+            "it": 1,
+            "icat": false,
+            "dat": "T3",
+            "aat": "T3",
+            "dt": "2026-06-26 07:00",
+            "at": "2026-06-27 18:45",
+            "ad": "1",
+            "dst": "07:00",
+            "ast": "18:45",
+            "td": "35h45m",
+            "dasn": "首都",
+            "aasn": "天河",
+            "sc": "太原",
+            "sd": "32h45m",
+            "tac": "",
+            "tfn": "",
+            "tasn": "",
+            "rt": 0,
+            "score": "0.00",
+            "fprt": 1,
+            "ss": [
+              {
+                "fn": "CA1145",
+                "dac": "PEK",
+                "aac": "TYN",
+                "isf": "False",
+                "dat": "T3",
+                "aat": "T1",
+                "dt": "2026-06-26 07:00",
+                "at": "2026-06-26 08:15",
+                "td": "1小时15分钟",
+                "ac": "CA",
+                "asn": "国航",
+                "amn": "空客321(中)"
+              },
+              {
+                "fn": "CA3728",
+                "dac": "TYN",
+                "aac": "WUH",
+                "isf": "True",
+                "dat": "T1",
+                "aat": "T3",
+                "dt": "2026-06-27 17:00",
+                "at": "2026-06-27 18:45",
+                "td": "1小时45分钟",
+                "ac": "CA",
+                "asn": "国航",
+                "amn": "波音737(中)"
+              }
+            ],
+            "fs": [
+              {
+                "ft": 1,
+                "fcs": [
+                  "2"
+                ]
+              },
+              {
+                "ft": 11,
+                "fcs": [
+                  "3"
+                ]
+              },
+              {
+                "ft": 2,
+                "fcs": [
+                  "CA",
+                  "CA"
+                ]
+              },
+              {
+                "ft": 3,
+                "fcs": [
+                  "1"
+                ]
+              },
+              {
+                "ft": 4,
+                "fcs": [
+                  "PEK"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "WUH"
+                ]
+              },
+              {
+                "ft": 6,
+                "fcs": [
+                  "太原"
+                ]
+              },
+              {
+                "ft": 8,
+                "fcs": [
+                  "3"
+                ]
+              }
+            ],
+            "lps": [
+              {
+                "lpt": 11,
+                "ccid": 1,
+                "atp": 1629,
+                "not": "8",
+                "tda": 0,
+                "tags": [
+                  "q2R7qcbVVRbcReB677nV9Yvxrsf4m0jU67zwn0i8XZVZt2hvduJY8gLkT1kL0bauYBUgvBcxy340Gz9y5ZUEgM8wJskJ71DiMjl8mUXsfDbdCru2RzQxovWOrZCMmoMS3",
+                  "Pxczozb1AJKccCnXDUzLy5Ywj2f67RBvdfV50kcw7lQfoOcOFofnWQr8CiAuzyIepkV5lggqAFzzBfPlxFd1uWn3pmszOxAYp5gqlAwhVpuw7PrpsTdApDrV8iqcfJ9Sj1"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "经济舱"
+                  }
+                ],
+                "mts": [
+                  {
+                    "tt": 11,
+                    "td": "已优惠¥15"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "6",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  }
+                ],
+                "sp": 1614,
+                "dps": {
+                  "mdp": 1614,
+                  "bdp": 1629,
+                  "iap": false
+                },
+                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":1629,\"ias\":false,\"iis\":false,\"fd\":false,\"eca\":0.0,\"ca\":0}",
+                "pa": 15,
+                "rts": [],
+                "fwbqRaws": "",
+                "fwbqs": [],
+                "$showTransferRts": "",
+                "$mts5": null,
+                "$mtsN5": [
+                  {
+                    "tt": 11,
+                    "td": "已优惠¥15"
+                  }
+                ],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 1629
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": false,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              },
+              {
+                "lpt": 2,
+                "ccid": 2,
+                "atp": 3799,
+                "not": "2",
+                "tda": 0,
+                "tags": [
+                  "0YGWWCn45CG32pzfvell2Nk2bYZMpE62GJl7f4yokt9HuVny7A2mY1xlGfvXdJCpIhi4saVQfI1MqrZURvLpDxdNyycfg3CRur5uI64SLzXccx21R26Mc7BjWoFEU01s3",
+                  "KIakKiLInYxu7QyJ8iwU92GobWEmXHEbG3pU0GulwZvLlYa8unt9JZ0pk9926YItyI16xGdV1rBfQPWTYZlyNOlMrP1zopCgG530Ho9etDGoRW3yFxj2UvGxKVMXimt8E"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "公务舱"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "6",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  }
+                ],
+                "sp": 3799,
+                "pa": 0,
+                "rts": [],
+                "fwbqRaws": "",
+                "fwbqs": [],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": false,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              }
+            ],
+            "tss": [],
+            "stss": [],
+            "fcd": false,
+            "dup": false,
+            "rs": "TransitTravel",
+            "cfis": [],
+            "mt": 1,
+            "bff_sort": 5,
+            "oIdx": 5,
+            "depMinsInDay": 420,
+            "isCross2ndTrip": true,
+            "$flightType": "IL",
+            "$checkKey": "1_5",
+            "$crossDateString": "6月27日",
+            "$crossDayWeek": "周六",
+            "$dasn": "首都",
+            "$aasn": "天河",
+            "$isShowHigh": true,
+            "$td": "35时45分",
+            "$sd": "32时45分",
+            "$arrowText": "中转",
+            "$crossDayText": "6月27日 周六",
+            "timespanNumber": 2145,
             "is_high": false
           }
         ],
@@ -24203,8 +24275,8 @@
                 "fd": "山东航空"
               },
               {
-                "fc": "ZH",
-                "fd": "深圳航空"
+                "fc": "CA",
+                "fd": "中国国际航空"
               }
             ]
           },
@@ -24232,8 +24304,8 @@
             ]
           }
         ],
-        "lp": 794,
-        "ms": "794|SC7610,SC7931|YNT|1|",
+        "lp": 932,
+        "ms": "932|SC7610,SC7931|YNT|1|",
         "cls": [
           {
             "code": "fcfr",
@@ -24321,17 +24393,10 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "c0b859d8-c7ff-4be8-8b0b-e9a46bdf9775",
-      "host": "::ffff:10.215.214.4",
+      "tracerId": "d9cc984f-83c7-4cbb-bada-90d4ef4f082a",
+      "host": "::ffff:10.204.110.240",
       "iact": "0",
-      "timestamp": 1779352096636
-    }
-  },
-  {
-    "url": "https://apmfront.17u.cn/fms/h5multi",
-    "data": {
-      "code": 200,
-      "msg": "ok"
+      "timestamp": 1779374219081
     }
   },
   {
