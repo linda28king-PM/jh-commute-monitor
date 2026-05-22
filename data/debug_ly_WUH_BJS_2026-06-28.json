@@ -1,40 +1,23 @@
 [
   {
-    "url": "https://c.go-mpulse.net/api/config.json?key=VP9LC-35W9U-68TQN-7HPLX-PPF4Y&d=m.ly.com&t=5931385&v=1.720.0&sl=0&si=412a5b67-1c2e-40ab-8e92-cb49a693f939-tff1u5&plugins=AK,ConfigOverride,Continuity,PageParams,IFrameDelay,AutoXHR,SPA,History,Angular,Backbone,Ember,RT,CrossDomain,BW,PaintTiming,NavigationTiming,ResourceTiming,Memory,CACHE_RELOAD,Errors,TPAnalytics,UserTiming,Akamai,Early,EventTiming,LOGN&acao=&ak.ai=947581",
+    "url": "https://c.go-mpulse.net/api/config.json?key=VP9LC-35W9U-68TQN-7HPLX-PPF4Y&d=m.ly.com&t=5931460&v=1.720.0&sl=0&si=ba21e5de-37b5-4a64-8886-be3e40fe8c01-tffj93&plugins=AK,ConfigOverride,Continuity,PageParams,IFrameDelay,AutoXHR,SPA,History,Angular,Backbone,Ember,RT,CrossDomain,BW,PaintTiming,NavigationTiming,ResourceTiming,Memory,CACHE_RELOAD,Errors,TPAnalytics,UserTiming,Akamai,Early,EventTiming,LOGN&acao=&ak.ai=947581",
     "data": {
-      "h.key": "VP9LC-35W9U-68TQN-7HPLX-PPF4Y",
-      "h.d": "arlid:947581",
-      "h.t": 1779415566067,
-      "h.cr": "bceb17ff2990f5e2e9fa7ea412e7a317d2d260d0-d63307e4-8dfb27fa",
-      "session_id": "558b7cd9-364e-4fbe-bd2a-b0396f077452",
       "site_domain": "arlid:947581",
-      "beacon_url": "//17de4c0f.akstat.io/",
-      "autorun": true,
-      "BW": {
-        "enabled": false
-      },
-      "RT": {
-        "cookie": null,
-        "session_exp": 1800
-      },
-      "ResourceTiming": {
-        "enabled": true,
-        "splitAtPath": true
-      },
-      "PageParams": {
-        "xhr": "none",
-        "pageGroups": [],
-        "customMetrics": [],
-        "customTimers": [],
-        "customDimensions": [],
-        "urlPatterns": [],
-        "params": true
-      },
-      "Akamai": {
-        "enabled": true,
-        "dns_prefetch_enabled": true
-      },
-      "user_ip": "df62b03c4"
+      "rate_limited": true
+    }
+  },
+  {
+    "url": "https://wx.17u.cn/flightbffv2/basic/last",
+    "data": {
+      "success": true,
+      "data": null,
+      "showType": 0,
+      "errorCode": "0",
+      "errorMessage": "请求成功",
+      "tracerId": "40ef4afa-3ae4-4c4d-8af7-196d57cffe73",
+      "host": "::ffff:10.214.186.223",
+      "iact": "0",
+      "timestamp": 1779438136803
     }
   },
   {
@@ -722,20 +705,6 @@
     }
   },
   {
-    "url": "https://wx.17u.cn/flightbffv2/basic/last",
-    "data": {
-      "success": true,
-      "data": null,
-      "showType": 0,
-      "errorCode": "0",
-      "errorMessage": "请求成功",
-      "tracerId": "a8c14991-8312-4a69-9668-2b28c6cfe949",
-      "host": "::ffff:10.214.154.51",
-      "iact": "0",
-      "timestamp": 1779415566573
-    }
-  },
-  {
     "url": "https://wx.17u.cn/flightbffv2/book1/flights",
     "data": {
       "success": true,
@@ -781,15 +750,15 @@
           },
           {
             "dd": "2026-06-27",
-            "lp": 420,
+            "lp": 380,
             "hlp": 1145
           },
           {
             "dd": "2026-06-28",
             "lp": 498,
-            "ms": "2|498|498|0|28|SC7930,SC7953|YNT|ut_user_new|||500|0|0|CZ8542|0|2||||2026-05-21 21:35:34|2026-05-22 10:06:06|0|500|500",
-            "hlp": 1150,
-            "hms": "1|1150|0|1150|17|MU2601||ut_user_new|||1150|1|0|MU2601|2|0|XC||2026-05-22 10:06:06||2026-05-22 10:06:06|0|1150|1150"
+            "ms": "2|498|498|0|28|SC7930,SC7953|YNT|ut_user_new|||500|0|0|CZ8542|0|2||||2026-05-21 21:35:34|2026-05-22 16:22:16|0|500|500",
+            "hlp": 1145,
+            "hms": "1|1145|0|1145|17|MU2601||ut_user_new|||1145|1|0|MU2601|2|0|XC||2026-05-22 16:22:16||2026-05-22 16:22:16|0|1145|1145"
           },
           {
             "dd": "2026-06-29",
@@ -798,7 +767,7 @@
           },
           {
             "dd": "2026-06-30",
-            "lp": 420,
+            "lp": 380,
             "hlp": 1145
           },
           {
@@ -1018,7 +987,7 @@
             ]
           }
         ],
-        "cache_key": "flight_bdef9b431e56a994e8d7be8d997ed3ca4aab59bd",
+        "cache_key": "flight_e8e28c05a95ac66e5f00e33840f164a0558b8ca6",
         "tfs": [
           {
             "type": "9",
@@ -1086,7 +1055,7 @@
             "dd": "2026-06-28 08:40",
             "tmins": 105,
             "nos": 0,
-            "price": 1150,
+            "price": 1145,
             "discountDesc": "折扣公务舱"
           },
           "inAllCabin": {
@@ -1122,7 +1091,7 @@
             "dd": "2026-06-28 08:40",
             "tmins": 105,
             "nos": 0,
-            "price": 1150,
+            "price": 1145,
             "discountDesc": "折扣公务舱"
           },
           "minTicketPrice": {
@@ -3805,7 +3774,7 @@
                 "lpt": 2,
                 "ccid": 2,
                 "dct": 2,
-                "atp": 1150,
+                "atp": 1145,
                 "app": 0,
                 "not": "4",
                 "pts": [
@@ -3843,7 +3812,7 @@
                     "td": "到达准点率100%"
                   }
                 ],
-                "sp": 1150,
+                "sp": 1145,
                 "pa": 0,
                 "$label": "值机需到实际承运航司柜台办理",
                 "$betterTag": {},
@@ -4174,7 +4143,7 @@
               },
               {
                 "ccid": 2,
-                "atp": 1150
+                "atp": 1145
               }
             ],
             "ieso": false,
@@ -4527,7 +4496,7 @@
               },
               {
                 "ccid": 2,
-                "atp": 1150
+                "atp": 1145
               }
             ],
             "ieso": false,
@@ -5369,7 +5338,7 @@
               },
               {
                 "tt": 2,
-                "td": "机龄13.9年"
+                "td": "机龄14.0年"
               },
               {
                 "tt": 4,
@@ -5713,7 +5682,7 @@
               },
               {
                 "tt": 2,
-                "td": "机龄13.9年"
+                "td": "机龄14.0年"
               },
               {
                 "tt": 4,
@@ -6091,7 +6060,7 @@
               },
               {
                 "tt": 2,
-                "td": "机龄11.0年"
+                "td": "机龄10.9年"
               },
               {
                 "tt": 4,
@@ -6231,7 +6200,7 @@
                 "lpt": 2,
                 "ccid": 2,
                 "dct": 2,
-                "atp": 1150,
+                "atp": 1145,
                 "app": 0,
                 "not": "4",
                 "pts": [
@@ -6269,7 +6238,7 @@
                     "td": "到达准点率100%"
                   }
                 ],
-                "sp": 1150,
+                "sp": 1145,
                 "pa": 0,
                 "$label": "值机需到实际承运航司柜台办理",
                 "$betterTag": {},
@@ -6435,7 +6404,7 @@
               },
               {
                 "tt": 2,
-                "td": "机龄11.0年"
+                "td": "机龄10.9年"
               },
               {
                 "tt": 4,
@@ -6600,7 +6569,7 @@
               },
               {
                 "ccid": 2,
-                "atp": 1150
+                "atp": 1145
               }
             ],
             "ieso": false,
@@ -6721,7 +6690,7 @@
               },
               {
                 "tt": 2,
-                "td": "机龄11.0年"
+                "td": "机龄10.9年"
               },
               {
                 "tt": 4,
@@ -6953,7 +6922,7 @@
               },
               {
                 "ccid": 2,
-                "atp": 1150
+                "atp": 1145
               }
             ],
             "ieso": false,
@@ -11112,7 +11081,7 @@
                 "lpt": 2,
                 "ccid": 2,
                 "dct": 2,
-                "atp": 1150,
+                "atp": 1145,
                 "app": 0,
                 "not": "3",
                 "pts": [
@@ -11150,7 +11119,7 @@
                     "td": "到达准点率100%"
                   }
                 ],
-                "sp": 1150,
+                "sp": 1145,
                 "pa": 0,
                 "$label": "值机需到实际承运航司柜台办理",
                 "$betterTag": {},
@@ -11481,7 +11450,7 @@
               },
               {
                 "ccid": 2,
-                "atp": 1150
+                "atp": 1145
               }
             ],
             "ieso": false,
@@ -11834,7 +11803,7 @@
               },
               {
                 "ccid": 2,
-                "atp": 1150
+                "atp": 1145
               }
             ],
             "ieso": false,
@@ -14017,7 +13986,7 @@
               },
               {
                 "tt": 2,
-                "td": "机龄13.3年"
+                "td": "机龄13.6年"
               },
               {
                 "tt": 4,
@@ -14361,7 +14330,7 @@
               },
               {
                 "tt": 2,
-                "td": "机龄13.3年"
+                "td": "机龄13.6年"
               },
               {
                 "tt": 4,
@@ -14712,7 +14681,7 @@
               },
               {
                 "tt": 2,
-                "td": "机龄13.3年"
+                "td": "机龄13.6年"
               },
               {
                 "tt": 4,
@@ -15063,7 +15032,7 @@
               },
               {
                 "tt": 2,
-                "td": "机龄13.3年"
+                "td": "机龄13.6年"
               },
               {
                 "tt": 4,
@@ -15554,7 +15523,7 @@
                 "lpt": 2,
                 "ccid": 2,
                 "dct": 2,
-                "atp": 1150,
+                "atp": 1145,
                 "app": 0,
                 "not": "4",
                 "pts": [
@@ -15592,7 +15561,7 @@
                     "td": "到达准点率97%"
                   }
                 ],
-                "sp": 1150,
+                "sp": 1145,
                 "pa": 0,
                 "$label": "值机需到实际承运航司柜台办理",
                 "$betterTag": {},
@@ -15923,7 +15892,7 @@
               },
               {
                 "ccid": 2,
-                "atp": 1150
+                "atp": 1145
               }
             ],
             "ieso": false,
@@ -16620,7 +16589,7 @@
               },
               {
                 "ccid": 2,
-                "atp": 1150
+                "atp": 1145
               }
             ],
             "ieso": false,
@@ -17935,7 +17904,7 @@
                 "lpt": 2,
                 "ccid": 2,
                 "dct": 2,
-                "atp": 1150,
+                "atp": 1145,
                 "app": 0,
                 "not": "4",
                 "pts": [
@@ -17973,7 +17942,7 @@
                     "td": "到达准点率97%"
                   }
                 ],
-                "sp": 1150,
+                "sp": 1145,
                 "pa": 0,
                 "$label": "值机需到实际承运航司柜台办理",
                 "$betterTag": {},
@@ -18298,7 +18267,7 @@
               },
               {
                 "ccid": 2,
-                "atp": 1150
+                "atp": 1145
               }
             ],
             "ieso": false,
@@ -18645,7 +18614,7 @@
               },
               {
                 "ccid": 2,
-                "atp": 1150
+                "atp": 1145
               }
             ],
             "ieso": false,
@@ -19475,7 +19444,7 @@
               },
               {
                 "tt": 2,
-                "td": "机龄13.2年"
+                "td": "机龄12.1年"
               },
               {
                 "tt": 4,
@@ -19826,7 +19795,7 @@
               },
               {
                 "tt": 2,
-                "td": "机龄13.2年"
+                "td": "机龄12.1年"
               },
               {
                 "tt": 4,
@@ -20171,7 +20140,7 @@
               },
               {
                 "tt": 2,
-                "td": "机龄13.2年"
+                "td": "机龄12.1年"
               },
               {
                 "tt": 4,
@@ -21890,10 +21859,10 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "a8c14991-8312-4a69-9668-2b28c6cfe949",
-      "host": "::ffff:10.216.138.234",
+      "tracerId": "40ef4afa-3ae4-4c4d-8af7-196d57cffe73",
+      "host": "::ffff:10.200.19.30",
       "iact": "0",
-      "timestamp": 1779415566763
+      "timestamp": 1779438137000
     }
   },
   {
@@ -21903,6 +21872,25 @@
       "status": "fail",
       "message": "数据查询失败",
       "code": 500
+    }
+  },
+  {
+    "url": "https://wx.17u.cn/flightbffv2/book1/configs",
+    "data": {
+      "success": true,
+      "data": {
+        "isUseVOIP": false,
+        "adv": null,
+        "spb": false,
+        "abs": null
+      },
+      "showType": 0,
+      "errorCode": "0",
+      "errorMessage": "请求成功",
+      "tracerId": "40ef4afa-3ae4-4c4d-8af7-196d57cffe73",
+      "host": "::ffff:10.204.168.221",
+      "iact": "0",
+      "timestamp": 1779438137605
     }
   },
   {
@@ -21918,7 +21906,7 @@
         "bgImgUrl": "",
         "advertises": [],
         "associatePositions": null,
-        "biRequestId": "c7f9201d-a364-406e-864c-24d25bc7d85f",
+        "biRequestId": "9c915837-c501-41b5-bd8c-85b2bc366a05",
         "biExpNo": null,
         "prizeCount": null,
         "title": "",
@@ -22092,29 +22080,10 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "a8c14991-8312-4a69-9668-2b28c6cfe949",
-      "host": "::ffff:10.204.110.240",
+      "tracerId": "40ef4afa-3ae4-4c4d-8af7-196d57cffe73",
+      "host": "::ffff:10.206.55.110",
       "iact": "0",
-      "timestamp": 1779415567291
-    }
-  },
-  {
-    "url": "https://wx.17u.cn/flightbffv2/book1/configs",
-    "data": {
-      "success": true,
-      "data": {
-        "isUseVOIP": false,
-        "adv": null,
-        "spb": false,
-        "abs": null
-      },
-      "showType": 0,
-      "errorCode": "0",
-      "errorMessage": "请求成功",
-      "tracerId": "a8c14991-8312-4a69-9668-2b28c6cfe949",
-      "host": "::ffff:10.215.235.4",
-      "iact": "0",
-      "timestamp": 1779415567294
+      "timestamp": 1779438137621
     }
   },
   {
@@ -22123,7 +22092,7 @@
       "success": true,
       "data": {
         "ec": 0,
-        "tId": "3bf3e179ccbe29e9c36c1acd5b9542e2",
+        "tId": "e33a0816f74ae849317cd3377cbf80cc",
         "d": "WUH",
         "a": "BJS",
         "dac": "",
@@ -22236,12 +22205,12 @@
               {
                 "lpt": 11,
                 "ccid": 1,
-                "atp": 754,
+                "atp": 750,
                 "not": "5",
                 "tda": 0,
                 "tags": [
-                  "f0z7loZz4HH4QR16FaonFPTNFVzfp1xaSk48B0VWyWTTRebCIr2CGXc56YckVdLdAmO6zDtkU3lnyy4hnPG1fuWc8rFfDytiDPl2K9L6NNJukcydTpagWfyfhz81psrKF4",
-                  "gz0BDw3CfwWZJeGufrW5dyumIleB6kl439p5773edRyykVo8nEB4o9GCynlflCN9Nnj5EHWdGdc4fFzzFjGuSSihO5JateOfQBUfSklWz40lldXcPdj7KJLsLxt9l718k3"
+                  "f0z7loZz4HH4QR16FaonFQg16qgjW3lxU6fzFhR8FHE6cld2YmR6SOZv18pTsleFFmMMxRKIGdDvfpQEbRjmjFZXz1fLeRFAJezy52Tmita7wQ6tbJHyPWFzvqY12Krf01",
+                  "jrSxy17oXaRd4ur3iwL3r0Enj30CBlJCoSryehD6y8yHmu5FmBWPoFPHcNmxwidl5yG60uVZNf61s1rXLxdOZZmnp35dzXgLSwhZEXFyzpyYvzEH0p8Xz2HWgaYojBElL0"
                 ],
                 "pts": [
                   {
@@ -22288,13 +22257,13 @@
                     "cn": -1
                   }
                 ],
-                "sp": 739,
+                "sp": 735,
                 "dps": {
-                  "mdp": 739,
-                  "bdp": 754,
+                  "mdp": 735,
+                  "bdp": 750,
                   "iap": false
                 },
-                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":754,\"ias\":false,\"iis\":false,\"fd\":false,\"eca\":0.0,\"ca\":0}",
+                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":750,\"ias\":false,\"iis\":false,\"fd\":false,\"eca\":0.0,\"ca\":0}",
                 "pa": 15,
                 "fwbqRaws": "",
                 "fwbqs": [],
@@ -22309,7 +22278,7 @@
                 ],
                 "$showHxj": {
                   "showInMts": false,
-                  "showPrice": 754
+                  "showPrice": 750
                 },
                 "$ptStyle": "pt24",
                 "$showFwbqsInMulti": false,
@@ -22471,12 +22440,12 @@
               {
                 "lpt": 11,
                 "ccid": 1,
-                "atp": 1195,
+                "atp": 1185,
                 "not": "6",
                 "tda": 0,
                 "tags": [
-                  "w5YHLcvWKghhXxWWyX2M2Qs9tXR2DzCndDkYOjky207QUUQkvlgdyziOvMgitDd2MsF89yc99mHAEMNydT8oTA9UMvL7FTRLLo8nOP1R6NAadtejsAd8Ke7vtcyAE932Z3",
-                  "iA9Bxc2nrXEaxpBombJkzLDQNg4FHAFyjLZbs3UQLot0BLfiFsuTzy2hOyHm8MqYLzfs3TSkuCLZDwJVks95LTYHfOAS0tdFythpswobEzXZazUNRp1DvBcnfurDDz7nu4"
+                  "48iNwdUaWxJpSRXV08sUQKOjtEoa2vJl1QQLDnJjATXLeK4DBHRfOshXajjp6XOTkBT1pu7QuZzbr0B9lDFiazVbbRqRT5W94STkU2NeO4yobjFchzdAzTQEIW6hIXVHI",
+                  "jXpBdfNsS9nw5yupa5aunI76JwjpzFBqYQ29GrniSRSZyYvHqtUOjSmMIRAzhQ04L7d9eqzmof9hHpp9BaALsVRjNpoS68uR25U6nv5ANJbykYtXcOs9WQTTEkeTiVR6Y"
                 ],
                 "pts": [
                   {
@@ -22517,13 +22486,13 @@
                     "cn": -1
                   }
                 ],
-                "sp": 1180,
+                "sp": 1170,
                 "dps": {
-                  "mdp": 1180,
-                  "bdp": 1195,
+                  "mdp": 1170,
+                  "bdp": 1185,
                   "iap": false
                 },
-                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":1195,\"ias\":false,\"iis\":false,\"fd\":false,\"eca\":0.0,\"ca\":0}",
+                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":1185,\"ias\":false,\"iis\":false,\"fd\":false,\"eca\":0.0,\"ca\":0}",
                 "pa": 15,
                 "rts": [],
                 "fwbqRaws": "",
@@ -22538,7 +22507,7 @@
                 ],
                 "$showHxj": {
                   "showInMts": false,
-                  "showPrice": 1195
+                  "showPrice": 1185
                 },
                 "$ptStyle": "pt24",
                 "$showFwbqsInMulti": false,
@@ -22686,12 +22655,12 @@
               {
                 "lpt": 11,
                 "ccid": 1,
-                "atp": 1165,
+                "atp": 1157,
                 "not": "A",
                 "tda": 0,
                 "tags": [
-                  "i8oMa54EzDvJNaZwugjK8YzeMY0APZNr1sxaQGwSryhWEp0Yw16IMxZljj0FlCG4YV0zyZmGeTecL0zGwfzP87QhJLvsTg3EbooTX4dxQxie4KiHzhodNddajkyJuclha5",
-                  "PxxvcJHf4HUA5xWaRURey0JzRs3WCXat3BybeN1fjaFiJMy4EL0QAd5CqAhNzakcl1sWu6wCi5qEcnew7HwrRWCpysVz6XxGhMDZ5bOGQUWxJ7TA5ab4gfJazJj5Ry0O52"
+                  "bUkI2qrsymCMNypDlA6KFweAkzmUWPPaByS4zbLk9HIshyJaTKnPUnYJKERzxWVx66fQyaVxKTzpokzHZ1PgPnRwBRDzokUpeTdyTXETkfLYckk9F8ANxY6jNAG2y6qJa81",
+                  "xo9a7r80bOMIre4XrQLayAlOaxl7keBXhKyz1HunSlHz2Y79nSlKzBu26G6eqCacTtirvp9nzxJyOm4CeEJW7rNfrugyFhXqGDcRWJNmooukYXstPNh66RO8OIvqEqEzY0"
                 ],
                 "pts": [
                   {
@@ -22733,13 +22702,13 @@
                     "cn": -1
                   }
                 ],
-                "sp": 1150,
+                "sp": 1142,
                 "dps": {
-                  "mdp": 1150,
-                  "bdp": 1165,
+                  "mdp": 1142,
+                  "bdp": 1157,
                   "iap": false
                 },
-                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":1165,\"ias\":false,\"iis\":false,\"fd\":false,\"eca\":0.0,\"ca\":0}",
+                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":1157,\"ias\":false,\"iis\":false,\"fd\":false,\"eca\":0.0,\"ca\":0}",
                 "pa": 15,
                 "rts": [],
                 "fwbqRaws": "",
@@ -22754,7 +22723,7 @@
                 ],
                 "$showHxj": {
                   "showInMts": false,
-                  "showPrice": 1165
+                  "showPrice": 1157
                 },
                 "$ptStyle": "pt24",
                 "$showFwbqsInMulti": false,
@@ -22770,8 +22739,8 @@
                 "not": "2",
                 "tda": 0,
                 "tags": [
-                  "zgKB0IWvzM5cIb47x01lJBE7Gv8kLjE7llQXRTB1oz3NrO51AVhwxUMocCKzntkBf02XoNX9rPvZw9ngUNbx0WLpeW3eieMybZ8CHMLQDdynx1Fvhr6y2a9wmlmmuKeeW1",
-                  "aYQH8bEzcmneaRSu9INxtQMBug05OM5CkRWfNcmBSWWF4I9153oq3u8b6psWymIJEhuxSQlKXQSYdrRcelqyVF1Bcyy3eOBcG41bpzag19RPPyzzdzfX1wyM4Xgc5xmXx9"
+                  "zgKB0IWvzM5cIb47x01lJ9qyTRMFCMoBxINwZdGaai2S6ic85qnsbAwOKeZrmcJJBycFZhSV5BZ84smfiWR0Tz0wmsSWFpckYrg2q2Pek5yeRTbpTAgwaYFxSRfl0RCYJ",
+                  "aYQH8bEzcmneaRSu9INxtOYjB56MeIZoG8bbYlTxxSW33w9RnhD8HEEy7AlWi9kLhrgfXEOfWg8E0Fw1RB8f2Czl9IEMboaEHLUn8ZUTDRsNSOB4A2pV2GzUafaXzJz7o"
                 ],
                 "pts": [
                   {
@@ -23024,12 +22993,12 @@
               {
                 "lpt": 11,
                 "ccid": 1,
-                "atp": 1135,
+                "atp": 1134,
                 "not": "A",
                 "tda": 0,
                 "tags": [
-                  "Irtuy7TeJtQGalk5q1xMI2gjGud1mt1Cbsaj8e4zZza0iQUZ0VB0a14sZvHylApm4flrkeRvCZxKMdtZoeHNEzYIAwYYtzaCyRpmZA1s4ucccfKTzMVK1DHS9dyNaX0a36",
-                  "W7Gufyk04dLIHrJgYtAGr768ucsWxpb3vMjxcfoaHRzasA4myJlWumEPGQOWD1Qj4Ww7fA4vrDB89XOYfRh6TiG5mKYaItmxrST36hpOC84DeOdSOE910dyyz6Tb8p8XN"
+                  "EFjOSriekRka5SpvT39PnozLeJk1yFbkzzwvWbwOgTuBDV2oSfYSNywIJFzhDY5exBHi3cR6e4NGJe0Kclr34DKMQgtdPShkLXZQyANPFCsVKALtirDBhiyLPyJylW7C82",
+                  "ZfdkIRzSpy4Dn6qvcqmMwVOZAQndRh5vzv8blK0sOtkwac3nTsu0GoD78ycJA7Bt6AX520SanalIXqTbqAO8RJUKhiybnDZ67RdkJ0y6y3eLz5ueut21fsmISzLhdiUW65"
                 ],
                 "pts": [
                   {
@@ -23071,13 +23040,13 @@
                     "cn": -1
                   }
                 ],
-                "sp": 1120,
+                "sp": 1119,
                 "dps": {
-                  "mdp": 1120,
-                  "bdp": 1135,
+                  "mdp": 1119,
+                  "bdp": 1134,
                   "iap": false
                 },
-                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":1135,\"ias\":false,\"iis\":false,\"fd\":false,\"eca\":0.0,\"ca\":0}",
+                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":1134,\"ias\":false,\"iis\":false,\"fd\":false,\"eca\":0.0,\"ca\":0}",
                 "pa": 15,
                 "rts": [],
                 "fwbqRaws": "",
@@ -23092,7 +23061,7 @@
                 ],
                 "$showHxj": {
                   "showInMts": false,
-                  "showPrice": 1135
+                  "showPrice": 1134
                 },
                 "$ptStyle": "pt24",
                 "$showFwbqsInMulti": false,
@@ -23108,8 +23077,8 @@
                 "not": "2",
                 "tda": 0,
                 "tags": [
-                  "TAY97aydF8mXuMvrjbXzBCjJvBIJiLZxOY1qukwegViu3uSQBzTIzrH2LUKYMoQ19a6W09f5Xuh8aCZzl1KqX5krzeIbH8XQRWx0UaIPXrE7zsnS7I98ELcaBYiektivE0",
-                  "aYQH8bEzcmneaRSu9INxtQMBug05OM5CkRWfNcmBSWXXxzwGNmzu0EH58OOZUoHKKqVPA6lyKqF1zAlz267PakN9nJTr5HhiG7WlNO7GKXiIhKGDvP0XszArFIIDCYGY41"
+                  "TAY97aydF8mXuMvrjbXzBCXFFrqqqcKV6rMF1LhEb5B84CGhqzi6uynOn1MAYucqPcCTG00J6mnUK2KvaVuzNuJ1Gze7foS8fHMxELKirYi46qvV17A4dgMGWOxdgtYVK",
+                  "aYQH8bEzcmneaRSu9INxtOYjB56MeIZoG8bbYlTxxSWldENgGOEuSDwEl5NCjyZmFzxFJYgbL3FwsSm4lbft1hGIqenSLG6UIL1p4mt5kGv61SZo34JI2rexdQll4UFX0"
                 ],
                 "pts": [
                   {
@@ -23356,12 +23325,12 @@
               {
                 "lpt": 11,
                 "ccid": 1,
-                "atp": 1135,
+                "atp": 1134,
                 "not": "A",
                 "tda": 0,
                 "tags": [
-                  "Irtuy7TeJtQGalk5q1xMI2gjGud1mt1Cbsaj8e4zZza0iQUZ0VB0a14sZvHylApm4flrkeRvCZxKMdtZoeHNEzYIAwYYtzaCyRpmZA1s4ucccfKTzMVK1DHS9dyNaX0a36",
-                  "W7Gufyk04dLIHrJgYtAGr768ucsWxpb3vMjxcfoaHRzasA4myJlWumEPGQOWD1Qj3iyiiIjx7Cy3XIWmEc3gE6ZAQCGofOiD7yLV7cTlbvz8DxfBuqeZx0yhUkprBTAzg7"
+                  "EFjOSriekRka5SpvT39PnozLeJk1yFbkzzwvWbwOgTuBDV2oSfYSNywIJFzhDY5exBHi3cR6e4NGJe0Kclr34DKMQgtdPShkLXZQyANPFCsVKALtirDBhiyLPyJylW7C82",
+                  "ZfdkIRzSpy4Dn6qvcqmMwVOZAQndRh5vzv8blK0sOtkwac3nTsu0GoD78ycJA7Bt6xovf9VUMAFiXwBWMGDcVbiNYNEKwnCEhg8vV5nBRUnhV5TqwjTD6vwiYGcO4Zd43"
                 ],
                 "pts": [
                   {
@@ -23403,13 +23372,13 @@
                     "cn": -1
                   }
                 ],
-                "sp": 1120,
+                "sp": 1119,
                 "dps": {
-                  "mdp": 1120,
-                  "bdp": 1135,
+                  "mdp": 1119,
+                  "bdp": 1134,
                   "iap": false
                 },
-                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":1135,\"ias\":false,\"iis\":false,\"fd\":false,\"eca\":0.0,\"ca\":0}",
+                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":1134,\"ias\":false,\"iis\":false,\"fd\":false,\"eca\":0.0,\"ca\":0}",
                 "pa": 15,
                 "rts": [],
                 "fwbqRaws": "",
@@ -23424,7 +23393,7 @@
                 ],
                 "$showHxj": {
                   "showInMts": false,
-                  "showPrice": 1135
+                  "showPrice": 1134
                 },
                 "$ptStyle": "pt24",
                 "$showFwbqsInMulti": false,
@@ -23440,8 +23409,8 @@
                 "not": "2",
                 "tda": 0,
                 "tags": [
-                  "TAY97aydF8mXuMvrjbXzBCjJvBIJiLZxOY1qukwegViu3uSQBzTIzrH2LUKYMoQ19a6W09f5Xuh8aCZzl1KqX5krzeIbH8XQRWx0UaIPXrE7zsnS7I98ELcaBYiektivE0",
-                  "aYQH8bEzcmneaRSu9INxtQMBug05OM5CkRWfNcmBSWXXxzwGNmzu0EH58OOZUoHKHPMySeetjIJcCtl1yNJeyN7ouSzCcZoctlZHis8j5ByOF37qKdFllIrnofWZzwW836"
+                  "TAY97aydF8mXuMvrjbXzBCXFFrqqqcKV6rMF1LhEb5B84CGhqzi6uynOn1MAYucqPcCTG00J6mnUK2KvaVuzNuJ1Gze7foS8fHMxELKirYi46qvV17A4dgMGWOxdgtYVK",
+                  "aYQH8bEzcmneaRSu9INxtOYjB56MeIZoG8bbYlTxxSWldENgGOEuSDwEl5NCjyZm7aurCAyzyNwdiSXSb1dURTtfcL8XL5SkjRcmJqmL5LQDn5fn4Ge2AeMzyzdk5COkd0"
                 ],
                 "pts": [
                   {
@@ -23683,12 +23652,12 @@
               {
                 "lpt": 11,
                 "ccid": 1,
-                "atp": 1504,
+                "atp": 1537,
                 "not": "5",
                 "tda": 0,
                 "tags": [
-                  "7zqY7mnxuycFoVQzmjPHQRPWej7eMEI1WygaKzgPLJ0UY9D112G9722rXkavVby7LLVDZ4LIsVLJ15eT8myYdatIA1KNPKjzFO5upzK7NbeRVmJT9iEtmdWdiTTpgo9azA",
-                  "xtan5dWmlnXj1kGsO7C6zmqSfQcWzpJzOlT6xxvPF4nmtpYp4J0lbfyCrSQAmedoawG11gzg5lRJF091SnCb5u4gOvD2HHZbRBZ188xFzCJH14E8aaCdRC7gu7JN0TGob"
+                  "7zqY7mnxuycFoVQzmjPHQRQpw70kUb0ZgwoA6gABYuNUWjQCkv39eKV6wyZsY2rxBPedtPyyQCeIXIH8Bs1rMU9Gu8YnHgerC2zdmiWLyOOkwntFBX1abyHSEvHiX5ltd2",
+                  "JbeyeyS4SRTZs6YzF665gUzHUAldgebB6nJy91IkC1XRwdyQWyBzR2Xqz8xFNdqIiUlBaM1hmydi53jnxkHTo2APtvjBoXCy8FOKMdAMSHHcdu4OVgseJvh2pg1RkOgdr2"
                 ],
                 "pts": [
                   {
@@ -23730,13 +23699,13 @@
                     "cn": -1
                   }
                 ],
-                "sp": 1489,
+                "sp": 1522,
                 "dps": {
-                  "mdp": 1489,
-                  "bdp": 1504,
+                  "mdp": 1522,
+                  "bdp": 1537,
                   "iap": false
                 },
-                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":1504,\"ias\":false,\"iis\":false,\"fd\":false,\"eca\":0.0,\"ca\":0}",
+                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":1537,\"ias\":false,\"iis\":false,\"fd\":false,\"eca\":0.0,\"ca\":0}",
                 "pa": 15,
                 "rts": [],
                 "fwbqRaws": "",
@@ -23751,7 +23720,7 @@
                 ],
                 "$showHxj": {
                   "showInMts": false,
-                  "showPrice": 1504
+                  "showPrice": 1537
                 },
                 "$ptStyle": "pt24",
                 "$showFwbqsInMulti": false,
@@ -23899,8 +23868,8 @@
             ]
           }
         ],
-        "lp": 754,
-        "ms": "754|CA3320,CA1140|YCU|1|",
+        "lp": 750,
+        "ms": "750|CA3320,CA1140|YCU|1|",
         "cls": [
           {
             "code": "fcfr",
@@ -23988,10 +23957,10 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "a8c14991-8312-4a69-9668-2b28c6cfe949",
-      "host": "::ffff:10.204.66.18",
+      "tracerId": "40ef4afa-3ae4-4c4d-8af7-196d57cffe73",
+      "host": "::ffff:10.204.30.158",
       "iact": "0",
-      "timestamp": 1779415567439
+      "timestamp": 1779438137745
     }
   },
   {
