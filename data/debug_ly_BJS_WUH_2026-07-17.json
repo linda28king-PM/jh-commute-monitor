@@ -1,54 +1,9 @@
 [
   {
-    "url": "https://c.go-mpulse.net/api/config.json?key=VP9LC-35W9U-68TQN-7HPLX-PPF4Y&d=m.ly.com&t=5936068&v=1.720.0&sl=0&si=e69fb539-80bc-4258-a11d-a04a4ae9764c-tg95tt&plugins=AK,ConfigOverride,Continuity,PageParams,IFrameDelay,AutoXHR,SPA,History,Angular,Backbone,Ember,RT,CrossDomain,BW,PaintTiming,NavigationTiming,ResourceTiming,Memory,CACHE_RELOAD,Errors,TPAnalytics,UserTiming,Akamai,Early,EventTiming,LOGN&acao=&ak.ai=947581",
+    "url": "https://c.go-mpulse.net/api/config.json?key=VP9LC-35W9U-68TQN-7HPLX-PPF4Y&d=m.ly.com&t=5936128&v=1.720.0&sl=0&si=d46ba81c-7ef7-4c8f-a936-37e51638dbc7-tg9jlv&plugins=AK,ConfigOverride,Continuity,PageParams,IFrameDelay,AutoXHR,SPA,History,Angular,Backbone,Ember,RT,CrossDomain,BW,PaintTiming,NavigationTiming,ResourceTiming,Memory,CACHE_RELOAD,Errors,TPAnalytics,UserTiming,Akamai,Early,EventTiming,LOGN&acao=&ak.ai=947581",
     "data": {
-      "h.key": "VP9LC-35W9U-68TQN-7HPLX-PPF4Y",
-      "h.d": "arlid:947581",
-      "h.t": 1780820419128,
-      "h.cr": "bbe47b458b73202ae7c7cb1b3baf05e329370615-94e18f8b-8dfb27fa",
-      "session_id": "9db974a8-60f9-469d-86ab-6282e1097de9",
       "site_domain": "arlid:947581",
-      "beacon_url": "//173bf107.akstat.io/",
-      "autorun": true,
-      "BW": {
-        "enabled": false
-      },
-      "RT": {
-        "cookie": null,
-        "session_exp": 1800
-      },
-      "ResourceTiming": {
-        "enabled": true,
-        "splitAtPath": true
-      },
-      "PageParams": {
-        "xhr": "none",
-        "pageGroups": [],
-        "customMetrics": [],
-        "customTimers": [],
-        "customDimensions": [],
-        "urlPatterns": [],
-        "params": true
-      },
-      "Akamai": {
-        "enabled": true,
-        "dns_prefetch_enabled": true
-      },
-      "user_ip": "f9ab231dc"
-    }
-  },
-  {
-    "url": "https://wx.17u.cn/flightbffv2/basic/last",
-    "data": {
-      "success": true,
-      "data": null,
-      "showType": 0,
-      "errorCode": "0",
-      "errorMessage": "请求成功",
-      "tracerId": "a6763cd3-a739-4c95-9910-4dc8272f96a7",
-      "host": "::ffff:10.214.186.223",
-      "iact": "0",
-      "timestamp": 1780820419605
+      "rate_limited": true
     }
   },
   {
@@ -736,6 +691,20 @@
     }
   },
   {
+    "url": "https://wx.17u.cn/flightbffv2/basic/last",
+    "data": {
+      "success": true,
+      "data": null,
+      "showType": 0,
+      "errorCode": "0",
+      "errorMessage": "请求成功",
+      "tracerId": "30ff5986-f886-4df4-aa41-afc426c067e0",
+      "host": "::ffff:10.200.5.139",
+      "iact": "0",
+      "timestamp": 1780838276863
+    }
+  },
+  {
     "url": "https://wx.17u.cn/flightbffv2/book1/flights",
     "data": {
       "success": true,
@@ -783,9 +752,9 @@
           {
             "dd": "2026-07-17",
             "lp": 650,
-            "ms": "1|650|0|650|29|MU2452||ut_user_new|||650|1|0|MU2452|2|0|QJ||2026-06-07 16:20:19||2026-06-07 16:20:19|0|650|650",
+            "ms": "1|650|0|650|29|MU2452||ut_user_new|||650|1|0|MU2452|2|0|QJ||2026-06-07 21:17:56||2026-06-07 21:17:57|0|650|650",
             "hlp": 1489,
-            "hms": "1|1489|0|1489|22|MU2454||ut_user_new|||1489|1|0|MU2454|2|0|XC||2026-06-07 16:20:19||2026-06-07 16:20:19|0|1489|1489"
+            "hms": "1|1489|0|1489|22|MU2454||ut_user_new|||1489|1|0|MU2454|2|0|XC||2026-06-07 21:17:56||2026-06-07 21:17:57|0|1489|1489"
           },
           {
             "dd": "2026-07-18",
@@ -1035,7 +1004,7 @@
             ]
           }
         ],
-        "cache_key": "flight_b469998a624f410f69a8a68ea954ffa6bf5f9a16",
+        "cache_key": "flight_ec73f5d7c83323dd79c933f5322727a7e8b7c7a1",
         "tfs": [
           {
             "type": "9",
@@ -20407,10 +20376,10 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "a6763cd3-a739-4c95-9910-4dc8272f96a7",
-      "host": "::ffff:10.204.66.18",
+      "tracerId": "30ff5986-f886-4df4-aa41-afc426c067e0",
+      "host": "::ffff:10.206.0.7",
       "iact": "0",
-      "timestamp": 1780820419730
+      "timestamp": 1780838277031
     }
   },
   {
@@ -20433,7 +20402,7 @@
         "bgImgUrl": "",
         "advertises": [],
         "associatePositions": null,
-        "biRequestId": "9fc3d104-db5b-489c-8c28-08f73d7854d0",
+        "biRequestId": "905fb1f0-c689-4855-86fd-2cdc9e996434",
         "biExpNo": null,
         "prizeCount": null,
         "title": "",
@@ -20455,6 +20424,25 @@
       "status": "fail",
       "message": "数据查询失败",
       "code": 500
+    }
+  },
+  {
+    "url": "https://wx.17u.cn/flightbffv2/book1/configs",
+    "data": {
+      "success": true,
+      "data": {
+        "isUseVOIP": false,
+        "adv": null,
+        "spb": false,
+        "abs": null
+      },
+      "showType": 0,
+      "errorCode": "0",
+      "errorMessage": "请求成功",
+      "tracerId": "30ff5986-f886-4df4-aa41-afc426c067e0",
+      "host": "::ffff:10.200.5.139",
+      "iact": "0",
+      "timestamp": 1780838277668
     }
   },
   {
@@ -20634,29 +20622,10 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "a6763cd3-a739-4c95-9910-4dc8272f96a7",
-      "host": "::ffff:10.200.142.201",
+      "tracerId": "30ff5986-f886-4df4-aa41-afc426c067e0",
+      "host": "::ffff:10.200.189.82",
       "iact": "0",
-      "timestamp": 1780820420374
-    }
-  },
-  {
-    "url": "https://wx.17u.cn/flightbffv2/book1/configs",
-    "data": {
-      "success": true,
-      "data": {
-        "isUseVOIP": false,
-        "adv": null,
-        "spb": false,
-        "abs": null
-      },
-      "showType": 0,
-      "errorCode": "0",
-      "errorMessage": "请求成功",
-      "tracerId": "a6763cd3-a739-4c95-9910-4dc8272f96a7",
-      "host": "::ffff:10.214.154.51",
-      "iact": "0",
-      "timestamp": 1780820420373
+      "timestamp": 1780838277700
     }
   },
   {
@@ -20684,10 +20653,10 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "a6763cd3-a739-4c95-9910-4dc8272f96a7",
-      "host": "::ffff:10.204.203.180",
+      "tracerId": "30ff5986-f886-4df4-aa41-afc426c067e0",
+      "host": "::ffff:10.204.66.18",
       "iact": "0",
-      "timestamp": 1780820420408
+      "timestamp": 1780838277740
     }
   },
   {
