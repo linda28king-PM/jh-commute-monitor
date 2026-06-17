@@ -1,23 +1,9 @@
 [
   {
-    "url": "https://c.go-mpulse.net/api/config.json?key=VP9LC-35W9U-68TQN-7HPLX-PPF4Y&d=m.ly.com&t=5938961&v=1.720.0&sl=0&si=e382fc31-a006-44f3-879f-e1bdc4c14a1a-tgrrle&plugins=AK,ConfigOverride,Continuity,PageParams,IFrameDelay,AutoXHR,SPA,History,Angular,Backbone,Ember,RT,CrossDomain,BW,PaintTiming,NavigationTiming,ResourceTiming,Memory,CACHE_RELOAD,Errors,TPAnalytics,UserTiming,Akamai,Early,EventTiming,LOGN&acao=&ak.ai=947581",
+    "url": "https://c.go-mpulse.net/api/config.json?key=VP9LC-35W9U-68TQN-7HPLX-PPF4Y&d=m.ly.com&t=5939026&v=1.720.0&sl=0&si=89cfec13-40dd-4c58-82b0-cfb60db0b7ab-tgs6fw&plugins=AK,ConfigOverride,Continuity,PageParams,IFrameDelay,AutoXHR,SPA,History,Angular,Backbone,Ember,RT,CrossDomain,BW,PaintTiming,NavigationTiming,ResourceTiming,Memory,CACHE_RELOAD,Errors,TPAnalytics,UserTiming,Akamai,Early,EventTiming,LOGN&acao=&ak.ai=947581",
     "data": {
       "site_domain": "arlid:947581",
       "rate_limited": true
-    }
-  },
-  {
-    "url": "https://wx.17u.cn/flightbffv2/basic/last",
-    "data": {
-      "success": true,
-      "data": null,
-      "showType": 0,
-      "errorCode": "0",
-      "errorMessage": "请求成功",
-      "tracerId": "2af507ba-0171-43be-8579-a8588a3cf605",
-      "host": "::ffff:10.215.214.4",
-      "iact": "0",
-      "timestamp": 1781688436474
     }
   },
   {
@@ -705,6 +691,20 @@
     }
   },
   {
+    "url": "https://wx.17u.cn/flightbffv2/basic/last",
+    "data": {
+      "success": true,
+      "data": null,
+      "showType": 0,
+      "errorCode": "0",
+      "errorMessage": "请求成功",
+      "tracerId": "bc29efd2-5900-4e48-88b2-10d899248876",
+      "host": "::ffff:10.204.93.205",
+      "iact": "0",
+      "timestamp": 1781707677653
+    }
+  },
+  {
     "url": "https://wx.17u.cn/flightbffv2/book1/flights",
     "data": {
       "success": true,
@@ -752,9 +752,9 @@
           {
             "dd": "2026-07-17",
             "lp": 650,
-            "ms": "1|650|0|650|29|MU2452||ut_user_new|||650|1|0|MU2452|2|0|QJ||2026-06-17 17:27:16||2026-06-17 17:27:16|0|650|650",
+            "ms": "1|650|0|650|29|MU2452||ut_user_new|||650|1|0|MU2452|2|0|QJ||2026-06-17 22:47:57||2026-06-17 22:47:57|0|650|650",
             "hlp": 1370,
-            "hms": "1|1370|0|1370|14|HU7187||ut_user_new|||1370|1|0|HU7187|2|0|XC||2026-06-17 17:27:16||2026-06-17 17:27:16|0|1370|1370"
+            "hms": "1|1370|0|1370|14|HU7187||ut_user_new|||1370|1|0|HU7187|2|0|XC||2026-06-17 22:47:57||2026-06-17 22:47:57|0|1370|1370"
           },
           {
             "dd": "2026-07-18",
@@ -1004,7 +1004,7 @@
             ]
           }
         ],
-        "cache_key": "flight_523e2e2ccbb370861f3d3517577c20ce6122bc90",
+        "cache_key": "flight_5f221a3769ae53d75dd093b6bf888334b63ed031",
         "tfs": [
           {
             "type": "9",
@@ -20286,47 +20286,48 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "2af507ba-0171-43be-8579-a8588a3cf605",
-      "host": "::ffff:10.206.21.135",
+      "tracerId": "bc29efd2-5900-4e48-88b2-10d899248876",
+      "host": "::ffff:10.214.186.223",
       "iact": "0",
-      "timestamp": 1781688437005
+      "timestamp": 1781707677800
     }
   },
   {
-    "url": "https://wx.17u.cn/mihawkapi/ad/info",
+    "url": "https://apmfront.17u.cn/fms/h5multi",
+    "data": {
+      "code": 200,
+      "msg": "ok"
+    }
+  },
+  {
+    "url": "https://wx.17u.cn/flightbffv2/book1/connection/flights",
     "data": {
       "success": true,
-      "status": "success",
-      "code": 200,
       "data": {
-        "positionCode": "TOUCH_Flight_Single_B1Banner",
-        "redirectPositionCode": null,
-        "displayType": 1,
-        "bgImgUrl": "",
-        "advertises": [],
-        "associatePositions": null,
-        "biRequestId": "98f101d7-e3af-4c04-ba77-338f25b89b7c",
-        "biExpNo": null,
-        "prizeCount": null,
-        "title": "",
-        "remark": "",
-        "jumpUrl": null,
-        "cpAbExp": null,
-        "ext": {},
-        "config": {
-          "closeDelay": 1,
-          "carouselDelay": 4
+        "optimalAiConfig": null,
+        "ffoc": {
+          "ffCompareRate": "90%",
+          "ffComparePrice": 50
+        },
+        "gtctop": 2,
+        "moretabsseq": [
+          "kk",
+          "tc",
+          "lj",
+          "kt"
+        ],
+        "b1_rec_pos": "2",
+        "comboConfigs": {
+          "tcLogoUrl": "https://file.40017.cn/img140017cnproduct/fed/tcelxcx/icon-tc.png?v=2025021901"
         }
-      }
-    }
-  },
-  {
-    "url": "https://wx.17u.cn/mihawkapi/ad/info",
-    "data": {
-      "success": false,
-      "status": "fail",
-      "message": "数据查询失败",
-      "code": 500
+      },
+      "showType": 0,
+      "errorCode": "0",
+      "errorMessage": "请求成功",
+      "tracerId": "bc29efd2-5900-4e48-88b2-10d899248876",
+      "host": "::ffff:10.200.189.82",
+      "iact": "0",
+      "timestamp": 1781707678811
     }
   },
   {
@@ -20488,48 +20489,38 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "2af507ba-0171-43be-8579-a8588a3cf605",
-      "host": "::ffff:10.204.203.180",
+      "tracerId": "bc29efd2-5900-4e48-88b2-10d899248876",
+      "host": "::ffff:10.204.66.18",
       "iact": "0",
-      "timestamp": 1781688437660
+      "timestamp": 1781707678768
     }
   },
   {
-    "url": "https://wx.17u.cn/flightbffv2/book1/connection/flights",
+    "url": "https://wx.17u.cn/mihawkapi/ad/info",
     "data": {
       "success": true,
-      "data": {
-        "optimalAiConfig": null,
-        "ffoc": {
-          "ffCompareRate": "90%",
-          "ffComparePrice": 50
-        },
-        "gtctop": 2,
-        "moretabsseq": [
-          "kk",
-          "tc",
-          "lj",
-          "kt"
-        ],
-        "b1_rec_pos": "2",
-        "comboConfigs": {
-          "tcLogoUrl": "https://file.40017.cn/img140017cnproduct/fed/tcelxcx/icon-tc.png?v=2025021901"
-        }
-      },
-      "showType": 0,
-      "errorCode": "0",
-      "errorMessage": "请求成功",
-      "tracerId": "2af507ba-0171-43be-8579-a8588a3cf605",
-      "host": "::ffff:10.204.203.180",
-      "iact": "0",
-      "timestamp": 1781688437691
-    }
-  },
-  {
-    "url": "https://apmfront.17u.cn/fms/h5multi",
-    "data": {
+      "status": "success",
       "code": 200,
-      "msg": "ok"
+      "data": {
+        "positionCode": "TOUCH_Flight_Single_B1Banner",
+        "redirectPositionCode": null,
+        "displayType": 1,
+        "bgImgUrl": "",
+        "advertises": [],
+        "associatePositions": null,
+        "biRequestId": "32e77818-99b2-4a8a-af5a-40a20cd21e70",
+        "biExpNo": null,
+        "prizeCount": null,
+        "title": "",
+        "remark": "",
+        "jumpUrl": null,
+        "cpAbExp": null,
+        "ext": {},
+        "config": {
+          "closeDelay": 1,
+          "carouselDelay": 4
+        }
+      }
     }
   },
   {
@@ -20545,10 +20536,19 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "2af507ba-0171-43be-8579-a8588a3cf605",
-      "host": "::ffff:10.204.25.223",
+      "tracerId": "bc29efd2-5900-4e48-88b2-10d899248876",
+      "host": "::ffff:10.206.0.7",
       "iact": "0",
-      "timestamp": 1781688438028
+      "timestamp": 1781707679148
+    }
+  },
+  {
+    "url": "https://wx.17u.cn/mihawkapi/ad/info",
+    "data": {
+      "success": false,
+      "status": "fail",
+      "message": "数据查询失败",
+      "code": 500
     }
   },
   {
