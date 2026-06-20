@@ -1,23 +1,43 @@
 [
   {
-    "url": "https://c.go-mpulse.net/api/config.json?key=VP9LC-35W9U-68TQN-7HPLX-PPF4Y&d=m.ly.com&t=5939812&v=1.720.0&sl=0&si=65bc4174-5de1-400a-9545-764618261036-tgx8er&plugins=AK,ConfigOverride,Continuity,PageParams,IFrameDelay,AutoXHR,SPA,History,Angular,Backbone,Ember,RT,CrossDomain,BW,PaintTiming,NavigationTiming,ResourceTiming,Memory,CACHE_RELOAD,Errors,TPAnalytics,UserTiming,Akamai,Early,EventTiming,LOGN&acao=&ak.ai=947581",
+    "url": "https://c.go-mpulse.net/api/config.json?key=VP9LC-35W9U-68TQN-7HPLX-PPF4Y&d=m.ly.com&t=5939873&v=1.720.0&sl=0&si=919c506a-7e91-40c0-becc-0c258955cf4f-tgxmjr&plugins=AK,ConfigOverride,Continuity,PageParams,IFrameDelay,AutoXHR,SPA,History,Angular,Backbone,Ember,RT,CrossDomain,BW,PaintTiming,NavigationTiming,ResourceTiming,Memory,CACHE_RELOAD,Errors,TPAnalytics,UserTiming,Akamai,Early,EventTiming,LOGN&acao=&ak.ai=947581",
     "data": {
+      "h.key": "VP9LC-35W9U-68TQN-7HPLX-PPF4Y",
+      "h.d": "arlid:947581",
+      "h.t": 1781961831924,
+      "h.cr": "41390acd1d7c95226f958d118250b1e3686fd0eb-daefc94c-8dfb27fa",
+      "session_id": "504d44dc-089e-43eb-9b8c-4d8fa2c378ff",
       "site_domain": "arlid:947581",
-      "rate_limited": true
-    }
-  },
-  {
-    "url": "https://wx.17u.cn/flightbffv2/basic/last",
-    "data": {
-      "success": true,
-      "data": null,
-      "showType": 0,
-      "errorCode": "0",
-      "errorMessage": "请求成功",
-      "tracerId": "98bb2bf1-340a-47c2-8802-467a532fa1e9",
-      "host": "::ffff:10.204.93.205",
-      "iact": "0",
-      "timestamp": 1781943509288
+      "beacon_url": "//17de4c19.akstat.io/",
+      "autorun": true,
+      "BW": {
+        "enabled": false
+      },
+      "RT": {
+        "cookie": null,
+        "session_exp": 1800
+      },
+      "ResourceTiming": {
+        "enabled": true,
+        "splitAtPath": true
+      },
+      "PageParams": {
+        "xhr": "none",
+        "pageGroups": [],
+        "customMetrics": [],
+        "customTimers": [],
+        "customDimensions": [],
+        "urlPatterns": [],
+        "params": true
+      },
+      "Akamai": {
+        "enabled": true,
+        "mapping_xhr_base_url": "akamaihd.net",
+        "mapping_xhr_url_path": "/eum/getdns.txt",
+        "mapping_xhr_url_v4_prefix": "trial-eum-clientnsv4-s",
+        "mapping_xhr_url_v6_prefix": "trial-eum-clienttons-s"
+      },
+      "user_ip": "dd617de07"
     }
   },
   {
@@ -705,6 +725,27 @@
     }
   },
   {
+    "url": "https://apmfront.17u.cn/fms/h5multi",
+    "data": {
+      "code": 200,
+      "msg": "ok"
+    }
+  },
+  {
+    "url": "https://wx.17u.cn/flightbffv2/basic/last",
+    "data": {
+      "success": true,
+      "data": null,
+      "showType": 0,
+      "errorCode": "0",
+      "errorMessage": "请求成功",
+      "tracerId": "09d7c6af-5332-4696-89be-3dfd65e4d06c",
+      "host": "::ffff:10.206.70.7",
+      "iact": "0",
+      "timestamp": 1781961832864
+    }
+  },
+  {
     "url": "https://wx.17u.cn/flightbffv2/book1/flights",
     "data": {
       "success": true,
@@ -740,7 +781,7 @@
           },
           {
             "dd": "2026-07-21",
-            "lp": 480,
+            "lp": 500,
             "hlp": 1489
           },
           {
@@ -750,15 +791,15 @@
           },
           {
             "dd": "2026-07-23",
-            "lp": 480,
+            "lp": 500,
             "hlp": 1489
           },
           {
             "dd": "2026-07-24",
             "lp": 640,
-            "ms": "2|640|640|650|17|MU5186,MU2544|PVG|ut_user_new|||650|1|0|MU2452|0|2||||2026-06-17 14:41:45|2026-06-20 16:18:29|0|650|650",
+            "ms": "2|640|640|650|17|MU5186,MU2544|PVG|ut_user_new|||650|1|0|MU2452|0|2||||2026-06-17 14:41:45|2026-06-20 21:23:53|0|650|650",
             "hlp": 1489,
-            "hms": "1|1489|1823|1489|22|MU2454||ut_user_new|||1489|1|0|MU2454|2|0|XC||2026-06-20 16:18:29||2026-06-20 16:18:29|0|1489|1489"
+            "hms": "1|1489|1823|1489|22|MU2454||ut_user_new|||1489|1|0|MU2454|2|0|XC||2026-06-20 21:23:52||2026-06-20 21:23:53|0|1489|1489"
           },
           {
             "dd": "2026-07-25",
@@ -1004,7 +1045,7 @@
             ]
           }
         ],
-        "cache_key": "flight_003c2cae495c439c1d82735c34f62b1421511b3d",
+        "cache_key": "flight_93bb1feffae22d8f5f03466c55c67891a6aaacb5",
         "tfs": [
           {
             "type": "9",
@@ -11694,7 +11735,7 @@
                 "dct": 2,
                 "atp": 3090,
                 "app": 0,
-                "not": "2",
+                "not": "1",
                 "pts": [
                   {
                     "tt": 2,
@@ -20039,7 +20080,7 @@
                 "dct": 2,
                 "atp": 4920,
                 "app": 0,
-                "not": "6",
+                "not": "7",
                 "pts": [
                   {
                     "tt": 2,
@@ -20232,17 +20273,10 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "98bb2bf1-340a-47c2-8802-467a532fa1e9",
-      "host": "::ffff:10.204.110.240",
+      "tracerId": "09d7c6af-5332-4696-89be-3dfd65e4d06c",
+      "host": "::ffff:10.204.66.18",
       "iact": "0",
-      "timestamp": 1781943509435
-    }
-  },
-  {
-    "url": "https://apmfront.17u.cn/fms/h5multi",
-    "data": {
-      "code": 200,
-      "msg": "ok"
+      "timestamp": 1781961833021
     }
   },
   {
@@ -20252,25 +20286,6 @@
       "status": "fail",
       "message": "数据查询失败",
       "code": 500
-    }
-  },
-  {
-    "url": "https://wx.17u.cn/flightbffv2/book1/configs",
-    "data": {
-      "success": true,
-      "data": {
-        "isUseVOIP": false,
-        "adv": null,
-        "spb": false,
-        "abs": null
-      },
-      "showType": 0,
-      "errorCode": "0",
-      "errorMessage": "请求成功",
-      "tracerId": "98bb2bf1-340a-47c2-8802-467a532fa1e9",
-      "host": "::ffff:10.215.235.4",
-      "iact": "0",
-      "timestamp": 1781943510109
     }
   },
   {
@@ -20286,7 +20301,7 @@
         "bgImgUrl": "",
         "advertises": [],
         "associatePositions": null,
-        "biRequestId": "941a9d64-b50c-4c8d-bb75-9fe00d0ba491",
+        "biRequestId": "2a9b5265-dbea-4905-9957-3d2329423884",
         "biExpNo": null,
         "prizeCount": null,
         "title": "",
@@ -20460,10 +20475,29 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "98bb2bf1-340a-47c2-8802-467a532fa1e9",
-      "host": "::ffff:10.204.203.180",
+      "tracerId": "09d7c6af-5332-4696-89be-3dfd65e4d06c",
+      "host": "::ffff:10.206.21.135",
       "iact": "0",
-      "timestamp": 1781943510116
+      "timestamp": 1781961833673
+    }
+  },
+  {
+    "url": "https://wx.17u.cn/flightbffv2/book1/configs",
+    "data": {
+      "success": true,
+      "data": {
+        "isUseVOIP": false,
+        "adv": null,
+        "spb": false,
+        "abs": null
+      },
+      "showType": 0,
+      "errorCode": "0",
+      "errorMessage": "请求成功",
+      "tracerId": "09d7c6af-5332-4696-89be-3dfd65e4d06c",
+      "host": "::ffff:10.204.168.221",
+      "iact": "0",
+      "timestamp": 1781961834015
     }
   },
   {
@@ -20491,10 +20525,10 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "98bb2bf1-340a-47c2-8802-467a532fa1e9",
+      "tracerId": "09d7c6af-5332-4696-89be-3dfd65e4d06c",
       "host": "::ffff:10.220.160.85",
       "iact": "0",
-      "timestamp": 1781943510158
+      "timestamp": 1781961834046
     }
   },
   {
