@@ -1,23 +1,9 @@
 [
   {
-    "url": "https://c.go-mpulse.net/api/config.json?key=VP9LC-35W9U-68TQN-7HPLX-PPF4Y&d=m.ly.com&t=5943478&v=1.720.0&sl=0&si=76ff8bbb-3338-47fd-a0e2-99a89c46b7e4-thkt13&plugins=AK,ConfigOverride,Continuity,PageParams,IFrameDelay,AutoXHR,SPA,History,Angular,Backbone,Ember,RT,CrossDomain,BW,PaintTiming,NavigationTiming,ResourceTiming,Memory,CACHE_RELOAD,Errors,TPAnalytics,UserTiming,Akamai,Early,EventTiming,LOGN&acao=&ak.ai=947581",
+    "url": "https://c.go-mpulse.net/api/config.json?key=VP9LC-35W9U-68TQN-7HPLX-PPF4Y&d=m.ly.com&t=5943552&v=1.720.0&sl=0&si=1d142c30-4621-41a8-a68f-df9dcddb6dc7-thla4o&plugins=AK,ConfigOverride,Continuity,PageParams,IFrameDelay,AutoXHR,SPA,History,Angular,Backbone,Ember,RT,CrossDomain,BW,PaintTiming,NavigationTiming,ResourceTiming,Memory,CACHE_RELOAD,Errors,TPAnalytics,UserTiming,Akamai,Early,EventTiming,LOGN&acao=&ak.ai=947581",
     "data": {
       "site_domain": "arlid:947581",
       "rate_limited": true
-    }
-  },
-  {
-    "url": "https://wx.17u.cn/flightbffv2/basic/last",
-    "data": {
-      "success": true,
-      "data": null,
-      "showType": 0,
-      "errorCode": "0",
-      "errorMessage": "请求成功",
-      "tracerId": "053e253e-5a2c-47d0-8fca-9c692e73095b",
-      "host": "::ffff:10.204.168.221",
-      "iact": "0",
-      "timestamp": 1783043320402
     }
   },
   {
@@ -705,6 +691,20 @@
     }
   },
   {
+    "url": "https://wx.17u.cn/flightbffv2/basic/last",
+    "data": {
+      "success": true,
+      "data": null,
+      "showType": 0,
+      "errorCode": "0",
+      "errorMessage": "请求成功",
+      "tracerId": "cbc54450-dde9-4492-8eb9-40e31476da16",
+      "host": "::ffff:10.206.55.110",
+      "iact": "0",
+      "timestamp": 1783065481609
+    }
+  },
+  {
     "url": "https://wx.17u.cn/flightbffv2/book1/flights",
     "data": {
       "success": true,
@@ -721,7 +721,7 @@
           },
           {
             "dd": "2026-07-20",
-            "lp": 374,
+            "lp": 370,
             "hlp": 1145
           },
           {
@@ -741,7 +741,7 @@
           },
           {
             "dd": "2026-07-24",
-            "lp": 409,
+            "lp": 375,
             "hlp": 1145
           },
           {
@@ -752,9 +752,9 @@
           {
             "dd": "2026-07-26",
             "lp": 420,
-            "ms": "1|420|0|420|16|CZ8542||ut_user_new|||420|1|0|CZ8542|2|0|QJ||2026-07-03 09:48:40||2026-07-03 09:48:40|0|420|420",
+            "ms": "1|420|0|420|16|CZ8542||ut_user_new|||420|1|0|CZ8542|2|0|QJ||2026-07-03 15:58:01||2026-07-03 15:58:01|0|420|420",
             "hlp": 1145,
-            "hms": "1|1145|0|1145|17|MU7529||ut_user_new|||1145|1|0|MU7529|2|0|XC||2026-07-03 09:48:40||2026-07-03 09:48:40|0|1145|1145"
+            "hms": "1|1145|0|1145|17|MU7529||ut_user_new|||1145|1|0|MU7529|2|0|XC||2026-07-03 15:58:01||2026-07-03 15:58:01|0|1145|1145"
           },
           {
             "dd": "2026-07-27",
@@ -769,7 +769,7 @@
           {
             "dd": "2026-07-29",
             "lp": 420,
-            "hlp": 1145
+            "hlp": 1120
           },
           {
             "dd": "2026-07-30",
@@ -983,7 +983,7 @@
             ]
           }
         ],
-        "cache_key": "flight_faf4c38570bd5e94ab34fb30254ded53f926f80e",
+        "cache_key": "flight_0c5c9f119f7ae26e68d8c1bdcd5167972c08b493",
         "tfs": [
           {
             "type": "9",
@@ -1841,7 +1841,7 @@
               },
               {
                 "tt": 2,
-                "td": "机龄14.2年"
+                "td": "机龄14.3年"
               },
               {
                 "tt": 4,
@@ -2518,7 +2518,7 @@
               },
               {
                 "tt": 2,
-                "td": "机龄14.2年"
+                "td": "机龄14.3年"
               },
               {
                 "tt": 4,
@@ -2857,7 +2857,7 @@
               },
               {
                 "tt": 2,
-                "td": "机龄14.2年"
+                "td": "机龄14.3年"
               },
               {
                 "tt": 4,
@@ -19473,6 +19473,18 @@
               {
                 "tt": 4,
                 "td": "无餐食"
+              },
+              {
+                "tt": 6,
+                "td": "航班廊桥率20%"
+              },
+              {
+                "tt": 7,
+                "td": "平均延误80分钟"
+              },
+              {
+                "tt": 9,
+                "td": "航班取消率5%"
               }
             ],
             "fs": [
@@ -19532,7 +19544,6 @@
                   {
                     "ft": 7,
                     "fcs": [
-                      "3",
                       "4",
                       "5",
                       "6",
@@ -19591,7 +19602,6 @@
                   {
                     "ft": 7,
                     "fcs": [
-                      "3",
                       "4",
                       "5",
                       "6",
@@ -19694,7 +19704,6 @@
                 {
                   "ft": 7,
                   "fcs": [
-                    "3",
                     "4",
                     "5",
                     "6",
@@ -20396,10 +20405,10 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "053e253e-5a2c-47d0-8fca-9c692e73095b",
-      "host": "::ffff:10.204.203.180",
+      "tracerId": "cbc54450-dde9-4492-8eb9-40e31476da16",
+      "host": "::ffff:10.216.138.234",
       "iact": "0",
-      "timestamp": 1783043320621
+      "timestamp": 1783065481766
     }
   },
   {
@@ -20415,7 +20424,7 @@
         "bgImgUrl": "",
         "advertises": [],
         "associatePositions": null,
-        "biRequestId": "6004dca7-0d63-4646-abcb-13cc050dea55",
+        "biRequestId": "743f0a36-deac-4c48-bf05-bc1dba415212",
         "biExpNo": null,
         "prizeCount": null,
         "title": "",
@@ -20428,34 +20437,6 @@
           "carouselDelay": 4
         }
       }
-    }
-  },
-  {
-    "url": "https://wx.17u.cn/flightbffv2/book1/configs",
-    "data": {
-      "success": true,
-      "data": {
-        "isUseVOIP": false,
-        "adv": null,
-        "spb": false,
-        "abs": null
-      },
-      "showType": 0,
-      "errorCode": "0",
-      "errorMessage": "请求成功",
-      "tracerId": "053e253e-5a2c-47d0-8fca-9c692e73095b",
-      "host": "::ffff:10.204.93.205",
-      "iact": "0",
-      "timestamp": 1783043321310
-    }
-  },
-  {
-    "url": "https://wx.17u.cn/mihawkapi/ad/info",
-    "data": {
-      "success": false,
-      "status": "fail",
-      "message": "数据查询失败",
-      "code": 500
     }
   },
   {
@@ -20617,10 +20598,38 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "053e253e-5a2c-47d0-8fca-9c692e73095b",
-      "host": "::ffff:10.206.70.7",
+      "tracerId": "cbc54450-dde9-4492-8eb9-40e31476da16",
+      "host": "::ffff:10.216.138.234",
       "iact": "0",
-      "timestamp": 1783043321318
+      "timestamp": 1783065482335
+    }
+  },
+  {
+    "url": "https://wx.17u.cn/flightbffv2/book1/configs",
+    "data": {
+      "success": true,
+      "data": {
+        "isUseVOIP": false,
+        "adv": null,
+        "spb": false,
+        "abs": null
+      },
+      "showType": 0,
+      "errorCode": "0",
+      "errorMessage": "请求成功",
+      "tracerId": "cbc54450-dde9-4492-8eb9-40e31476da16",
+      "host": "::ffff:10.215.235.4",
+      "iact": "0",
+      "timestamp": 1783065482360
+    }
+  },
+  {
+    "url": "https://wx.17u.cn/mihawkapi/ad/info",
+    "data": {
+      "success": false,
+      "status": "fail",
+      "message": "数据查询失败",
+      "code": 500
     }
   },
   {
@@ -20648,10 +20657,10 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "053e253e-5a2c-47d0-8fca-9c692e73095b",
-      "host": "::ffff:10.204.66.18",
+      "tracerId": "cbc54450-dde9-4492-8eb9-40e31476da16",
+      "host": "::ffff:10.220.160.85",
       "iact": "0",
-      "timestamp": 1783043321330
+      "timestamp": 1783065483584
     }
   },
   {
