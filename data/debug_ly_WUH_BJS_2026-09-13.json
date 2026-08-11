@@ -1,6 +1,6 @@
 [
   {
-    "url": "https://c.go-mpulse.net/api/config.json?key=VP9LC-35W9U-68TQN-7HPLX-PPF4Y&d=m.ly.com&t=5954698&v=1.720.0&sl=0&si=a41e62ea-43da-4b27-a23e-f8ba1a1eb778-tjkybv&plugins=AK,ConfigOverride,Continuity,PageParams,IFrameDelay,AutoXHR,SPA,History,Angular,Backbone,Ember,RT,CrossDomain,BW,PaintTiming,NavigationTiming,ResourceTiming,Memory,CACHE_RELOAD,Errors,TPAnalytics,UserTiming,Akamai,Early,EventTiming,LOGN&acao=&ak.ai=947581",
+    "url": "https://c.go-mpulse.net/api/config.json?key=VP9LC-35W9U-68TQN-7HPLX-PPF4Y&d=m.ly.com&t=5954758&v=1.720.0&sl=0&si=6c7d9bd9-f2a9-4a7a-b2d6-b47fbc2c8553-tjlc6w&plugins=AK,ConfigOverride,Continuity,PageParams,IFrameDelay,AutoXHR,SPA,History,Angular,Backbone,Ember,RT,CrossDomain,BW,PaintTiming,NavigationTiming,ResourceTiming,Memory,CACHE_RELOAD,Errors,TPAnalytics,UserTiming,Akamai,Early,EventTiming,LOGN&acao=&ak.ai=947581",
     "data": {
       "site_domain": "arlid:947581",
       "rate_limited": true
@@ -14,10 +14,10 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "ad69c9db-447d-46e9-84db-8f045ec5d495",
-      "host": "::ffff:10.216.138.234",
+      "tracerId": "e237949b-ae9c-4a59-a0e9-8577fa4a931d",
+      "host": "::ffff:10.204.203.180",
       "iact": "0",
-      "timestamp": 1786409420758
+      "timestamp": 1786427386038
     }
   },
   {
@@ -47,7 +47,7 @@
           },
           {
             "dd": "2026-09-09",
-            "lp": 500,
+            "lp": 520,
             "hlp": 1020
           },
           {
@@ -68,9 +68,9 @@
           {
             "dd": "2026-09-13",
             "lp": 500,
-            "ms": "2|500|500|600|27|MU2628,KN5662|UYN|ut_user_new|||600|1|0|HU7188|0|2||||2026-08-10 15:06:47|2026-08-11 08:50:20|0|600|600",
+            "ms": "2|500|500|600|27|MU2628,KN5662|UYN|ut_user_new|||600|1|0|HU7188|0|2||||2026-08-10 15:06:47|2026-08-11 13:49:46|0|600|600",
             "hlp": 1145,
-            "hms": "1|1145|3930|1145|17|MU7529||ut_user_new|||1145|1|0|MU7529|2|0|XC||2026-08-11 08:50:20||2026-08-11 08:50:20|0|1145|1145"
+            "hms": "1|1145|3930|1145|17|MU7529||ut_user_new|||1145|1|0|MU7529|2|0|XC||2026-08-11 13:49:46||2026-08-11 13:49:46|0|1145|1145"
           },
           {
             "dd": "2026-09-14",
@@ -307,7 +307,7 @@
             ]
           }
         ],
-        "cache_key": "flight_2da2da0c4d4fc2c1bb7c57f5d537cc642f09facf",
+        "cache_key": "flight_d9769a9621227054c19fac7aaad0353f32882f0f",
         "tfs": [
           {
             "type": "9",
@@ -2483,7 +2483,8 @@
               {
                 "ft": 3,
                 "fcs": [
-                  "1"
+                  "1",
+                  "2"
                 ]
               },
               {
@@ -2573,12 +2574,80 @@
                 ],
                 "$pts4": [],
                 "$rtsN7N25Str": ""
+              },
+              {
+                "lpt": 2,
+                "ccid": 2,
+                "dct": 2,
+                "atp": 9090,
+                "app": 0,
+                "not": "7",
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "公务舱"
+                  }
+                ],
+                "mts": [
+                  {
+                    "tt": 11,
+                    "td": "已优惠约¥7",
+                    "$text": "已优惠约¥",
+                    "$price": "7"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "5",
+                      "6",
+                      "9",
+                      "11"
+                    ]
+                  }
+                ],
+                "pin": [
+                  "29"
+                ],
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  }
+                ],
+                "sp": 9083,
+                "pa": 7,
+                "dps": {
+                  "mdp": 9083,
+                  "bdp": 9090,
+                  "datpd": 0,
+                  "iap": false
+                },
+                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":7,\"atp\":9090,\"dfp\":0,\"cdp\":0,\"ias\":false,\"fd\":false,\"eca\":0.0,\"dva\":0,\"pcba\":0,\"iplr\":false,\"plrcba\":0}",
+                "$label": "值机需到实际承运航司柜台办理",
+                "$betterTag": {},
+                "$showSingle": false,
+                "$pts1": [],
+                "$pts1f": [],
+                "$pts2": [],
+                "$pts2f": [
+                  {
+                    "tt": 2,
+                    "td": "公务舱"
+                  }
+                ],
+                "$pts4": [],
+                "$rtsN7N25Str": ""
               }
             ],
             "ms": [
               {
                 "mc": "pinsort",
-                "mv": "TH_XC"
+                "mv": "TH_LS_XC"
               },
               {
                 "mc": "buddhapinsort",
@@ -3448,7 +3517,7 @@
                 "dct": 2,
                 "atp": 4920,
                 "app": 0,
-                "not": "7",
+                "not": "8",
                 "pts": [
                   {
                     "tt": 2,
@@ -4662,7 +4731,8 @@
               {
                 "ft": 3,
                 "fcs": [
-                  "1"
+                  "1",
+                  "2"
                 ]
               },
               {
@@ -4752,12 +4822,80 @@
                 ],
                 "$pts4": [],
                 "$rtsN7N25Str": ""
+              },
+              {
+                "lpt": 2,
+                "ccid": 2,
+                "dct": 2,
+                "atp": 9090,
+                "app": 0,
+                "not": "5",
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "公务舱"
+                  }
+                ],
+                "mts": [
+                  {
+                    "tt": 11,
+                    "td": "已优惠约¥7",
+                    "$text": "已优惠约¥",
+                    "$price": "7"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "5",
+                      "6",
+                      "9",
+                      "11"
+                    ]
+                  }
+                ],
+                "pin": [
+                  "29"
+                ],
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  }
+                ],
+                "sp": 9083,
+                "pa": 7,
+                "dps": {
+                  "mdp": 9083,
+                  "bdp": 9090,
+                  "datpd": 0,
+                  "iap": false
+                },
+                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":7,\"atp\":9090,\"dfp\":0,\"cdp\":0,\"ias\":false,\"fd\":false,\"eca\":0.0,\"dva\":0,\"pcba\":0,\"iplr\":false,\"plrcba\":0}",
+                "$label": "值机需到实际承运航司柜台办理",
+                "$betterTag": {},
+                "$showSingle": false,
+                "$pts1": [],
+                "$pts1f": [],
+                "$pts2": [],
+                "$pts2f": [
+                  {
+                    "tt": 2,
+                    "td": "公务舱"
+                  }
+                ],
+                "$pts4": [],
+                "$rtsN7N25Str": ""
               }
             ],
             "ms": [
               {
                 "mc": "pinsort",
-                "mv": "TH_XC"
+                "mv": "TH_LS_XC"
               },
               {
                 "mc": "buddhapinsort",
@@ -9628,7 +9766,7 @@
                 "dct": 2,
                 "atp": 4920,
                 "app": 0,
-                "not": "8",
+                "not": "7",
                 "pts": [
                   {
                     "tt": 2,
@@ -18071,17 +18209,10 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "ad69c9db-447d-46e9-84db-8f045ec5d495",
-      "host": "::ffff:10.220.160.85",
+      "tracerId": "e237949b-ae9c-4a59-a0e9-8577fa4a931d",
+      "host": "::ffff:10.206.55.110",
       "iact": "0",
-      "timestamp": 1786409420893
-    }
-  },
-  {
-    "url": "https://apmfront.17u.cn/fms/h5multi",
-    "data": {
-      "code": 200,
-      "msg": "ok"
+      "timestamp": 1786427386218
     }
   },
   {
@@ -18106,7 +18237,7 @@
         "bgImgUrl": "",
         "advertises": [],
         "associatePositions": null,
-        "biRequestId": "39f61e88-f9e9-4543-b39e-7254adab4703",
+        "biRequestId": "924fa69b-ce8e-4a7c-8aee-a0d084ed556f",
         "biExpNo": null,
         "prizeCount": null,
         "title": "",
@@ -18302,10 +18433,10 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "ad69c9db-447d-46e9-84db-8f045ec5d495",
-      "host": "::ffff:10.204.203.180",
+      "tracerId": "e237949b-ae9c-4a59-a0e9-8577fa4a931d",
+      "host": "::ffff:10.200.142.201",
       "iact": "0",
-      "timestamp": 1786409421582
+      "timestamp": 1786427386916
     }
   },
   {
@@ -18321,10 +18452,10 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "ad69c9db-447d-46e9-84db-8f045ec5d495",
-      "host": "::ffff:10.204.66.18",
+      "tracerId": "e237949b-ae9c-4a59-a0e9-8577fa4a931d",
+      "host": "::ffff:10.206.21.135",
       "iact": "0",
-      "timestamp": 1786409421579
+      "timestamp": 1786427386904
     }
   },
   {
@@ -18333,13 +18464,309 @@
       "success": true,
       "data": {
         "ec": 0,
-        "tId": "046693812986e85ffc800bdc282aceed",
+        "tId": "5c34c1c7cdda08d7447eab5562da45b8",
         "d": "WUH",
         "a": "BJS",
         "dac": "",
         "aac": "",
         "dd": "2026-09-13",
         "fps": [
+          {
+            "fId": "WUHYNT20260913SC7932_YNTPEK20260914SC7603",
+            "it": 1,
+            "icat": false,
+            "dat": "T2",
+            "aat": "T3",
+            "dt": "2026-09-13 10:40",
+            "at": "2026-09-14 08:50",
+            "ad": "1",
+            "dst": "10:40",
+            "ast": "08:50",
+            "td": "22h10m",
+            "dasn": "天河",
+            "aasn": "首都",
+            "sc": "烟台",
+            "sd": "18h35m",
+            "tac": "",
+            "tfn": "",
+            "tasn": "",
+            "rt": 0,
+            "score": "0.00",
+            "fprt": 1,
+            "ss": [
+              {
+                "fn": "SC7932",
+                "dac": "WUH",
+                "aac": "YNT",
+                "isf": "False",
+                "dat": "T2",
+                "aat": "T2",
+                "dt": "2026-09-13 10:40",
+                "at": "2026-09-13 12:45",
+                "td": "2小时5分钟",
+                "ac": "SC",
+                "asn": "山航",
+                "amn": "波音737-800(中)"
+              },
+              {
+                "fn": "SC7603",
+                "dac": "YNT",
+                "aac": "PEK",
+                "isf": "False",
+                "dat": "T2",
+                "aat": "T3",
+                "dt": "2026-09-14 07:20",
+                "at": "2026-09-14 08:50",
+                "td": "1小时30分钟",
+                "ac": "SC",
+                "asn": "山航",
+                "amn": "波音737-800(中)"
+              }
+            ],
+            "fs": [
+              {
+                "ft": 1,
+                "fcs": [
+                  "2"
+                ]
+              },
+              {
+                "ft": 11,
+                "fcs": [
+                  "4"
+                ]
+              },
+              {
+                "ft": 2,
+                "fcs": [
+                  "SC",
+                  "SC"
+                ]
+              },
+              {
+                "ft": 3,
+                "fcs": [
+                  "1"
+                ]
+              },
+              {
+                "ft": 4,
+                "fcs": [
+                  "WUH"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "PEK"
+                ]
+              },
+              {
+                "ft": 6,
+                "fcs": [
+                  "烟台"
+                ]
+              },
+              {
+                "ft": 8,
+                "fcs": [
+                  "3"
+                ]
+              }
+            ],
+            "lps": [
+              {
+                "lpt": 11,
+                "ccid": 1,
+                "atp": 878,
+                "not": "5",
+                "tda": 0,
+                "tags": [
+                  "myyD3gw5s1wfzBy7XueDFtA00dlqtURNi5z0YzaccVcBgav3kKGVw5BvFBwDMefX7Q089RtdcOCunhSfbMClodtZBfUYqP21gIXN7YTIwzP5ocGTPzoaCX58LTH1dOJvs1",
+                  "xg29SbGQiCQSFOgpS9ARJgrUcibv1Q8wo1pjGSMC5UeUtKnZU7JfPRiNeiK92re1FcyaUwZY2NnwoV3RNPz47NSAp2pz1ccyy0M4POulx0CA0eVVZXiMviVk8s2EqK0K9"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "经济舱"
+                  }
+                ],
+                "rts": [
+                  {
+                    "tt": 4,
+                    "td": "中转低价推荐"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  }
+                ],
+                "sp": 878,
+                "pa": 0,
+                "$fwbqRawsLenForMulti": 0,
+                "fwbqRaws": "",
+                "fwbqs": [],
+                "noLabelBg": true,
+                "$showTransferRts": "中转低价推荐",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": false,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              },
+              {
+                "lpt": 2,
+                "ccid": 2,
+                "atp": 3930,
+                "not": "2",
+                "tda": 0,
+                "tags": [
+                  "T3qZjf7r1RoFxYzekv6D7VaRsDPB05P6QOe6dBsWJI8M8FBEhivGoaQWssPPflpHVHtkgtWDKS9tzf755Iy2bNGIO6gMs2nDFMOZAvlt1sKO1WA6yptS1ZzzPXgeQnwKF",
+                  "X4TL2ARKjL8APeEQvWSmBaIynBgTxKupXIiAisH9rbwvn67lkkTMTdWiyoI4udJOuwVOr3F3JMNwZvx9FFa8sVUST1YBeyqWdMNpqwLRxqhn9AJeIHv58JRyhevKAVxRD"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "公务舱"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  }
+                ],
+                "sp": 3930,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 0,
+                "fwbqRaws": "",
+                "fwbqs": [],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": false,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              }
+            ],
+            "stss": [
+              {
+                "ServiceType": "TRANSFER_HOTEL",
+                "ServiceId": "985278630370236196@2026072201001",
+                "ServiceName": "可申请免费住宿",
+                "ServiceDesc": [],
+                "AuxRevenueSkuCode": "9046004031"
+              },
+              {
+                "ServiceType": "DISCOUNT_BUSINESS",
+                "ServiceId": "2005551224593612800@2025122901027",
+                "ServiceName": "优惠旅游门票申领",
+                "ServiceDesc": [],
+                "AuxRevenueSkuCode": "9046004046496"
+              },
+              {
+                "ServiceType": "TRANSFER_VIP_ROOM_2",
+                "ServiceId": "2079761877344219136@2026072201002",
+                "ServiceName": "头等舱休息室特惠",
+                "ServiceDesc": [],
+                "AuxRevenueSkuCode": "9046004046555"
+              }
+            ],
+            "fcd": false,
+            "dup": false,
+            "rs": "HuiXing",
+            "cfis": [
+              {
+                "ft": 1,
+                "fcs": [
+                  "1"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "5"
+                ]
+              }
+            ],
+            "mt": 2,
+            "bff_sort": 0,
+            "oIdx": 0,
+            "depMinsInDay": 640,
+            "isCross2ndTrip": true,
+            "$flightType": "IL",
+            "$checkKey": "1_0",
+            "$crossDateString": "9月14日",
+            "$crossDayWeek": "周一",
+            "$dasn": "天河",
+            "$aasn": "首都",
+            "$isShowHigh": false,
+            "$td": "22时10分",
+            "$sd": "18时35分",
+            "$arrowText": "中转",
+            "$crossDayText": "9月14日 周一",
+            "timespanNumber": 1330,
+            "is_high": false
+          },
           {
             "fId": "WUHYNT20260913SC7930_YNTPEK20260913SC7953",
             "it": 1,
@@ -18450,19 +18877,13 @@
                 "not": "A",
                 "tda": 0,
                 "tags": [
-                  "myyD3gw5s1wfzBy7XueDFtbXx7yGjINggB9ywK4YJzkdgfsbA3Lnoqp7HL8pfMlweBdxOhzJKxsjVUP0REODLlLaC5N2lpHdFNuYYDMcCbT7FUv7pbh4FbCvYWDSzUPnz1FTxw0MjGhwJvSZt4AjJSY",
-                  "I10pgiO01vgD51MtCtUn1wY642P7AZEUGpNIO2jdYu62USlc45dVI6JTUfcKEMMcPYfpMkyxfqGDRkvmdQqkKVQTqn1x6zfuHzKTRWL4vNqtmwGAvc2JKINfuyEPs31eDBXIWTzf7ievfvqmDdWRXI1"
+                  "myyD3gw5s1wfzBy7XueDFtA00dlqtURNi5z0YzaccVcBgav3kKGVw5BvFBwDMefX7W7MpCuqIODU3mZbQ5nkKb5EhuGKGa0j0QpczzdULor756loBkZSSFnuP2kHX9gKPMdttLS9yIgb14ChjGatgzq",
+                  "I10pgiO01vgD51MtCtUn1rZ0eahcGjMNCrcRlGjAXHQjRg50EiNGyqOaSHM4Y5QLrS1CMcJCVvgrRcaKGzyRbXLaoqOOH4mTM7DzH4r6LeazRWWT1FmCBD4Bd3ZxwxO0usXWC2OO1hJCX2X0o6fWQG1"
                 ],
                 "pts": [
                   {
                     "tt": 2,
                     "td": "经济舱"
-                  }
-                ],
-                "rts": [
-                  {
-                    "tt": 4,
-                    "td": "中转低价推荐"
                   }
                 ],
                 "fs": [
@@ -18495,11 +18916,11 @@
                 ],
                 "sp": 879,
                 "pa": 0,
+                "rts": [],
                 "$fwbqRawsLenForMulti": 0,
                 "fwbqRaws": "",
                 "fwbqs": [],
-                "noLabelBg": true,
-                "$showTransferRts": "中转低价推荐",
+                "$showTransferRts": "",
                 "$mtsN5": [],
                 "$showHxj": {
                   "showInMts": false,
@@ -18519,8 +18940,8 @@
                 "not": "2",
                 "tda": 0,
                 "tags": [
-                  "T3qZjf7r1RoFxYzekv6D7OWSEO1sdCnS51T1oG0Iop9zRVwVpBi0kA38DskTH8LKgwtg746vbh9brWEtHjUfJvY98sTfS55uHMLzuGlKp2gyJLW0LeXfyyYzdHedEWpG7us7djwT9eKtgLyHWvunugD",
-                  "X4TL2ARKjL8APeEQvWSmBZFoKXQdZWU46itjgdOoJy9fU7WZQclAbyNqMvwaS09B5KdTFcrqIFtC2V9hUp7SxHaVzopcC1W36uvMuTrd4KXEEACecVv5Zqy7Ll1zKegI66OFpK9Nty42gwMX4oTwEi3"
+                  "T3qZjf7r1RoFxYzekv6D7VaRsDPB05P6QOe6dBsWJI8M8FBEhivGoaQWssPPflpHVtE3w8bogHg0qD5vAQzWv0ycoIY94lur3zedM9hJoy5LyOsyuksQPsfQwdphNV43BhMlrnGMUywlOzB5Do77SFP",
+                  "X4TL2ARKjL8APeEQvWSmBaIynBgTxKupXIiAisH9rbw3OnMVQrS9pm0ejUCSZefAHU5kxYlBqNzT0JKjQMyCVzDdUIzfkyKnW139jr6gzsAAo5Bm7Bzb7HpI84rLguF6LPQ33XwWbGaUusKHMV6FqK6"
                 ],
                 "pts": [
                   {
@@ -18657,12 +19078,12 @@
               }
             ],
             "mt": 3,
-            "bff_sort": 0,
-            "oIdx": 0,
+            "bff_sort": 1,
+            "oIdx": 1,
             "depMinsInDay": 1015,
             "isCross2ndTrip": false,
             "$flightType": "IL",
-            "$checkKey": "1_0",
+            "$checkKey": "1_1",
             "$crossDateString": "",
             "$crossDayWeek": "",
             "$dasn": "天河",
@@ -18673,6 +19094,250 @@
             "$arrowText": "中转",
             "$crossDayText": "",
             "timespanNumber": 345,
+            "is_high": false
+          },
+          {
+            "fId": "WUHSHA20260913MU8456_SHAPKX20260914MU8230",
+            "it": 1,
+            "icat": false,
+            "dat": "T3",
+            "aat": "",
+            "dt": "2026-09-13 21:30",
+            "at": "2026-09-14 22:15",
+            "ad": "1",
+            "dst": "21:30",
+            "ast": "22:15",
+            "td": "24h45m",
+            "dasn": "天河",
+            "aasn": "北京大兴",
+            "sc": "上海",
+            "sd": "20h40m",
+            "tac": "",
+            "tfn": "",
+            "tasn": "",
+            "rt": 0,
+            "score": "0.00",
+            "fprt": 1,
+            "ss": [
+              {
+                "fn": "MU8456",
+                "dac": "WUH",
+                "aac": "SHA",
+                "isf": "True",
+                "dat": "T3",
+                "aat": "T2",
+                "dt": "2026-09-13 21:30",
+                "at": "2026-09-13 23:25",
+                "td": "1小时55分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "机型73E"
+              },
+              {
+                "fn": "MU8230",
+                "dac": "SHA",
+                "aac": "PKX",
+                "isf": "True",
+                "dat": "T2",
+                "aat": "",
+                "dt": "2026-09-14 20:05",
+                "at": "2026-09-14 22:15",
+                "td": "2小时10分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "波音737(中)"
+              }
+            ],
+            "fs": [
+              {
+                "ft": 1,
+                "fcs": [
+                  "4"
+                ]
+              },
+              {
+                "ft": 11,
+                "fcs": [
+                  "8"
+                ]
+              },
+              {
+                "ft": 2,
+                "fcs": [
+                  "MU",
+                  "MU"
+                ]
+              },
+              {
+                "ft": 3,
+                "fcs": [
+                  "1"
+                ]
+              },
+              {
+                "ft": 4,
+                "fcs": [
+                  "WUH"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "PKX"
+                ]
+              },
+              {
+                "ft": 6,
+                "fcs": [
+                  "上海"
+                ]
+              }
+            ],
+            "lps": [
+              {
+                "lpt": 11,
+                "ccid": 1,
+                "atp": 956,
+                "not": "A",
+                "tda": 0,
+                "tags": [
+                  "czUzkWcUmRozn2OU9FoVT2y9qNqqkrIH2Sqyi4CeNtkHgF6JYhuLIAK7JEHefcjfGMR57mGOytrRTWmIdtl1M6QV6mY4DCheO2n3mjvSVrcgC0AsIJ5eNPuHFWMsUp0WIVLsbXAdmB8sGGwU5rA2T73",
+                  "2NNPhJhmOa8ItJOeMiIIeCwYqmiFG685mrjFWkzyfugNXJy979kor3TKnV03oyQLG4ddAZiUoUlwWx1coneqmyUmiU1FqRNy96bzAGXbVNwWmjLDOyLAwxKFX5wB7CP4MbeyJnruDcff6tH8tOhBQuH"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "经济舱"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "4",
+                      "6",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  }
+                ],
+                "sp": 956,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 0,
+                "fwbqRaws": "",
+                "fwbqs": [],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": false,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              },
+              {
+                "lpt": 2,
+                "ccid": 2,
+                "atp": 4368,
+                "not": "2",
+                "tda": 0,
+                "tags": [
+                  "wIxcVZOY8wQmgd5vBbZFNpXya4wuz6hbBryM44AOpACDRzEcy3J9axeCPPyRytVQiznzyvBy8l16GW5e4wqYYMn55eV8AZbosfhagHic4D2cmUCiHofMCJ6jtWR0QC9OPHd6ZiYZSFKEbNvRIKJVyOM2",
+                  "3XYk3gNqOMCyqKvL7xkc7Pr3g0ALlMyhsEyYDnng7gkDLxcMfqD9T5l692NKeNwzbiwgfMCAj8cIlWBmB5BH01kyQTVB3U02CH2b05atnt9TdZLpBMX8CtRJV0MJoqqnHZYByHXmybabQEa0ygF3mp1"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "公务舱"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "4",
+                      "6",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  }
+                ],
+                "sp": 4368,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 0,
+                "fwbqRaws": "",
+                "fwbqs": [],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": false,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              }
+            ],
+            "fcd": false,
+            "dup": false,
+            "rs": "TransitTravel",
+            "cfis": [],
+            "mt": 1,
+            "bff_sort": 2,
+            "oIdx": 2,
+            "depMinsInDay": 1290,
+            "isCross2ndTrip": true,
+            "$flightType": "IL",
+            "$checkKey": "1_2",
+            "$crossDateString": "9月14日",
+            "$crossDayWeek": "周一",
+            "$dasn": "天河",
+            "$aasn": "北京大兴",
+            "$isShowHigh": true,
+            "$td": "24时45分",
+            "$sd": "20时40分",
+            "$arrowText": "中转",
+            "$crossDayText": "9月14日 周一",
+            "timespanNumber": 1485,
             "is_high": false
           },
           {
@@ -18780,8 +19445,8 @@
                 "not": "7",
                 "tda": 0,
                 "tags": [
-                  "4OzIp4nz23CjK56DU8Q1IYQWSmKpMlTUSjGrlIVH3lxchGhiREra1zglTjSorNTVxNznk0aJwBbVhpwg9ab0C1Pz1234AC6MRlbCSpN8qlG73xbJ14sOGJaZ5qfLCF0sXXw7lzkbCyxBNmvKLLJoZI6",
-                  "0spywVsvEGO8QTXxh39yfhUMZ1bUO0NjibHomeTRUDXLgMpcOqsT9AQ5sjMroCgy9EdobwqBqGQo1BbCZYc6MNZfPn0iQyeil8LyzhIkzyFJV2yzBQg4He126gjjg0rSTI7Zze2r8KHBPw5oY8uZhg31"
+                  "4OzIp4nz23CjK56DU8Q1IZE52PbRlDXQyRYNpqNyGwQGl4jwXnRq8HUAPyGhro3CphweYKQDmMuXDErqtyThWLFkvttUNS4D75VUT52tb2wezpvw4zsPBRUhDoxtH1eUJK1F18wxmjaTPe682VdfLyP",
+                  "0spywVsvEGO8QTXxh39yfgeW1MyLSOHpNUfq7f2RWukcWnio5PKlqV9WMoWubkTy8jT22vW7Ddac1Q9dRRxpmpJ8lPMtxOvuUvsamPOsKb3rhbsZLBkSu0RXN6Ida6L9OpYmCzRLn8z6gPYJNfxKsY2"
                 ],
                 "pts": [
                   {
@@ -18890,12 +19555,12 @@
               }
             ],
             "mt": 1,
-            "bff_sort": 1,
-            "oIdx": 1,
+            "bff_sort": 3,
+            "oIdx": 3,
             "depMinsInDay": 1325,
             "isCross2ndTrip": false,
             "$flightType": "IL",
-            "$checkKey": "1_1",
+            "$checkKey": "1_3",
             "$crossDateString": "9月14日",
             "$crossDayWeek": "周一",
             "$dasn": "天河",
@@ -18909,21 +19574,21 @@
             "is_high": false
           },
           {
-            "fId": "WUHSHA20260913MU8456_SHAPKX20260914MU8230",
+            "fId": "WUHCAN20260913MU9600_CANPEK20260914HU7812",
             "it": 1,
             "icat": false,
             "dat": "T3",
-            "aat": "",
-            "dt": "2026-09-13 21:30",
-            "at": "2026-09-14 22:15",
+            "aat": "T2",
+            "dt": "2026-09-13 23:55",
+            "at": "2026-09-14 21:30",
             "ad": "1",
-            "dst": "21:30",
-            "ast": "22:15",
-            "td": "24h45m",
+            "dst": "23:55",
+            "ast": "21:30",
+            "td": "21h35m",
             "dasn": "天河",
-            "aasn": "北京大兴",
-            "sc": "上海",
-            "sd": "20h40m",
+            "aasn": "首都",
+            "sc": "广州",
+            "sd": "16h30m",
             "tac": "",
             "tfn": "",
             "tasn": "",
@@ -18932,32 +19597,32 @@
             "fprt": 1,
             "ss": [
               {
-                "fn": "MU8456",
+                "fn": "MU9600",
                 "dac": "WUH",
-                "aac": "SHA",
-                "isf": "True",
+                "aac": "CAN",
+                "isf": "False",
                 "dat": "T3",
-                "aat": "T2",
-                "dt": "2026-09-13 21:30",
-                "at": "2026-09-13 23:25",
-                "td": "1小时55分钟",
+                "aat": "T3",
+                "dt": "2026-09-13 23:55",
+                "at": "2026-09-14 01:45",
+                "td": "1小时50分钟",
                 "ac": "MU",
                 "asn": "东航",
-                "amn": "机型73E"
+                "amn": "波音738(窄)"
               },
               {
-                "fn": "MU8230",
-                "dac": "SHA",
-                "aac": "PKX",
-                "isf": "True",
-                "dat": "T2",
-                "aat": "",
-                "dt": "2026-09-14 20:05",
-                "at": "2026-09-14 22:15",
-                "td": "2小时10分钟",
-                "ac": "MU",
-                "asn": "东航",
-                "amn": "波音737(中)"
+                "fn": "HU7812",
+                "dac": "CAN",
+                "aac": "PEK",
+                "isf": "False",
+                "dat": "T3",
+                "aat": "T2",
+                "dt": "2026-09-14 18:15",
+                "at": "2026-09-14 21:30",
+                "td": "3小时15分钟",
+                "ac": "HU",
+                "asn": "新海航｜海南航空",
+                "amn": "空客330-300(大)"
               }
             ],
             "fs": [
@@ -18977,7 +19642,7 @@
                 "ft": 2,
                 "fcs": [
                   "MU",
-                  "MU"
+                  "HU"
                 ]
               },
               {
@@ -18995,13 +19660,13 @@
               {
                 "ft": 5,
                 "fcs": [
-                  "PKX"
+                  "PEK"
                 ]
               },
               {
                 "ft": 6,
                 "fcs": [
-                  "上海"
+                  "广州"
                 ]
               }
             ],
@@ -19009,12 +19674,286 @@
               {
                 "lpt": 11,
                 "ccid": 1,
-                "atp": 956,
+                "atp": 905,
                 "not": "A",
                 "tda": 0,
                 "tags": [
-                  "czUzkWcUmRozn2OU9FoVT39YfkNeB24AzVqIcgGfzOpDaoUxtAbx8aeQSEFV1BZolqDP7Y5nkIAFSjhDxDVFhvF83IIz7wxpyhAWDypCjlOn4XReWxOf8RAppZlZAd7kTezu5MySJaXi7tSKrEbeFr3",
-                  "2NNPhJhmOa8ItJOeMiIIeCjIzlWVt99N4yFgY9LWORHLNNm65PYwxFquOXkfWkhPYAOa8zW20KHSoHZ6PhXY698fGZ2G7aU14oPVPy7mHlVJAgztBUEpHI0VXfoShVcs7qU6ydOy9ltWnw4Kf9w1yOE"
+                  "sG7VvJjswNI5XwrCLMYFHPv6qG1Yp8E5WC5EzQEquxvmeyUVaDjZata46QGanhekKcFhkymZFZu0BdkLqZq3Gfy4rjAkzzvbn1e1VjlvmBAOerfwgbXGXKtLIIWdW8XlMcEw61XxJJm8H3L6gEZqlk1",
+                  "Z8ojxetlGXWKAEaW54rduIclITwCZydqRKVE2GQK2ZrCWFhYbj5J9VCcOF2gsVDHP4JkZy7x8fS8g37NNlENquTGv0rAR2UNRBKEnvOmqyvz1427wUOkAQq3fQWnJ98uylHG3AeeWKtJgpOIRpylEf3"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "经济舱"
+                  }
+                ],
+                "mts": [
+                  {
+                    "tt": 11,
+                    "td": "已优惠¥15"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "4",
+                      "6",
+                      "7"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [],
+                "sp": 890,
+                "dps": {
+                  "mdp": 890,
+                  "bdp": 905,
+                  "datpd": 0,
+                  "iap": false
+                },
+                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":905,\"dfp\":600,\"cdp\":890,\"ias\":false,\"fd\":false,\"eca\":0.0,\"iplr\":false,\"plrcba\":0}",
+                "pa": 15,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 0,
+                "fwbqRaws": "",
+                "fwbqs": [],
+                "$showTransferRts": "",
+                "$mts5": null,
+                "$mtsN5": [
+                  {
+                    "tt": 11,
+                    "td": "已优惠¥15"
+                  }
+                ],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 905
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": false,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              },
+              {
+                "lpt": 2,
+                "ccid": 2,
+                "atp": 3204,
+                "not": "2",
+                "tda": 0,
+                "tags": [
+                  "qyKhTPOyzFCZ97RajMfdyCRmfankyxL4W7jAPx2IgeZLVKqBxzFuRO8Ky390neYGVoyzXRI6XLzQK0gZhxTuzatbD00ILrSrx7S9hmz5JfHBpwPbzyeZ1iLf8W48iVZ86O6TfZbfh3kFFLfTwdUUowfE",
+                  "tns2ThiWPDoXIPSzE0jU8LVfRozMJan2vzCIprn3R4mQfxnyydeDavL7tDJeiDswxKt4n0mcyP6QzhiPwQ4BxuyujUWObvS13vOxyk63Dz6HhIHzZ0x6pw9zDkL9lpVSLvNZ6jKt1MElU39BhP9H2gQ3"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "公务舱"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  }
+                ],
+                "sp": 3204,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 0,
+                "fwbqRaws": "",
+                "fwbqs": [],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": false,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              }
+            ],
+            "stss": [
+              {
+                "ServiceType": "LUGGAGE_DEPOSIT",
+                "ServiceId": "1791063914792914944@2026062501001",
+                "ServiceName": "免费行李寄存",
+                "ServiceDesc": [],
+                "AuxRevenueSkuCode": "9046004046380"
+              },
+              {
+                "ServiceType": "COUPON_REST",
+                "ServiceId": "1526465619900268544@2026071701001",
+                "ServiceName": "住宿优惠",
+                "ServiceDesc": [],
+                "AuxRevenueSkuCode": "9046004122"
+              }
+            ],
+            "fcd": false,
+            "dup": false,
+            "rs": "TransitTravel",
+            "cfis": [],
+            "mt": 3,
+            "bff_sort": 4,
+            "oIdx": 4,
+            "depMinsInDay": 1435,
+            "isCross2ndTrip": false,
+            "$flightType": "IL",
+            "$checkKey": "1_4",
+            "$crossDateString": "9月14日",
+            "$crossDayWeek": "周一",
+            "$dasn": "天河",
+            "$aasn": "首都",
+            "$isShowHigh": false,
+            "$td": "21时35分",
+            "$sd": "16时30分",
+            "$arrowText": "中转",
+            "$crossDayText": "9月14日 周一",
+            "timespanNumber": 1295,
+            "is_high": false
+          },
+          {
+            "fId": "WUHYNT20260913SC7932_YNTPEK20260913SC7607",
+            "it": 1,
+            "icat": false,
+            "dat": "T2",
+            "aat": "T3",
+            "dt": "2026-09-13 10:40",
+            "at": "2026-09-13 21:05",
+            "dst": "10:40",
+            "ast": "21:05",
+            "td": "10h25m",
+            "dasn": "天河",
+            "aasn": "首都",
+            "sc": "烟台",
+            "sd": "6h45m",
+            "tac": "",
+            "tfn": "",
+            "tasn": "",
+            "rt": 0,
+            "score": "0.00",
+            "fprt": 1,
+            "ss": [
+              {
+                "fn": "SC7932",
+                "dac": "WUH",
+                "aac": "YNT",
+                "isf": "False",
+                "dat": "T2",
+                "aat": "T2",
+                "dt": "2026-09-13 10:40",
+                "at": "2026-09-13 12:45",
+                "td": "2小时5分钟",
+                "ac": "SC",
+                "asn": "山航",
+                "amn": "波音737-800(中)"
+              },
+              {
+                "fn": "SC7607",
+                "dac": "YNT",
+                "aac": "PEK",
+                "isf": "False",
+                "dat": "T2",
+                "aat": "T3",
+                "dt": "2026-09-13 19:30",
+                "at": "2026-09-13 21:05",
+                "td": "1小时35分钟",
+                "ac": "SC",
+                "asn": "山航",
+                "amn": "波音737-800(中)"
+              }
+            ],
+            "fs": [
+              {
+                "ft": 1,
+                "fcs": [
+                  "2"
+                ]
+              },
+              {
+                "ft": 11,
+                "fcs": [
+                  "4"
+                ]
+              },
+              {
+                "ft": 2,
+                "fcs": [
+                  "SC",
+                  "SC"
+                ]
+              },
+              {
+                "ft": 3,
+                "fcs": [
+                  "1"
+                ]
+              },
+              {
+                "ft": 4,
+                "fcs": [
+                  "WUH"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "PEK"
+                ]
+              },
+              {
+                "ft": 6,
+                "fcs": [
+                  "烟台"
+                ]
+              },
+              {
+                "ft": 8,
+                "fcs": [
+                  "3"
+                ]
+              }
+            ],
+            "lps": [
+              {
+                "lpt": 11,
+                "ccid": 1,
+                "atp": 879,
+                "not": "A",
+                "tda": 0,
+                "tags": [
+                  "myyD3gw5s1wfzBy7XueDFtA00dlqtURNi5z0YzaccVcBgav3kKGVw5BvFBwDMefX7Q089RtdcOCunhSfbMClodtZBfUYqP21gIXN7YTIwzP5ocGTPzoaCX58LTH1dOJvs1",
+                  "I10pgiO01vgD51MtCtUn1rZ0eahcGjMNCrcRlGjAXHQOMu48k0IHPYFkPEctOYCClOwcy94IHLg0ltzYWGy1XoKSRkYzCjDvohnLL7aU2xUsSo3lJ8OlhgVy1VtoLAoYL"
                 ],
                 "pts": [
                   {
@@ -19026,8 +19965,10 @@
                   {
                     "ft": 7,
                     "fcs": [
+                      "3",
                       "4",
                       "6",
+                      "7",
                       "11"
                     ]
                   }
@@ -19048,7 +19989,7 @@
                     "cn": -1
                   }
                 ],
-                "sp": 956,
+                "sp": 879,
                 "pa": 0,
                 "rts": [],
                 "$fwbqRawsLenForMulti": 0,
@@ -19070,12 +20011,12 @@
               {
                 "lpt": 2,
                 "ccid": 2,
-                "atp": 4368,
+                "atp": 3930,
                 "not": "2",
                 "tda": 0,
                 "tags": [
-                  "wIxcVZOY8wQmgd5vBbZFNtJKdL4s6hOym8IBDiLDacYWONNfJeYPYRXmA6BGGpcaRqpIsONzbDyQhgzuXhowIHYegyh7C5bwgqHJqlj4b5tovwKOgkgisegMvy0hQzqbGzc0DGWeCnwb4oC2yIM0sH4",
-                  "3XYk3gNqOMCyqKvL7xkc7RT7Bbylx7pMc67NaYzEtwHKX8qdfGMl8zKxFWyW5ObKM5CvMQNJjV59uhopJyf3u7SnaLp2iuKRnQSIiDBANJT2dS4zdfdL9SA2DvSBiGd4dMOK9rr6BRYCAsOzbucf998"
+                  "T3qZjf7r1RoFxYzekv6D7VaRsDPB05P6QOe6dBsWJI8M8FBEhivGoaQWssPPflpHVHtkgtWDKS9tzf755Iy2bNGIO6gMs2nDFMOZAvlt1sKO1WA6yptS1ZzzPXgeQnwKF",
+                  "X4TL2ARKjL8APeEQvWSmBaIynBgTxKupXIiAisH9rbxY0sbU48sr5L906AwDwqrZYXmsrekc4BUyDom1uDpU7fiJjSAqL98AXhTt0wo6LO8AETX6vyuHphy1qyDxvOjiP"
                 ],
                 "pts": [
                   {
@@ -19087,8 +20028,10 @@
                   {
                     "ft": 7,
                     "fcs": [
+                      "3",
                       "4",
                       "6",
+                      "7",
                       "11"
                     ]
                   }
@@ -19109,7 +20052,7 @@
                     "cn": -1
                   }
                 ],
-                "sp": 4368,
+                "sp": 3930,
                 "pa": 0,
                 "rts": [],
                 "$fwbqRawsLenForMulti": 0,
@@ -19129,27 +20072,97 @@
                 }
               }
             ],
+            "stss": [
+              {
+                "ServiceType": "NO_CHECK",
+                "ServiceId": "1333699935547179214@2025123001010",
+                "ServiceName": "免二次安检",
+                "ServiceDesc": [],
+                "AuxRevenueSkuCode": "9046003016"
+              },
+              {
+                "ServiceType": "LUGGAGE_SYSTEM",
+                "ServiceId": "1333700520694534311@2025122901024",
+                "ServiceName": "行李直达",
+                "ServiceDesc": [],
+                "AuxRevenueSkuCode": "9046003015"
+              },
+              {
+                "ServiceType": "COUPON_VOUCHER",
+                "ServiceId": "2005549742582431744@2025122901022",
+                "ServiceName": "中转权益券申领",
+                "ServiceDesc": [],
+                "AuxRevenueSkuCode": "9046004046494"
+              },
+              {
+                "ServiceType": "TRANSFER_LOUNGE",
+                "ServiceId": "2005550727446949888@2025122901026",
+                "ServiceName": "中转休息区",
+                "ServiceDesc": [],
+                "AuxRevenueSkuCode": "9046004046495"
+              },
+              {
+                "ServiceType": "DISCOUNT_BUSINESS",
+                "ServiceId": "2005551224593612800@2025122901027",
+                "ServiceName": "优惠旅游门票申领",
+                "ServiceDesc": [],
+                "AuxRevenueSkuCode": "9046004046496"
+              },
+              {
+                "ServiceType": "COUPON_SHOPPING",
+                "ServiceId": "2005551660184666112@2025122901028",
+                "ServiceName": "优惠购物折扣申领",
+                "ServiceDesc": [],
+                "AuxRevenueSkuCode": "9046004046497"
+              },
+              {
+                "ServiceType": "TRANSFER_VIP_ROOM_2",
+                "ServiceId": "2079761877344219136@2026072201002",
+                "ServiceName": "头等舱休息室特惠",
+                "ServiceDesc": [],
+                "AuxRevenueSkuCode": "9046004046555"
+              }
+            ],
             "fcd": false,
             "dup": false,
-            "rs": "TransitTravel",
-            "cfis": [],
-            "mt": 1,
-            "bff_sort": 2,
-            "oIdx": 2,
-            "depMinsInDay": 1290,
-            "isCross2ndTrip": true,
+            "rs": "HuiXing",
+            "cfis": [
+              {
+                "ft": 2,
+                "fcs": [
+                  "2"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "5"
+                ]
+              },
+              {
+                "ft": 6,
+                "fcs": [
+                  "6"
+                ]
+              }
+            ],
+            "mt": 2,
+            "bff_sort": 5,
+            "oIdx": 5,
+            "depMinsInDay": 640,
+            "isCross2ndTrip": false,
             "$flightType": "IL",
-            "$checkKey": "1_2",
-            "$crossDateString": "9月14日",
-            "$crossDayWeek": "周一",
+            "$checkKey": "1_5",
+            "$crossDateString": "",
+            "$crossDayWeek": "",
             "$dasn": "天河",
-            "$aasn": "北京大兴",
-            "$isShowHigh": true,
-            "$td": "24时45分",
-            "$sd": "20时40分",
+            "$aasn": "首都",
+            "$isShowHigh": false,
+            "$td": "10时25分",
+            "$sd": "6时45分",
             "$arrowText": "中转",
-            "$crossDayText": "9月14日 周一",
-            "timespanNumber": 1485,
+            "$crossDayText": "",
+            "timespanNumber": 625,
             "is_high": false
           },
           {
@@ -19262,8 +20275,8 @@
                 "not": "5",
                 "tda": 0,
                 "tags": [
-                  "f0z7loZz4HH4QR16FaonFQIFg9Pla7H86K5Sqar4yromyZnhnx8EUp4CXdjWBrtC0yAVzpyFNp4yuf06V8qq4He9Blyb9yHsPMYCktRVdixMCjzzrBN0VgqccsuNMfh5oJm80RwfXhjC0zbE5s5F0lL6",
-                  "8PvFvnAPmns1j51rFmRQQ2zfvaj2tryOPwbKPCtT2YyNVXyYdeeG0yPOAbMKGySxrhcRWRzKMu8BEqRbx68qBEfOstS6nMhsOQcEyPLOczAb5CwyC6AEBMgRRR2RuiyZQYWtOa7iJRF1mgFyJDS2irg1"
+                  "f0z7loZz4HH4QR16FaonFQ83nmIyly4mvTybgnfYNDHdcDQ4Qhq4SBi4lqOR1bjTzalPXUsjoG0FldQovlNXprkkdiPqxym3uZ8AqwDfbzTSiMwJc0t1urnkOcpr94v5brBq0FHCGWSDx9ZUMnRpz2D",
+                  "8PvFvnAPmns1j51rFmRQQA9BjhENycaTOufklTBxCWtv73CET643srbNmGK00i2TRYvksU0a2qyShNvxPB8ixiR26BTITovt3TZ6wEOzmgWz0jhiP1gzxQg980ynxmszK7yJbt2lHz15yhqDQNtrUKs"
                 ],
                 "pts": [
                   {
@@ -19365,12 +20378,12 @@
               }
             ],
             "mt": 1,
-            "bff_sort": 3,
-            "oIdx": 3,
+            "bff_sort": 6,
+            "oIdx": 6,
             "depMinsInDay": 815,
             "isCross2ndTrip": false,
             "$flightType": "IL",
-            "$checkKey": "1_3",
+            "$checkKey": "1_6",
             "$crossDateString": "",
             "$crossDayWeek": "",
             "$dasn": "天河",
@@ -19493,8 +20506,8 @@
                 "not": "5",
                 "tda": 0,
                 "tags": [
-                  "uLQBeAMAsF3NMTAigP1gfiObJbF3FX1RuZKPW4CGQHXzhzyrySy3y8X3I3zdCwwGpTrm5ti8gExkIRobxYRJDEQsicbXDE7N0pvkPzrBoZhHtuz7fzOAvORD9prjxNKeU0I3lhb4ZlffPpE8szmJyZO1",
-                  "0vYxZDhE0y6ijYv461KZALIRziq5q9GZg6HjLi1x75kexr9242zr8SA5Poc1t2CjjF6MPJ8OaPAKPcOb2Fg5ow8Fm1JL8zVJedyv0DnAyRPxmeymJnyhGsM3zsyTF9Sx9zeM6hF4twwhyA6WzismHxyD"
+                  "uLQBeAMAsF3NMTAigP1gfbQAvr1exkszDmxShHBt994z5GCwAlVQPfFj3zg3ZnMMZcIi08xg1U6RIRpl8itZScdg12zNtU6SZrpfd1Wt4gyA3crkGDzLyqdpBLEwXmWbN5JyQdibh5GnHOb34bEqfz2",
+                  "0vYxZDhE0y6ijYv461KZAMnSX3aw6o2T2XlGyeYjU68X7pwatCPDP2nRp2J7GfEv5ckSAmfS1nJH2Abw01OKjy8gIwCoIJqNcSz4Z5PrvI4v5rgA0ZGrIKj58OUUDy0HL4FKBjD7okMNoBZqrKvocQ0"
                 ],
                 "pts": [
                   {
@@ -19596,12 +20609,12 @@
               }
             ],
             "mt": 1,
-            "bff_sort": 4,
-            "oIdx": 4,
+            "bff_sort": 7,
+            "oIdx": 7,
             "depMinsInDay": 815,
             "isCross2ndTrip": false,
             "$flightType": "IL",
-            "$checkKey": "1_4",
+            "$checkKey": "1_7",
             "$crossDateString": "",
             "$crossDayWeek": "",
             "$dasn": "天河",
@@ -19719,8 +20732,8 @@
                 "not": "A",
                 "tda": 0,
                 "tags": [
-                  "sG7VvJjswNI5XwrCLMYFHNzCM8yyRGH2crHEJycR6ytCWZFDFfudplhmG9kCD7k8S1lEiBzGfMzXM4OPyWEJbMd5nlzTXp0lMQfFIJUbiVHNGZnBT6xV61bUpU58MDmTk3gXOcfn1FV471dzNCPxJ7Z",
-                  "CSy2vmyWqZ1yxGCtWivuaFHOW4VC6o5HAl7tFiC3Fxnzm5UaVwBiWnVciuzCuM8hw2AEIXneppXqYzU9muszH1srtJa6hflzqgKzuJj4Ba0Y3S3Sv67osbTZI1K7FHhn4rV6yauRAP9MLVAqtYuGBrZ"
+                  "sG7VvJjswNI5XwrCLMYFHPv6qG1Yp8E5WC5EzQEquxvmeyUVaDjZata46QGanhekKcFhkymZFZu0BdkLqZq3Gfy4rjAkzzvbn1e1VjlvmBAOerfwgbXGXKtLIIWdW8XlMcEw61XxJJm8H3L6gEZqlk1",
+                  "CSy2vmyWqZ1yxGCtWivuaFlOM4qUfPGzTeQiPZZbUEu2wM4Tz9peXt6E0efUyStuUqkdm3HKmb2w1m0KSph36GW1AaHHr4QLlUv10PRyVUp5NXCJ2ssx1uUXzPHq6uotOKygT95usyDBF8Mm6gxiyeR0"
                 ],
                 "pts": [
                   {
@@ -19800,8 +20813,8 @@
                 "not": "2",
                 "tda": 0,
                 "tags": [
-                  "qyKhTPOyzFCZ97RajMfdyClpDng8oXt9wQSDVSWoxzQ1c5gGIfGIlkhibQdVC98NTRzB2Qu45IzkuTHc0e836WKQxJBtF8N0Qk1yhtfgzRTop8IwCp2cfbeMilwHq4SJqtyRrODJKjzCRWuIs254gDG0",
-                  "MitYayH0r41he96zOBYRJVxqlECSS9ZLB1PDvnu55rP7Vo1aLvrBCR17FbJAePtdgYUynBAg7h9ycCyyr9z9nVBtKQSldy0InyikYb478kXkjrId6fBMLEBVtYNoNju6e8ToGhmdhlzKt4CoPayz3922"
+                  "qyKhTPOyzFCZ97RajMfdyCRmfankyxL4W7jAPx2IgeZLVKqBxzFuRO8Ky390neYGVoyzXRI6XLzQK0gZhxTuzatbD00ILrSrx7S9hmz5JfHBpwPbzyeZ1iLf8W48iVZ86O6TfZbfh3kFFLfTwdUUowfE",
+                  "MitYayH0r41he96zOBYRJSCqGksudJZCJUuuGdE07T9BdHslAylHhTrEU9UqUuRyvLG6eGyGi89BeZ4E1HOGzydAT21P4R1JofiqJ9ZUps5xrN9X1mAXPx66UZAa8xjnSgroVUPhEUEX2ahluO1lm75"
                 ],
                 "pts": [
                   {
@@ -19861,12 +20874,12 @@
             "rs": "TransitTravel",
             "cfis": [],
             "mt": 3,
-            "bff_sort": 5,
-            "oIdx": 5,
+            "bff_sort": 8,
+            "oIdx": 8,
             "depMinsInDay": 1435,
             "isCross2ndTrip": false,
             "$flightType": "IL",
-            "$checkKey": "1_5",
+            "$checkKey": "1_8",
             "$crossDateString": "9月14日",
             "$crossDayWeek": "周一",
             "$dasn": "天河",
@@ -19877,492 +20890,6 @@
             "$arrowText": "中转",
             "$crossDayText": "9月14日 周一",
             "timespanNumber": 940,
-            "is_high": false
-          },
-          {
-            "fId": "WUHKMG20260913MU5894_KMGPKX20260914MF8484",
-            "it": 1,
-            "icat": false,
-            "dat": "T3",
-            "aat": "",
-            "dt": "2026-09-13 23:15",
-            "at": "2026-09-14 16:20",
-            "ad": "1",
-            "dst": "23:15",
-            "ast": "16:20",
-            "td": "17h5m",
-            "dasn": "天河",
-            "aasn": "北京大兴",
-            "sc": "昆明",
-            "sd": "11h40m",
-            "tac": "",
-            "tfn": "",
-            "tasn": "",
-            "rt": 0,
-            "score": "0.00",
-            "fprt": 1,
-            "ss": [
-              {
-                "fn": "MU5894",
-                "dac": "WUH",
-                "aac": "KMG",
-                "isf": "False",
-                "dat": "T3",
-                "aat": "",
-                "dt": "2026-09-13 23:15",
-                "at": "2026-09-14 01:30",
-                "td": "2小时15分钟",
-                "ac": "MU",
-                "asn": "东航",
-                "amn": "波音738(窄)"
-              },
-              {
-                "fn": "MF8484",
-                "dac": "KMG",
-                "aac": "PKX",
-                "isf": "False",
-                "dat": "",
-                "aat": "",
-                "dt": "2026-09-14 13:10",
-                "at": "2026-09-14 16:20",
-                "td": "3小时10分钟",
-                "ac": "MF",
-                "asn": "厦航",
-                "amn": "波音737-800(中)"
-              }
-            ],
-            "fs": [
-              {
-                "ft": 1,
-                "fcs": [
-                  "4"
-                ]
-              },
-              {
-                "ft": 11,
-                "fcs": [
-                  "8"
-                ]
-              },
-              {
-                "ft": 2,
-                "fcs": [
-                  "MU",
-                  "MF"
-                ]
-              },
-              {
-                "ft": 3,
-                "fcs": [
-                  "1"
-                ]
-              },
-              {
-                "ft": 4,
-                "fcs": [
-                  "WUH"
-                ]
-              },
-              {
-                "ft": 5,
-                "fcs": [
-                  "PKX"
-                ]
-              },
-              {
-                "ft": 6,
-                "fcs": [
-                  "昆明"
-                ]
-              }
-            ],
-            "lps": [
-              {
-                "lpt": 11,
-                "ccid": 1,
-                "atp": 980,
-                "not": "5",
-                "tda": 0,
-                "tags": [
-                  "rDxpShKKgoVUNu1fVDqN2ttJyWREWX0CgknTKpoxvvct8Q7AynJsrheZ0838XS3y1LRwbgNovKreCI0KpUebMFB91YYKqrfHxtvKY8JZD81CEyIW5XHWUXeOKEhTYNaE4SOdy5CW1DzAHk4Hu2Bjki3",
-                  "fuEihtmEy3bPAy6q0zdywkjgmAye5PzyYRbBz8VYzBVtl9sN5NLzNjT9DUl9Bwi0jD1x5CtAxJ5zWqRAjISA9fzabu3lxFGV5XWnWUZkWFbbmSpq3IEGW4LgzvqH7cFFCSjI4SuJM2P2gUhxXuFHtX45"
-                ],
-                "pts": [
-                  {
-                    "tt": 2,
-                    "td": "经济舱"
-                  }
-                ],
-                "fs": [
-                  {
-                    "ft": 7,
-                    "fcs": [
-                      "3",
-                      "4",
-                      "6",
-                      "7",
-                      "11"
-                    ]
-                  }
-                ],
-                "ofl": 0,
-                "tht": 0,
-                "fcd": false,
-                "dup": false,
-                "brs": [
-                  {
-                    "bpt": 0,
-                    "al": 20,
-                    "cn": -1
-                  },
-                  {
-                    "bpt": 0,
-                    "al": 20,
-                    "cn": -1
-                  }
-                ],
-                "sp": 980,
-                "pa": 0,
-                "rts": [],
-                "$fwbqRawsLenForMulti": 0,
-                "fwbqRaws": "",
-                "fwbqs": [],
-                "$showTransferRts": "",
-                "$mtsN5": [],
-                "$showHxj": {
-                  "showInMts": false,
-                  "showPrice": 0
-                },
-                "$ptStyle": "pt24",
-                "$showFwbqsInMulti": false,
-                "$tcTip": {
-                  "c1": "中转专享",
-                  "c2": "航司中转，享联程服务"
-                }
-              },
-              {
-                "lpt": 2,
-                "ccid": 2,
-                "atp": 4909,
-                "not": "2",
-                "tda": 0,
-                "tags": [
-                  "zlDOzUGsZBzOor9E7eygmrgHk487CvQRPNTqBc6sd4VyBShIScQdY5bdRRcvqzBhHq8Ej31a8yZc7StKBoMq7E7XqWU4OMLF1NtndMTJcmhb1nA8m904DbwsWmuXGhTUB6JLZRe7Y4Cbg32QJ6I6897",
-                  "va1PhKFUcyoizTnQpGycBSNYhGqkm1mBFtTu6Vh5D1ZqWWDLTLm7Dpf7KdzYaatlohfd7fGXMe2thCPobkBdzcOdDZubiQOgzFUFdkEGz4zVIYaVaQyiX9AKrTRxRP5zOJWzFuIFapGrcykgOAohtkP2"
-                ],
-                "pts": [
-                  {
-                    "tt": 2,
-                    "td": "公务舱"
-                  }
-                ],
-                "fs": [
-                  {
-                    "ft": 7,
-                    "fcs": [
-                      "3",
-                      "4",
-                      "6",
-                      "7",
-                      "11"
-                    ]
-                  }
-                ],
-                "ofl": 0,
-                "tht": 0,
-                "fcd": false,
-                "dup": false,
-                "brs": [
-                  {
-                    "bpt": 0,
-                    "al": 30,
-                    "cn": -1
-                  },
-                  {
-                    "bpt": 0,
-                    "al": 30,
-                    "cn": -1
-                  }
-                ],
-                "sp": 4909,
-                "pa": 0,
-                "rts": [],
-                "$fwbqRawsLenForMulti": 0,
-                "fwbqRaws": "",
-                "fwbqs": [],
-                "$showTransferRts": "",
-                "$mtsN5": [],
-                "$showHxj": {
-                  "showInMts": false,
-                  "showPrice": 0
-                },
-                "$ptStyle": "pt24",
-                "$showFwbqsInMulti": false,
-                "$tcTip": {
-                  "c1": "中转专享",
-                  "c2": "航司中转，享联程服务"
-                }
-              }
-            ],
-            "stss": [
-              {
-                "ServiceType": "COUPON_FASTCHECK",
-                "ServiceId": "1585888423929991168@2026042901001",
-                "ServiceName": "快速安检",
-                "ServiceDesc": [],
-                "AuxRevenueSkuCode": "9046004157"
-              },
-              {
-                "ServiceType": "TRANSFER_LOUNGE",
-                "ServiceId": "1585888834804011008@2026060801007",
-                "ServiceName": "中转休息区",
-                "ServiceDesc": [],
-                "AuxRevenueSkuCode": "9046004158"
-              },
-              {
-                "ServiceType": "TRANSFER_GUIDE",
-                "ServiceId": "1555398208752979968@2025102301201",
-                "ServiceName": "专人中转指引",
-                "ServiceDesc": [],
-                "AuxRevenueSkuCode": "9046004145"
-              }
-            ],
-            "fcd": false,
-            "dup": false,
-            "rs": "TransitTravel",
-            "cfis": [
-              {
-                "ft": 5,
-                "fcs": [
-                  "5"
-                ]
-              }
-            ],
-            "mt": 3,
-            "bff_sort": 6,
-            "oIdx": 6,
-            "depMinsInDay": 1395,
-            "isCross2ndTrip": false,
-            "$flightType": "IL",
-            "$checkKey": "1_6",
-            "$crossDateString": "9月14日",
-            "$crossDayWeek": "周一",
-            "$dasn": "天河",
-            "$aasn": "北京大兴",
-            "$isShowHigh": false,
-            "$td": "17时5分",
-            "$sd": "11时40分",
-            "$arrowText": "中转",
-            "$crossDayText": "9月14日 周一",
-            "timespanNumber": 1025,
-            "is_high": false
-          },
-          {
-            "fId": "WUHPVG20260913MU2533_PVGPKX20260914MU8202",
-            "it": 1,
-            "icat": false,
-            "dat": "T3",
-            "aat": "",
-            "dt": "2026-09-13 14:15",
-            "at": "2026-09-14 10:25",
-            "ad": "1",
-            "dst": "14:15",
-            "ast": "10:25",
-            "td": "20h10m",
-            "dasn": "天河",
-            "aasn": "北京大兴",
-            "sc": "上海",
-            "sd": "16h10m",
-            "tac": "",
-            "tfn": "",
-            "tasn": "",
-            "rt": 0,
-            "score": "0.00",
-            "fprt": 1,
-            "ss": [
-              {
-                "fn": "MU2533",
-                "dac": "WUH",
-                "aac": "PVG",
-                "isf": "False",
-                "dat": "T3",
-                "aat": "T1",
-                "dt": "2026-09-13 14:15",
-                "at": "2026-09-13 16:05",
-                "td": "1小时50分钟",
-                "ac": "MU",
-                "asn": "东航",
-                "amn": "波音738(窄)"
-              },
-              {
-                "fn": "MU8202",
-                "dac": "PVG",
-                "aac": "PKX",
-                "isf": "True",
-                "dat": "T1",
-                "aat": "",
-                "dt": "2026-09-14 08:15",
-                "at": "2026-09-14 10:25",
-                "td": "2小时10分钟",
-                "ac": "MU",
-                "asn": "东航",
-                "amn": "波音737-800(中)"
-              }
-            ],
-            "fs": [
-              {
-                "ft": 1,
-                "fcs": [
-                  "3"
-                ]
-              },
-              {
-                "ft": 11,
-                "fcs": [
-                  "5"
-                ]
-              },
-              {
-                "ft": 2,
-                "fcs": [
-                  "MU",
-                  "MU"
-                ]
-              },
-              {
-                "ft": 3,
-                "fcs": [
-                  "1"
-                ]
-              },
-              {
-                "ft": 4,
-                "fcs": [
-                  "WUH"
-                ]
-              },
-              {
-                "ft": 5,
-                "fcs": [
-                  "PKX"
-                ]
-              },
-              {
-                "ft": 6,
-                "fcs": [
-                  "上海"
-                ]
-              },
-              {
-                "ft": 8,
-                "fcs": [
-                  "2"
-                ]
-              }
-            ],
-            "lps": [
-              {
-                "lpt": 11,
-                "ccid": 1,
-                "atp": 1120,
-                "not": "A",
-                "tda": 0,
-                "tags": [
-                  "FZyyFVnzZwKZo96LjYfUy22B4qktFJgvLcdfb8gEzp5YaVYJNW9rsSonhPHyDielN7yYHA0fHEaHozME0pVtYy7y6dRjePyKtgE2yzWe8uzsNOlbzfQky7wddkdrEAfaU4JyFrTbhGqvvyEdit7rzlp25",
-                  "2NNPhJhmOa8ItJOeMiIIeADzpzqwYMvM0hO5aycX3z3K8GLjZQxlhgKqdK6WlsQIZc9yzGvcgtAcMTga6mAj6iIVU43kjPzmWDoP7DXRkxHKn7ysHiv9EyIFVd9JmzZahaELI997PkQPGCEvfxraIPK"
-                ],
-                "pts": [
-                  {
-                    "tt": 2,
-                    "td": "经济舱"
-                  }
-                ],
-                "mts": [
-                  {
-                    "tt": 11,
-                    "td": "已优惠¥15"
-                  }
-                ],
-                "fs": [
-                  {
-                    "ft": 7,
-                    "fcs": [
-                      "4",
-                      "6",
-                      "11"
-                    ]
-                  }
-                ],
-                "ofl": 0,
-                "tht": 0,
-                "fcd": false,
-                "dup": false,
-                "brs": [
-                  {
-                    "bpt": 0,
-                    "al": 20,
-                    "cn": -1
-                  },
-                  {
-                    "bpt": 0,
-                    "al": 20,
-                    "cn": -1
-                  }
-                ],
-                "sp": 1105,
-                "dps": {
-                  "mdp": 1105,
-                  "bdp": 1120,
-                  "datpd": 0,
-                  "iap": false
-                },
-                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":1120,\"dfp\":600,\"cdp\":1105,\"ias\":false,\"fd\":false,\"eca\":0.0,\"iplr\":false,\"plrcba\":0}",
-                "pa": 15,
-                "rts": [],
-                "$fwbqRawsLenForMulti": 0,
-                "fwbqRaws": "",
-                "fwbqs": [],
-                "$showTransferRts": "",
-                "$mts5": null,
-                "$mtsN5": [
-                  {
-                    "tt": 11,
-                    "td": "已优惠¥15"
-                  }
-                ],
-                "$showHxj": {
-                  "showInMts": false,
-                  "showPrice": 1120
-                },
-                "$ptStyle": "pt24",
-                "$showFwbqsInMulti": false,
-                "$tcTip": {
-                  "c1": "中转专享",
-                  "c2": "航司中转，享联程服务"
-                }
-              }
-            ],
-            "fcd": false,
-            "dup": false,
-            "rs": "TransitTravel",
-            "cfis": [],
-            "mt": 3,
-            "bff_sort": 7,
-            "oIdx": 7,
-            "depMinsInDay": 855,
-            "isCross2ndTrip": true,
-            "$flightType": "IL",
-            "$checkKey": "1_7",
-            "$crossDateString": "9月14日",
-            "$crossDayWeek": "周一",
-            "$dasn": "天河",
-            "$aasn": "北京大兴",
-            "$isShowHigh": false,
-            "$td": "20时10分",
-            "$sd": "16时10分",
-            "$arrowText": "中转",
-            "$crossDayText": "9月14日 周一",
-            "timespanNumber": 1210,
             "is_high": false
           },
           {
@@ -20470,8 +20997,8 @@
                 "not": "A",
                 "tda": 0,
                 "tags": [
-                  "O9z6Fv0Ji9whMJDhrB8gAdit189Gl8VLuN8cI0ufZ9WDdqkd3BmeptZnIyi4hhqTNnKz4HJKwQr2WjYRW9zMUDi1r4zeZwsDTYtbHxsAliTO1Pb5IaeDbtyJ85nlILGH32BKRbMd15VyCtOHzQUcdEB",
-                  "2NNPhJhmOa8ItJOeMiIIeCjIzlWVt99N4yFgY9LWORHLNNm65PYwxFquOXkfWkhPYAOa8zW20KHSoHZ6PhXY698fGZ2G7aU14oPVPy7mHlVJAgztBUEpHI0VXfoShVcs7qU6ydOy9ltWnw4Kf9w1yOE"
+                  "O9z6Fv0Ji9whMJDhrB8gAb8eKY8aJVyRb6FY6fBzDQM0gpJ6RQEhzL4XRjikFIt9lsZODJyKsyMoUNWFOyqmz4ZzcSbZyvwuge0rY40zMd6QsxTJSPas9oGiomDdKzxBy4VVzsgPLZVGaMvs2cuzZrfO",
+                  "2NNPhJhmOa8ItJOeMiIIeCwYqmiFG685mrjFWkzyfugNXJy979kor3TKnV03oyQLG4ddAZiUoUlwWx1coneqmyUmiU1FqRNy96bzAGXbVNwWmjLDOyLAwxKFX5wB7CP4MbeyJnruDcff6tH8tOhBQuH"
                 ],
                 "pts": [
                   {
@@ -20531,8 +21058,8 @@
                 "not": "2",
                 "tda": 0,
                 "tags": [
-                  "wIxcVZOY8wQmgd5vBbZFNtJKdL4s6hOym8IBDiLDacY0d0ywUgzGFZzd3AXUX2gvkwHDCb8OOivLb4F6pIVDoQb9RJSFFFdcoeQDfJqpJghzL4lp8dSzF1ooSaHxzhj2GNSRPaUfrxUI8n5hXm8mbv4",
-                  "3XYk3gNqOMCyqKvL7xkc7RT7Bbylx7pMc67NaYzEtwHKX8qdfGMl8zKxFWyW5ObKM5CvMQNJjV59uhopJyf3u7SnaLp2iuKRnQSIiDBANJT2dS4zdfdL9SA2DvSBiGd4dMOK9rr6BRYCAsOzbucf998"
+                  "wIxcVZOY8wQmgd5vBbZFNpXya4wuz6hbBryM44AOpACVvIMDS5s9ysKv8randiyNWvOPUVUHpniTXO5zCWkDP6FhfqVdoCDxa1Jwu7BIf5pCY3MfE7vL1ORqpRNMq4tsGyRBUjoJVXyLrXDGBKFj5f9",
+                  "3XYk3gNqOMCyqKvL7xkc7Pr3g0ALlMyhsEyYDnng7gkDLxcMfqD9T5l692NKeNwzbiwgfMCAj8cIlWBmB5BH01kyQTVB3U02CH2b05atnt9TdZLpBMX8CtRJV0MJoqqnHZYByHXmybabQEa0ygF3mp1"
                 ],
                 "pts": [
                   {
@@ -20591,12 +21118,12 @@
             "rs": "TransitTravel",
             "cfis": [],
             "mt": 1,
-            "bff_sort": 8,
-            "oIdx": 8,
+            "bff_sort": 9,
+            "oIdx": 9,
             "depMinsInDay": 1210,
             "isCross2ndTrip": true,
             "$flightType": "IL",
-            "$checkKey": "1_8",
+            "$checkKey": "1_9",
             "$crossDateString": "9月14日",
             "$crossDayWeek": "周一",
             "$dasn": "天河",
@@ -20714,8 +21241,8 @@
                 "not": "A",
                 "tda": 0,
                 "tags": [
-                  "FZyyFVnzZwKZo96LjYfUy22B4qktFJgvLcdfb8gEzp5YaVYJNW9rsSonhPHyDielNFr89eJDkYrQhJY9eoSEpJ3i8hAnmRyiDzNj9LoaYIvMSD5202VtElXCeCGgHYTwm64PeULpuzHZEEjYCIpzx0q",
-                  "2NNPhJhmOa8ItJOeMiIIeADzpzqwYMvM0hO5aycX3z3K8GLjZQxlhgKqdK6WlsQIZc9yzGvcgtAcMTga6mAj6iIVU43kjPzmWDoP7DXRkxHKn7ysHiv9EyIFVd9JmzZahaELI997PkQPGCEvfxraIPK"
+                  "FZyyFVnzZwKZo96LjYfUy2jZkbPYTzVKNcui3aGLoant0VdFdLmt72yPgLg88FnKa1kEFnO0ai52zjQ1rzsiG5NwTh9zO9UI0AZZxuN0gYGCl9AyVFrllsGFWTo1jhfyvkI7xPqCx2iRBs9OPvtDIba0",
+                  "2NNPhJhmOa8ItJOeMiIIe8brfcOnUk1X9hNNs4oHB65zjfu7RrMTOs5U47z4aOfzJuChHLO4dOyqw3qHXjIU1GPemcNr5gWWba0RNyhWNe7EI8N10ysI7mKp4zA0yU7BaSsp2kPyvuF1CWX1hl92f1Q"
                 ],
                 "pts": [
                   {
@@ -20793,12 +21320,12 @@
             "rs": "TransitTravel",
             "cfis": [],
             "mt": 3,
-            "bff_sort": 9,
-            "oIdx": 9,
+            "bff_sort": 10,
+            "oIdx": 10,
             "depMinsInDay": 1175,
             "isCross2ndTrip": true,
             "$flightType": "IL",
-            "$checkKey": "1_9",
+            "$checkKey": "1_10",
             "$crossDateString": "9月14日",
             "$crossDayWeek": "周一",
             "$dasn": "天河",
@@ -20809,6 +21336,2921 @@
             "$arrowText": "中转",
             "$crossDayText": "9月14日 周一",
             "timespanNumber": 890,
+            "is_high": false
+          },
+          {
+            "fId": "WUHPVG20260913MU2533_PVGPKX20260914MU8202",
+            "it": 1,
+            "icat": false,
+            "dat": "T3",
+            "aat": "",
+            "dt": "2026-09-13 14:15",
+            "at": "2026-09-14 10:25",
+            "ad": "1",
+            "dst": "14:15",
+            "ast": "10:25",
+            "td": "20h10m",
+            "dasn": "天河",
+            "aasn": "北京大兴",
+            "sc": "上海",
+            "sd": "16h10m",
+            "tac": "",
+            "tfn": "",
+            "tasn": "",
+            "rt": 0,
+            "score": "0.00",
+            "fprt": 1,
+            "ss": [
+              {
+                "fn": "MU2533",
+                "dac": "WUH",
+                "aac": "PVG",
+                "isf": "False",
+                "dat": "T3",
+                "aat": "T1",
+                "dt": "2026-09-13 14:15",
+                "at": "2026-09-13 16:05",
+                "td": "1小时50分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "波音738(窄)"
+              },
+              {
+                "fn": "MU8202",
+                "dac": "PVG",
+                "aac": "PKX",
+                "isf": "True",
+                "dat": "T1",
+                "aat": "",
+                "dt": "2026-09-14 08:15",
+                "at": "2026-09-14 10:25",
+                "td": "2小时10分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "波音737-800(中)"
+              }
+            ],
+            "fs": [
+              {
+                "ft": 1,
+                "fcs": [
+                  "3"
+                ]
+              },
+              {
+                "ft": 11,
+                "fcs": [
+                  "5"
+                ]
+              },
+              {
+                "ft": 2,
+                "fcs": [
+                  "MU",
+                  "MU"
+                ]
+              },
+              {
+                "ft": 3,
+                "fcs": [
+                  "1"
+                ]
+              },
+              {
+                "ft": 4,
+                "fcs": [
+                  "WUH"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "PKX"
+                ]
+              },
+              {
+                "ft": 6,
+                "fcs": [
+                  "上海"
+                ]
+              },
+              {
+                "ft": 8,
+                "fcs": [
+                  "2"
+                ]
+              }
+            ],
+            "lps": [
+              {
+                "lpt": 11,
+                "ccid": 1,
+                "atp": 1120,
+                "not": "A",
+                "tda": 0,
+                "tags": [
+                  "FZyyFVnzZwKZo96LjYfUy2jZkbPYTzVKNcui3aGLoant0VdFdLmt72yPgLg88FnKaKzko6YlZiEAGR7xfC6LkM5Xf9FNMiymqCX6eCyMIuArmofcfmKxaaufdVvuZgyhdes7571jTYHgeZXzzHjm4Db2",
+                  "2NNPhJhmOa8ItJOeMiIIe8brfcOnUk1X9hNNs4oHB65zjfu7RrMTOs5U47z4aOfzJuChHLO4dOyqw3qHXjIU1GPemcNr5gWWba0RNyhWNe7EI8N10ysI7mKp4zA0yU7BaSsp2kPyvuF1CWX1hl92f1Q"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "经济舱"
+                  }
+                ],
+                "mts": [
+                  {
+                    "tt": 11,
+                    "td": "已优惠¥15"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "4",
+                      "6",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  }
+                ],
+                "sp": 1105,
+                "dps": {
+                  "mdp": 1105,
+                  "bdp": 1120,
+                  "datpd": 0,
+                  "iap": false
+                },
+                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":1120,\"dfp\":600,\"cdp\":1105,\"ias\":false,\"fd\":false,\"eca\":0.0,\"iplr\":false,\"plrcba\":0}",
+                "pa": 15,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 0,
+                "fwbqRaws": "",
+                "fwbqs": [],
+                "$showTransferRts": "",
+                "$mts5": null,
+                "$mtsN5": [
+                  {
+                    "tt": 11,
+                    "td": "已优惠¥15"
+                  }
+                ],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 1120
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": false,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              }
+            ],
+            "fcd": false,
+            "dup": false,
+            "rs": "TransitTravel",
+            "cfis": [],
+            "mt": 3,
+            "bff_sort": 11,
+            "oIdx": 11,
+            "depMinsInDay": 855,
+            "isCross2ndTrip": true,
+            "$flightType": "IL",
+            "$checkKey": "1_11",
+            "$crossDateString": "9月14日",
+            "$crossDayWeek": "周一",
+            "$dasn": "天河",
+            "$aasn": "北京大兴",
+            "$isShowHigh": false,
+            "$td": "20时10分",
+            "$sd": "16时10分",
+            "$arrowText": "中转",
+            "$crossDayText": "9月14日 周一",
+            "timespanNumber": 1210,
+            "is_high": false
+          },
+          {
+            "fId": "WUHSHA20260913MU2501_SHAPEK20260914MU5099",
+            "it": 1,
+            "icat": false,
+            "dat": "T3",
+            "aat": "T2",
+            "dt": "2026-09-13 08:30",
+            "at": "2026-09-14 09:15",
+            "ad": "1",
+            "dst": "08:30",
+            "ast": "09:15",
+            "td": "24h45m",
+            "dasn": "天河",
+            "aasn": "首都",
+            "sc": "上海",
+            "sd": "20h55m",
+            "tac": "",
+            "tfn": "",
+            "tasn": "",
+            "rt": 0,
+            "score": "0.00",
+            "fprt": 1,
+            "ss": [
+              {
+                "fn": "MU2501",
+                "dac": "WUH",
+                "aac": "SHA",
+                "isf": "False",
+                "dat": "T3",
+                "aat": "T2",
+                "dt": "2026-09-13 08:30",
+                "at": "2026-09-13 10:05",
+                "td": "1小时35分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "波音738(窄)"
+              },
+              {
+                "fn": "MU5099",
+                "dac": "SHA",
+                "aac": "PEK",
+                "isf": "False",
+                "dat": "T2",
+                "aat": "T2",
+                "dt": "2026-09-14 07:00",
+                "at": "2026-09-14 09:15",
+                "td": "2小时15分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "空客333(宽)"
+              }
+            ],
+            "fs": [
+              {
+                "ft": 1,
+                "fcs": [
+                  "2"
+                ]
+              },
+              {
+                "ft": 11,
+                "fcs": [
+                  "3"
+                ]
+              },
+              {
+                "ft": 2,
+                "fcs": [
+                  "MU",
+                  "MU"
+                ]
+              },
+              {
+                "ft": 3,
+                "fcs": [
+                  "1"
+                ]
+              },
+              {
+                "ft": 4,
+                "fcs": [
+                  "WUH"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "PEK"
+                ]
+              },
+              {
+                "ft": 6,
+                "fcs": [
+                  "上海"
+                ]
+              },
+              {
+                "ft": 8,
+                "fcs": [
+                  "3"
+                ]
+              }
+            ],
+            "lps": [
+              {
+                "lpt": 11,
+                "ccid": 1,
+                "atp": 1426,
+                "not": "A",
+                "tda": 0,
+                "tags": [
+                  "czUzkWcUmRozn2OU9FoVT2y9qNqqkrIH2Sqyi4CeNtkL5GlHKDsE9981Nw1OwT44x7TtM2qA6GTscO4UAzXMNMwE8zDytbLbpRbtm1x58jUqBWJCob9wXZtdkrRL1RoJs1",
+                  "sv185hayyOpi2DxvyxHPFYQN9OsHYnhqjNtVYf0iOXAT0bGMKsz7svy1WlXe41hv5wYOq1dgrH6BBkPfu9NApFGKI3it6A7HEljKiBaydpVy6DwwSoHzVsEy6qxNkZgyn3"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "经济舱"
+                  }
+                ],
+                "qpst": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  }
+                ],
+                "sp": 1426,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 8,
+                "fwbqRaws": "第2程：免费上网",
+                "fwbqs": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": true,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              },
+              {
+                "lpt": 2,
+                "ccid": 2,
+                "atp": 4476,
+                "not": "4",
+                "tda": 0,
+                "tags": [
+                  "3Bj3siHPiVKqyXLPwKJL4jmKQPmE32bvaMqHdOxtlszhq5XzkOl6kyZgNnAmCkxWtt4NQEn1YXS9mmGzynCEEEhqTFthgwnjVL9GlFFUrt20j71CJJRMMFGVpJyXPwvgG1",
+                  "v8BcstyhrvEHMhLOaqhNVGDTYDYty7XkrRCZ2tvwraPyEg4pEhz0Fnm4357opaWgVr4LFWy8aLiHRIy5BqSa6aurgr8QsL4L2SEJmwEI4zacni78lIj8WouFokrBQvqQf1"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "公务舱"
+                  }
+                ],
+                "qpst": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  }
+                ],
+                "sp": 4476,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 8,
+                "fwbqRaws": "第2程：免费上网",
+                "fwbqs": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": true,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              }
+            ],
+            "fcd": false,
+            "dup": false,
+            "rs": "HuiXing",
+            "cfis": [],
+            "mt": 2,
+            "bff_sort": 12,
+            "oIdx": 12,
+            "depMinsInDay": 510,
+            "isCross2ndTrip": true,
+            "$flightType": "IL",
+            "$checkKey": "1_12",
+            "$crossDateString": "9月14日",
+            "$crossDayWeek": "周一",
+            "$dasn": "天河",
+            "$aasn": "首都",
+            "$isShowHigh": true,
+            "$td": "24时45分",
+            "$sd": "20时55分",
+            "$arrowText": "中转",
+            "$crossDayText": "9月14日 周一",
+            "timespanNumber": 1485,
+            "is_high": false
+          },
+          {
+            "fId": "WUHPVG20260913MU2523_PVGPKX20260914MU5185",
+            "it": 1,
+            "icat": false,
+            "dat": "T3",
+            "aat": "",
+            "dt": "2026-09-13 19:35",
+            "at": "2026-09-15 00:30",
+            "ad": "2",
+            "dst": "19:35",
+            "ast": "00:30",
+            "td": "28h55m",
+            "dasn": "天河",
+            "aasn": "北京大兴",
+            "sc": "上海",
+            "sd": "24h50m",
+            "tac": "",
+            "tfn": "",
+            "tasn": "",
+            "rt": 0,
+            "score": "0.00",
+            "fprt": 1,
+            "ss": [
+              {
+                "fn": "MU2523",
+                "dac": "WUH",
+                "aac": "PVG",
+                "isf": "False",
+                "dat": "T3",
+                "aat": "T1",
+                "dt": "2026-09-13 19:35",
+                "at": "2026-09-13 21:10",
+                "td": "1小时35分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "波音738(窄)"
+              },
+              {
+                "fn": "MU5185",
+                "dac": "PVG",
+                "aac": "PKX",
+                "isf": "False",
+                "dat": "T1",
+                "aat": "",
+                "dt": "2026-09-14 22:00",
+                "at": "2026-09-15 00:30",
+                "td": "2小时30分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "机型326"
+              }
+            ],
+            "fs": [
+              {
+                "ft": 1,
+                "fcs": [
+                  "4"
+                ]
+              },
+              {
+                "ft": 11,
+                "fcs": [
+                  "7"
+                ]
+              },
+              {
+                "ft": 2,
+                "fcs": [
+                  "MU",
+                  "MU"
+                ]
+              },
+              {
+                "ft": 3,
+                "fcs": [
+                  "1"
+                ]
+              },
+              {
+                "ft": 4,
+                "fcs": [
+                  "WUH"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "PKX"
+                ]
+              },
+              {
+                "ft": 6,
+                "fcs": [
+                  "上海"
+                ]
+              }
+            ],
+            "lps": [
+              {
+                "lpt": 11,
+                "ccid": 1,
+                "atp": 2030,
+                "not": "7",
+                "tda": 0,
+                "tags": [
+                  "FZyyFVnzZwKZo96LjYfUy2jZkbPYTzVKNcui3aGLoant0VdFdLmt72yPgLg88FnKa1kEFnO0ai52zjQ1rzsiG5KygvFh17pugPKyObgvzpOjIz10T0UfMJVLcA8ZO0Dhc1",
+                  "GuGyQm3MSKjYqysqLyYaMvUOZ7Zw7FVg072BZq4Ql7BdLuPttIJyMvud3ku3JQonni5xiXBldOpcIdWGucI2NdBUmWjJaRVXOLFu8yeN322ep5zMzSZq3Ej5P33lI7rxi0"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "经济舱"
+                  }
+                ],
+                "mts": [
+                  {
+                    "tt": 11,
+                    "td": "已优惠¥15"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  }
+                ],
+                "sp": 2015,
+                "dps": {
+                  "mdp": 2015,
+                  "bdp": 2030,
+                  "datpd": 0,
+                  "iap": false
+                },
+                "mpk": "{\"ma\":0,\"ra\":0,\"npa\":0,\"dpa\":15,\"atp\":2030,\"dfp\":600,\"cdp\":2015,\"ias\":false,\"fd\":false,\"eca\":0.0,\"iplr\":false,\"plrcba\":0}",
+                "pa": 15,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 0,
+                "fwbqRaws": "",
+                "fwbqs": [],
+                "$showTransferRts": "",
+                "$mts5": null,
+                "$mtsN5": [
+                  {
+                    "tt": 11,
+                    "td": "已优惠¥15"
+                  }
+                ],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 2030
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": false,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              },
+              {
+                "lpt": 2,
+                "ccid": 2,
+                "atp": 3737,
+                "not": "4",
+                "tda": 0,
+                "tags": [
+                  "3Bj3siHPiVKqyXLPwKJL4jmKQPmE32bvaMqHdOxtlszPxsO4ZtFoMzPyXGGVYVOkoyBKzNvpuMgZVXeQcdjqyJ1Ybv1prAT1kEv6JI9lKtDMmAZQPfiGnSwnTBjbqimgP0",
+                  "YjgkAO1H9LeJghwH8RwJbt9CBzbqwNZA4Of77XfdCOzyTKVEZNGRpI2oyCuidKmNYXyvhcYl9ziIDJ0QYwEpDUzUPzmVU9Pb8uLTePBOo3CYYV39pvSKJY8LnmoyqWHMo2"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "公务舱"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  }
+                ],
+                "sp": 3737,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 0,
+                "fwbqRaws": "",
+                "fwbqs": [],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": false,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              }
+            ],
+            "fcd": false,
+            "dup": false,
+            "rs": "HuiXing",
+            "cfis": [],
+            "mt": 3,
+            "bff_sort": 13,
+            "oIdx": 13,
+            "depMinsInDay": 1175,
+            "isCross2ndTrip": true,
+            "$flightType": "IL",
+            "$checkKey": "1_13",
+            "$crossDateString": "9月15日",
+            "$crossDayWeek": "周二",
+            "$dasn": "天河",
+            "$aasn": "北京大兴",
+            "$isShowHigh": true,
+            "$td": "28时55分",
+            "$sd": "24时50分",
+            "$arrowText": "中转",
+            "$crossDayText": "9月15日 周二",
+            "timespanNumber": 1735,
+            "is_high": false
+          },
+          {
+            "fId": "WUHSHA20260913MU2501_SHAPEK20260913MU5119",
+            "it": 1,
+            "icat": false,
+            "dat": "T3",
+            "aat": "T2",
+            "dt": "2026-09-13 08:30",
+            "at": "2026-09-13 19:15",
+            "dst": "08:30",
+            "ast": "19:15",
+            "td": "10h45m",
+            "dasn": "天河",
+            "aasn": "首都",
+            "sc": "上海",
+            "sd": "6h55m",
+            "tac": "",
+            "tfn": "",
+            "tasn": "",
+            "rt": 0,
+            "score": "0.00",
+            "fprt": 1,
+            "ss": [
+              {
+                "fn": "MU2501",
+                "dac": "WUH",
+                "aac": "SHA",
+                "isf": "False",
+                "dat": "T3",
+                "aat": "T2",
+                "dt": "2026-09-13 08:30",
+                "at": "2026-09-13 10:05",
+                "td": "1小时35分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "波音738(窄)"
+              },
+              {
+                "fn": "MU5119",
+                "dac": "SHA",
+                "aac": "PEK",
+                "isf": "False",
+                "dat": "T2",
+                "aat": "T2",
+                "dt": "2026-09-13 17:00",
+                "at": "2026-09-13 19:15",
+                "td": "2小时15分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "空客332(宽)"
+              }
+            ],
+            "fs": [
+              {
+                "ft": 1,
+                "fcs": [
+                  "2"
+                ]
+              },
+              {
+                "ft": 11,
+                "fcs": [
+                  "3"
+                ]
+              },
+              {
+                "ft": 2,
+                "fcs": [
+                  "MU",
+                  "MU"
+                ]
+              },
+              {
+                "ft": 3,
+                "fcs": [
+                  "1"
+                ]
+              },
+              {
+                "ft": 4,
+                "fcs": [
+                  "WUH"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "PEK"
+                ]
+              },
+              {
+                "ft": 6,
+                "fcs": [
+                  "上海"
+                ]
+              },
+              {
+                "ft": 8,
+                "fcs": [
+                  "3"
+                ]
+              }
+            ],
+            "lps": [
+              {
+                "lpt": 11,
+                "ccid": 1,
+                "atp": 1246,
+                "not": "A",
+                "tda": 0,
+                "tags": [
+                  "czUzkWcUmRozn2OU9FoVT2y9qNqqkrIH2Sqyi4CeNtkL5GlHKDsE9981Nw1OwT44x7TtM2qA6GTscO4UAzXMNMwE8zDytbLbpRbtm1x58jUqBWJCob9wXZtdkrRL1RoJs1",
+                  "BjGMtTbqgIlE3qxBHNfEh3wN5tMVYqWOfdsisiAGwYXuzwmeRl7sPyj6BwtRuuFSUOw4MQK1wznMuFRnpO5PejSQHzsLnz8NE9b7JSv5o5YdxjlFw1dCiOH9Y8vsy14JX"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "经济舱"
+                  }
+                ],
+                "qpst": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  }
+                ],
+                "sp": 1246,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 8,
+                "fwbqRaws": "第2程：免费上网",
+                "fwbqs": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": true,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              },
+              {
+                "lpt": 2,
+                "ccid": 2,
+                "atp": 4476,
+                "not": "4",
+                "tda": 0,
+                "tags": [
+                  "3Bj3siHPiVKqyXLPwKJL4jmKQPmE32bvaMqHdOxtlszhq5XzkOl6kyZgNnAmCkxWtt4NQEn1YXS9mmGzynCEEEhqTFthgwnjVL9GlFFUrt20j71CJJRMMFGVpJyXPwvgG1",
+                  "v8BcstyhrvEHMhLOaqhNVGDTYDYty7XkrRCZ2tvwraPTazCR7IlLMuJ89m7aUFpCluf5oVR6njRwnKyLB4yI40oiih7AFzO0hqbzAGggNIGqznjcJn2QtbmVD71aTR1Y01"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "公务舱"
+                  }
+                ],
+                "qpst": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  }
+                ],
+                "sp": 4476,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 8,
+                "fwbqRaws": "第2程：免费上网",
+                "fwbqs": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": true,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              }
+            ],
+            "fcd": false,
+            "dup": false,
+            "rs": "HuiXing",
+            "cfis": [
+              {
+                "ft": 2,
+                "fcs": [
+                  "2"
+                ]
+              }
+            ],
+            "mt": 2,
+            "bff_sort": 14,
+            "oIdx": 14,
+            "depMinsInDay": 510,
+            "isCross2ndTrip": false,
+            "$flightType": "IL",
+            "$checkKey": "1_14",
+            "$crossDateString": "",
+            "$crossDayWeek": "",
+            "$dasn": "天河",
+            "$aasn": "首都",
+            "$isShowHigh": false,
+            "$td": "10时45分",
+            "$sd": "6时55分",
+            "$arrowText": "中转",
+            "$crossDayText": "",
+            "timespanNumber": 645,
+            "is_high": false
+          },
+          {
+            "fId": "WUHSHA20260913MU5386_SHAPEK20260913MU5119",
+            "it": 1,
+            "icat": false,
+            "dat": "T3",
+            "aat": "T2",
+            "dt": "2026-09-13 11:30",
+            "at": "2026-09-13 19:15",
+            "dst": "11:30",
+            "ast": "19:15",
+            "td": "7h45m",
+            "dasn": "天河",
+            "aasn": "首都",
+            "sc": "上海",
+            "sd": "4h",
+            "tac": "",
+            "tfn": "",
+            "tasn": "",
+            "rt": 0,
+            "score": "0.00",
+            "fprt": 1,
+            "ss": [
+              {
+                "fn": "MU5386",
+                "dac": "WUH",
+                "aac": "SHA",
+                "isf": "False",
+                "dat": "T3",
+                "aat": "T2",
+                "dt": "2026-09-13 11:30",
+                "at": "2026-09-13 13:00",
+                "td": "1小时30分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "C919"
+              },
+              {
+                "fn": "MU5119",
+                "dac": "SHA",
+                "aac": "PEK",
+                "isf": "False",
+                "dat": "T2",
+                "aat": "T2",
+                "dt": "2026-09-13 17:00",
+                "at": "2026-09-13 19:15",
+                "td": "2小时15分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "空客332(宽)"
+              }
+            ],
+            "fs": [
+              {
+                "ft": 1,
+                "fcs": [
+                  "2"
+                ]
+              },
+              {
+                "ft": 11,
+                "fcs": [
+                  "4"
+                ]
+              },
+              {
+                "ft": 2,
+                "fcs": [
+                  "MU",
+                  "MU"
+                ]
+              },
+              {
+                "ft": 3,
+                "fcs": [
+                  "1"
+                ]
+              },
+              {
+                "ft": 4,
+                "fcs": [
+                  "WUH"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "PEK"
+                ]
+              },
+              {
+                "ft": 6,
+                "fcs": [
+                  "上海"
+                ]
+              },
+              {
+                "ft": 8,
+                "fcs": [
+                  "3"
+                ]
+              }
+            ],
+            "lps": [
+              {
+                "lpt": 11,
+                "ccid": 1,
+                "atp": 1283,
+                "not": "A",
+                "tda": 0,
+                "tags": [
+                  "BwmiRg5qK9u2pZ5uWCord27z3hRUkWmEcrKSLwmwqtyP8NQtWuiXkNLw7ael1q9UP9L17Hk3vKzrwWYPmQh276R2bUlSrUaL2kkif5utyAtTBaPR3NuTQRKOgEsOHyh1J",
+                  "BjGMtTbqgIlE3qxBHNfEh3wN5tMVYqWOfdsisiAGwYXuzwmeRl7sPyj6BwtRuuFSUOw4MQK1wznMuFRnpO5PejSQHzsLnz8NE9b7JSv5o5YdxjlFw1dCiOH9Y8vsy14JX"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "经济舱"
+                  }
+                ],
+                "qpst": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  }
+                ],
+                "sp": 1283,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 8,
+                "fwbqRaws": "第2程：免费上网",
+                "fwbqs": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": true,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              },
+              {
+                "lpt": 2,
+                "ccid": 2,
+                "atp": 4568,
+                "not": "2",
+                "tda": 0,
+                "tags": [
+                  "wIxcVZOY8wQmgd5vBbZFNpXya4wuz6hbBryM44AOpACLb0lACHRMjEAT1JqCnMHFay9dYrkSJ4GIJxcI6YSyH7nagUXqgfsr1buiEWu87UjrH2L1ljQ5wnAfD8ePPWepM",
+                  "v8BcstyhrvEHMhLOaqhNVGDTYDYty7XkrRCZ2tvwraPTazCR7IlLMuJ89m7aUFpCluf5oVR6njRwnKyLB4yI40oiih7AFzO0hqbzAGggNIGqznjcJn2QtbmVD71aTR1Y01"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "公务舱"
+                  }
+                ],
+                "qpst": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  }
+                ],
+                "sp": 4568,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 8,
+                "fwbqRaws": "第2程：免费上网",
+                "fwbqs": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": true,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              }
+            ],
+            "fcd": false,
+            "dup": false,
+            "rs": "HuiXing",
+            "cfis": [
+              {
+                "ft": 2,
+                "fcs": [
+                  "2"
+                ]
+              }
+            ],
+            "mt": 2,
+            "bff_sort": 15,
+            "oIdx": 15,
+            "depMinsInDay": 690,
+            "isCross2ndTrip": false,
+            "$flightType": "IL",
+            "$checkKey": "1_15",
+            "$crossDateString": "",
+            "$crossDayWeek": "",
+            "$dasn": "天河",
+            "$aasn": "首都",
+            "$isShowHigh": false,
+            "$td": "7时45分",
+            "$sd": "4时",
+            "$arrowText": "中转",
+            "$crossDayText": "",
+            "timespanNumber": 465,
+            "is_high": false
+          },
+          {
+            "fId": "WUHSHA20260913MU2501_SHAPEK20260914MU5101",
+            "it": 1,
+            "icat": false,
+            "dat": "T3",
+            "aat": "T2",
+            "dt": "2026-09-13 08:30",
+            "at": "2026-09-14 10:10",
+            "ad": "1",
+            "dst": "08:30",
+            "ast": "10:10",
+            "td": "25h40m",
+            "dasn": "天河",
+            "aasn": "首都",
+            "sc": "上海",
+            "sd": "21h55m",
+            "tac": "",
+            "tfn": "",
+            "tasn": "",
+            "rt": 0,
+            "score": "0.00",
+            "fprt": 1,
+            "ss": [
+              {
+                "fn": "MU2501",
+                "dac": "WUH",
+                "aac": "SHA",
+                "isf": "False",
+                "dat": "T3",
+                "aat": "T2",
+                "dt": "2026-09-13 08:30",
+                "at": "2026-09-13 10:05",
+                "td": "1小时35分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "波音738(窄)"
+              },
+              {
+                "fn": "MU5101",
+                "dac": "SHA",
+                "aac": "PEK",
+                "isf": "False",
+                "dat": "T2",
+                "aat": "T2",
+                "dt": "2026-09-14 08:00",
+                "at": "2026-09-14 10:10",
+                "td": "2小时10分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "波音773(宽)"
+              }
+            ],
+            "fs": [
+              {
+                "ft": 1,
+                "fcs": [
+                  "2"
+                ]
+              },
+              {
+                "ft": 11,
+                "fcs": [
+                  "3"
+                ]
+              },
+              {
+                "ft": 2,
+                "fcs": [
+                  "MU",
+                  "MU"
+                ]
+              },
+              {
+                "ft": 3,
+                "fcs": [
+                  "1"
+                ]
+              },
+              {
+                "ft": 4,
+                "fcs": [
+                  "WUH"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "PEK"
+                ]
+              },
+              {
+                "ft": 6,
+                "fcs": [
+                  "上海"
+                ]
+              },
+              {
+                "ft": 8,
+                "fcs": [
+                  "3"
+                ]
+              }
+            ],
+            "lps": [
+              {
+                "lpt": 11,
+                "ccid": 1,
+                "atp": 1786,
+                "not": "A",
+                "tda": 0,
+                "tags": [
+                  "czUzkWcUmRozn2OU9FoVT2y9qNqqkrIH2Sqyi4CeNtkL5GlHKDsE9981Nw1OwT44x7TtM2qA6GTscO4UAzXMNMwE8zDytbLbpRbtm1x58jUqBWJCob9wXZtdkrRL1RoJs1",
+                  "VC2ZX9upyyl2hNTPkIBLvycAttfMczbNeFxDhasiosORqd5jRFzeePz6yngCMiuOK7epVidhbFXGl1r6ud2EWmPepFoDacb8moVNoskheHH2EvFjVDoE12mbyWIWlhXBu1"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "经济舱"
+                  }
+                ],
+                "qpst": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  }
+                ],
+                "sp": 1786,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 8,
+                "fwbqRaws": "第2程：免费上网",
+                "fwbqs": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": true,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              },
+              {
+                "lpt": 2,
+                "ccid": 2,
+                "atp": 4476,
+                "not": "4",
+                "tda": 0,
+                "tags": [
+                  "3Bj3siHPiVKqyXLPwKJL4jmKQPmE32bvaMqHdOxtlszhq5XzkOl6kyZgNnAmCkxWtt4NQEn1YXS9mmGzynCEEEhqTFthgwnjVL9GlFFUrt20j71CJJRMMFGVpJyXPwvgG1",
+                  "v8BcstyhrvEHMhLOaqhNVGDTYDYty7XkrRCZ2tvwraPWboaG3oZ9Gahyqem1Rjb9zAcTXq0GMF9mTLnzfSO1uTzelBz7xZwYOXpdBpzyCNN6P2rnG68zALbsnQrMmUnZW6"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "公务舱"
+                  }
+                ],
+                "qpst": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  }
+                ],
+                "sp": 4476,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 8,
+                "fwbqRaws": "第2程：免费上网",
+                "fwbqs": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": true,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              }
+            ],
+            "fcd": false,
+            "dup": false,
+            "rs": "HuiXing",
+            "cfis": [],
+            "mt": 2,
+            "bff_sort": 16,
+            "oIdx": 16,
+            "depMinsInDay": 510,
+            "isCross2ndTrip": true,
+            "$flightType": "IL",
+            "$checkKey": "1_16",
+            "$crossDateString": "9月14日",
+            "$crossDayWeek": "周一",
+            "$dasn": "天河",
+            "$aasn": "首都",
+            "$isShowHigh": true,
+            "$td": "25时40分",
+            "$sd": "21时55分",
+            "$arrowText": "中转",
+            "$crossDayText": "9月14日 周一",
+            "timespanNumber": 1540,
+            "is_high": false
+          },
+          {
+            "fId": "WUHSHA20260913MU5386_SHAPEK20260914MU5099",
+            "it": 1,
+            "icat": false,
+            "dat": "T3",
+            "aat": "T2",
+            "dt": "2026-09-13 11:30",
+            "at": "2026-09-14 09:15",
+            "ad": "1",
+            "dst": "11:30",
+            "ast": "09:15",
+            "td": "21h45m",
+            "dasn": "天河",
+            "aasn": "首都",
+            "sc": "上海",
+            "sd": "18h",
+            "tac": "",
+            "tfn": "",
+            "tasn": "",
+            "rt": 0,
+            "score": "0.00",
+            "fprt": 1,
+            "ss": [
+              {
+                "fn": "MU5386",
+                "dac": "WUH",
+                "aac": "SHA",
+                "isf": "False",
+                "dat": "T3",
+                "aat": "T2",
+                "dt": "2026-09-13 11:30",
+                "at": "2026-09-13 13:00",
+                "td": "1小时30分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "C919"
+              },
+              {
+                "fn": "MU5099",
+                "dac": "SHA",
+                "aac": "PEK",
+                "isf": "False",
+                "dat": "T2",
+                "aat": "T2",
+                "dt": "2026-09-14 07:00",
+                "at": "2026-09-14 09:15",
+                "td": "2小时15分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "空客333(宽)"
+              }
+            ],
+            "fs": [
+              {
+                "ft": 1,
+                "fcs": [
+                  "2"
+                ]
+              },
+              {
+                "ft": 11,
+                "fcs": [
+                  "4"
+                ]
+              },
+              {
+                "ft": 2,
+                "fcs": [
+                  "MU",
+                  "MU"
+                ]
+              },
+              {
+                "ft": 3,
+                "fcs": [
+                  "1"
+                ]
+              },
+              {
+                "ft": 4,
+                "fcs": [
+                  "WUH"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "PEK"
+                ]
+              },
+              {
+                "ft": 6,
+                "fcs": [
+                  "上海"
+                ]
+              },
+              {
+                "ft": 8,
+                "fcs": [
+                  "3"
+                ]
+              }
+            ],
+            "lps": [
+              {
+                "lpt": 11,
+                "ccid": 1,
+                "atp": 1463,
+                "not": "A",
+                "tda": 0,
+                "tags": [
+                  "BwmiRg5qK9u2pZ5uWCord27z3hRUkWmEcrKSLwmwqtyP8NQtWuiXkNLw7ael1q9UP9L17Hk3vKzrwWYPmQh276R2bUlSrUaL2kkif5utyAtTBaPR3NuTQRKOgEsOHyh1J",
+                  "sv185hayyOpi2DxvyxHPFYQN9OsHYnhqjNtVYf0iOXAT0bGMKsz7svy1WlXe41hv5wYOq1dgrH6BBkPfu9NApFGKI3it6A7HEljKiBaydpVy6DwwSoHzVsEy6qxNkZgyn3"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "经济舱"
+                  }
+                ],
+                "qpst": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  }
+                ],
+                "sp": 1463,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 8,
+                "fwbqRaws": "第2程：免费上网",
+                "fwbqs": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": true,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              },
+              {
+                "lpt": 2,
+                "ccid": 2,
+                "atp": 4568,
+                "not": "2",
+                "tda": 0,
+                "tags": [
+                  "wIxcVZOY8wQmgd5vBbZFNpXya4wuz6hbBryM44AOpACLb0lACHRMjEAT1JqCnMHFay9dYrkSJ4GIJxcI6YSyH7nagUXqgfsr1buiEWu87UjrH2L1ljQ5wnAfD8ePPWepM",
+                  "v8BcstyhrvEHMhLOaqhNVGDTYDYty7XkrRCZ2tvwraPyEg4pEhz0Fnm4357opaWgVr4LFWy8aLiHRIy5BqSa6aurgr8QsL4L2SEJmwEI4zacni78lIj8WouFokrBQvqQf1"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "公务舱"
+                  }
+                ],
+                "qpst": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  }
+                ],
+                "sp": 4568,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 8,
+                "fwbqRaws": "第2程：免费上网",
+                "fwbqs": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": true,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              }
+            ],
+            "fcd": false,
+            "dup": false,
+            "rs": "HuiXing",
+            "cfis": [],
+            "mt": 2,
+            "bff_sort": 17,
+            "oIdx": 17,
+            "depMinsInDay": 690,
+            "isCross2ndTrip": true,
+            "$flightType": "IL",
+            "$checkKey": "1_17",
+            "$crossDateString": "9月14日",
+            "$crossDayWeek": "周一",
+            "$dasn": "天河",
+            "$aasn": "首都",
+            "$isShowHigh": false,
+            "$td": "21时45分",
+            "$sd": "18时",
+            "$arrowText": "中转",
+            "$crossDayText": "9月14日 周一",
+            "timespanNumber": 1305,
+            "is_high": false
+          },
+          {
+            "fId": "WUHPVG20260913MU2503_PVGPEK20260914MU5155",
+            "it": 1,
+            "icat": false,
+            "dat": "T3",
+            "aat": "T2",
+            "dt": "2026-09-13 07:25",
+            "at": "2026-09-14 13:00",
+            "ad": "1",
+            "dst": "07:25",
+            "ast": "13:00",
+            "td": "29h35m",
+            "dasn": "天河",
+            "aasn": "首都",
+            "sc": "上海",
+            "sd": "25h35m",
+            "tac": "",
+            "tfn": "",
+            "tasn": "",
+            "rt": 0,
+            "score": "0.00",
+            "fprt": 1,
+            "ss": [
+              {
+                "fn": "MU2503",
+                "dac": "WUH",
+                "aac": "PVG",
+                "isf": "False",
+                "dat": "T3",
+                "aat": "T1",
+                "dt": "2026-09-13 07:25",
+                "at": "2026-09-13 08:55",
+                "td": "1小时30分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "波音738(窄)"
+              },
+              {
+                "fn": "MU5155",
+                "dac": "PVG",
+                "aac": "PEK",
+                "isf": "False",
+                "dat": "T1",
+                "aat": "T2",
+                "dt": "2026-09-14 10:30",
+                "at": "2026-09-14 13:00",
+                "td": "2小时30分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "空客320N(窄)"
+              }
+            ],
+            "fs": [
+              {
+                "ft": 1,
+                "fcs": [
+                  "2"
+                ]
+              },
+              {
+                "ft": 11,
+                "fcs": [
+                  "3"
+                ]
+              },
+              {
+                "ft": 2,
+                "fcs": [
+                  "MU",
+                  "MU"
+                ]
+              },
+              {
+                "ft": 3,
+                "fcs": [
+                  "1"
+                ]
+              },
+              {
+                "ft": 4,
+                "fcs": [
+                  "WUH"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "PEK"
+                ]
+              },
+              {
+                "ft": 6,
+                "fcs": [
+                  "上海"
+                ]
+              },
+              {
+                "ft": 8,
+                "fcs": [
+                  "3"
+                ]
+              }
+            ],
+            "lps": [
+              {
+                "lpt": 11,
+                "ccid": 1,
+                "atp": 1539,
+                "not": "A",
+                "tda": 0,
+                "tags": [
+                  "yunsfDVrRmMEoVC7hUhMtGhLeI6RswTHwhCj4j7tIIzelP0qpSOhGYhgg8PMfP8jgjyeZ7wzv2FFA05ynRVVZfp2G8a5IQ3DJE167QUMiicrusfbVHRyKzl9rdLMVcoSv1",
+                  "FiRN9I0MyknkDBohuCBpSYtHY2nKrGDJG63vxCVY5sZBz0YQtqlgr08KCWnxvW2VwwKXy2PUtepPFoHhzRdkMosQnygnyA8GVMzNz3nd6PgH1xSvEJz4jbs8XCgtkpCeS7"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "经济舱"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  }
+                ],
+                "sp": 1539,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 0,
+                "fwbqRaws": "",
+                "fwbqs": [],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": false,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              },
+              {
+                "lpt": 2,
+                "ccid": 2,
+                "atp": 3474,
+                "not": "3",
+                "tda": 0,
+                "tags": [
+                  "Li0Vh1uuBvmE6vX66BvHx7rjOgjnft59YsyqACgY8gJnBuPy9b8bDK0FQsnCGyScmESVh8KRzYXRnQvFs6Wl0dXdxwBUIThRJOiKnWWb4IbMhs1fmaGGdxCSDh2WomeX3",
+                  "HG8FASFBjWCOZBdNjlvOGltGKRZ6CIWh2DxcyvNOFzyLxm9fSlrFFtyk563hfwxOZp21Sw288GYctWsZijJYb0ojsEEznmCgLZKsvnThjm4AKlOHk3Ty43lM4fSqEyqpC0"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "公务舱"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  }
+                ],
+                "sp": 3474,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 0,
+                "fwbqRaws": "",
+                "fwbqs": [],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": false,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              }
+            ],
+            "fcd": false,
+            "dup": false,
+            "rs": "HuiXing",
+            "cfis": [],
+            "mt": 2,
+            "bff_sort": 18,
+            "oIdx": 18,
+            "depMinsInDay": 445,
+            "isCross2ndTrip": true,
+            "$flightType": "IL",
+            "$checkKey": "1_18",
+            "$crossDateString": "9月14日",
+            "$crossDayWeek": "周一",
+            "$dasn": "天河",
+            "$aasn": "首都",
+            "$isShowHigh": true,
+            "$td": "29时35分",
+            "$sd": "25时35分",
+            "$arrowText": "中转",
+            "$crossDayText": "9月14日 周一",
+            "timespanNumber": 1775,
+            "is_high": false
+          },
+          {
+            "fId": "WUHSHA20260913MU2521_SHAPKX20260913MU9191",
+            "it": 1,
+            "icat": false,
+            "dat": "T3",
+            "aat": "",
+            "dt": "2026-09-13 13:30",
+            "at": "2026-09-13 19:30",
+            "dst": "13:30",
+            "ast": "19:30",
+            "td": "6h",
+            "dasn": "天河",
+            "aasn": "北京大兴",
+            "sc": "上海",
+            "sd": "2h10m",
+            "tac": "",
+            "tfn": "",
+            "tasn": "",
+            "rt": 0,
+            "score": "0.00",
+            "fprt": 1,
+            "ss": [
+              {
+                "fn": "MU2521",
+                "dac": "WUH",
+                "aac": "SHA",
+                "isf": "False",
+                "dat": "T3",
+                "aat": "T2",
+                "dt": "2026-09-13 13:30",
+                "at": "2026-09-13 15:05",
+                "td": "1小时35分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "波音738(窄)"
+              },
+              {
+                "fn": "MU9191",
+                "dac": "SHA",
+                "aac": "PKX",
+                "isf": "False",
+                "dat": "T2",
+                "aat": "",
+                "dt": "2026-09-13 17:15",
+                "at": "2026-09-13 19:30",
+                "td": "2小时15分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "C919"
+              }
+            ],
+            "fs": [
+              {
+                "ft": 1,
+                "fcs": [
+                  "3"
+                ]
+              },
+              {
+                "ft": 11,
+                "fcs": [
+                  "5"
+                ]
+              },
+              {
+                "ft": 2,
+                "fcs": [
+                  "MU",
+                  "MU"
+                ]
+              },
+              {
+                "ft": 3,
+                "fcs": [
+                  "1"
+                ]
+              },
+              {
+                "ft": 4,
+                "fcs": [
+                  "WUH"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "PKX"
+                ]
+              },
+              {
+                "ft": 6,
+                "fcs": [
+                  "上海"
+                ]
+              },
+              {
+                "ft": 8,
+                "fcs": [
+                  "2"
+                ]
+              }
+            ],
+            "lps": [
+              {
+                "lpt": 11,
+                "ccid": 1,
+                "atp": 1379,
+                "not": "A",
+                "tda": 0,
+                "tags": [
+                  "sSuUCsz0gXguSYDisTvjVvbYbz6EMyqAxlJjTeI1mq7De4IEIhwFMUyBWvp4J1EASAWER63x0Tdrpp4rEV5sIBE65RztUgCQDJSYbA6IakmUiDvsiMC0pVHX9JBNqPzZo",
+                  "yygJXBEzAJ4FxXET7AnqNDSJMcc1Hj7wpqmNvaFn9A5RySl3y2koDsAOyZwhAtXJlzFV3C8Gt1oNMMwRQkvQvayfyNUBDltjbGyQMzj4uoIzfRsxH0IHrYdq7DrJnkmPdb"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "经济舱"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  }
+                ],
+                "sp": 1379,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 0,
+                "fwbqRaws": "",
+                "fwbqs": [],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": false,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              },
+              {
+                "lpt": 2,
+                "ccid": 2,
+                "atp": 3173,
+                "not": "2",
+                "tda": 0,
+                "tags": [
+                  "wIxcVZOY8wQmgd5vBbZFNpXya4wuz6hbBryM44AOpACVvIMDS5s9ysKv8randiyNXG60MphG0nU8AWZHYI1bX78bPlfKVI0NPq939ZuQlSn6Usqg94JzuN2bQwHFgIzSO0",
+                  "j1pmVQfDLrpZrML1syczIGwMerQebC4k8F4hvES8WswDJYyUUmpeS6rzRz5ZudMnzyagrR9H2B0tZdI29EG0Hcb10aro0DRv3tpAsbyg5Bza8lteZsz6Pnl5x6Ie2QF1K0"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "公务舱"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  }
+                ],
+                "sp": 3173,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 0,
+                "fwbqRaws": "",
+                "fwbqs": [],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": false,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              }
+            ],
+            "fcd": false,
+            "dup": false,
+            "rs": "HuiXing",
+            "cfis": [
+              {
+                "ft": 2,
+                "fcs": [
+                  "2"
+                ]
+              }
+            ],
+            "mt": 2,
+            "bff_sort": 19,
+            "oIdx": 19,
+            "depMinsInDay": 810,
+            "isCross2ndTrip": false,
+            "$flightType": "IL",
+            "$checkKey": "1_19",
+            "$crossDateString": "",
+            "$crossDayWeek": "",
+            "$dasn": "天河",
+            "$aasn": "北京大兴",
+            "$isShowHigh": true,
+            "$td": "6时",
+            "$sd": "2时10分",
+            "$arrowText": "中转",
+            "$crossDayText": "",
+            "timespanNumber": 360,
+            "is_high": false
+          },
+          {
+            "fId": "WUHSHA20260913MU5386_SHAPEK20260914MU5101",
+            "it": 1,
+            "icat": false,
+            "dat": "T3",
+            "aat": "T2",
+            "dt": "2026-09-13 11:30",
+            "at": "2026-09-14 10:10",
+            "ad": "1",
+            "dst": "11:30",
+            "ast": "10:10",
+            "td": "22h40m",
+            "dasn": "天河",
+            "aasn": "首都",
+            "sc": "上海",
+            "sd": "19h",
+            "tac": "",
+            "tfn": "",
+            "tasn": "",
+            "rt": 0,
+            "score": "0.00",
+            "fprt": 1,
+            "ss": [
+              {
+                "fn": "MU5386",
+                "dac": "WUH",
+                "aac": "SHA",
+                "isf": "False",
+                "dat": "T3",
+                "aat": "T2",
+                "dt": "2026-09-13 11:30",
+                "at": "2026-09-13 13:00",
+                "td": "1小时30分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "C919"
+              },
+              {
+                "fn": "MU5101",
+                "dac": "SHA",
+                "aac": "PEK",
+                "isf": "False",
+                "dat": "T2",
+                "aat": "T2",
+                "dt": "2026-09-14 08:00",
+                "at": "2026-09-14 10:10",
+                "td": "2小时10分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "波音773(宽)"
+              }
+            ],
+            "fs": [
+              {
+                "ft": 1,
+                "fcs": [
+                  "2"
+                ]
+              },
+              {
+                "ft": 11,
+                "fcs": [
+                  "4"
+                ]
+              },
+              {
+                "ft": 2,
+                "fcs": [
+                  "MU",
+                  "MU"
+                ]
+              },
+              {
+                "ft": 3,
+                "fcs": [
+                  "1"
+                ]
+              },
+              {
+                "ft": 4,
+                "fcs": [
+                  "WUH"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "PEK"
+                ]
+              },
+              {
+                "ft": 6,
+                "fcs": [
+                  "上海"
+                ]
+              },
+              {
+                "ft": 8,
+                "fcs": [
+                  "3"
+                ]
+              }
+            ],
+            "lps": [
+              {
+                "lpt": 11,
+                "ccid": 1,
+                "atp": 1823,
+                "not": "A",
+                "tda": 0,
+                "tags": [
+                  "BwmiRg5qK9u2pZ5uWCord27z3hRUkWmEcrKSLwmwqtyP8NQtWuiXkNLw7ael1q9UP9L17Hk3vKzrwWYPmQh276R2bUlSrUaL2kkif5utyAtTBaPR3NuTQRKOgEsOHyh1J",
+                  "VC2ZX9upyyl2hNTPkIBLvycAttfMczbNeFxDhasiosORqd5jRFzeePz6yngCMiuOK7epVidhbFXGl1r6ud2EWmPepFoDacb8moVNoskheHH2EvFjVDoE12mbyWIWlhXBu1"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "经济舱"
+                  }
+                ],
+                "qpst": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  }
+                ],
+                "sp": 1823,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 8,
+                "fwbqRaws": "第2程：免费上网",
+                "fwbqs": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": true,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              },
+              {
+                "lpt": 2,
+                "ccid": 2,
+                "atp": 4568,
+                "not": "2",
+                "tda": 0,
+                "tags": [
+                  "wIxcVZOY8wQmgd5vBbZFNpXya4wuz6hbBryM44AOpACLb0lACHRMjEAT1JqCnMHFay9dYrkSJ4GIJxcI6YSyH7nagUXqgfsr1buiEWu87UjrH2L1ljQ5wnAfD8ePPWepM",
+                  "v8BcstyhrvEHMhLOaqhNVGDTYDYty7XkrRCZ2tvwraPWboaG3oZ9Gahyqem1Rjb9zAcTXq0GMF9mTLnzfSO1uTzelBz7xZwYOXpdBpzyCNN6P2rnG68zALbsnQrMmUnZW6"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "公务舱"
+                  }
+                ],
+                "qpst": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "3",
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  }
+                ],
+                "sp": 4568,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 8,
+                "fwbqRaws": "第2程：免费上网",
+                "fwbqs": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": true,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              }
+            ],
+            "fcd": false,
+            "dup": false,
+            "rs": "HuiXing",
+            "cfis": [],
+            "mt": 2,
+            "bff_sort": 20,
+            "oIdx": 20,
+            "depMinsInDay": 690,
+            "isCross2ndTrip": true,
+            "$flightType": "IL",
+            "$checkKey": "1_20",
+            "$crossDateString": "9月14日",
+            "$crossDayWeek": "周一",
+            "$dasn": "天河",
+            "$aasn": "首都",
+            "$isShowHigh": false,
+            "$td": "22时40分",
+            "$sd": "19时",
+            "$arrowText": "中转",
+            "$crossDayText": "9月14日 周一",
+            "timespanNumber": 1360,
+            "is_high": false
+          },
+          {
+            "fId": "WUHSHA20260913MU2553_SHAPEK20260914MU5099",
+            "it": 1,
+            "icat": false,
+            "dat": "T3",
+            "aat": "T2",
+            "dt": "2026-09-13 20:10",
+            "at": "2026-09-14 09:15",
+            "ad": "1",
+            "dst": "20:10",
+            "ast": "09:15",
+            "td": "13h5m",
+            "dasn": "天河",
+            "aasn": "首都",
+            "sc": "上海",
+            "sd": "9h25m",
+            "tac": "",
+            "tfn": "",
+            "tasn": "",
+            "rt": 0,
+            "score": "0.00",
+            "fprt": 1,
+            "ss": [
+              {
+                "fn": "MU2553",
+                "dac": "WUH",
+                "aac": "SHA",
+                "isf": "False",
+                "dat": "T3",
+                "aat": "T2",
+                "dt": "2026-09-13 20:10",
+                "at": "2026-09-13 21:35",
+                "td": "1小时25分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "波音738(窄)"
+              },
+              {
+                "fn": "MU5099",
+                "dac": "SHA",
+                "aac": "PEK",
+                "isf": "False",
+                "dat": "T2",
+                "aat": "T2",
+                "dt": "2026-09-14 07:00",
+                "at": "2026-09-14 09:15",
+                "td": "2小时15分钟",
+                "ac": "MU",
+                "asn": "东航",
+                "amn": "空客333(宽)"
+              }
+            ],
+            "fs": [
+              {
+                "ft": 1,
+                "fcs": [
+                  "4"
+                ]
+              },
+              {
+                "ft": 11,
+                "fcs": [
+                  "7"
+                ]
+              },
+              {
+                "ft": 2,
+                "fcs": [
+                  "MU",
+                  "MU"
+                ]
+              },
+              {
+                "ft": 3,
+                "fcs": [
+                  "1"
+                ]
+              },
+              {
+                "ft": 4,
+                "fcs": [
+                  "WUH"
+                ]
+              },
+              {
+                "ft": 5,
+                "fcs": [
+                  "PEK"
+                ]
+              },
+              {
+                "ft": 6,
+                "fcs": [
+                  "上海"
+                ]
+              }
+            ],
+            "lps": [
+              {
+                "lpt": 11,
+                "ccid": 1,
+                "atp": 1666,
+                "not": "A",
+                "tda": 0,
+                "tags": [
+                  "O9z6Fv0Ji9whMJDhrB8gAb8eKY8aJVyRb6FY6fBzDQM0gpJ6RQEhzL4XRjikFIt9lsZODJyKsyMoUNWFOyqmz4Yfzq4SK7jDw9uEVbXERqzj2ppbDKHAtANl4HRtS0RGZF",
+                  "sv185hayyOpi2DxvyxHPFYQN9OsHYnhqjNtVYf0iOXAT0bGMKsz7svy1WlXe41hv5wYOq1dgrH6BBkPfu9NApFGKI3it6A7HEljKiBaydpVy6DwwSoHzVsEy6qxNkZgyn3"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "经济舱"
+                  }
+                ],
+                "qpst": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 20,
+                    "cn": -1
+                  }
+                ],
+                "sp": 1666,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 8,
+                "fwbqRaws": "第2程：免费上网",
+                "fwbqs": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": true,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              },
+              {
+                "lpt": 2,
+                "ccid": 2,
+                "atp": 4568,
+                "not": "2",
+                "tda": 0,
+                "tags": [
+                  "wIxcVZOY8wQmgd5vBbZFNpXya4wuz6hbBryM44AOpACVvIMDS5s9ysKv8randiyNWvOPUVUHpniTXO5zCWkDP61VySHzpkOgHyYzKo3bdNvle8rJ2BOgZ3kLZcy6EKRC0Q",
+                  "v8BcstyhrvEHMhLOaqhNVGDTYDYty7XkrRCZ2tvwraPyEg4pEhz0Fnm4357opaWgVr4LFWy8aLiHRIy5BqSa6aurgr8QsL4L2SEJmwEI4zacni78lIj8WouFokrBQvqQf1"
+                ],
+                "pts": [
+                  {
+                    "tt": 2,
+                    "td": "公务舱"
+                  }
+                ],
+                "qpst": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "fs": [
+                  {
+                    "ft": 7,
+                    "fcs": [
+                      "4",
+                      "6",
+                      "7",
+                      "11"
+                    ]
+                  }
+                ],
+                "ofl": 0,
+                "tht": 0,
+                "fcd": false,
+                "dup": false,
+                "brs": [
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  },
+                  {
+                    "bpt": 0,
+                    "al": 30,
+                    "cn": -1
+                  }
+                ],
+                "sp": 4568,
+                "pa": 0,
+                "rts": [],
+                "$fwbqRawsLenForMulti": 8,
+                "fwbqRaws": "第2程：免费上网",
+                "fwbqs": [
+                  {
+                    "tt": 3,
+                    "td": "第2程：免费上网"
+                  }
+                ],
+                "$showTransferRts": "",
+                "$mtsN5": [],
+                "$showHxj": {
+                  "showInMts": false,
+                  "showPrice": 0
+                },
+                "$ptStyle": "pt24",
+                "$showFwbqsInMulti": true,
+                "$tcTip": {
+                  "c1": "中转专享",
+                  "c2": "航司中转，享联程服务"
+                }
+              }
+            ],
+            "fcd": false,
+            "dup": false,
+            "rs": "HuiXing",
+            "cfis": [],
+            "mt": 3,
+            "bff_sort": 21,
+            "oIdx": 21,
+            "depMinsInDay": 1210,
+            "isCross2ndTrip": true,
+            "$flightType": "IL",
+            "$checkKey": "1_21",
+            "$crossDateString": "9月14日",
+            "$crossDayWeek": "周一",
+            "$dasn": "天河",
+            "$aasn": "首都",
+            "$isShowHigh": false,
+            "$td": "13时5分",
+            "$sd": "9时25分",
+            "$arrowText": "中转",
+            "$crossDayText": "9月14日 周一",
+            "timespanNumber": 785,
             "is_high": false
           }
         ],
@@ -20872,12 +24314,16 @@
                 "fd": "中国国际航空"
               },
               {
-                "fc": "ZH",
-                "fd": "深圳航空"
-              },
-              {
                 "fc": "MU",
                 "fd": "东方航空"
+              },
+              {
+                "fc": "HU",
+                "fd": "新海航｜海南航空"
+              },
+              {
+                "fc": "ZH",
+                "fd": "深圳航空"
               },
               {
                 "fc": "MF",
@@ -20913,8 +24359,8 @@
             ]
           }
         ],
-        "lp": 879,
-        "ms": "879|SC7930,SC7953|YNT|1|",
+        "lp": 878,
+        "ms": "878|SC7932,SC7603|YNT|1|",
         "cls": [
           {
             "code": "fcfr",
@@ -21002,10 +24448,17 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "ad69c9db-447d-46e9-84db-8f045ec5d495",
-      "host": "::ffff:10.204.66.18",
+      "tracerId": "e237949b-ae9c-4a59-a0e9-8577fa4a931d",
+      "host": "::ffff:10.204.93.205",
       "iact": "0",
-      "timestamp": 1786409421726
+      "timestamp": 1786427387237
+    }
+  },
+  {
+    "url": "https://apmfront.17u.cn/fms/h5multi",
+    "data": {
+      "code": 200,
+      "msg": "ok"
     }
   },
   {
