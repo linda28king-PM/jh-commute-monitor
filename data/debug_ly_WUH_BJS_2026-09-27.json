@@ -1,23 +1,43 @@
 [
   {
-    "url": "https://c.go-mpulse.net/api/config.json?key=VP9LC-35W9U-68TQN-7HPLX-PPF4Y&d=m.ly.com&t=5956136&v=1.720.0&sl=0&si=e3c2a08b-d7d3-4237-82bd-a0024e0b5a26-tju72v&plugins=AK,ConfigOverride,Continuity,PageParams,IFrameDelay,AutoXHR,SPA,History,Angular,Backbone,Ember,RT,CrossDomain,BW,PaintTiming,NavigationTiming,ResourceTiming,Memory,CACHE_RELOAD,Errors,TPAnalytics,UserTiming,Akamai,Early,EventTiming,LOGN&acao=&ak.ai=947581",
+    "url": "https://c.go-mpulse.net/api/config.json?key=VP9LC-35W9U-68TQN-7HPLX-PPF4Y&d=m.ly.com&t=5956193&v=1.720.0&sl=0&si=57901b77-dd0b-426c-8af1-62bbea441d17-tjuk9i&plugins=AK,ConfigOverride,Continuity,PageParams,IFrameDelay,AutoXHR,SPA,History,Angular,Backbone,Ember,RT,CrossDomain,BW,PaintTiming,NavigationTiming,ResourceTiming,Memory,CACHE_RELOAD,Errors,TPAnalytics,UserTiming,Akamai,Early,EventTiming,LOGN&acao=&ak.ai=947581",
     "data": {
+      "h.key": "VP9LC-35W9U-68TQN-7HPLX-PPF4Y",
+      "h.d": "arlid:947581",
+      "h.t": 1786857751484,
+      "h.cr": "bd3a89d481d127b857aa9561ce56c81a35981720-e31848bd-8dfb27fa",
+      "session_id": "22a26835-0476-48ad-bb81-53f0ad1d763f",
       "site_domain": "arlid:947581",
-      "rate_limited": true
-    }
-  },
-  {
-    "url": "https://wx.17u.cn/flightbffv2/basic/last",
-    "data": {
-      "success": true,
-      "data": null,
-      "showType": 0,
-      "errorCode": "0",
-      "errorMessage": "请求成功",
-      "tracerId": "580eb9c5-cdfe-43f7-9a59-08b40b5c3020",
-      "host": "::ffff:10.214.154.51",
-      "iact": "0",
-      "timestamp": 1786840664735
+      "beacon_url": "//17de4c18.akstat.io/",
+      "autorun": true,
+      "BW": {
+        "enabled": false
+      },
+      "RT": {
+        "cookie": null,
+        "session_exp": 1800
+      },
+      "ResourceTiming": {
+        "enabled": true,
+        "splitAtPath": true
+      },
+      "PageParams": {
+        "xhr": "none",
+        "pageGroups": [],
+        "customMetrics": [],
+        "customTimers": [],
+        "customDimensions": [],
+        "urlPatterns": [],
+        "params": true
+      },
+      "Akamai": {
+        "enabled": true,
+        "mapping_xhr_base_url": "akamaihd.net",
+        "mapping_xhr_url_path": "/eum/getdns.txt",
+        "mapping_xhr_url_v4_prefix": "trial-eum-clientnsv4-s",
+        "mapping_xhr_url_v6_prefix": "trial-eum-clienttons-s"
+      },
+      "user_ip": "e56e0de17"
     }
   },
   {
@@ -32,7 +52,7 @@
         "pc": [
           {
             "dd": "2026-09-20",
-            "lp": 520,
+            "lp": 500,
             "isHoliday": true,
             "holidayName": "",
             "tag": "班",
@@ -41,7 +61,7 @@
           },
           {
             "dd": "2026-09-21",
-            "lp": 400,
+            "lp": 380,
             "hlp": 927
           },
           {
@@ -61,7 +81,7 @@
           },
           {
             "dd": "2026-09-25",
-            "lp": 610,
+            "lp": 560,
             "isHoliday": true,
             "holidayName": "中秋节",
             "tag": "休",
@@ -84,9 +104,9 @@
             "holidayName": "",
             "tag": "休",
             "isStrong": true,
-            "ms": "2|500|500|610|28|SC7932,SC7605|YNT|ut_user_new|||610|1|0|CZ3117|0|2||||2026-08-14 09:33:35|2026-08-16 08:37:44|0|610|610",
+            "ms": "2|500|500|610|28|SC7932,SC7605|YNT|ut_user_new|||610|1|0|CZ3117|0|2||||2026-08-14 09:33:35|2026-08-16 13:22:33|0|610|610",
             "hlp": 1239,
-            "hms": "1|1239|6310|1239|18|MU2455||ut_user_new|||1239|1|0|MU2455|2|0|XC||2026-08-16 08:37:44||2026-08-16 08:37:44|0|1239|1239"
+            "hms": "1|1239|6310|1239|18|MU2455||ut_user_new|||1239|1|0|MU2455|2|0|XC||2026-08-16 13:22:33||2026-08-16 13:22:33|0|1239|1239"
           },
           {
             "dd": "2026-09-28",
@@ -100,7 +120,7 @@
           },
           {
             "dd": "2026-09-30",
-            "lp": 580,
+            "lp": 560,
             "hlp": 2000
           },
           {
@@ -331,7 +351,7 @@
             ]
           }
         ],
-        "cache_key": "flight_a68f116036f06590cb7e4c7491e054a621520431",
+        "cache_key": "flight_724fe38e5dd0799a326168208414257644b5eac1",
         "tfs": [
           {
             "type": "9",
@@ -17596,253 +17616,31 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "580eb9c5-cdfe-43f7-9a59-08b40b5c3020",
-      "host": "::ffff:10.206.21.135",
+      "tracerId": "382157e3-3d11-436c-8496-727954a74fb0",
+      "host": "::ffff:10.206.70.7",
       "iact": "0",
-      "timestamp": 1786840664874
+      "timestamp": 1786857753196
     }
   },
   {
-    "url": "https://wx.17u.cn/mihawkapi/ad/info",
+    "url": "https://wx.17u.cn/flightbffv2/basic/last",
     "data": {
       "success": true,
-      "status": "success",
+      "data": null,
+      "showType": 0,
+      "errorCode": "0",
+      "errorMessage": "请求成功",
+      "tracerId": "382157e3-3d11-436c-8496-727954a74fb0",
+      "host": "::ffff:10.206.70.7",
+      "iact": "0",
+      "timestamp": 1786857753223
+    }
+  },
+  {
+    "url": "https://apmfront.17u.cn/fms/h5multi",
+    "data": {
       "code": 200,
-      "data": {
-        "positionCode": "TOUCH_Flight_Single_B1Banner",
-        "redirectPositionCode": null,
-        "displayType": 1,
-        "bgImgUrl": "",
-        "advertises": [],
-        "associatePositions": null,
-        "biRequestId": "64d89b61-b694-419b-9648-8112f8f138bc",
-        "biExpNo": null,
-        "prizeCount": null,
-        "title": "",
-        "remark": "",
-        "jumpUrl": null,
-        "cpAbExp": null,
-        "ext": {},
-        "config": {
-          "closeDelay": 1,
-          "carouselDelay": 4
-        }
-      }
-    }
-  },
-  {
-    "url": "https://wx.17u.cn/mihawkapi/ad/info",
-    "data": {
-      "success": false,
-      "status": "fail",
-      "message": "数据查询失败",
-      "code": 500
-    }
-  },
-  {
-    "url": "https://wx.17u.cn/flightbffv2/book1/configs",
-    "data": {
-      "success": true,
-      "data": {
-        "isUseVOIP": false,
-        "adv": null,
-        "spb": false,
-        "abs": null
-      },
-      "showType": 0,
-      "errorCode": "0",
-      "errorMessage": "请求成功",
-      "tracerId": "580eb9c5-cdfe-43f7-9a59-08b40b5c3020",
-      "host": "::ffff:10.200.189.82",
-      "iact": "0",
-      "timestamp": 1786840665445
-    }
-  },
-  {
-    "url": "https://wx.17u.cn/flightbffv2/book1/recommended",
-    "data": {
-      "success": true,
-      "data": {
-        "ec": 0,
-        "rcmds": [
-          {
-            "c": "NoticeGroup",
-            "n": "公告",
-            "d": [
-              {
-                "rns": [],
-                "sns": [
-                  {
-                    "fon": 1,
-                    "nts": [
-                      {
-                        "uid": 18733,
-                        "t": "关于加强充电宝、锂电池机上安全风险管控的提示",
-                        "c": "尊敬的旅客：为保障航班飞行安全，请您在携带充电宝乘机时遵守以下规定：\n一、禁止携带：厂家召回、鼓包、破损开裂、标识不清、额定能量＞160Wh、境内航班无清晰3C标识的充电宝。\n二、携带要求：每人最多随身携带2块充电宝，严禁托运。额定能量≤100Wh可直接携带；100Wh-160Wh需提前向国航（电话95583）申请批准。\n三、机上规范：充电宝全程关机并做好绝缘防护，机上禁止使用充电宝，不得利用机上电源为充电宝补电；不可放入头顶行李架，请放置座椅口袋或随身包袋。",
-                        "r": "<p>尊敬的旅客：为保障航班飞行安全，请您在携带充电宝乘机时遵守以下规定：</p>\n<p>一、禁止携带：厂家召回、鼓包、破损开裂、标识不清、额定能量＞160Wh、境内航班无清晰3C标识的充电宝。</p>\n<p>二、携带要求：每人最多随身携带2块充电宝，严禁托运。额定能量&le;100Wh可直接携带；100Wh-160Wh需提前向国航（电话95583）申请批准。</p>\n<p>三、机上规范：充电宝全程关机并做好绝缘防护，机上禁止使用充电宝，不得利用机上电源为充电宝补电；不可放入头顶行李架，请放置座椅口袋或随身包袋。</p>",
-                        "p": 0,
-                        "u": "",
-                        "pu": 0,
-                        "popUpLimit": null,
-                        "nts": [
-                          "0"
-                        ],
-                        "ut": "2026-08-07",
-                        "rl": "",
-                        "rlc": "",
-                        "cs": [],
-                        "sut": 0,
-                        "links": []
-                      }
-                    ]
-                  }
-                ],
-                "cns": [
-                  {
-                    "uid": 13715,
-                    "t": "反诈提醒",
-                    "c": "近日，有不法分子非法截取同程旅行支付页面进行诈骗，诱导受骗人为其支付机票订单获取非法收益。\n同程旅行在此严正声明：我司系机票预订正规平台，坚决抵制各种利用我司平台实施诈骗的不法行为。我司已就相关情况向公安机关报告，并积极配合公安机关的调查工作。\n同时，我司再次提醒广大客户，谨防电信诈骗及刷单骗局。如您有出行需求，请通过同程旅行官方网站、APP及微信小程序预订机票，并在支付款项前仔细核对订单及收款信息。\n请广大客户提高警惕，切莫上当受骗。\n",
-                    "r": "<p>&nbsp; &nbsp; &nbsp; &nbsp; 近日，有不法分子非法截取同程旅行支付页面进行诈骗，诱导受骗人为其支付机票订单获取非法收益。</p>\n<p>&nbsp; &nbsp; &nbsp; &nbsp; 同程旅行在此严正声明：我司系机票预订正规平台，坚决抵制各种利用我司平台实施诈骗的不法行为。我司已就相关情况向公安机关报告，并积极配合公安机关的调查工作。</p>\n<p>&nbsp; &nbsp; &nbsp; &nbsp; 同时，我司再次提醒广大客户，谨防电信诈骗及刷单骗局。如您有出行需求，请通过同程旅行官方网站、APP及微信小程序预订机票，并在支付款项前仔细核对订单及收款信息。</p>\n<p>&nbsp; &nbsp; &nbsp; &nbsp; 请广大客户提高警惕，切莫上当受骗。</p>\n<p>&nbsp;</p>",
-                    "p": 0,
-                    "u": "",
-                    "pu": 0,
-                    "popUpLimit": null,
-                    "nts": [
-                      "3"
-                    ],
-                    "ut": "2024-08-21",
-                    "rl": "",
-                    "rlc": "",
-                    "cs": [],
-                    "sut": 0,
-                    "links": []
-                  }
-                ],
-                "cqs": []
-              }
-            ]
-          }
-        ],
-        "cache_key": "",
-        "abCollections": [
-          {
-            "expNo": "20210114_DirectFlyRecommend",
-            "result": "B"
-          },
-          {
-            "expNo": "20220309_linjinCity",
-            "result": "A"
-          }
-        ],
-        "stu_page_url": "https://wx.17u.cn/kylinwechat/student?RefId=1037909833",
-        "logo_version": 2026073001,
-        "roundway_rec_position": {
-          "enable": true,
-          "theme_top": {
-            "enable": true,
-            "sub_title": "往返一起订：若去程航变或取消，返程免费退改",
-            "days": 7
-          },
-          "theme_middle": {
-            "enable": true,
-            "sub_title": "往返一起订：若去程航变或取消，返程免费退改",
-            "days": 7
-          },
-          "theme_bottom": {
-            "enable": true,
-            "sub_title": "往返一起订：若去程航变或取消，返程免费退改",
-            "days": 7
-          }
-        },
-        "stu_prompt": "学生特惠，购票立减￥50",
-        "com_rec_title": "超多省钱方案都在这里哦！",
-        "multipleSceneRecommends": [
-          {
-            "scene": "gnjp_book1_Book1PositionRank",
-            "products": [
-              {
-                "num": 1,
-                "name": "SX",
-                "pos": "A"
-              },
-              {
-                "num": 2,
-                "name": "JD",
-                "pos": "A"
-              },
-              {
-                "num": 0,
-                "name": "LJ",
-                "pos": "B"
-              },
-              {
-                "num": 0,
-                "name": "WFA",
-                "pos": "B"
-              },
-              {
-                "num": 0,
-                "name": "HC",
-                "pos": "B"
-              },
-              {
-                "num": 8,
-                "name": "DJ",
-                "pos": "B"
-              },
-              {
-                "num": 15,
-                "name": "WFB",
-                "pos": "B"
-              },
-              {
-                "num": 22,
-                "name": "FS",
-                "pos": "B"
-              },
-              {
-                "num": 29,
-                "name": "HS",
-                "pos": "B"
-              },
-              {
-                "num": 36,
-                "name": "LC",
-                "pos": "B"
-              },
-              {
-                "num": 36,
-                "name": "FXQ",
-                "pos": "B"
-              },
-              {
-                "num": 1,
-                "name": "WFC",
-                "pos": "C"
-              },
-              {
-                "num": 2,
-                "name": "ZT",
-                "pos": "D"
-              }
-            ]
-          }
-        ],
-        "common_activity": [],
-        "voucher": {
-          "vmp": 0,
-          "cmp": 0
-        },
-        "limitChallenge": null,
-        "priceTrend": null
-      },
-      "showType": 0,
-      "errorCode": "0",
-      "errorMessage": "请求成功",
-      "tracerId": "580eb9c5-cdfe-43f7-9a59-08b40b5c3020",
-      "host": "::ffff:10.200.193.254",
-      "iact": "0",
-      "timestamp": 1786840665471
+      "msg": "ok"
     }
   },
   {
@@ -17851,7 +17649,7 @@
       "success": true,
       "data": {
         "ec": 0,
-        "tId": "f5bedbb6e9e825e65d80fdb022ed5dfe",
+        "tId": "1eb3e4197f78a169a1e0f3dcbde7549c",
         "d": "WUH",
         "a": "BJS",
         "dac": "",
@@ -17969,8 +17767,8 @@
                 "not": "A",
                 "tda": 0,
                 "tags": [
-                  "XvUmUy92oEdt1iKJHTftEPszHh5HCiQW4KLNVTA3AAISlfAPkRuq9m0DjZNyjEykN52L5825CnvEwryQGqEg1HxKsbWRHHebcyNxqKdPulh0drLqbICcfee24qoT1NrqNIfSU3G8TRFlDTcyjdF3Ku4",
-                  "9iTEuN3NNX2DRQX2829QFficodTyDhtcjIlGyiotpIuPIEvsMHi29ydT7ztU0icnUy7eYrRKynzFDGxqzdhn3hjEPrpKrpZP8qkIkjGzr8zjIlimRQYnPTWnt21MVCOBytyksN8viSWbxoz4bogz5EN1"
+                  "XvUmUy92oEdt1iKJHTftETQePEnhiZ1GvLzKT4hZGGs9L841bxpi4iysiOEzFfI9uTNcUn4rZmr4d8hasdH5DbKMovwGL3K6zww8Z8SrjMAKgftxu3luDLXiTBday8Tl0tWDT7g08QRF6KFjsr9UDI2",
+                  "9iTEuN3NNX2DRQX2829QFj1Jl6ks1h2ktwzcsuyiZ2wQUohtZUhtqQpL1LyAe5ENcbeimzbaL10VCezQVXjO9qk7vTEKvh3Ivy31pvlsHzzSGPczDWVQeDwTBvVOt7aERBAQT1fhvqIyYRIbrCQgIsz1"
                 ],
                 "pts": [
                   {
@@ -18057,8 +17855,8 @@
                 "not": "8",
                 "tda": 0,
                 "tags": [
-                  "2zytj2zOG82F44dfNyv5L67gTdnEmEdEpvTj0zDvtXA1DBlySxg5htydF5x35cDIRu6THlIKoayDaT0saemB1ypjg1yS4pTpWFR1kOJzrm8WGeDLuVhd4ziogDKdrYOA37UmX8VQS99B67VwY3Vne483",
-                  "X4TL2ARKjL8APeEQvWSmBfpNEqe52j6KRFPJd9jGTdhEdV5aFVruWgOg5GzSxt8Qen7nAwmpf4A5yPMRYDoUSn8vSAcfS5sV7rfwdQs4KcXdjZaftfhv9oFFVy0l5GKVXoVMwUJmI1tIVK9jl9GIHI"
+                  "2zytj2zOG82F44dfNyv5L6Za7d3PmzlJt5xUqxTQSquhBrsRZjOJSrugumR002hRZ9YOAXghBYPvttXybYn6phFpHJIt6dqzdhpmwMkqq4oz0OhUwopCeLVv978Snhxikj3uRPIUBzentkhYLAdw15Q",
+                  "X4TL2ARKjL8APeEQvWSmBlZ85Pbinzgjpyxc6A5NqtApQ7HiEy5koMDBzgCGNtSfOkoU0Z6qAnOgH52MoiRAdtOf4qaQXBOHxh9ZgeFEdHyyqE5QsUNLI5ZjYXKdYHmlPzPwzo8xq5en46ZQxVAqc7F"
                 ],
                 "pts": [
                   {
@@ -18283,8 +18081,8 @@
                 "not": "1",
                 "tda": 0,
                 "tags": [
-                  "XvUmUy92oEdt1iKJHTftEPszHh5HCiQW4KLNVTA3AAISlfAPkRuq9m0DjZNyjEykN52L5825CnvEwryQGqEg1HxKsbWRHHebcyNxqKdPulh0drLqbICcfee24qoT1NrqNIfSU3G8TRFlDTcyjdF3Ku4",
-                  "0ekPN21MFy6YJdCPiDEGGzmBziyREemYZqcyk1W0k3FPg4Mgy6sHpleFSaTIsN2iPjKXn4dxSm9TRtyrD5z3gWGDFZ5s4guf0iuVEzZalomGSRBYLXZqjZnpqfPC7vNM19YTW19QM8QFwGzqOVtIK2q"
+                  "XvUmUy92oEdt1iKJHTftETQePEnhiZ1GvLzKT4hZGGs9L841bxpi4iysiOEzFfI9uTNcUn4rZmr4d8hasdH5DbKMovwGL3K6zww8Z8SrjMAKgftxu3luDLXiTBday8Tl0tWDT7g08QRF6KFjsr9UDI2",
+                  "0ekPN21MFy6YJdCPiDEGGyBS8NK7b3poJye69IiSiNJP2Wg3xbXiF9MFsJG3qrnxCL2dYNQxyNnbxeoEHY3VFBXE9gATPHEzDuymEvFc0yVAFEXQZ1AK4Mqx3JIXl3a3bxbQnPC5AWd0n9ZpV1lCa57"
                 ],
                 "pts": [
                   {
@@ -18365,8 +18163,8 @@
                 "not": "7",
                 "tda": 0,
                 "tags": [
-                  "2zytj2zOG82F44dfNyv5L67gTdnEmEdEpvTj0zDvtXA1DBlySxg5htydF5x35cDIRu6THlIKoayDaT0saemB1ypjg1yS4pTpWFR1kOJzrm8WGeDLuVhd4ziogDKdrYOA37UmX8VQS99B67VwY3Vne483",
-                  "X4TL2ARKjL8APeEQvWSmBfpNEqe52j6KRFPJd9jGTdhQIbRk2vuoMiDm0SQFrPcYZ549SEHr49s6pzw4SyHchaDl20R3w6cKwzIv3QHxygExXkXD9izG4lyI8lUgnAle1BJ2AcvAYX3Ure2FLX7xuK2"
+                  "2zytj2zOG82F44dfNyv5L6Za7d3PmzlJt5xUqxTQSquhBrsRZjOJSrugumR002hRZ9YOAXghBYPvttXybYn6phFpHJIt6dqzdhpmwMkqq4oz0OhUwopCeLVv978Snhxikj3uRPIUBzentkhYLAdw15Q",
+                  "X4TL2ARKjL8APeEQvWSmBlZ85Pbinzgjpyxc6A5NqtA3G0mLjzmB1Xl1nQDjzn9UVlmhpfKgHZ9npqAVd62hRXC2sCd3kNWFjO6OT31LPqpvyrpJPpnhZvJ6CI3CW7oz7BpyWTIFIwV5YrIwQlRpXX3"
                 ],
                 "pts": [
                   {
@@ -18672,17 +18470,253 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "580eb9c5-cdfe-43f7-9a59-08b40b5c3020",
-      "host": "::ffff:10.204.93.205",
+      "tracerId": "382157e3-3d11-436c-8496-727954a74fb0",
+      "host": "::ffff:10.206.70.7",
       "iact": "0",
-      "timestamp": 1786840665565
+      "timestamp": 1786857754236
     }
   },
   {
-    "url": "https://apmfront.17u.cn/fms/h5multi",
+    "url": "https://wx.17u.cn/mihawkapi/ad/info",
     "data": {
+      "success": false,
+      "status": "fail",
+      "message": "数据查询失败",
+      "code": 500
+    }
+  },
+  {
+    "url": "https://wx.17u.cn/flightbffv2/book1/recommended",
+    "data": {
+      "success": true,
+      "data": {
+        "ec": 0,
+        "rcmds": [
+          {
+            "c": "NoticeGroup",
+            "n": "公告",
+            "d": [
+              {
+                "rns": [],
+                "sns": [
+                  {
+                    "fon": 1,
+                    "nts": [
+                      {
+                        "uid": 18733,
+                        "t": "关于加强充电宝、锂电池机上安全风险管控的提示",
+                        "c": "尊敬的旅客：为保障航班飞行安全，请您在携带充电宝乘机时遵守以下规定：\n一、禁止携带：厂家召回、鼓包、破损开裂、标识不清、额定能量＞160Wh、境内航班无清晰3C标识的充电宝。\n二、携带要求：每人最多随身携带2块充电宝，严禁托运。额定能量≤100Wh可直接携带；100Wh-160Wh需提前向国航（电话95583）申请批准。\n三、机上规范：充电宝全程关机并做好绝缘防护，机上禁止使用充电宝，不得利用机上电源为充电宝补电；不可放入头顶行李架，请放置座椅口袋或随身包袋。",
+                        "r": "<p>尊敬的旅客：为保障航班飞行安全，请您在携带充电宝乘机时遵守以下规定：</p>\n<p>一、禁止携带：厂家召回、鼓包、破损开裂、标识不清、额定能量＞160Wh、境内航班无清晰3C标识的充电宝。</p>\n<p>二、携带要求：每人最多随身携带2块充电宝，严禁托运。额定能量&le;100Wh可直接携带；100Wh-160Wh需提前向国航（电话95583）申请批准。</p>\n<p>三、机上规范：充电宝全程关机并做好绝缘防护，机上禁止使用充电宝，不得利用机上电源为充电宝补电；不可放入头顶行李架，请放置座椅口袋或随身包袋。</p>",
+                        "p": 0,
+                        "u": "",
+                        "pu": 0,
+                        "popUpLimit": null,
+                        "nts": [
+                          "0"
+                        ],
+                        "ut": "2026-08-07",
+                        "rl": "",
+                        "rlc": "",
+                        "cs": [],
+                        "sut": 0,
+                        "links": []
+                      }
+                    ]
+                  }
+                ],
+                "cns": [
+                  {
+                    "uid": 13715,
+                    "t": "反诈提醒",
+                    "c": "近日，有不法分子非法截取同程旅行支付页面进行诈骗，诱导受骗人为其支付机票订单获取非法收益。\n同程旅行在此严正声明：我司系机票预订正规平台，坚决抵制各种利用我司平台实施诈骗的不法行为。我司已就相关情况向公安机关报告，并积极配合公安机关的调查工作。\n同时，我司再次提醒广大客户，谨防电信诈骗及刷单骗局。如您有出行需求，请通过同程旅行官方网站、APP及微信小程序预订机票，并在支付款项前仔细核对订单及收款信息。\n请广大客户提高警惕，切莫上当受骗。\n",
+                    "r": "<p>&nbsp; &nbsp; &nbsp; &nbsp; 近日，有不法分子非法截取同程旅行支付页面进行诈骗，诱导受骗人为其支付机票订单获取非法收益。</p>\n<p>&nbsp; &nbsp; &nbsp; &nbsp; 同程旅行在此严正声明：我司系机票预订正规平台，坚决抵制各种利用我司平台实施诈骗的不法行为。我司已就相关情况向公安机关报告，并积极配合公安机关的调查工作。</p>\n<p>&nbsp; &nbsp; &nbsp; &nbsp; 同时，我司再次提醒广大客户，谨防电信诈骗及刷单骗局。如您有出行需求，请通过同程旅行官方网站、APP及微信小程序预订机票，并在支付款项前仔细核对订单及收款信息。</p>\n<p>&nbsp; &nbsp; &nbsp; &nbsp; 请广大客户提高警惕，切莫上当受骗。</p>\n<p>&nbsp;</p>",
+                    "p": 0,
+                    "u": "",
+                    "pu": 0,
+                    "popUpLimit": null,
+                    "nts": [
+                      "3"
+                    ],
+                    "ut": "2024-08-21",
+                    "rl": "",
+                    "rlc": "",
+                    "cs": [],
+                    "sut": 0,
+                    "links": []
+                  }
+                ],
+                "cqs": []
+              }
+            ]
+          }
+        ],
+        "cache_key": "",
+        "abCollections": [
+          {
+            "expNo": "20210114_DirectFlyRecommend",
+            "result": "B"
+          },
+          {
+            "expNo": "20220309_linjinCity",
+            "result": "A"
+          }
+        ],
+        "stu_page_url": "https://wx.17u.cn/kylinwechat/student?RefId=1037909833",
+        "logo_version": 2026073001,
+        "roundway_rec_position": {
+          "enable": true,
+          "theme_top": {
+            "enable": true,
+            "sub_title": "往返一起订：若去程航变或取消，返程免费退改",
+            "days": 7
+          },
+          "theme_middle": {
+            "enable": true,
+            "sub_title": "往返一起订：若去程航变或取消，返程免费退改",
+            "days": 7
+          },
+          "theme_bottom": {
+            "enable": true,
+            "sub_title": "往返一起订：若去程航变或取消，返程免费退改",
+            "days": 7
+          }
+        },
+        "stu_prompt": "学生特惠，购票立减￥50",
+        "com_rec_title": "超多省钱方案都在这里哦！",
+        "multipleSceneRecommends": [
+          {
+            "scene": "gnjp_book1_Book1PositionRank",
+            "products": [
+              {
+                "num": 1,
+                "name": "SX",
+                "pos": "A"
+              },
+              {
+                "num": 2,
+                "name": "JD",
+                "pos": "A"
+              },
+              {
+                "num": 0,
+                "name": "LJ",
+                "pos": "B"
+              },
+              {
+                "num": 0,
+                "name": "WFA",
+                "pos": "B"
+              },
+              {
+                "num": 0,
+                "name": "HC",
+                "pos": "B"
+              },
+              {
+                "num": 8,
+                "name": "DJ",
+                "pos": "B"
+              },
+              {
+                "num": 15,
+                "name": "WFB",
+                "pos": "B"
+              },
+              {
+                "num": 22,
+                "name": "FS",
+                "pos": "B"
+              },
+              {
+                "num": 29,
+                "name": "HS",
+                "pos": "B"
+              },
+              {
+                "num": 36,
+                "name": "LC",
+                "pos": "B"
+              },
+              {
+                "num": 36,
+                "name": "FXQ",
+                "pos": "B"
+              },
+              {
+                "num": 1,
+                "name": "WFC",
+                "pos": "C"
+              },
+              {
+                "num": 2,
+                "name": "ZT",
+                "pos": "D"
+              }
+            ]
+          }
+        ],
+        "common_activity": [],
+        "voucher": {
+          "vmp": 0,
+          "cmp": 0
+        },
+        "limitChallenge": null,
+        "priceTrend": null
+      },
+      "showType": 0,
+      "errorCode": "0",
+      "errorMessage": "请求成功",
+      "tracerId": "382157e3-3d11-436c-8496-727954a74fb0",
+      "host": "::ffff:10.200.164.49",
+      "iact": "0",
+      "timestamp": 1786857754553
+    }
+  },
+  {
+    "url": "https://wx.17u.cn/flightbffv2/book1/configs",
+    "data": {
+      "success": true,
+      "data": {
+        "isUseVOIP": false,
+        "adv": null,
+        "spb": false,
+        "abs": null
+      },
+      "showType": 0,
+      "errorCode": "0",
+      "errorMessage": "请求成功",
+      "tracerId": "382157e3-3d11-436c-8496-727954a74fb0",
+      "host": "::ffff:10.200.164.49",
+      "iact": "0",
+      "timestamp": 1786857754619
+    }
+  },
+  {
+    "url": "https://wx.17u.cn/mihawkapi/ad/info",
+    "data": {
+      "success": true,
+      "status": "success",
       "code": 200,
-      "msg": "ok"
+      "data": {
+        "positionCode": "TOUCH_Flight_Single_B1Banner",
+        "redirectPositionCode": null,
+        "displayType": 1,
+        "bgImgUrl": "",
+        "advertises": [],
+        "associatePositions": null,
+        "biRequestId": "21b4e2d1-ce02-4f1e-b464-d4ed805c53b5",
+        "biExpNo": null,
+        "prizeCount": null,
+        "title": "",
+        "remark": "",
+        "jumpUrl": null,
+        "cpAbExp": null,
+        "ext": {},
+        "config": {
+          "closeDelay": 1,
+          "carouselDelay": 4
+        }
+      }
     }
   },
   {
