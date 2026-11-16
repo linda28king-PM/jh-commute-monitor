@@ -1,9 +1,40 @@
 [
   {
-    "url": "https://c.go-mpulse.net/api/config.json?key=VP9LC-35W9U-68TQN-7HPLX-PPF4Y&d=m.ly.com&t=5982485&v=1.720.0&sl=0&si=6f5320af-d16c-4bbe-bd09-9ee75ff8cc11-tojmij&plugins=AK,ConfigOverride,Continuity,PageParams,IFrameDelay,AutoXHR,SPA,History,Angular,Backbone,Ember,RT,CrossDomain,BW,PaintTiming,NavigationTiming,ResourceTiming,Memory,CACHE_RELOAD,Errors,TPAnalytics,UserTiming,Akamai,Early,EventTiming,LOGN&acao=&ak.ai=947581",
+    "url": "https://c.go-mpulse.net/api/config.json?key=VP9LC-35W9U-68TQN-7HPLX-PPF4Y&d=m.ly.com&t=5982667&v=1.720.0&sl=0&si=f9ef31b0-a91f-41bf-a814-52e3666bc7d8-toksiw&plugins=AK,ConfigOverride,Continuity,PageParams,IFrameDelay,AutoXHR,SPA,History,Angular,Backbone,Ember,RT,CrossDomain,BW,PaintTiming,NavigationTiming,ResourceTiming,Memory,CACHE_RELOAD,Errors,TPAnalytics,UserTiming,Akamai,Early,EventTiming,LOGN&acao=&ak.ai=947581",
     "data": {
+      "h.key": "VP9LC-35W9U-68TQN-7HPLX-PPF4Y",
+      "h.d": "arlid:947581",
+      "h.t": 1794799976341,
+      "h.cr": "2765b4b2d224d63eda08ec9d4ba5cb718e29c5b0-a41c9e30-8dfb27fa",
+      "session_id": "6476ee1b-ed65-486d-ba29-4e2f69eb50a6",
       "site_domain": "arlid:947581",
-      "rate_limited": true
+      "beacon_url": "//ace99abb.akstat.io/",
+      "autorun": true,
+      "BW": {
+        "enabled": false
+      },
+      "RT": {
+        "cookie": null,
+        "session_exp": 1800
+      },
+      "ResourceTiming": {
+        "enabled": true,
+        "splitAtPath": true
+      },
+      "PageParams": {
+        "xhr": "none",
+        "pageGroups": [],
+        "customMetrics": [],
+        "customTimers": [],
+        "customDimensions": [],
+        "urlPatterns": [],
+        "params": true
+      },
+      "Akamai": {
+        "enabled": true,
+        "dns_prefetch_enabled": true
+      },
+      "user_ip": "7a2e1551c"
     }
   },
   {
@@ -14,10 +45,10 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "af25eb95-2b2e-4d8d-88cc-e68c81fd45b1",
-      "host": "::ffff:10.216.138.234",
+      "tracerId": "613ed488-cb87-40cd-8afe-3a4faa584e9f",
+      "host": "::ffff:10.204.93.205",
       "iact": "0",
-      "timestamp": 1794745532869
+      "timestamp": 1794799976763
     }
   },
   {
@@ -37,17 +68,17 @@
           },
           {
             "dd": "2026-12-14",
-            "lp": 297,
-            "hlp": 1144
+            "lp": 315,
+            "hlp": 1143
           },
           {
             "dd": "2026-12-15",
-            "lp": 340,
-            "hlp": 1145
+            "lp": 318,
+            "hlp": 1143
           },
           {
             "dd": "2026-12-16",
-            "lp": 398,
+            "lp": 397,
             "hlp": 1145
           },
           {
@@ -72,28 +103,28 @@
           {
             "dd": "2026-12-20",
             "lp": 350,
-            "ms": "1|350|400|350|16|MU2451||ut_user_new|||350|1|0|MU2451|2|0|QJ||2026-11-15 20:25:32||2026-11-15 20:25:33|0|350|350",
+            "ms": "1|350|400|350|16|MU2451||ut_user_new|||350|1|0|MU2451|2|0|QJ||2026-11-16 11:32:56||2026-11-16 11:32:56|0|350|350",
             "hlp": 1145,
-            "hms": "1|1145|2480|1145|17|MU2559||ut_user_new|||1145|1|0|MU2559|2|0|XC||2026-11-15 20:25:32||2026-11-15 20:25:33|0|1145|1145"
+            "hms": "1|1145|2480|1145|17|MU2559||ut_user_new|||1145|1|0|MU2559|2|0|XC||2026-11-16 11:32:56||2026-11-16 11:32:56|0|1145|1145"
           },
           {
             "dd": "2026-12-21",
-            "lp": 322,
+            "lp": 320,
             "hlp": 1145
           },
           {
             "dd": "2026-12-22",
-            "lp": 322,
+            "lp": 320,
             "hlp": 1145
           },
           {
             "dd": "2026-12-23",
-            "lp": 322,
+            "lp": 320,
             "hlp": 1145
           },
           {
             "dd": "2026-12-24",
-            "lp": 322,
+            "lp": 320,
             "isHoliday": true,
             "holidayName": "平安夜",
             "tag": "",
@@ -333,7 +364,7 @@
             ]
           }
         ],
-        "cache_key": "flight_dd8092f28b3262cefc070ecd7e4cf32575a47524",
+        "cache_key": "flight_8a4772147e3f29fa45f81a70f8feabb3ee445e0c",
         "tfs": [
           {
             "type": "9",
@@ -1272,7 +1303,7 @@
               },
               {
                 "tt": 9,
-                "td": "航班取消率0%"
+                "td": "航班取消率3%"
               }
             ],
             "fs": [
@@ -1639,7 +1670,7 @@
               },
               {
                 "tt": 9,
-                "td": "航班取消率0%"
+                "td": "航班取消率3%"
               }
             ],
             "fs": [
@@ -2036,7 +2067,7 @@
               },
               {
                 "tt": 7,
-                "td": "平均延误19分钟"
+                "td": "平均延误20分钟"
               },
               {
                 "tt": 9,
@@ -2404,7 +2435,7 @@
               },
               {
                 "tt": 7,
-                "td": "平均延误19分钟"
+                "td": "平均延误20分钟"
               },
               {
                 "tt": 9,
@@ -4984,7 +5015,7 @@
               },
               {
                 "tt": 7,
-                "td": "平均延误4分钟"
+                "td": "平均延误3分钟"
               },
               {
                 "tt": 9,
@@ -5334,7 +5365,7 @@
               },
               {
                 "tt": 7,
-                "td": "平均延误4分钟"
+                "td": "平均延误3分钟"
               },
               {
                 "tt": 9,
@@ -5725,7 +5756,7 @@
               },
               {
                 "tt": 9,
-                "td": "航班取消率23%"
+                "td": "航班取消率22%"
               }
             ],
             "fs": [
@@ -5786,7 +5817,7 @@
                 "dct": 1,
                 "atp": 500,
                 "app": 0,
-                "not": "A",
+                "not": "5",
                 "pts": [
                   {
                     "tt": 2,
@@ -5980,7 +6011,7 @@
               "dct": 1,
               "atp": 500,
               "app": 0,
-              "not": "A",
+              "not": "5",
               "pts": [
                 {
                   "tt": 2,
@@ -6093,7 +6124,7 @@
               },
               {
                 "tt": 9,
-                "td": "航班取消率23%"
+                "td": "航班取消率22%"
               }
             ],
             "fs": [
@@ -6464,7 +6495,7 @@
               },
               {
                 "tt": 7,
-                "td": "平均延误8分钟"
+                "td": "平均延误7分钟"
               },
               {
                 "tt": 9,
@@ -6832,7 +6863,7 @@
               },
               {
                 "tt": 7,
-                "td": "平均延误8分钟"
+                "td": "平均延误7分钟"
               },
               {
                 "tt": 9,
@@ -7225,7 +7256,7 @@
               },
               {
                 "tt": 2,
-                "td": "机龄14.1年"
+                "td": "机龄13.9年"
               },
               {
                 "tt": 4,
@@ -7595,7 +7626,7 @@
               },
               {
                 "tt": 2,
-                "td": "机龄14.1年"
+                "td": "机龄13.9年"
               },
               {
                 "tt": 4,
@@ -8760,7 +8791,7 @@
               },
               {
                 "tt": 7,
-                "td": "平均延误6分钟"
+                "td": "平均延误5分钟"
               },
               {
                 "tt": 9,
@@ -9133,7 +9164,7 @@
               },
               {
                 "tt": 7,
-                "td": "平均延误6分钟"
+                "td": "平均延误5分钟"
               },
               {
                 "tt": 8,
@@ -9514,7 +9545,7 @@
               },
               {
                 "tt": 7,
-                "td": "平均延误6分钟"
+                "td": "平均延误5分钟"
               },
               {
                 "tt": 9,
@@ -11351,7 +11382,7 @@
                 "dct": 1,
                 "atp": 500,
                 "app": 0,
-                "not": "A",
+                "not": "7",
                 "pts": [
                   {
                     "tt": 2,
@@ -11545,7 +11576,7 @@
               "dct": 1,
               "atp": 500,
               "app": 0,
-              "not": "A",
+              "not": "7",
               "pts": [
                 {
                   "tt": 2,
@@ -12017,7 +12048,7 @@
               },
               {
                 "tt": 2,
-                "td": "机龄14.9年"
+                "td": "机龄14.8年"
               },
               {
                 "tt": 4,
@@ -12422,7 +12453,7 @@
               },
               {
                 "tt": 2,
-                "td": "机龄14.9年"
+                "td": "机龄14.8年"
               },
               {
                 "tt": 4,
@@ -12790,7 +12821,7 @@
               },
               {
                 "tt": 2,
-                "td": "机龄14.7年"
+                "td": "机龄14.4年"
               },
               {
                 "tt": 4,
@@ -13158,7 +13189,7 @@
               },
               {
                 "tt": 2,
-                "td": "机龄14.7年"
+                "td": "机龄14.4年"
               },
               {
                 "tt": 4,
@@ -17602,7 +17633,7 @@
               },
               {
                 "tt": 7,
-                "td": "平均延误2分钟"
+                "td": "平均延误3分钟"
               },
               {
                 "tt": 9,
@@ -19416,10 +19447,17 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "af25eb95-2b2e-4d8d-88cc-e68c81fd45b1",
-      "host": "::ffff:10.204.66.18",
+      "tracerId": "613ed488-cb87-40cd-8afe-3a4faa584e9f",
+      "host": "::ffff:10.214.154.51",
       "iact": "0",
-      "timestamp": 1794745533022
+      "timestamp": 1794799976929
+    }
+  },
+  {
+    "url": "https://apmfront.17u.cn/fms/h5multi-v2",
+    "data": {
+      "code": 200,
+      "msg": "ok"
     }
   },
   {
@@ -19435,7 +19473,7 @@
         "bgImgUrl": "",
         "advertises": [],
         "associatePositions": null,
-        "biRequestId": "ce291298-5c26-4b70-9483-972f788a2705",
+        "biRequestId": "7737c143-81a2-4598-8494-fab88a6a8869",
         "biExpNo": null,
         "prizeCount": null,
         "title": "",
@@ -19647,29 +19685,10 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "af25eb95-2b2e-4d8d-88cc-e68c81fd45b1",
-      "host": "::ffff:10.215.214.4",
+      "tracerId": "613ed488-cb87-40cd-8afe-3a4faa584e9f",
+      "host": "::ffff:10.204.25.223",
       "iact": "0",
-      "timestamp": 1794745533867
-    }
-  },
-  {
-    "url": "https://wx.17u.cn/flightbffv2/book1/configs",
-    "data": {
-      "success": true,
-      "data": {
-        "isUseVOIP": false,
-        "adv": null,
-        "spb": false,
-        "abs": null
-      },
-      "showType": 0,
-      "errorCode": "0",
-      "errorMessage": "请求成功",
-      "tracerId": "af25eb95-2b2e-4d8d-88cc-e68c81fd45b1",
-      "host": "::ffff:10.206.55.110",
-      "iact": "0",
-      "timestamp": 1794745533869
+      "timestamp": 1794799977984
     }
   },
   {
@@ -19696,17 +19715,29 @@
       "showType": 0,
       "errorCode": "0",
       "errorMessage": "请求成功",
-      "tracerId": "af25eb95-2b2e-4d8d-88cc-e68c81fd45b1",
-      "host": "::ffff:10.220.160.85",
+      "tracerId": "613ed488-cb87-40cd-8afe-3a4faa584e9f",
+      "host": "::ffff:10.204.110.240",
       "iact": "0",
-      "timestamp": 1794745533936
+      "timestamp": 1794799978029
     }
   },
   {
-    "url": "https://apmfront.17u.cn/fms/h5multi-v2",
+    "url": "https://wx.17u.cn/flightbffv2/book1/configs",
     "data": {
-      "code": 200,
-      "msg": "ok"
+      "success": true,
+      "data": {
+        "isUseVOIP": false,
+        "adv": null,
+        "spb": false,
+        "abs": null
+      },
+      "showType": 0,
+      "errorCode": "0",
+      "errorMessage": "请求成功",
+      "tracerId": "613ed488-cb87-40cd-8afe-3a4faa584e9f",
+      "host": "::ffff:10.216.138.234",
+      "iact": "0",
+      "timestamp": 1794799978319
     }
   },
   {
